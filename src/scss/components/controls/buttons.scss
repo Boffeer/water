@@ -1,0 +1,201 @@
+/*
+* Пример использования компонента кнопки
+* <button class="button button--primary">Акцентная кнопка</button>
+* <button class="button button--secondary btn--icon">Кнопка с иконкой вторичного цвета</button>
+* <button class="button button--primary button--icon btn--icon-arrow btn--icon-left">Кнопка с иконкой с левой стороны акцентного цвета</button>
+*/
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  // padding: 23px 46px 26px 46px;
+  padding: 21px 16px 26px 16px;
+  font-size: var(--fz-button);
+  font-weight: var(--fw-normal);
+  line-height: var(--lh-button);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  border: 1px solid var(--button-color);
+  transition: all 0.3s ease;
+  @media (max-width: 768px) {
+    padding-top: 20px;
+    padding-top: 21px;
+  }
+}
+
+.button[disabled] {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.6;
+}
+
+.button:active {
+  @media (min-width: $minHover) {
+    opacity: 0.6;
+  }
+}
+
+.button--primary {
+  --button-color: var(--c-accent);
+  color: var(--c-text-on);
+  background-color: var(--button-color);
+}
+
+.button--primary:hover {
+  @media (min-width: $minHover) {
+  }
+}
+
+// .button--primary[disabled] {
+//   --button-color: var(--c-blind);
+// }
+
+.button--on.button--primary {
+  --button-color: var(--c-text-on);
+  color: var(--c-accent);
+}
+
+.button--on.button--primary:hover {
+  @media (min-width: $minHover) {
+    --button-color: var(--c-accent--light);
+  }
+}
+
+// .button--on.button--primary[disabled],
+// .button--on.button--primary[disabled]:hover {
+//   --button-color: var(--c-blind);
+//   color: var(--c-text-disabled);
+//   opacity: 1;
+//   @media (prefers-color-scheme: dark) {
+//     color: #106332;
+//     --button-color: var(--c-accent--dark);
+//   }
+// }
+
+.button--secondary {
+  --button-color: var(--c-button-secondary);
+  color: var(--button-color);
+}
+
+.button--secondary:hover {
+  @media (min-width: $minHover) {
+    color: var(--c-text-on);
+    background-color: var(--button-color);
+  }
+}
+
+// .button--secondary[disabled],
+// .button--secondary[disabled]:hover {
+//   background-color: transparent;
+//   border-color: var(--c-text-disabled);
+// }
+
+.button--on.button--secondary {
+  --button-color: var(--c-text-on);
+}
+
+.button--on.button--secondary:hover {
+  @media (min-width: $minHover) {
+    color: var(--c-accent);
+  }
+}
+
+// .button--on.button--secondary[disabled],
+// .button--on.button--secondary[disabled]:hover {
+//   --button-color: var(--c-blind);
+//   color: var(--button-color);
+//   background-color: transparent;
+//   border-color: var(--button-color);
+//   @media (prefers-color-scheme: dark) {
+//     --button-color: var(--c-text-disabled);
+//     opacity: 0.4;
+//   }
+// }
+
+.button--thirdly {
+  --button-color: var(--c-accent);
+  --icon-color: var(--button-color);
+  padding: 0;
+  color: var(--button-color);
+}
+.button--thirdly:hover {
+  @media (min-width: $minHover) {
+    --button-color: var(--c-accent--dark);
+    --icon-color: var(--button-color);
+  }
+}
+
+.button--on.button--thirdly {
+  --button-color: var(--c-text-on);
+  // --icon-color: var(--c-text-on);
+  @media (prefers-color-scheme: dark) {
+    --button-color: var(--bg-element);
+  }
+}
+
+.button--on.button--thirdly:hover {
+  @media (min-width: $minHover) {
+    --button-color: var(--c-accent--light);
+  }
+}
+
+// .button--on.button--thirdly[disabled],
+// .button--on.button--thirdly[disabled]:hover {
+//   @media (prefers-color-scheme: dark) {
+//     --button-color: #1a743f;
+//     color: var(--button-color);
+//   }
+// }
+
+.button__text {
+  width: 100%;
+  font-size: inherit;
+}
+
+.button__icon {
+  display: block;
+  width: var(--button-icon-size);
+  min-width: var(--button-icon-size);
+  max-width: var(--button-icon-size);
+  height: var(--button-icon-size);
+  background-color: var(--icon-color);
+  fill: transparent;
+  stroke: var(--icon-color);
+  transition: all var(--tr) ease;
+}
+.button--icon-fill .button__icon {
+  fill: var(--icon-color);
+  stroke: none;
+}
+
+.button--icon-left .button__icon {
+  order: -1;
+  margin-right: 0.57em;
+}
+
+.button--icon-right .button__icon {
+  order: 5;
+  margin-left: 0.57em;
+}
+
+.button__icon path {
+  stroke: var(--button-color);
+}
+
+.button--icon-plus .button__icon {
+  @include getmask("../img/icons/plus.svg");
+}
+.button--icon-plus:hover .button__icon {
+  @media (min-width: $minHover) {
+    transform: rotate(180deg);
+  }
+}
+
+.button--icon-plus:hover {
+  @media (min-width: $minHover) {
+    --icon-color: var(--c-accent);
+    --button-color: var(--c-accent);
+  }
+}

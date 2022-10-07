@@ -1,0 +1,31 @@
+/*
+
+    @link
+
+*/
+
+/* stylelint-disable */
+.link {
+  --link-color: var(--c-accent);
+  color: var(--link-color);
+  transition: all var(--tr) ease-in-out;
+  padding: 0;
+  justify-content: flex-start;
+}
+
+.link--inline {
+  --link-color: var(--c-text-on);
+  border-bottom: 1px solid var(--link-color);
+  font-weight: 600;
+}
+
+.link:hover {
+  @media (min-width: $minHover) {
+    --link-color: var(--c-accent);
+  }
+}
+.link:active {
+  opacity: 0.6;
+}
+
+/* stylelint-enable */

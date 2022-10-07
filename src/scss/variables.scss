@@ -1,0 +1,93 @@
+// ================ Responsive Start ================
+$min-width: 320px;
+$max-width: 1920px;
+$max-width-container: 1170px;
+$container-padding: 48;
+$container-width: $max-width-container + $container-padding;
+
+$laptop-l: 1500px;
+$laptop: 1100px;
+$tablet: 800px;
+$mobile-l: 450px;
+$mobile-m: 390px;
+$mobile-s: 330px;
+$hide-menu: $tablet;
+$minHover: $laptop;
+// ================ Responsive End ================
+
+// ================ Colors Start ================
+// Текст
+$text-primary: var(--c-text-regular);
+$text-second: var(--c-text-secondary);
+$text-label: var(--c-text-label);
+$accent: #b24d2b;
+$light: #fff;
+
+// Задний фон разделов
+// $frame-dark: #080A0A;
+// $frame-light: #0E1010;
+
+// Обводка
+$border-line: var(--c-border);
+
+// Радиусы
+$radius-s: var(--radius-s);
+$radius-l: var(--radius-l);
+
+// Текстовые поля
+$input-placeholder: var(--c-input-placeholder);
+
+// Уведомления
+$error: var(--c-error);
+// ================ Colors End ================
+:root {
+  --c-text-regular: #333;
+  --c-text-secondary: #5b5b5b;
+  --c-button-secondary: #5b5b5b;
+  --c-text-label: #bdbdbd;
+  --c-text-on: #fff;
+  --c-input-placeholder: brig-color(#000, 0.3);
+
+  --c-accent: #b24d2b;
+  --c-accent-light: #cc886a;
+  --c-error: #ff3b30;
+
+  --bg-element: #fff;
+  --bg-app: #0e1317;
+  --bg-app-light: #212425;
+
+  --bg-dropdown: #384043;
+  --bg-dropdown-list: #4e5557;
+
+  --bg-poppa: #171b1f;
+  --radius-poppa: 10px;
+  --overlay-poppa: rgba(0, 0, 0, 0.8);
+
+  --c-border: #cecece;
+  --radius-s: 4px;
+  --radius-l: 30px;
+
+  --tr: 0.3s;
+  --tr-regular: all var(--tr) ease;
+
+  // --container-padding: #{math.div($container-padding, 2) + "px"};
+  --container-padding: 15px;
+  @media (max-width: 1100px) {
+    --container-padding: 10px;
+  }
+
+  --ff-regular: "Ubuntu", sans-serif;
+  --ff-title: "Poiret One", sans-serif;
+
+  --fz-button: 18px;
+  --lh-button: 126.5%;
+  @media (max-width: 768px) {
+    --fz-button: 15px;
+    --lh-button: 126%;
+  }
+}
+
+// ================ Other Start ================
+$ff-main: var(--ff-regular);
+$tr: var(--tr);
+// ================ Other End ================

@@ -1,0 +1,105 @@
+.input {
+  --border-color: #dfdfdf;
+  --border-radius: 0px;
+  --text-color: var(--c-text-regular);
+  --fz: 18px;
+  --lh: 1.4;
+  --padding: 22px 22px 22px 68px;
+  --label-color: var(--c-text-grey-2);
+  --label-top: 16px;
+  --label-left: 12px;
+  --label-fz: var(--fz);
+  --label-lh: var(--lh);
+  --message-color: var(--c-text);
+  --message-transform: scale(1, 0);
+  --message-offset: -1.2em;
+  position: relative;
+  display: block;
+  width: 100%;
+  font-family: var(--ff-regular);
+  @media (max-width: 768px) {
+    --padding: 13px 13px 13px 46px;
+    --fz: 15px;
+    --lh: 22px;
+  }
+}
+.input--active {
+  --border-color: var(--c-text-grey-2);
+  --label-top: -9px;
+  --lebel-left: 12px;
+  --label-fz: calc(var(--label-fz) - 5);
+}
+.input--invalid {
+  --label-color: var(--c-error);
+  --message-transform: scale(1);
+  --message-color: var(--c-error);
+  --message-offset: 5px;
+  --border-color: var(--c-error);
+}
+
+.input__field {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: var(--padding);
+  font-size: var(--fz);
+  line-height: var(--lh);
+  color: var(--text-color);
+  background-color: var(--bg-element);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-shadow: inset 0px 0px 40px rgba(188, 188, 188, 0.25);
+  transition: all 0.3s ease;
+}
+.input__field::placeholder {
+  color: rgba(0, 0, 0, 0.19);
+}
+
+.input__icon {
+  position: absolute;
+  top: 27px;
+  left: 38px;
+  z-index: 3;
+  display: block;
+  width: 18px;
+  height: 18px;
+  @media (max-width: 768px) {
+    top: 18px;
+    left: 24px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.input__label {
+  position: absolute;
+  top: var(--label-top);
+  left: var(--label-left);
+  z-index: 3;
+  display: inline-block;
+  padding-right: 4px;
+  padding-left: 4px;
+  color: var(--label-color);
+  pointer-events: none;
+  background-color: var(--bg-element);
+  transition: all 0.3s ease;
+}
+
+.input__message {
+  z-index: 1;
+  display: block;
+  min-height: 1.2em;
+  margin-top: var(--message-offset);
+  font-size: var(--fz-tag);
+  line-height: var(--lh-tag);
+  color: var(--message-color);
+  transition: all 0.3s ease;
+  transform: var(--message-transform);
+  transform-origin: top;
+}
+
+.input--textarea .input__field {
+  height: 100%;
+  padding-left: 42px;
+  resize: none;
+}
