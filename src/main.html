@@ -12,87 +12,510 @@
       @@include('tpls/header.html',{})
 
       <main class="main">
-        <div class="timer__wrapper hero__timer">
-          <div class="timer b_timer">
-            <div class="timer__left timer__section">
-              <span class="timer__digit">7</span>
-              <span class="timer__digit">1</span>
+        <section class="hero">
+          <div class="container hero__container">
+            <h1 class="hero__title">
+              <span class="hero__suptitle"></span>
+              <span class="hero__title-text"></span>
+            </h1>
+            <div class="hero__offer">
+              <div class="hero__gift">
+                <h3 class="section-text section-text--bold">
+                  Для вас — подарок
+                </h3>
+                <p class="section-text">От Haswater и Four Seasons</p>
+                <a href="" class="button button--secondary hero__gift"
+                  >Забрать</a
+                >
+              </div>
+              <picture class="hero__pic"
+                ><img src="./img/hero/bottle.png" alt="" class="hero__img"
+              /></picture>
+              <div class="hero__video">
+                <button class="button-play"></button>
+                <h3 class="section-text section-text--bold">Видео про has</h3>
+                <p class="section-text">Время просмотра — 45 мин.</p>
+              </div>
             </div>
-            :
-            <div class="timer__center timer__section">
-              <span class="timer__digit">5</span>
-              <span class="timer__digit">9</span>
-            </div>
-            :
-            <div class="timer__right timer__section">
-              <span class="timer__digit">5</span>
-              <span class="timer__digit">9</span>
+            <div class="hero__socials socials">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="socials__link"
+              >
+                <svg class="socials__icon">
+                  <use xlink:href="./img/common/facebook.svg#facebook"></use>
+                </svg>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="socials__link"
+              >
+                <svg class="socials__icon">
+                  <use xlink:href="./img/common/telegram.svg#telegram"></use>
+                </svg>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="socials__link"
+              >
+                <svg class="socials__icon">
+                  <use xlink:href="./img/common/twitter.svg#twitter"></use>
+                </svg>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="socials__link"
+              >
+                <svg class="socials__icon">
+                  <use xlink:href="./img/common/vk.svg#vk"></use>
+                </svg>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="socials__link"
+              >
+                <svg class="socials__icon">
+                  <use xlink:href="./img/common/youtube.svg#youtube"></use>
+                </svg>
+              </a>
             </div>
           </div>
-          <picture class="picture timer__pic">
-            <img src="" alt="Timer" class="timer__img" />
-          </picture>
-        </div>
+        </section>
+
+        <section class="try">
+          <div class="container try__container">
+            <p class="section-suptitle">Добро пожаловать в Four Seasons</p>
+            <h2 class="section-title">
+              Наверное, вы устали После долгого перелета
+            </h2>
+            <div class="try__content gtc-2">
+              <picture class="try__picture"
+                ><img
+                  src="./img/try/product.png"
+                  alt="Добро пожаловать в Four Seasons"
+                  class="try__img"
+              /></picture>
+              <div class="bullets try__bullets">
+                <article class="bullets-card">
+                  <h3 class="bullets-card__title">
+                    Факт, доказанный лабораторными исследованиями
+                  </h3>
+                  <p class="bullets-card__desc">
+                    HasWater — природный антиоксидант, который поможет
+                    восстановиться быстрее и лучше, чем от 8 часового сна
+                  </p>
+                </article>
+                <article class="bullets-card">
+                  <h3 class="bullets-card__title">Попробуйте HasWater</h3>
+                  <p class="bullets-card__desc">
+                    и почувствуйте восстановительный эффект. В нашем отеле
+                    выдается бесплатно.
+                  </p>
+                </article>
+                <button class="button button--secondary">оставить отзыв</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cases">
+          <div class="cases__container container">
+            <p class="section-suptitle">Добро пожаловать в Four Seasons</p>
+            <h2 class="section-title">
+              Используют HasWater после физ. нагрузок
+            </h2>
+            <div class="cases__cards">
+              <article class="cases-card card">
+                <picture class="cases-card__pic"
+                  ><img src="./img/cases/1.jpg" alt="" class="cases-card__img"
+                /></picture>
+                <h3 class="cases-card__title">Александр Штепенко</h3>
+                <p class="cases-card__desc">Профессиональный боец UFC</p>
+              </article>
+              <article class="cases-card card">
+                <picture class="cases-card__pic"
+                  ><img src="./img/cases/1.jpg" alt="" class="cases-card__img"
+                /></picture>
+                <h3 class="cases-card__title">Полина Миллер</h3>
+                <p class="cases-card__desc">Лёгкая атлетка мирового класса</p>
+              </article>
+              <article class="cases-card card">
+                <picture class="cases-card__pic"
+                  ><img src="./img/cases/1.jpg" alt="" class="cases-card__img"
+                /></picture>
+                <h3 class="cases-card__title">Уэйн Болт</h3>
+                <p class="cases-card__desc">Лёгкий атлет мирового класса</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="history">
+          <div class="history__container container">
+            <p class="section-suptitle">Мы показали вам знаменитостей</p>
+            <h2 class="section-title">
+              А сейчас, покажем <br />
+              миллионы людей
+            </h2>
+            <article class="history__card">
+              <h3 class="section-text--bold">
+                Япония — страна <br />
+                долгожителей
+              </h3>
+              <div class="gtc-2 history__card-row">
+                <p class="section-text">
+                  По статистическим данным, средняя продолжительность жизни в
+                  Японии ~ 84 года.
+                </p>
+                <p class="section-text">
+                  Это на 19% выше средней продолжительности жизни по всему миру.
+                </p>
+              </div>
+              <h3 class="section-text--bold">
+                Каждый второй житель в Японии, пьет воду, насыщенную водородом
+              </h3>
+              <p class="section-text">Исследования проводятся с 2007 года</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="features">
+          <div class="features__container container">
+            <p class="section-suptitle">Пока обычная вода уталяет жажду,</p>
+            <h2 class="section-title">
+              Вода 2.0 — улучшает <br />
+              качество жизни
+            </h2>
+            <div class="gtc-3">
+              <div class="gtc__column">
+                <p class="section-text">
+                  Помимо восстановительного эффекта, вода, насыщенная водородом
+                  обладает другими позитивными эффектами, помогающими вывести
+                  жизнь на принципиально новый уровень
+                </p>
+              </div>
+              <div class="gtc__column">
+                <picture class="features__pic">
+                  <source
+                    srcset="./img/features/features-hero.webp"
+                    type="image/webp"
+                  />
+                  <img
+                    class="features__img"
+                    src="./img/features/features-hero.png"
+                    alt=""
+                  />
+                </picture>
+              </div>
+              <div class="gtc__column">
+                <h3 class="bullets__title">
+                  Это лишь часть положительных эффектов:
+                </h3>
+                <div class="bullets">
+                  <article class="bullets-card">
+                    <p class="bullets-card__desc">
+                      Видимое и естественное омоложение
+                    </p>
+                  </article>
+                  <article class="bullets-card">
+                    <p class="bullets-card__desc">
+                      Гидратация организма в 6 раз лучше, чем от обычной воды
+                    </p>
+                  </article>
+                  <article class="bullets-card">
+                    <p class="bullets-card__desc">
+                      Выведение токсинов — экология, курение, алкоголь
+                    </p>
+                  </article>
+                  <article class="bullets-card">
+                    <p class="bullets-card__desc">
+                      Нормализует уровень сахара в крови и показателей инсулина
+                    </p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="care">
+          <div class="container care__container">
+            <p class="section-suptitle">
+              Four seasons и HAS. Новый уровень заботы о вашем здоровье
+            </p>
+            <h2 class="section-title">HasFood для людей</h2>
+            <div class="care__offer">
+              <p class="care__desc">
+                Вся еда в нашем отеле приготовлена на HAS Water. Обработка всех
+                овощей, фруктов и зелени позволяет полностью смыть большинство
+                известных пестицидов. В нашем отеле вы едите экологически чистую
+                пищу, приготовленную поварами высшей категории
+              </p>
+              <button
+                class="button button--secondary care__watch-video"
+                data-poppa="care"
+              >
+                Смотреть видео
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="video">
+          <div class="container video__container">
+            <h2 class="section-title">
+              HasFood удаляет пестициды, масла и прочие токсины
+            </h2>
+            <p class="section-suptitle">Непригодные для организма</p>
+            <div class="video-wrapper lazy-media media">
+              <picture class="media video__preview-pic"
+                ><img src="" alt="" class="video__preview-img"
+              /></picture>
+              <iframe
+                class="video__content media"
+                src=""
+                frameborder="0"
+              ></iframe>
+            </div>
+            <p class="video__caption">
+              При пятиминутном нахождении в Воде 2.0, токсины смыватся на
+              глазах. Убедитесь сами.
+            </p>
+          </div>
+        </section>
+
+        <section class="food">
+          <div class="container food__container">
+            <h2 class="section-title">
+              У Has нет аналогов в домашнем хозяйстве
+            </h2>
+            <div class="food__content">
+              <div class="food__offer">
+                <h3 class="food__offer-title">
+                  HAS ускоряет приготовление и качество блюд
+                </h3>
+                <p class="food__offer-desc">
+                  Если в HAS замочить мясо или рыбу в течение 10 минут, то
+                  процесс тушения сократится в среднем с 1 часа 40 минут до 45
+                  минут.
+                </p>
+                <p class="food__offer-desc">
+                  При этом мясо или рыба получаются более нежное, благодаря
+                  ферментации.
+                </p>
+              </div>
+              <picture class="food__pic">
+                <source srcset="./img/food/hero.webp" type="image/webp" />
+                <img class="food__img" src="./img/food/hero.png" alt="" />
+              </picture>
+            </div>
+          </div>
+        </section>
+
+        <section class="gift">
+          <div class="container gift__container">
+            <p class="section-suptitle">Пейте HAS каждый день</p>
+            <h2 class="section-title">Для вас есть подарок на ресепшене</h2>
+            <div class="gift__offer">
+              <h3 class="gift__offer-title">
+                Чтобы получить подарок, заполните короткую форму
+              </h3>
+              <p class="gift__offer-desc">
+                и покажите полученный код администратору на ресепшене
+              </p>
+              <button
+                class="gift__offer-order button button--primary"
+                data-poppa="gift-callback"
+              >
+                Заполнить
+              </button>
+              <h3 class="gift__offer-title">Рекомендуемая норма потребления</h3>
+              <p class="gift__offer-desc">воды HAS — 1,5-2 литра в день</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="magic">
+          <div class="container magic__container">
+            <h2 class="section-title">
+              Немного <span class="section-text--strike"> магии </span> науки
+            </h2>
+            <p class="section-suptitle">
+              Узнайте о том, как обычная вода становится “истинной”
+            </p>
+            <div class="socials socials--big">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="socials__link"
+              >
+                <svg class="socials__icon">
+                  <use xlink:href="./img/common/facebook.svg#facebook"></use>
+                </svg>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="socials__link"
+              >
+                <svg class="socials__icon">
+                  <use xlink:href="./img/common/telegram.svg#telegram"></use>
+                </svg>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="socials__link"
+              >
+                <svg class="socials__icon">
+                  <use xlink:href="./img/common/twitter.svg#twitter"></use>
+                </svg>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="socials__link"
+              >
+                <svg class="socials__icon">
+                  <use xlink:href="./img/common/vk.svg#vk"></use>
+                </svg>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="socials__link"
+              >
+                <svg class="socials__icon">
+                  <use xlink:href="./img/common/youtube.svg#youtube"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="research">
+          <div class="container research__container">
+            <p class="section-suptitle">Has против пустых фактов</p>
+            <h2 class="section-title">
+              Все наши слова подтверждены научными исследованиями
+            </h2>
+            <div class="research__cards">
+              <article class="card">
+                <picture class="cases-card__pic"
+                  ><img
+                    src="./img/researches/1.jpg"
+                    alt=""
+                    class="cases-card__img"
+                /></picture>
+                <h3 class="cases-card__title">Полное название исследования</h3>
+                <p class="cases-card__desc">
+                  Описание исследования, которое может быть в высоту максимум в
+                  2 строки
+                </p>
+              </article>
+              <article class="card">
+                <picture class="cases-card__pic"
+                  ><img
+                    src="./img/researches/2.jpg"
+                    alt=""
+                    class="cases-card__img"
+                /></picture>
+                <h3 class="cases-card__title">Полное название исследования</h3>
+                <p class="cases-card__desc">
+                  Описание исследования, которое может быть в высоту максимум в
+                  2 строки
+                </p>
+              </article>
+              <article class="card">
+                <picture class="cases-card__pic"
+                  ><img
+                    src="./img/researches/3.jpg"
+                    alt=""
+                    class="cases-card__img"
+                /></picture>
+                <h3 class="cases-card__title">Полное название исследования</h3>
+                <p class="cases-card__desc">
+                  Описание исследования, которое может быть в высоту максимум в
+                  2 строки
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="map">
+          <div class="container map__container">
+            <h2 class="section-title">
+              Увидеть 1 раз в живую лучше, чем 100 раз услышать
+            </h2>
+            <div class="map__card">
+              <div class="map__card map__way">
+                <h3 class="map__title section-text--bold"></h3>
+                <p class="map__desc section-text">
+                  Адрес: Antalya, Konyaaltı, Bahtılı Köyü Köyü, 555. <br />
+                  Hasco Teknloji San. Ve tic. ltd. sti. Телефон:
+                  <a href="tel:+71234567890" class="map__phone js-phone"
+                    >+7 123 456-78-90</a
+                  >
+                </p>
+                <button class="button button--secondary">
+                  Проложить маршрут
+                </button>
+              </div>
+
+              <div class="map__card map__events">
+                <article class="map__events-item">
+                  <picture class="map__events-item-pic">
+                    <source srcset=".webp" type="image/webp" />
+                    <img class="map__events-item-img" src=".png" alt="" />
+                  </picture>
+                  <div class="map__card-info">
+                    <h3 class="map__title section-text--bold">Название</h3>
+                    <p class="map__desc section-text">
+                      Адрес: Россия, Москва, Пресненская наб., 2
+                    </p>
+                  </div>
+                  <button class="button button--secondary">
+                    Хочу посетить
+                  </button>
+                </article>
+                <article class="map__events-item">
+                  <picture class="map__events-item-pic">
+                    <source srcset=".webp" type="image/webp" />
+                    <img class="map__events-item-img" src=".png" alt="" />
+                  </picture>
+                  <div class="map__card-info">
+                    <h3 class="map__title section-text--bold">Название</h3>
+                    <p class="map__desc section-text">
+                      Адрес: Россия, Москва, Пресненская наб., 2
+                    </p>
+                  </div>
+                  <button class="button button--secondary">
+                    Хочу посетить
+                  </button>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
-      <div class="content">
-        <form action="">
-          <h2>Заголовок формы</h2>
-          <label class="input input--name">
-            <input
-              class="input__field"
-              name="user_name"
-              type="text"
-              placeholder="Имя"
-              data-value-missing="Заполните имя"
-              data-value-invalid="Что-то не так с введенным именем"
-              autocomplete="name"
-            />
-            <span class="input__message">Сообщение</span>
-          </label>
-          <label class="input input--tel">
-            <input
-              class="input__field"
-              name="user_tel"
-              type="tel"
-              placeholder="Телефон"
-              maxlength="25"
-              minlength="10"
-              data-value-missing="Напишите телефон"
-              data-value-invalid="Проверьте корректность телефона"
-              autocomplete="tel"
-            />
-            <span class="input__message">Ошибка</span>
-          </label>
-          <label class="input input--email">
-            <input
-              class="input__field"
-              name="user_email"
-              type="email"
-              placeholder="Email"
-              autocorrect="off"
-              autocomplete="email"
-              data-value-missing="Напишите имейл"
-              data-value-invalid="Проверьте корректность имейла"
-            />
-            <span class="input__message">Ошибка</span>
-          </label>
-          <button class="button button--primary" type="submit">
-            Отправить!
-          </button>
-        </form>
-        <button class="button button--primary" data-poppa-open="popich">
-          Открыть
-        </button>
-        <button>еще</button>
-      </div>
-
-      <div id="popich" class="poppa">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Recusandae
-        consectetur velit architecto illo! A itaque saepe consequatur quam
-        iusto, quaerat ratione, earum ad et recusandae voluptates iure error
-        quidem tempore!
-      </div>
+      <div class="content"></div>
 
       @@include('tpls/footer.html',{})
     </div>
