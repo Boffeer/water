@@ -1,5 +1,6 @@
 .video {
   padding-top: 80px;
+  padding-bottom: 96px;
 }
 .video__title {
   margin-bottom: 28px;
@@ -7,4 +8,40 @@
 
 .video__suptitle {
   margin-bottom: 55px;
+}
+
+.video-player {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 560px;
+  margin-bottom: 32px;
+  background: radial-gradient(
+      50% 100% at 50% 0%,
+      rgba(73, 73, 73, 0.2) 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    linear-gradient(76.15deg, #0c0c0c 0%, #101010 35.42%, #161616 100%);
+}
+
+.video-player__content,
+.video-player__preview {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-player__button {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+}
+
+.video__caption {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 180%;
+  color: #878787;
+  text-align: center;
 }

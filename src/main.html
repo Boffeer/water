@@ -147,21 +147,21 @@
             </h2>
             <div class="testimonials__cards">
               <article class="testimonials-card card">
-                <picture class="testimonials-card__pic"
+                <picture class="card__pic testimonials-card__pic"
                   ><img
                     src="./img/testimonials/1.jpg"
                     alt=""
-                    class="testimonials-card__img"
+                    class="testimonials-card__img card__img"
                 /></picture>
                 <h3 class="testimonials-card__title">Александр Штепенко</h3>
                 <p class="testimonials-card__desc">Профессиональный боец UFC</p>
               </article>
               <article class="testimonials-card card">
-                <picture class="testimonials-card__pic"
+                <picture class="testimonials-card__pic card__pic"
                   ><img
                     src="./img/testimonials/2.jpg"
                     alt=""
-                    class="testimonials-card__img"
+                    class="testimonials-card__img card__img"
                 /></picture>
                 <h3 class="testimonials-card__title">Полина Миллер</h3>
                 <p class="testimonials-card__desc">
@@ -169,11 +169,11 @@
                 </p>
               </article>
               <article class="testimonials-card card">
-                <picture class="testimonials-card__pic"
+                <picture class="testimonials-card__pic card__pic"
                   ><img
                     src="./img/testimonials/3.jpg"
                     alt=""
-                    class="testimonials-card__img"
+                    class="testimonials-card__img card__img"
                 /></picture>
                 <h3 class="testimonials-card__title">Уэйн Болт</h3>
                 <p class="testimonials-card__desc">
@@ -321,27 +321,28 @@
               Непригодные для организма
             </p>
             <div class="video-player lazy-media media">
-              <picture class="media video__preview-pic"
+              <picture class="media video-player__preview"
                 ><img src="" alt="" class="video__preview-img"
               /></picture>
               <iframe
-                class="video__content media"
+                class="video-player__content media"
                 src=""
                 frameborder="0"
               ></iframe>
-              <div class="button--play hero__video-button"></div>
+              <div class="button--play video-player__button"></div>
             </div>
             <p class="video__caption">
-              При пятиминутном нахождении в Воде 2.0, токсины смыватся на
-              глазах. Убедитесь сами.
+              При пятиминутном нахождении в Воде 2.0, <br />
+              токсины смыватся на глазах. Убедитесь сами.
             </p>
           </div>
         </section>
 
         <section class="food">
           <div class="container food__container">
-            <h2 class="section-title">
-              У Has нет аналогов в домашнем хозяйстве
+            <h2 class="section-title food__title">
+              У Has нет аналогов <br />
+              в домашнем хозяйстве
             </h2>
             <div class="food__content">
               <div class="food__offer">
@@ -359,7 +360,7 @@
                 </p>
               </div>
               <picture class="food__pic">
-                <source srcset="./img/food/hero.webp" type="image/webp" />
+                <!-- <source srcset="./img/food/hero.webp" type="image/webp" /> -->
                 <img class="food__img" src="./img/food/hero.png" alt="" />
               </picture>
             </div>
@@ -368,34 +369,49 @@
 
         <section class="gift">
           <div class="container gift__container">
-            <p class="section-suptitle">Пейте HAS каждый день</p>
-            <h2 class="section-title">Для вас есть подарок на ресепшене</h2>
-            <div class="gift__offer">
-              <h3 class="gift__offer-title">
-                Чтобы получить подарок, заполните короткую форму
-              </h3>
-              <p class="gift__offer-desc">
-                и покажите полученный код администратору на ресепшене
-              </p>
-              <button
-                class="gift__offer-order button button--primary"
-                data-poppa="gift-callback"
-              >
-                Заполнить
-              </button>
-              <h3 class="gift__offer-title">Рекомендуемая норма потребления</h3>
-              <p class="gift__offer-desc">воды HAS — 1,5-2 литра в день</p>
+            <p class="section-suptitle gift__suptitle">Пейте HAS каждый день</p>
+            <h2 class="section-title gift__title">
+              Для вас есть подарок на ресепшене
+            </h2>
+            <div class="gift__content">
+              <picture class="gift__pic">
+                <!-- <source
+                  srcset="./img/gift/stand.webp,"
+                  type="image/webp"> -->
+                <img class="gift__img" src="./img/gift/stand.png" alt="" />
+              </picture>
+
+              <div class="gift__offer">
+                <h3 class="gift__offer-title">
+                  Чтобы получить подарок, заполните короткую форму
+                </h3>
+                <p class="gift__offer-desc">
+                  и покажите полученный код администратору на ресепшене
+                </p>
+                <button
+                  class="gift__offer-order button button--primary"
+                  data-poppa="gift-callback"
+                >
+                  Заполнить
+                </button>
+                <h3 class="gift__offer-title gift__offer-title--small">
+                  Рекомендуемая <br />
+                  норма потребления
+                </h3>
+                <p class="gift__offer-desc">воды HAS — 1,5-2 литра в день</p>
+              </div>
             </div>
           </div>
         </section>
 
         <section class="magic">
           <div class="container magic__container">
-            <h2 class="section-title">
-              Немного <span class="section-text--strike"> магии </span> науки
+            <h2 class="section-title magic__title">
+              Немного <span class="section-text--strike">магии</span> науки
             </h2>
-            <p class="section-suptitle">
-              Узнайте о том, как обычная вода становится “истинной”
+            <p class="section-suptitle magic__suptitle">
+              Узнайте о том, как обычная вода <br />
+              становится “истинной”
             </p>
             <div class="socials socials--big">
               <a
@@ -454,52 +470,41 @@
 
         <section class="research">
           <div class="container research__container">
-            <p class="section-suptitle">Has против пустых фактов</p>
-            <h2 class="section-title">
-              Все наши слова подтверждены научными исследованиями
+            <p class="section-suptitle research__suptitle">
+              Has против пустых фактов
+            </p>
+            <h2 class="section-title research__title">
+              Все наши слова <br />
+              подтверждены научными <br />
+              исследованиями
             </h2>
             <div class="research__cards">
               <article class="card">
-                <picture class="testimonials-card__pic"
-                  ><img
-                    src="./img/researches/1.jpg"
-                    alt=""
-                    class="testimonials-card__img"
+                <picture class="card__pic"
+                  ><img src="./img/researches/1.jpg" alt="" class="card__img"
                 /></picture>
-                <h3 class="testimonials-card__title">
-                  Полное название исследования
-                </h3>
-                <p class="testimonials-card__desc">
+                <h3 class="card__title">Полное название исследования</h3>
+                <p class="card__desc">
                   Описание исследования, которое может быть в высоту максимум в
                   2 строки
                 </p>
               </article>
               <article class="card">
-                <picture class="testimonials-card__pic"
-                  ><img
-                    src="./img/researches/2.jpg"
-                    alt=""
-                    class="testimonials-card__img"
+                <picture class="card__pic"
+                  ><img src="./img/researches/2.jpg" alt="" class="card__img"
                 /></picture>
-                <h3 class="testimonials-card__title">
-                  Полное название исследования
-                </h3>
-                <p class="testimonials-card__desc">
+                <h3 class="card__title">Полное название исследования</h3>
+                <p class="card__desc">
                   Описание исследования, которое может быть в высоту максимум в
                   2 строки
                 </p>
               </article>
               <article class="card">
-                <picture class="testimonials-card__pic"
-                  ><img
-                    src="./img/researches/3.jpg"
-                    alt=""
-                    class="testimonials-card__img"
+                <picture class="card__pic"
+                  ><img src="./img/researches/3.jpg" alt="" class="card__img"
                 /></picture>
-                <h3 class="testimonials-card__title">
-                  Полное название исследования
-                </h3>
-                <p class="testimonials-card__desc">
+                <h3 class="card__title">Полное название исследования</h3>
+                <p class="card__desc">
                   Описание исследования, которое может быть в высоту максимум в
                   2 строки
                 </p>
@@ -510,37 +515,52 @@
 
         <section class="map">
           <div class="container map__container">
-            <h2 class="section-title">
-              Увидеть 1 раз в живую лучше, чем 100 раз услышать
+            <h2 class="section-title map__title">
+              Увидеть 1 раз в живую <br />
+              лучше, чем 100 раз <br />
+              услышать
             </h2>
-            <div class="map__card">
+            <div class="map__cards">
               <div class="map__card map__way">
-                <h3 class="map__title section-text-bold"></h3>
-                <p class="map__desc section-text">
+                <h3 class="map__card-title section-text-bold">
+                  Hasco Teknloji <br />
+                  San. Ve tic. ltd. sti.
+                </h3>
+                <p class="map__card-desc section-text">
                   Адрес: Antalya, Konyaaltı, Bahtılı Köyü Köyü, 555. <br />
-                  Hasco Teknloji San. Ve tic. ltd. sti. Телефон:
-                  <a href="tel:+71234567890" class="map__phone js-phone"
+                  Hasco Teknloji San. Ve tic. ltd. sti.
+                </p>
+                <p class="map__card-desc section-text">
+                  Телефон:
+                  <a href="tel:+71234567890" class="map__card-phone js-phone"
                     >+7 123 456-78-90</a
                   >
                 </p>
-                <button class="button button--secondary">
+                <button class="button button--secondary map__card-route">
                   Проложить маршрут
                 </button>
               </div>
 
               <div class="map__card map__events">
+                <h3 class="map__card-title section-text-bold">
+                  Ближайшие меропрития:
+                </h3>
                 <article class="map__events-item">
                   <picture class="map__events-item-pic">
                     <source srcset=".webp" type="image/webp" />
                     <img class="map__events-item-img" src=".png" alt="" />
                   </picture>
-                  <div class="map__card-info">
-                    <h3 class="map__title section-text-bold">Название</h3>
-                    <p class="map__desc section-text">
+                  <div class="map__events-item-info">
+                    <h3 class="map__events-item-title section-text-bold">
+                      Название
+                    </h3>
+                    <p class="map__events-item-desc section-text">
                       Адрес: Россия, Москва, Пресненская наб., 2
                     </p>
                   </div>
-                  <button class="button button--secondary">
+                  <button
+                    class="button button--secondary map__events-item-button"
+                  >
                     Хочу посетить
                   </button>
                 </article>
@@ -549,13 +569,17 @@
                     <source srcset=".webp" type="image/webp" />
                     <img class="map__events-item-img" src=".png" alt="" />
                   </picture>
-                  <div class="map__card-info">
-                    <h3 class="map__title section-text-bold">Название</h3>
-                    <p class="map__desc section-text">
+                  <div class="map__events-item-info">
+                    <h3 class="map__events-item-title section-text-bold">
+                      Название
+                    </h3>
+                    <p class="map__events-item-desc section-text">
                       Адрес: Россия, Москва, Пресненская наб., 2
                     </p>
                   </div>
-                  <button class="button button--secondary">
+                  <button
+                    class="button button--secondary map__events-item-button"
+                  >
                     Хочу посетить
                   </button>
                 </article>

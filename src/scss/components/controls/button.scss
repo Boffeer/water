@@ -37,9 +37,8 @@
 }
 
 .button--primary {
-  --button-color: var(--c-accent);
-  color: var(--c-text-on);
-  background-color: var(--button-color);
+  color: #323232;
+  background: #fff;
 }
 
 .button--primary:hover {

@@ -48,5 +48,9 @@
   text-transform: uppercase;
   letter-spacing: 0.32em;
 }
+
 .section-text--strike {
+  -webkit-text-fill-color: #a0a0a0;
+  // position: relative;
+  text-decoration: line-through;
 }

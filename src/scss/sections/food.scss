@@ -1,0 +1,36 @@
+.food {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+.food__container {
+  max-width: 1050px;
+}
+.food__content {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  padding-top: 32px;
+}
+
+.food__offer {
+  max-width: 340px;
+  padding-top: 195px;
+}
+.food__offer-title {
+  margin-bottom: 24px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 160%;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+}
+.food__offer-desc {
+  margin-bottom: 16px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 180%;
+  color: #878787;
+}
+.food__offer-desc:last-of-type {
+  margin-bottom: 0;
+}
