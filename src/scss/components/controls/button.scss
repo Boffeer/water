@@ -159,6 +159,7 @@
   position: relative;
   display: block;
   width: var(--size);
+  min-width: var(--size);
   height: var(--size);
   background-image: url(../img/icons/play.svg);
   background-repeat: no-repeat;

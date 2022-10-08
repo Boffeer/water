@@ -1,0 +1,29 @@
+.try {
+  padding-top: 38px;
+  padding-bottom: 50px;
+}
+.try__content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  column-gap: 90px;
+  max-width: 906px;
+  padding-top: 48px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.try__img {
+  display: block;
+  max-width: 80%;
+  margin-left: auto;
+}
+.try__bullets {
+  max-width: 310px;
+  padding-top: 100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.try__bullets .bullets-card:last-of-type {
+  margin-bottom: 24px;
+}

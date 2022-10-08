@@ -1,0 +1,44 @@
+.bullets-card {
+  position: relative;
+  margin-bottom: 64px;
+}
+.bullets-card::before {
+  position: static;
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 24px;
+  content: "";
+  background-color: transparent;
+  border: 1px solid #323232;
+  border-radius: 50%;
+}
+.bullets-card::after {
+  position: absolute;
+  top: var(--size);
+  left: var(--size);
+  display: block;
+  width: var(--size);
+  height: var(--size);
+  content: "";
+  background-color: #fff;
+  --size: 8px;
+  border-radius: 50%;
+}
+.bullets-card__title {
+  margin-bottom: 16px;
+  font-family: "RF Dewi Extended";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 160%;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+}
+.bullets-card__desc {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 150%;
+  color: #878787;
+}
