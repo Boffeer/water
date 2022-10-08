@@ -14,9 +14,9 @@
       <main class="main">
         <section class="hero">
           <div class="container hero__container">
-            <h1 class="hero__title">
-              <span class="hero__suptitle"></span>
-              <span class="hero__title-text"></span>
+            <h1 class="hero__heading">
+              <span class="hero__suptitle section-suptitle">Вода 2.0</span>
+              <span class="hero__title section-title">Haswater</span>
             </h1>
             <div class="hero__offer">
               <div class="hero__gift">
@@ -24,70 +24,80 @@
                   Для вас — подарок
                 </h3>
                 <p class="section-text">От Haswater и Four Seasons</p>
-                <a href="" class="button button--secondary hero__gift"
+                <a href="" class="button button--secondary hero__button-gift"
                   >Забрать</a
                 >
               </div>
               <picture class="hero__pic"
                 ><img src="./img/hero/bottle.png" alt="" class="hero__img"
               /></picture>
-              <div class="hero__video">
-                <button class="button-play"></button>
-                <h3 class="section-text section-text--bold">Видео про has</h3>
-                <p class="section-text">Время просмотра — 45 мин.</p>
+              <div class="hero__media">
+                <a href="#video" class="hero__video">
+                  <div class="button--play hero__video-button"></div>
+                  <div>
+                    <h3 class="section-text section-text--bold">
+                      Видео про has
+                    </h3>
+                    <p class="section-text">Время просмотра — 45 мин.</p>
+                  </div>
+                </a>
+                <div class="hero__socials socials">
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="socials__link"
+                  >
+                    <svg class="socials__icon">
+                      <use
+                        xlink:href="./img/common/facebook.svg#facebook"
+                      ></use>
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="socials__link"
+                  >
+                    <svg class="socials__icon">
+                      <use
+                        xlink:href="./img/common/telegram.svg#telegram"
+                      ></use>
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="socials__link"
+                  >
+                    <svg class="socials__icon">
+                      <use xlink:href="./img/common/twitter.svg#twitter"></use>
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="socials__link"
+                  >
+                    <svg class="socials__icon">
+                      <use xlink:href="./img/common/vk.svg#vk"></use>
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="socials__link"
+                  >
+                    <svg class="socials__icon">
+                      <use xlink:href="./img/common/youtube.svg#youtube"></use>
+                    </svg>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="hero__socials socials">
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="socials__link"
-              >
-                <svg class="socials__icon">
-                  <use xlink:href="./img/common/facebook.svg#facebook"></use>
-                </svg>
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="socials__link"
-              >
-                <svg class="socials__icon">
-                  <use xlink:href="./img/common/telegram.svg#telegram"></use>
-                </svg>
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="socials__link"
-              >
-                <svg class="socials__icon">
-                  <use xlink:href="./img/common/twitter.svg#twitter"></use>
-                </svg>
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="socials__link"
-              >
-                <svg class="socials__icon">
-                  <use xlink:href="./img/common/vk.svg#vk"></use>
-                </svg>
-              </a>
-              <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="socials__link"
-              >
-                <svg class="socials__icon">
-                  <use xlink:href="./img/common/youtube.svg#youtube"></use>
-                </svg>
-              </a>
             </div>
           </div>
         </section>
@@ -261,12 +271,12 @@
                 известных пестицидов. В нашем отеле вы едите экологически чистую
                 пищу, приготовленную поварами высшей категории
               </p>
-              <button
+              <a
+                href="#video"
                 class="button button--secondary care__watch-video"
-                data-poppa="care"
               >
                 Смотреть видео
-              </button>
+              </a>
             </div>
           </div>
         </section>

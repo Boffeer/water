@@ -41,8 +41,8 @@ $input-placeholder: var(--c-input-placeholder);
 $error: var(--c-error);
 // ================ Colors End ================
 :root {
-  --c-text-regular: #333;
-  --c-text-secondary: #5b5b5b;
+  --c-text-regular: #fff;
+  --c-text-secondary: #646464;
   --c-button-secondary: #5b5b5b;
   --c-text-label: #bdbdbd;
   --c-text-on: #fff;
@@ -76,11 +76,11 @@ $error: var(--c-error);
     --container-padding: 10px;
   }
 
-  --ff-regular: "Ubuntu", sans-serif;
-  --ff-title: "Poiret One", sans-serif;
+  --ff-regular: "RF Dewi Extended", sans-serif;
+  --ff-title: "RF Dewi Extended", sans-serif;
 
-  --fz-button: 18px;
-  --lh-button: 126.5%;
+  --fz-button: 10px;
+  --lh-button: 100%;
   @media (max-width: 768px) {
     --fz-button: 15px;
     --lh-button: 126%;

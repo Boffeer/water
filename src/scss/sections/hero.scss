@@ -1,0 +1,47 @@
+.hero {
+  background-image: url("../img/hero/bg.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: contain;
+}
+.hero__heading {
+  margin-bottom: 20px;
+}
+.hero__suptitle {
+  margin-bottom: 24px;
+  font-size: 36px;
+}
+.hero__title {
+  font-size: 96px;
+  line-height: 1;
+}
+
+.hero__gift {
+  padding-top: 40px;
+}
+.hero__gift .section-text {
+  margin-bottom: 16px;
+}
+
+.hero__media {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 50vh;
+}
+.hero__video {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 30px;
+}
+.hero__video-button {
+  margin-right: 27px;
+}
+.hero__socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+}
