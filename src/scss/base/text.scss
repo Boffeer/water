@@ -1,7 +1,7 @@
 .section-suptitle {
   display: block;
   margin-bottom: 20px;
-  font-family: "RF Dewi Extended";
+  font-family: "RF Dewi Extended", sans-serif;
   font-size: 20px;
   font-weight: 300;
   line-height: 100%;
@@ -16,7 +16,7 @@
 }
 .section-title {
   display: block;
-  font-family: "RF Dewi Extended";
+  font-family: "RF Dewi Extended", sans-serif;
   font-size: 40px;
   font-weight: 700;
   line-height: 150%;
@@ -31,6 +31,7 @@
 }
 
 .section-text {
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 150%;
@@ -39,7 +40,7 @@
 }
 .section-text-bold {
   margin-bottom: 12px;
-  font-family: "RF Dewi Extended";
+  font-family: "RF Dewi Extended", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;

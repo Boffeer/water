@@ -12,12 +12,7 @@
   300,
   "../resources/fonts/RFDewiExtended-Light"
 );
-@include font(
-  "RF Dewi Extended",
-  normal,
-  400,
-  "../resources/fonts/RFDewiExtended-Regular"
-);
+@include font("Inter", normal, 400, "../resources/fonts/Inter-Regular");
 @include font(
   "RF Dewi Extended",
   normal,

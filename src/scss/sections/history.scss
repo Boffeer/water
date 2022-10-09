@@ -1,33 +1,35 @@
 .history {
   padding-top: 98px;
-  padding-bottom: 198px;
+  padding-bottom: 228px;
   background-image: url("../img/history/story.png");
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-position: center bottom;
+  background-size: contain;
 }
 .history__container {
-  max-width: 1198px;
+  max-width: 1158px;
 }
 .history__suptitle {
   margin-bottom: 24px;
+  font-size: 24px;
 }
 .history__title {
-  margin-bottom: 320px;
+  margin-bottom: 325px;
   font-size: 48px;
+  line-height: 1.4;
 }
 
 .history__card {
-  max-width: 600px;
+  max-width: 576px;
   padding: 36px;
-  padding-right: 58px;
+  padding-right: 56px;
   margin-left: auto;
   background: #0c0c0c;
   backdrop-filter: blur(12px);
 }
 
 .history__heading {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   line-height: 1.6;
 }
 
@@ -44,10 +46,11 @@
 }
 
 .history__card-row .history__desc:nth-of-type(1) {
-  margin-right: 36px;
+  max-width: 54%;
+  margin-right: 30px;
 }
 .history__card-row .history__desc:nth-of-type(2) {
-  max-width: 40%;
+  max-width: 39%;
 }
 .history__card-row .history__desc:only-child {
   max-width: 100%;

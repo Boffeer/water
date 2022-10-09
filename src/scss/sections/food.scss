@@ -7,13 +7,14 @@
 }
 .food__content {
   display: grid;
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: 1fr 1.35fr;
   padding-top: 32px;
 }
 
 .food__offer {
   max-width: 340px;
   padding-top: 195px;
+  padding-left: 40px;
 }
 .food__offer-title {
   margin-bottom: 24px;
@@ -26,6 +27,7 @@
 }
 .food__offer-desc {
   margin-bottom: 16px;
+  font-family: "Inter", sans-serif;
   font-size: 12px;
   font-weight: 400;
   line-height: 180%;
@@ -33,4 +35,7 @@
 }
 .food__offer-desc:last-of-type {
   margin-bottom: 0;
+}
+.food__pic {
+  transform: translateX(-10px);
 }

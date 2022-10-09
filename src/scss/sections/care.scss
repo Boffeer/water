@@ -1,9 +1,10 @@
 .care {
   padding-top: 65px;
+  padding-bottom: 20px;
   background-image: url("../img/care/background.jpg");
   background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  background-position: bottom;
+  background-size: contain;
 }
 
 .care__suptitle {
@@ -13,16 +14,17 @@
 
 .care__content {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 1fr 1.2fr;
   padding-top: 48px;
 }
 
 .care__container {
-  max-width: 950px;
+  max-width: 970px;
 }
 
 .care__desc {
   margin-bottom: 24px;
+  font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
   line-height: 180%;
@@ -30,4 +32,7 @@
 }
 .care__offer {
   padding-top: 95px;
+}
+.care__pic {
+  transform: translate(-30px, 0);
 }

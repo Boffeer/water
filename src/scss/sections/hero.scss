@@ -14,12 +14,22 @@
 .hero__suptitle {
   margin-bottom: 24px;
   font-size: 36px;
+  letter-spacing: 0.32em;
 }
 .hero__title {
   font-size: 96px;
   line-height: 1;
+  letter-spacing: 0.32em;
+  transform: translate(17px, 0px);
 }
 
+.hero__offer {
+  display: grid;
+  grid-template-columns: 1fr 270px 325px;
+  column-gap: 70px;
+  align-items: grid-template;
+  justify-content: space-between;
+}
 .hero__gift {
   padding-top: 40px;
 }
@@ -27,18 +37,12 @@
   margin-bottom: 16px;
 }
 
-.hero__pic {
-  max-width: 270px;
-  margin-right: 64px;
-  margin-left: auto;
-}
-
 .hero__media {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  height: 50vh;
+  height: 56vh;
 }
 .hero__video {
   display: flex;
