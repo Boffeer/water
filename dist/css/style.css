@@ -1607,6 +1607,7 @@ body {
   background-image: url("../img/map/map.jpg");
   background-repeat: no-repeat;
   background-position: center;
+  background-position-y: 66%;
   background-size: contain;
 }
 
@@ -1718,6 +1719,6 @@ body {
   color: #717171;
   text-align: center;
   text-transform: uppercase;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.26em;
 }
 /*# sourceMappingURL=../maps/style.css.map */
