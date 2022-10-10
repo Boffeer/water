@@ -4,23 +4,41 @@
   background-repeat: no-repeat;
   background-position: top center;
   background-size: contain;
+  @media (max-width: 576px) {
+    padding-top: 48px;
+    padding-bottom: 72px;
+    background-position-x: 30%;
+    background-position-y: 14vh;
+    background-size: 260%;
+  }
 }
 .hero__container {
   max-width: 1090px;
 }
+
 .hero__heading {
   margin-bottom: 20px;
 }
+
 .hero__suptitle {
   margin-bottom: 24px;
   font-size: 36px;
   letter-spacing: 0.32em;
+  @media (max-width: 576px) {
+    margin-bottom: 16px;
+    font-size: 20px;
+  }
 }
 .hero__title {
   font-size: 96px;
   line-height: 1;
   letter-spacing: 0.32em;
   transform: translate(17px, 0px);
+  @media (max-width: 576px) {
+    margin-bottom: 24px;
+    font-size: 40px;
+    transform: none;
+  }
 }
 
 .hero__offer {
@@ -29,12 +47,30 @@
   column-gap: 70px;
   align-items: grid-template;
   justify-content: space-between;
+  @media (max-width: 576px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
+
 .hero__gift {
   padding-top: 40px;
+  @media (max-width: 576px) {
+    padding-top: 0;
+    text-align: center;
+  }
 }
 .hero__gift .section-text {
   margin-bottom: 16px;
+}
+
+.hero__pic {
+  @media (max-width: 576px) {
+    order: -2;
+    max-width: 144px;
+  }
 }
 
 .hero__media {
@@ -43,13 +79,26 @@
   align-items: flex-start;
   justify-content: space-between;
   height: 56vh;
+  @media (max-width: 576px) {
+    order: -1;
+    height: auto;
+    margin-bottom: 72px;
+  }
 }
+
 .hero__video {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   max-width: 330px;
   padding-top: 30px;
+  @media (max-width: 576px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+    text-align: center;
+  }
 }
 
 .hero__video .section-text {
@@ -57,6 +106,10 @@
 }
 .hero__video-button {
   margin-right: 27px;
+  @media (max-width: 576px) {
+    margin-right: 0;
+    margin-bottom: 32px;
+  }
 }
 .hero__socials {
   display: flex;
@@ -64,4 +117,7 @@
   justify-content: flex-end;
   margin-left: auto;
   transform: translate(35px, 4px);
+  @media (max-width: 576px) {
+    display: none;
+  }
 }

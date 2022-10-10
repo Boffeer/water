@@ -5,6 +5,13 @@
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: contain;
+  @media (max-width: 576px) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    background-position-x: 0;
+    background-position-y: 360px;
+    background-size: 120%;
+  }
 }
 .history__container {
   max-width: 1158px;
@@ -12,11 +19,19 @@
 .history__suptitle {
   margin-bottom: 24px;
   font-size: 24px;
+  @media (max-width: 576px) {
+    font-size: 16px;
+    line-height: 1.6;
+  }
 }
 .history__title {
   margin-bottom: 325px;
   font-size: 48px;
   line-height: 1.4;
+  @media (max-width: 576px) {
+    margin-bottom: 333px;
+    font-size: 32px;
+  }
 }
 
 .history__card {
@@ -26,15 +41,28 @@
   margin-left: auto;
   background: #0c0c0c;
   backdrop-filter: blur(12px);
+  @media (max-width: 576px) {
+    text-align: center;
+    background: transparent;
+    backdrop-filter: none;
+  }
 }
 
 .history__heading {
   margin-bottom: 18px;
   line-height: 1.6;
+  @media (max-width: 576px) {
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
 }
 
 .history__desc {
   line-height: 1.5;
+  @media (max-width: 576px) {
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
 }
 
 .history__card-row {
@@ -46,11 +74,15 @@
 }
 
 .history__card-row .history__desc:nth-of-type(1) {
-  max-width: 54%;
-  margin-right: 30px;
+  @media (min-width: 1100px) {
+    max-width: 54%;
+    margin-right: 30px;
+  }
 }
 .history__card-row .history__desc:nth-of-type(2) {
-  max-width: 39%;
+  @media (min-width: 1100px) {
+    max-width: 39%;
+  }
 }
 .history__card-row .history__desc:only-child {
   max-width: 100%;

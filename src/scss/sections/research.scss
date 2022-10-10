@@ -1,12 +1,28 @@
 .research {
   padding-top: 106px;
   padding-bottom: 96px;
+  @media (max-width: 576px) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 }
 .research__container {
   max-width: 1158px;
 }
+
+.research__title {
+  @media (max-width: 576px) {
+    font-size: 24px;
+  }
+}
 .research__suptitle {
   margin-bottom: 32px;
+  @media (max-width: 576px) {
+    max-width: 221px;
+    margin-right: auto;
+    margin-bottom: 24px;
+    margin-left: auto;
+  }
 }
 
 .research__cards {

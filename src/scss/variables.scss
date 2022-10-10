@@ -79,10 +79,6 @@ $error: var(--c-error);
 
   --fz-button: 10px;
   --lh-button: 100%;
-  @media (max-width: 768px) {
-    --fz-button: 15px;
-    --lh-button: 126%;
-  }
 }
 
 // ================ Other Start ================

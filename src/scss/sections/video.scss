@@ -1,13 +1,25 @@
 .video {
   padding-top: 90px;
   padding-bottom: 96px;
+  @media (max-width: 576px) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 }
 .video__title {
   margin-bottom: 32px;
+  @media (max-width: 576px) {
+    margin-bottom: 24px;
+    line-height: 1.4;
+  }
 }
 
 .video__suptitle {
   margin-bottom: 55px;
+  @media (max-width: 576px) {
+    margin-bottom: 24px;
+    line-height: 160%;
+  }
 }
 
 .video-player {

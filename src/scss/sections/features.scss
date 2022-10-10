@@ -1,12 +1,19 @@
 .features {
   padding-top: 150px;
   padding-bottom: 125px;
+  @media (max-width: 576px) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 }
 .features__container {
   max-width: 1158px;
 }
 .features__suptitle {
   margin-bottom: 24px;
+  @media (max-width: 576px) {
+    line-height: 1.6;
+  }
 }
 .features__desc {
   line-height: 1.75;
@@ -16,18 +23,40 @@
   grid-template-columns: 278px 290px 265px;
   justify-content: space-between;
   padding-top: 50px;
+  @media (max-width: 576px) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 24px;
+  }
 }
 
 .features__column-desc {
   padding-top: 75px;
+  @media (max-width: 576px) {
+    max-width: 278px;
+    padding-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
 }
 .features__column-img {
   padding-top: 12px;
   padding-right: 10px;
+  @media (max-width: 576px) {
+    order: 3;
+    max-width: 168px;
+  }
 }
 .features__column-bullets {
   max-width: 240px;
   padding-top: 70px;
+  @media (max-width: 576px) {
+    max-width: 167px;
+    padding-top: 24px;
+  }
 }
 .features__column-bullets-title {
   margin-bottom: 50px;
@@ -36,11 +65,42 @@
   line-height: 160%;
   text-transform: uppercase;
   letter-spacing: 0.32em;
+  @media (max-width: 576px) {
+    position: relative;
+    left: 20vw;
+    min-width: 206px;
+    margin-bottom: 72px;
+    font-size: 14px;
+    text-align: center;
+  }
 }
 
 .features__column-bullets .bullets-card {
   margin-bottom: 40px;
+  @media (max-width: 576px) {
+    margin-bottom: 58px;
+    text-align: left;
+  }
+}
+.features__column-bullets .bullets-card__desc {
+  z-index: 14;
+  color: #fff;
+}
+.features__column-bullets .bullets-card:nth-child(1) {
+  max-width: 108px;
+}
+.features__column-bullets .bullets-card:nth-child(2) {
+  max-width: 157px;
+}
+.features__column-bullets .bullets-card::after {
+  @media (max-width: 576px) {
+    left: 8px;
+    margin-left: 0;
+  }
 }
 .features__column-bullets .bullets-card::before {
   margin-bottom: 17px;
+  @media (max-width: 576px) {
+    margin-left: 0;
+  }
 }

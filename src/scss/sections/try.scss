@@ -1,6 +1,10 @@
 .try {
   padding-top: 38px;
   padding-bottom: 50px;
+  @media (max-width: 576px) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 }
 .try__content {
   display: grid;
@@ -10,12 +14,29 @@
   padding-top: 48px;
   margin-right: auto;
   margin-left: auto;
+  @media (max-width: 576px) {
+    display: flex;
+    flex-direction: column;
+    column-gap: 0;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
+.try__pic {
+  @media (max-width: 576px) {
+    max-width: 216px;
+    margin-bottom: 42px;
+  }
+}
 .try__img {
   display: block;
   max-width: 83.2%;
   margin-left: auto;
+  @media (max-width: 576px) {
+    max-width: 100%;
+    margin-right: auto;
+  }
 }
 .try__bullets {
   max-width: 310px;
@@ -23,8 +44,19 @@
   padding-right: 10px;
   margin-right: auto;
   margin-left: auto;
+  @media (max-width: 576px) {
+    padding-top: 0;
+  }
 }
 
 .try__bullets .bullets-card:last-of-type {
   margin-bottom: 24px;
+}
+
+.try__button-feedback {
+  @media (max-width: 576px) {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }

@@ -15,9 +15,9 @@
   max-height: var(--size);
   margin-right: 24px;
   fill: var(--icon-color);
-  @media (max-width: 575px) {
+  @media (max-width: 576px) {
     --size: 32px;
-    margin-right: 9px;
+    margin-right: 36px;
   }
 }
 .socials__link--has-stroke {
@@ -43,7 +43,13 @@
 }
 
 .socials--big {
+  flex-wrap: wrap;
   justify-content: center;
+  @media (max-width: 576px) {
+    max-width: 396px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 .socials--big .socials__link {
   --size: 168px;
@@ -51,6 +57,12 @@
   align-items: center;
   justify-content: center;
   border: 1px solid #474747;
+  @media (max-width: 576px) {
+    --size: 96px;
+    margin-right: 18px;
+    margin-bottom: 24px;
+    margin-left: 18px;
+  }
 }
 .socials--big .socials__icon {
   width: 36px;
