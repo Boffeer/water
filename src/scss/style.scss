@@ -36,11 +36,10 @@ body {
   line-height: 1.2;
   color: $text-primary;
   background-color: #010101;
-
-  ._lock & {
-    overflow: hidden;
-    touch-action: none;
-  }
+}
+body._lock {
+  overflow: hidden;
+  touch-action: none;
 }
 
 .wrapper {
@@ -131,6 +130,7 @@ body {
 @import "./sections/research";
 @import "./sections/map";
 @import "./sections/footer";
+@import "./sections/quiz";
 
 // Стили для отдельных страниц
 // @import "./pages/";

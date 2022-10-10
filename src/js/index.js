@@ -4,7 +4,7 @@
 // import DismalModules, { acc } from "./utils/modules.js";
 
 import "./unstable/formich.js";
-import Swiper, { Navigation, Autoplay } from "swiper";
+import Swiper, { Navigation } from "swiper";
 import "./unstable/burger.js";
 
 /**
@@ -30,6 +30,27 @@ if (document.querySelector(".langpicker-select")) {
  * Smooth anchors
  */
 import "./utils/smooth-anchors.js";
+
+let quizSlider = new Swiper(".quiz-slider", {
+  modules: [Navigation],
+  navigation: {
+    nextEl: ".quiz-slider__button-next",
+    prevEl: ".quiz-slider__button-prev",
+  },
+  allowTouchMove: false,
+});
+quizSlider.on("slideChange", () => {
+  let isBeforeResultsSlide =
+    quizSlider.activeIndex === quizSlider.slides.length - 2;
+  if (isBeforeResultsSlide) {
+    quizSlider.el.querySelector(".quiz-slider__buttons").style.pointerEvents =
+      "none";
+    quizSlider.el.querySelector(".quiz-slider__buttons").style.opacity = "0";
+  }
+});
+quizSlider.el.addEventListener("form_sent", () => {
+  quizSlider.slideNext();
+});
 
 // Аккордеон
 // const accordions = new DismalModules.Accordions()

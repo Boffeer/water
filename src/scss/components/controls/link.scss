@@ -6,11 +6,12 @@
 
 /* stylelint-disable */
 .link {
-  --link-color: var(--c-accent);
+  --link-color: #fff;
   color: var(--link-color);
   transition: all var(--tr) ease-in-out;
   padding: 0;
   justify-content: flex-start;
+  border-bottom: 1px solid var(--link-color);
 }
 
 .link--inline {
@@ -21,7 +22,7 @@
 
 .link:hover {
   @media (min-width: $minHover) {
-    --link-color: var(--c-accent);
+    // --link-color: var(--c-accent);
   }
 }
 .link:active {

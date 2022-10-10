@@ -108,10 +108,11 @@ formsList.forEach((form) => {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
-    console.log("submit");
+    // console.log("submit");
     form.querySelectorAll(".input").forEach((input) => {
       validateInput(input);
     });
+    if ([...form.querySelectorAll(".input--invalid")].length != 0) return;
 
     const formBody = new URLSearchParams(new FormData(form));
     let response = await fetch(form.action, {

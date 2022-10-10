@@ -7,9 +7,7 @@
   --c-text-label: #bdbdbd;
   --c-text-on: #fff;
   --c-input-placeholder: brig-color(#000, 0.3);
-  --c-accent: #b24d2b;
-  --c-accent-light: #cc886a;
-  --c-error: #ff3b30;
+  --c-error: #9f3434;
   --bg-element: #fff;
   --bg-app: #0e1317;
   --bg-app-light: #212425;
@@ -101,12 +99,12 @@
 }
 
 .input {
-  --border-color: #dfdfdf;
+  --border-color: #1e1e1e;
   --border-radius: 0px;
-  --text-color: var(--c-text-regular);
-  --fz: 18px;
-  --lh: 1.4;
-  --padding: 22px 22px 22px 68px;
+  --text-color: #fff;
+  --fz: 14px;
+  --lh: 1;
+  --padding: 32px;
   --label-color: var(--c-text-grey-2);
   --label-top: 16px;
   --label-left: 12px;
@@ -118,7 +116,8 @@
   position: relative;
   display: block;
   width: 100%;
-  font-family: var(--ff-regular);
+  font-family: "RF Dewi Extended", sans-serif;
+  font-weight: 600;
 }
 @media (max-width: 768px) {
   .input {
@@ -143,6 +142,24 @@
   --border-color: var(--c-error);
 }
 
+.input--invalid::after {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  content: "!";
+  background: var(--c-error);
+  transform: translateY(-50%);
+}
+
 .input__field {
   position: relative;
   z-index: 2;
@@ -150,16 +167,17 @@
   padding: var(--padding);
   font-size: var(--fz);
   line-height: var(--lh);
-  color: var(--text-color);
-  background-color: var(--bg-element);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  background-color: #030303;
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
-  box-shadow: inset 0px 0px 40px rgba(188, 188, 188, 0.25);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in;
 }
 
 .input__field::placeholder {
-  color: rgba(0, 0, 0, 0.19);
+  color: #fff;
 }
 
 .input__icon {
@@ -818,6 +836,32 @@
   transition: all 0.3s ease-in;
 }
 
+/*
+
+    @link
+
+*/
+/* stylelint-disable */
+.link {
+  --link-color: #fff;
+  color: var(--link-color);
+  transition: all var(--tr) ease-in-out;
+  padding: 0;
+  justify-content: flex-start;
+  border-bottom: 1px solid var(--link-color);
+}
+
+.link--inline {
+  --link-color: var(--c-text-on);
+  border-bottom: 1px solid var(--link-color);
+  font-weight: 600;
+}
+
+.link:active {
+  opacity: 0.6;
+}
+
+/* stylelint-enable */
 @font-face {
   font-family: "RF Dewi Extended";
   font-style: normal;
@@ -950,7 +994,8 @@ body {
   color: var(--c-text-regular);
   background-color: #010101;
 }
-._lock body {
+
+body._lock {
   overflow: hidden;
   touch-action: none;
 }
@@ -2383,5 +2428,182 @@ body {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.26em;
+}
+
+.quiz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  padding: 96px 156px;
+  background-color: #101010;
+  border-radius: 0;
+}
+
+.poppa__overlay--quiz-feedback .poppa__aligner {
+  padding: 0;
+}
+
+.quiz-slider {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 888px;
+  min-height: 564px;
+  padding-top: 72px;
+  counter-set: quizQuestion;
+}
+
+.quiz-slider__slide {
+  counter-increment: quizQuestion;
+}
+
+.quiz-slider__slide::before {
+  margin-bottom: 32px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: #646464;
+  content: counters(quizQuestion, "", decimal-leading-zero);
+}
+
+.quiz-slider__slide--results::before {
+  display: none;
+}
+
+.quiz .slider__button {
+  position: static;
+  inset: 0;
+  width: auto;
+  padding-top: 24px;
+  padding-right: 48px;
+  padding-bottom: 24px;
+  padding-left: 48px;
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.quiz-slider__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  transition: all 0.3s ease-in;
+}
+
+.quiz-slider__button-prev {
+  margin-right: 24px;
+}
+
+.quiz-slider__button-next {
+  margin-right: 56px;
+}
+
+.quiz-slider__question {
+  margin-bottom: 40px;
+  font-size: 40px;
+  line-height: 150%;
+  text-align: left;
+}
+
+.quiz-slider__answers {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.quiz-slider__answers-contacts {
+  align-items: stretch;
+  margin-top: 213px;
+}
+
+.quiz-slider__answer {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 24px;
+  margin-right: 32px;
+  margin-bottom: 32px;
+  cursor: pointer;
+  border: 1px solid #1e1e1e;
+}
+
+.quiz-slider__answer-check {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin-right: 24px;
+  background: #323232;
+  transition: all 0.3s ease-in;
+}
+
+.quiz-slider__answer-input {
+  position: absolute;
+  width: 1px;
+  opacity: 0;
+  appearance: none;
+}
+
+.quiz-slider__answer-input:checked ~ .quiz-slider__answer-check {
+  background-color: #fff;
+}
+
+.quiz-slider__answer-text {
+  font-family: "RF Dewi Extended", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.quiz-slider__skip {
+  max-width: 256px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 180%;
+  color: #646464;
+}
+
+.quiz__input {
+  display: inline-block;
+  width: 100%;
+  max-width: 334px;
+  margin-right: 24px;
+}
+
+.quiz__submit {
+  min-width: 214px;
+  padding: 32px 48px;
+}
+
+.quiz-slider__code {
+  margin-bottom: 72px;
+  text-align: left;
+}
+
+.quiz-slider__desc {
+  margin-bottom: 32px;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  color: #646464;
 }
 /*# sourceMappingURL=../maps/style.css.map */

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css?_v=20221009180625" />
+    <link rel="stylesheet" href="./css/style.css?_v=20221010143548" />
   </head>
   <body>
     <div class="wrapper">
@@ -232,7 +232,12 @@
                     выдается бесплатно.
                   </p>
                 </article>
-                <button class="button button--secondary">оставить отзыв</button>
+                <button
+                  class="button button--secondary"
+                  data-poppa-open="quiz-feedback"
+                >
+                  оставить отзыв
+                </button>
               </div>
             </div>
           </div>
@@ -694,14 +699,142 @@
         </section>
       </main>
 
-      <div class="content"></div>
-
       <footer class="footer">
   <div class="container footer__container">
     <a href="#" class="footer__link">Политика конфиденциальности данных</a>
     <p class="footer__copy">© HAS. Все права защищены</p>
   </div>
 </footer>
+
+<section class="quiz poppa" id="quiz-feedback">
+  <div class="container">
+    <form
+      method="post"
+      id="quiz-form"
+      action="./mail.php"
+      class="swiper quiz-slider"
+    >
+      <div class="swiper-wrapper">
+        <div class="swiper-slide quiz-slider__slide">
+          <h3 class="quiz-slider__question section-title">
+            Вы уже пробовали HasWater?
+          </h3>
+          <div class="quiz-slider__answers">
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-1"
+                class="quiz-slider__answer-input"
+                checked
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">
+                Да, мне понравился вкус и эффект
+              </p>
+            </label>
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-1"
+                class="quiz-slider__answer-input"
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">Да, мне не понравилось</p>
+            </label>
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-1"
+                class="quiz-slider__answer-input"
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">Ещё не пробовал(а)</p>
+            </label>
+          </div>
+        </div>
+
+        <div class="swiper-slide quiz-slider__slide">
+          <h3 class="quiz-slider__question section-title">
+            Как вам Four seasons и качество еды?
+          </h3>
+          <div class="quiz-slider__answers">
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-2"
+                class="quiz-slider__answer-input"
+                checked
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">Мне все нравится</p>
+            </label>
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-2"
+                class="quiz-slider__answer-input"
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">Мне не нравится</p>
+            </label>
+          </div>
+        </div>
+
+        <div class="swiper-slide quiz-slider__slide">
+          <h3 class="quiz-slider__question section-title">
+            Оставьте номер телефона и мы дадим вам код для получения подарка
+          </h3>
+          <div class="quiz-slider__answers quiz-slider__answers-contacts">
+            <label class="input quiz__input">
+              <input
+                required
+                type="tel"
+                name="user_tel"
+                placeholder="Ваш номер телефона"
+                class="input__field"
+                min="10"
+              />
+            </label>
+            <button class="button button--primary quiz__submit" type="submit">
+              Получить код
+            </button>
+          </div>
+        </div>
+        <div
+          class="swiper-slide quiz-slider__slide quiz-slider__slide--results"
+        >
+          <p class="quiz-slider__desc">Благодарим за прохождение опроса!</p>
+          <h3 class="quiz-slider__question section-title">
+            Ваш код для получения подарка на ресепшене:
+          </h3>
+          <p class="quiz-slider__code section-title">WOJENAS32</p>
+          <p class="quiz-slider__desc">
+            Просто скажите его администратору на ресепшене
+          </p>
+        </div>
+      </div>
+      <div
+        class="swiper-pagination quiz-slider__pagination slider__pagination"
+      ></div>
+      <div class="quiz-slider__buttons">
+        <div
+          class="quiz-slider__button-prev slider__button slider__button-prev button button--secondary"
+        >
+          ← Назад
+        </div>
+        <div
+          class="quiz-slider__button-next slider__button slider__button-next button button--primary"
+        >
+          Следующий вопрос
+        </div>
+        <div class="quiz-slider__skip">
+          У меня нет времени проходить тест, хочу просто
+          <button class="quiz-slider__skip-button link">забрать подарок</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
 
     </div>
 
@@ -723,6 +856,6 @@
   </div>
 </div> -->
 
-    <script src="./js/bundle.min.js?_v=20221009180625"></script>
+    <script src="./js/bundle.min.js?_v=20221010143548"></script>
   </body>
 </html>
