@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css?_v=20221009153648" />
+    <link rel="stylesheet" href="./css/style.css?_v=20221009180625" />
   </head>
   <body>
     <div class="wrapper">
@@ -14,11 +14,13 @@
     <a href="#" class="header__logo logo">
       <img src="./img/common/logo.svg" alt="Logo" class="logo__img" />
     </a>
-    <select name="" id="" class="header__langpicker langpicker">
-      <option value="ru">Ru</option>
-      <option value="fr">Fr</option>
-      <option value="en">En</option>
-    </select>
+    <form class="langpicker header__langpicker">
+      <select name="" id="" class="header__langpicker-select langpicker-select">
+        <option value="ru">Ru</option>
+        <option value="fr">Fr</option>
+        <option value="en">En</option>
+      </select>
+    </form>
   </div>
 </header>
 <!--[if lte IE 9]>
@@ -238,8 +240,10 @@
 
         <section class="testimonials">
           <div class="testimonials__container container">
-            <p class="section-suptitle">Профессиональные спортсмены</p>
-            <h2 class="section-title">
+            <p class="section-suptitle testimonials__suptitle">
+              Профессиональные спортсмены
+            </p>
+            <h2 class="section-title testimonials__title">
               Используют HasWater <br />
               после физ. нагрузок
             </h2>
@@ -719,6 +723,6 @@
   </div>
 </div> -->
 
-    <script src="./js/bundle.min.js?_v=20221009153648"></script>
+    <script src="./js/bundle.min.js?_v=20221009180625"></script>
   </body>
 </html>

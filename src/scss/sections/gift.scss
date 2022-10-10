@@ -7,6 +7,18 @@
   background-position-x: -50px;
   background-position-y: 290px;
   background-size: contain;
+
+  @media (min-width: 1441px) {
+    background-position-x: 120px;
+    background-position-y: 290px;
+    background-size: 80%;
+  }
+  @media (min-width: 1601px) {
+    background-position: center;
+    background-position-x: 280px;
+    background-position-y: 270px;
+    background-size: 70%;
+  }
 }
 .gift__suptitle {
   margin-bottom: 30px;

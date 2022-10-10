@@ -1,7 +1,7 @@
 "use strict";
 
-import { removeAllClasses, bodyLock } from "./utils/functions.js";
-import DismalModules, { acc } from "./utils/modules.js";
+// import { removeAllClasses, bodyLock } from "./utils/functions.js";
+// import DismalModules, { acc } from "./utils/modules.js";
 
 import "./unstable/formich.js";
 import Swiper, { Navigation, Autoplay } from "swiper";
@@ -22,10 +22,9 @@ let lazyLoadInstance = new LazyLoad();
  * Dropdown Select
  */
 import "./libs/custom-select.min.js";
-if (document.querySelector(".input--dropdown")) {
-  customSelect(".input--dropdown .input__select");
+if (document.querySelector(".langpicker-select")) {
+  customSelect(".langpicker-select");
 }
-import "./unstable/tabs.js";
 
 /**
  * Smooth anchors

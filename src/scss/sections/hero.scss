@@ -48,12 +48,12 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  max-width: 320px;
+  max-width: 330px;
   padding-top: 30px;
 }
 
 .hero__video .section-text {
-  font-size: 13px;
+  font-size: 14px;
 }
 .hero__video-button {
   margin-right: 27px;
@@ -63,5 +63,5 @@
   align-items: center;
   justify-content: flex-end;
   margin-left: auto;
-  transform: translateX(40px);
+  transform: translate(35px, 4px);
 }

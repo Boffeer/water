@@ -160,9 +160,11 @@
   width: var(--size);
   min-width: var(--size);
   height: var(--size);
+  cursor: pointer;
   background-image: url(../img/icons/play.svg);
   background-repeat: no-repeat;
   background-position: center;
+  background-position-x: 53%;
   background-size: 20px 18px;
 }
 .button--play::before {
@@ -173,8 +175,12 @@
   height: 75%;
   margin: auto;
   content: "";
-  border: 1px solid #fff;
+  border: 1px solid #929292;
   border-radius: 50%;
+  transition: all 0.35s ease-in;
+}
+.button--play:hover::before {
+  border-color: #fff;
 }
 .button--play::after {
   position: absolute;
@@ -184,8 +190,12 @@
   height: 100%;
   margin: auto;
   content: "";
-  border: 1px solid #fff;
+  border: 1px solid #323232;
   border-radius: 50%;
+  transition: all 0.35s ease-in;
+}
+.button--play:hover::after {
+  border-color: #929292;
 }
 
 // ===========

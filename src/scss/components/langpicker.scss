@@ -1,0 +1,52 @@
+.langpicker {
+  padding-bottom: 5px;
+}
+.langpicker .custom-select-opener {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 100%;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  background: transparent;
+}
+
+.langpicker .custom-select-opener::after {
+  display: block;
+  width: 16px;
+  height: 13px;
+  margin-top: 1px;
+  margin-left: 3px;
+  content: "";
+  background-image: url("../img/icons/angle-bottom.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.langpicker .custom-select-container .custom-select-panel {
+  background-color: transparent;
+}
+.langpicker .custom-select-container.is-open .custom-select-panel {
+  overflow: hidden;
+  background-color: transparent;
+}
+.langpicker .custom-select-option {
+  cursor: pointer;
+  background-color: transparent;
+}
+.langpicker .custom-select-option.is-selected {
+  background-color: transparent;
+}
+.langpicker .custom-select-option.has-focus {
+  font-weight: 600;
+  background-color: transparent;
+}
+
+.custom-select-option.is-selected::before {
+  display: none;
+}
