@@ -55,16 +55,40 @@ quizSlider.el.addEventListener("form_sent", () => {
 // #endregion quiz
 
 // #region scroller
-const testimonials = document.querySelector(".testimonials__cards");
-testimonials.style.background = "red";
-window.addEventListener("scroll", (e) => {
-  const rect = testimonials.getBoundingClientRect();
-  console.log(rect);
-  console.log(rect.top, rect.right, rect.bottom, rect.left);
-  testimonials.style.transform = `translateX(${rect.top}px)`;
-  // testimonials.style.transform = `translateY(${rect.bottom - rect.top}px)`;
-});
+import {gsap, TweenMax, TimelineMax} from "gsap";
+import ScrollMagic from "scrollmagic";
+import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 
+ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax); // Pass gsap import to Scrollmagic
+
+/**
+ * Передавай css селектоы
+ * @pin — какой блок надо сделать стики. 
+ * @scroller — какой блок надо прокручивать
+ * 
+ * @thanks https://codepen.io/nailaahmad/pen/BpJPJg
+ */
+function makeTimeline(pin, scroller) {
+  const controller = new ScrollMagic.Controller();
+  const slidesContainer = new TimelineMax()
+    .to(scroller, 1,   {x: "0%"}) 
+    .to(scroller, 1,   {x: "-40%"})
+    .to(scroller, 1,   {x: "-80%"})
+    .to(scroller, 1,   {x: "-120%"})
+
+  // create scene to pin and link animation
+  new ScrollMagic.Scene({
+    triggerElement: pin,
+    triggerHook: "onLeave",
+    duration: "400%"
+  })
+    .setPin(pin)
+    .setTween(slidesContainer)
+    .addTo(controller);
+}
+
+makeTimeline('.testimonials', '.testimonials__cards');
+makeTimeline('.research', '.research__cards');
 // #endregion scroller
 
 // Аккордеон

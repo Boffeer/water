@@ -30,9 +30,11 @@
 }
 
 .research__cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 24px;
+  // display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  // column-gap: 24px;
+  display: flex;
+  align-items: flex-start;
   padding-top: 46px;
   @media (max-width: 1020px) {
     padding-top: 31px;
@@ -47,4 +49,12 @@
 }
 .research__cards .card__desc {
   padding-right: 50px;
+}
+
+.research__card {
+  min-width: 360px;
+  margin-right: 24px;
+  @media (max-width: 576px) {
+    min-width: 264px;
+  }
 }
