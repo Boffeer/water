@@ -14,8 +14,9 @@
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
   @media (max-width: 576px) {
-    margin-bottom: 24px;
-    font-size: 16px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    line-height: 1.8;
     br {
       display: none;
     }
@@ -36,7 +37,7 @@
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
   @media (max-width: 576px) {
-    font-size: 32px;
+    font-size: 28px;
     br {
       display: none;
     }

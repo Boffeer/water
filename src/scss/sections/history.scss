@@ -7,9 +7,9 @@
   background-size: contain;
   @media (max-width: 576px) {
     padding-top: 64px;
-    padding-bottom: 64px;
-    background-position-x: 0;
-    background-position-y: 360px;
+    padding-bottom: 24px;
+    background-position-x: -50px;
+    background-position-y: 290px;
     background-size: 120%;
   }
 }
@@ -20,8 +20,8 @@
   margin-bottom: 24px;
   font-size: 24px;
   @media (max-width: 576px) {
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.8;
   }
 }
 .history__title {
@@ -29,8 +29,9 @@
   font-size: 48px;
   line-height: 1.4;
   @media (max-width: 576px) {
-    margin-bottom: 333px;
-    font-size: 32px;
+    margin-bottom: 172px;
+    font-size: 28px;
+    line-height: 1.5;
   }
 }
 
@@ -42,9 +43,11 @@
   background: #0c0c0c;
   backdrop-filter: blur(12px);
   @media (max-width: 576px) {
-    text-align: center;
-    background: transparent;
-    backdrop-filter: none;
+    max-width: 360px;
+    padding: 37px;
+    padding-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
@@ -52,16 +55,19 @@
   margin-bottom: 18px;
   line-height: 1.6;
   @media (max-width: 576px) {
-    margin-bottom: 16px;
-    font-size: 14px;
+    max-width: 200px;
+    margin-bottom: 13px;
+    font-size: 12px;
+    line-height: 1.8;
   }
 }
 
 .history__desc {
   line-height: 1.5;
   @media (max-width: 576px) {
+    max-width: 200px;
     margin-bottom: 16px;
-    font-size: 14px;
+    font-size: 12px;
   }
 }
 
@@ -71,6 +77,9 @@
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 24px;
+  @media (max-width: 576px) {
+    margin-bottom: 18px;
+  }
 }
 
 .history__card-row .history__desc:nth-of-type(1) {

@@ -8,7 +8,7 @@ import Swiper, { Navigation } from "swiper";
 import "./unstable/burger.js";
 
 /**
- * Poppa
+ * Modals
  */
 import "./poppa.js";
 
@@ -31,6 +31,7 @@ if (document.querySelector(".langpicker-select")) {
  */
 import "./utils/smooth-anchors.js";
 
+// #region quiz
 let quizSlider = new Swiper(".quiz-slider", {
   modules: [Navigation],
   navigation: {
@@ -51,6 +52,20 @@ quizSlider.on("slideChange", () => {
 quizSlider.el.addEventListener("form_sent", () => {
   quizSlider.slideNext();
 });
+// #endregion quiz
+
+// #region scroller
+const testimonials = document.querySelector(".testimonials__cards");
+testimonials.style.background = "red";
+window.addEventListener("scroll", (e) => {
+  const rect = testimonials.getBoundingClientRect();
+  console.log(rect);
+  console.log(rect.top, rect.right, rect.bottom, rect.left);
+  testimonials.style.transform = `translateX(${rect.top}px)`;
+  // testimonials.style.transform = `translateY(${rect.bottom - rect.top}px)`;
+});
+
+// #endregion scroller
 
 // Аккордеон
 // const accordions = new DismalModules.Accordions()

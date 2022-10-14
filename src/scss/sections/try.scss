@@ -2,7 +2,7 @@
   padding-top: 38px;
   padding-bottom: 50px;
   @media (max-width: 576px) {
-    padding-top: 64px;
+    padding-top: 56px;
     padding-bottom: 64px;
   }
 }
@@ -20,13 +20,21 @@
     column-gap: 0;
     align-items: center;
     justify-content: center;
+    padding-top: 24px;
   }
 }
 
+.try__suptitle {
+  @media (max-width: 576px) {
+    max-width: 320px;
+    margin-right: auto;
+    margin-left: auto;
+    line-height: 1.8;
+  }
+}
 .try__pic {
   @media (max-width: 576px) {
     max-width: 216px;
-    margin-bottom: 42px;
   }
 }
 .try__img {
@@ -47,10 +55,6 @@
   @media (max-width: 576px) {
     padding-top: 0;
   }
-}
-
-.try__bullets .bullets-card:last-of-type {
-  margin-bottom: 24px;
 }
 
 .try__button-feedback {

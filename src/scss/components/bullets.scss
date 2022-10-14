@@ -2,7 +2,7 @@
   position: relative;
   margin-bottom: 64px;
   @media (max-width: 576px) {
-    margin-bottom: 56px;
+    margin-bottom: 48px;
     text-align: center;
   }
 }
@@ -17,7 +17,10 @@
   border: 1px solid #323232;
   border-radius: 50%;
   @media (max-width: 576px) {
+    width: 16px;
+    height: 16px;
     margin-right: auto;
+    margin-bottom: 16px;
     margin-left: auto;
   }
 }
@@ -33,6 +36,7 @@
   --size: 8px;
   border-radius: 50%;
   @media (max-width: 576px) {
+    --size: 5px;
     right: 0;
     left: 0;
     margin-right: auto;
@@ -41,7 +45,7 @@
 }
 .bullets-card__title {
   margin-bottom: 16px;
-  font-family: "RF Dewi Extended";
+  font-family: "RF Dewi Extended", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -50,7 +54,9 @@
   text-transform: uppercase;
   letter-spacing: 0.32em;
   @media (max-width: 576px) {
-    font-size: 16px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 1.8;
   }
 }
 .bullets-card__desc {
@@ -60,6 +66,9 @@
   line-height: 150%;
   color: #878787;
   @media (max-width: 576px) {
+    max-width: 204px;
+    margin-right: auto;
+    margin-left: auto;
     font-size: 12px;
   }
 }
