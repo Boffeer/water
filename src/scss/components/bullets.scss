@@ -1,7 +1,7 @@
 .bullets-card {
   position: relative;
   margin-bottom: 64px;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     margin-bottom: 48px;
     text-align: center;
   }
@@ -16,12 +16,15 @@
   background-color: transparent;
   border: 1px solid #323232;
   border-radius: 50%;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     width: 16px;
     height: 16px;
     margin-right: auto;
     margin-bottom: 16px;
     margin-left: auto;
+  }
+  @media (max-width: 1020px) and (min-width: 576px) {
+    margin-left: 0;
   }
 }
 .bullets-card::after {
@@ -35,12 +38,16 @@
   background-color: #fff;
   --size: 8px;
   border-radius: 50%;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     --size: 5px;
     right: 0;
     left: 0;
     margin-right: auto;
     margin-left: auto;
+  }
+  @media (max-width: 1020px) and (min-width: 576px) {
+    left: var(--size);
+    margin-left: 0;
   }
 }
 .bullets-card__title {
@@ -53,10 +60,13 @@
   color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 0.32em;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     margin-bottom: 12px;
     font-size: 12px;
     line-height: 1.8;
+  }
+  @media (max-width: 1020px) and (min-width: 576px) {
+    text-align: left;
   }
 }
 .bullets-card__desc {
@@ -65,10 +75,14 @@
   font-weight: 400;
   line-height: 150%;
   color: #878787;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     max-width: 204px;
     margin-right: auto;
     margin-left: auto;
     font-size: 12px;
+  }
+  @media (max-width: 1020px) and (min-width: 576px) {
+    margin-left: 0;
+    text-align: left;
   }
 }

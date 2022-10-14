@@ -4,9 +4,11 @@
   background-repeat: no-repeat;
   background-position: top center;
   background-size: contain;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     padding-top: 56px;
     padding-bottom: 56px;
+  }
+  @media (max-width: 576px) {
     background-position-x: 46%;
     background-position-y: 14vh;
     background-size: 250%;
@@ -24,7 +26,7 @@
   margin-bottom: 24px;
   font-size: 36px;
   letter-spacing: 0.32em;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     margin-bottom: 20px;
     font-size: 16px;
     line-height: 1;
@@ -35,7 +37,7 @@
   line-height: 1;
   letter-spacing: 0.32em;
   transform: translate(17px, 0px);
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     margin-bottom: 14px;
     font-size: 36px;
     transform: none;
@@ -48,7 +50,7 @@
   column-gap: 70px;
   align-items: grid-template;
   justify-content: space-between;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,20 +60,20 @@
 
 .hero__gift {
   padding-top: 40px;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     padding-top: 0;
     text-align: center;
   }
 }
 .hero__gift .section-text {
   margin-bottom: 16px;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     margin-bottom: 23px;
   }
 }
 
 .hero__pic {
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     order: -2;
     max-width: 144px;
     margin-bottom: -218px;
@@ -84,7 +86,7 @@
   align-items: flex-start;
   justify-content: space-between;
   height: 56vh;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     order: -1;
     height: auto;
     margin-bottom: 72px;
@@ -97,7 +99,7 @@
   justify-content: flex-start;
   max-width: 330px;
   padding-top: 30px;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -111,7 +113,7 @@
 }
 .hero__video-button {
   margin-right: 27px;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     margin-right: 0;
     margin-bottom: 32px;
   }
@@ -122,7 +124,7 @@
   justify-content: flex-end;
   margin-left: auto;
   transform: translate(35px, 4px);
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     display: none;
   }
 }

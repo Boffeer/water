@@ -15,7 +15,8 @@
   max-height: var(--size);
   margin-right: 24px;
   fill: var(--icon-color);
-  @media (max-width: 576px) {
+  transition: 0.3s;
+  @media (max-width: 1020px) {
     --size: 32px;
     margin-right: 36px;
   }
@@ -36,7 +37,7 @@
 
 .socials__link:hover {
   @media (min-width: $minHover) {
-    --icon-color: var(--c-accent);
+    --icon-color: #fff;
     // fill: var(--c-accent);
     // stroke: var(--icon-color);
   }
@@ -45,7 +46,7 @@
 .socials--big {
   flex-wrap: wrap;
   justify-content: center;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     max-width: 396px;
     margin-right: auto;
     margin-left: auto;
@@ -57,7 +58,7 @@
   align-items: center;
   justify-content: center;
   border: 1px solid #474747;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     --size: 96px;
     margin-right: 18px;
     margin-bottom: 24px;

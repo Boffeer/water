@@ -1,7 +1,7 @@
 .try {
   padding-top: 38px;
   padding-bottom: 50px;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     padding-top: 56px;
     padding-bottom: 64px;
   }
@@ -25,7 +25,7 @@
 }
 
 .try__suptitle {
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     max-width: 320px;
     margin-right: auto;
     margin-left: auto;
@@ -52,13 +52,13 @@
   padding-right: 10px;
   margin-right: auto;
   margin-left: auto;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     padding-top: 0;
   }
 }
 
 .try__button-feedback {
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     display: flex;
     margin-right: auto;
     margin-left: auto;

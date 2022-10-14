@@ -6,7 +6,7 @@
   background-position: center;
   background-position-y: 66%;
   background-size: contain;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     padding-top: 36px;
     padding-bottom: 0;
     padding-bottom: 575px;
@@ -14,11 +14,17 @@
     background-position-y: 100%;
     background-size: 320%;
   }
+  @media (max-width: 1020px) and (min-width: 576px) {
+    padding-bottom: 36px;
+    background-position: -690px;
+    background-position-y: 230%;
+    background-size: 260%;
+  }
 }
 
 .map__title {
   margin-bottom: 46px;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     margin-bottom: 26px;
     line-height: 1.4;
     letter-spacing: 0.24em;
@@ -26,7 +32,7 @@
 }
 
 .map__cards {
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     display: flex;
     flex-direction: column-reverse;
   }
@@ -60,14 +66,14 @@
   font-weight: 400;
   line-height: 200%;
   color: #878787;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     line-height: 1.8;
   }
 }
 
 .map__card-route-button {
   margin-top: 24px;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     padding: 10px 30px;
   }
 }
@@ -78,7 +84,7 @@
 }
 .map__events {
   padding-bottom: 46px;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     margin-bottom: 24px;
   }
 }
@@ -88,7 +94,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   margin-bottom: 50px;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     margin-bottom: 46px;
   }
 }
@@ -123,7 +129,7 @@
 
 .map__events-item-button {
   margin-top: 24px;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     padding: 16px 30px;
     margin-top: 30px;
   }

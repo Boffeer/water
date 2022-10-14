@@ -1,14 +1,14 @@
 .video {
   padding-top: 90px;
   padding-bottom: 96px;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     padding-top: 80px;
     padding-bottom: 64px;
   }
 }
 .video__title {
   margin-bottom: 32px;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     margin-bottom: 24px;
     font-size: 24px;
   }
@@ -16,7 +16,7 @@
 
 .video__suptitle {
   margin-bottom: 55px;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     margin-bottom: 30px;
     line-height: 180%;
     letter-spacing: 0.24em;

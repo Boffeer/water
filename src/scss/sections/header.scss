@@ -1,7 +1,7 @@
 .header {
   padding-top: 78px;
   padding-bottom: 74px;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     width: 100%;
     padding-top: 24px;
     padding-bottom: 24px;
@@ -16,7 +16,7 @@
   max-width: 1178px;
   padding-right: 20px;
   padding-left: 25px;
-  @media (max-width: 576px) {
+  @media (max-width: 1020px) {
     padding-right: 30px;
     padding-left: 34px;
   }
