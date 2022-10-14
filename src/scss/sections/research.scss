@@ -5,6 +5,9 @@
     padding-top: 46px;
     padding-bottom: 56px;
   }
+  @media (max-width: 375px) {
+    padding-bottom: 28px;
+  }
 }
 .research__container {
   max-width: 1158px;
@@ -14,6 +17,9 @@
   @media (max-width: 1020px) {
     font-size: 24px;
     line-height: 1.4;
+  }
+  @media (max-width: 375px) {
+    font-size: 20px;
   }
 }
 .research__suptitle {

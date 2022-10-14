@@ -14,11 +14,21 @@
     background-position-y: 100%;
     background-size: 320%;
   }
-  @media (max-width: 1020px) and (min-width: 576px) {
+  @media (max-width: 1020px) and (min-width: 577px) {
     padding-bottom: 36px;
     background-position: -690px;
     background-position-y: 230%;
     background-size: 260%;
+  }
+  @media (max-width: 992px) and (min-width: 577px) {
+    background-position: -1040px;
+    background-position-y: -30%;
+  }
+  @media (max-width: 375px) {
+    padding-bottom: 425px;
+    background-position: -653px;
+    background-position-y: 110%;
+    background-size: 390%;
   }
 }
 

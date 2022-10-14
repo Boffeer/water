@@ -13,6 +13,10 @@
     background-position-y: 14vh;
     background-size: 250%;
   }
+  @media (max-width: 375px) {
+    background-position-x: 56%;
+    background-position-y: 2vh;
+  }
 }
 .hero__container {
   max-width: 1090px;
@@ -41,6 +45,9 @@
     margin-bottom: 14px;
     font-size: 36px;
     transform: none;
+  }
+  @media (max-width: 375px) {
+    font-size: 30px;
   }
 }
 
@@ -90,6 +97,9 @@
     order: -1;
     height: auto;
     margin-bottom: 72px;
+  }
+  @media (max-width: 375px) {
+    margin-bottom: 52px;
   }
 }
 

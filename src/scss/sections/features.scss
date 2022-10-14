@@ -5,6 +5,9 @@
     padding-top: 56px;
     padding-bottom: 56px;
   }
+  @media (max-width: 375px) {
+    padding-bottom: 28px;
+  }
 }
 .features__container {
   max-width: 1158px;
@@ -43,10 +46,13 @@
     justify-content: space-between;
     padding-top: 24px;
   }
-  @media (min-width: 576px) and (max-width: 1020px) {
+  @media (min-width: 635px) and (max-width: 1020px) {
     display: grid;
     grid-template-columns: 278px 380px;
     justify-content: center;
+  }
+  @media (max-width: 576px) {
+    flex-direction: column;
   }
 }
 
@@ -61,7 +67,7 @@
     margin-left: auto;
     text-align: center;
   }
-  @media (min-width: 576px) and (max-width: 1020px) {
+  @media (min-width: 635px) and (max-width: 1020px) {
     margin-left: 0;
     text-align: left;
   }
@@ -80,7 +86,7 @@
     margin-bottom: -198px;
     margin-left: auto;
   }
-  @media (min-width: 576px) and (max-width: 1020px) {
+  @media (min-width: 635px) and (max-width: 1020px) {
     grid-row-start: 1;
     grid-row-end: 3;
     max-width: 138px;
@@ -116,10 +122,10 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
     justify-content: center;
-    justify-items: center;
-  }
-  @media (max-width: 1020px) and (min-width: 576px) {
     justify-items: start;
+  }
+  @media (max-width: 430px) {
+    justify-items: center;
   }
 }
 .features__column-bullets-title {
@@ -138,7 +144,7 @@
     line-height: 1.8;
     text-align: center;
   }
-  @media (max-width: 1020px) and (min-width: 576px) {
+  @media (max-width: 1020px) and (min-width: 635px) {
     margin-bottom: 26px;
     margin-left: 0;
     text-align: left;
@@ -152,8 +158,12 @@
   }
 }
 .features__column-bullets .bullets-card__desc {
-  z-index: 14;
+  font-size: 14px;
   color: #fff;
+  @media (max-width: 1020px) {
+    max-width: 174px;
+    line-height: 1.6;
+  }
 }
 .features__column-bullets .bullets-card:nth-child(1) {
   order: 1;
@@ -173,13 +183,5 @@
   margin-bottom: 17px;
   @media (max-width: 1020px) {
     margin-bottom: 12px;
-  }
-}
-
-.features__column-bullets .bullets-card__desc {
-  @media (max-width: 1020px) {
-    max-width: 174px;
-
-    line-height: 1.6;
   }
 }

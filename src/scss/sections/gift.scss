@@ -27,6 +27,11 @@
     background-position-y: 160px;
     background-size: 90%;
   }
+  @media (max-width: 375px) {
+    background-position-x: -40px;
+    background-position-y: 230px;
+    background-size: 160%;
+  }
 }
 .gift__suptitle {
   margin-bottom: 30px;

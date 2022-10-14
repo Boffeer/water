@@ -4,6 +4,9 @@
   @media (max-width: 576px) {
     padding-top: 82px;
   }
+  @media (max-width: 375px) {
+    padding-top: 42px;
+  }
 }
 .testimonials__cards {
   display: flex;

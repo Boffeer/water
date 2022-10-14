@@ -5,6 +5,10 @@
     padding-top: 80px;
     padding-bottom: 64px;
   }
+  @media (max-width: 375px) {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
 }
 .video__title {
   margin-bottom: 32px;
@@ -35,6 +39,9 @@
       rgba(0, 0, 0, 0) 100%
     ),
     linear-gradient(76.15deg, #0c0c0c 0%, #101010 35.42%, #161616 100%);
+  @media (max-width: 375px) {
+    height: 400px;
+  }
 }
 
 .video-player__content,
@@ -58,4 +65,7 @@
   line-height: 180%;
   color: #878787;
   text-align: center;
+  @media (max-width: 375px) {
+    font-size: 12px;
+  }
 }

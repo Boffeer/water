@@ -41,6 +41,9 @@
   @media (max-width: 1020px) and (min-width: 576px) {
     margin-bottom: 32px;
   }
+  @media (max-width: 375px) {
+    font-size: 20px;
+  }
 }
 
 .history__card {

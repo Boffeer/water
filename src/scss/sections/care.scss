@@ -10,6 +10,10 @@
     padding-bottom: 64px;
     background-position: center;
   }
+  @media (max-width: 375px) {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
 }
 
 .care__suptitle {
