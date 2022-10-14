@@ -2,8 +2,8 @@
   padding-top: 106px;
   padding-bottom: 96px;
   @media (max-width: 576px) {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding-top: 46px;
+    padding-bottom: 56px;
   }
 }
 .research__container {
@@ -13,15 +13,13 @@
 .research__title {
   @media (max-width: 576px) {
     font-size: 24px;
+    line-height: 1.4;
   }
 }
 .research__suptitle {
   margin-bottom: 32px;
   @media (max-width: 576px) {
-    max-width: 221px;
-    margin-right: auto;
-    margin-bottom: 24px;
-    margin-left: auto;
+    margin-bottom: 26px;
   }
 }
 
@@ -30,10 +28,16 @@
   grid-template-columns: repeat(3, 1fr);
   column-gap: 24px;
   padding-top: 46px;
+  @media (max-width: 576px) {
+    padding-top: 31px;
+  }
 }
 
 .research__cards .card__pic {
   height: 320px;
+  @media (max-width: 576px) {
+    height: 236px;
+  }
 }
 .research__cards .card__desc {
   padding-right: 50px;

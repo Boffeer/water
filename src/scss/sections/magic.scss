@@ -2,14 +2,14 @@
   padding-top: 53px;
   padding-bottom: 96px;
   @media (max-width: 576px) {
-    padding-top: 64px;
+    padding-top: 42px;
     padding-bottom: 40px;
   }
 }
 .magic__title {
   margin-bottom: 32px;
   @media (max-width: 576px) {
-    margin-bottom: 24px;
+    margin-bottom: 14px;
     line-height: 1.4;
   }
 }
@@ -17,6 +17,11 @@
   margin-bottom: 58px;
   line-height: 1.6;
   @media (max-width: 576px) {
+    max-width: 330px;
+    margin-right: auto;
     margin-bottom: 32px;
+    margin-left: auto;
+    font-size: 12px;
+    line-height: 160%;
   }
 }

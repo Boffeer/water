@@ -134,3 +134,10 @@ body._lock {
 
 // Стили для отдельных страниц
 // @import "./pages/";
+
+._only-mobile {
+  display: none;
+  @media (max-width: 576px) {
+    display: initial;
+  }
+}

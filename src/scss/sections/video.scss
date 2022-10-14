@@ -2,7 +2,7 @@
   padding-top: 90px;
   padding-bottom: 96px;
   @media (max-width: 576px) {
-    padding-top: 64px;
+    padding-top: 80px;
     padding-bottom: 64px;
   }
 }
@@ -10,15 +10,16 @@
   margin-bottom: 32px;
   @media (max-width: 576px) {
     margin-bottom: 24px;
-    line-height: 1.4;
+    font-size: 24px;
   }
 }
 
 .video__suptitle {
   margin-bottom: 55px;
   @media (max-width: 576px) {
-    margin-bottom: 24px;
-    line-height: 160%;
+    margin-bottom: 30px;
+    line-height: 180%;
+    letter-spacing: 0.24em;
   }
 }
 

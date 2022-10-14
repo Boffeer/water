@@ -7,18 +7,20 @@
   background-position-y: 66%;
   background-size: contain;
   @media (max-width: 576px) {
-    padding-top: 72px;
+    padding-top: 36px;
     padding-bottom: 0;
-    background-position: -570px;
-    background-position-y: 86%;
-    background-size: 280%;
+    padding-bottom: 575px;
+    background-position: -693px;
+    background-position-y: 100%;
+    background-size: 320%;
   }
 }
 
 .map__title {
   margin-bottom: 46px;
   @media (max-width: 576px) {
-    font-size: 32px;
+    margin-bottom: 26px;
+    line-height: 1.4;
     letter-spacing: 0.24em;
   }
 }
@@ -66,8 +68,7 @@
 .map__card-route-button {
   margin-top: 24px;
   @media (max-width: 576px) {
-    padding-right: 32px;
-    padding-left: 32px;
+    padding: 10px 30px;
   }
 }
 
@@ -78,7 +79,7 @@
 .map__events {
   padding-bottom: 46px;
   @media (max-width: 576px) {
-    margin-bottom: 267px;
+    margin-bottom: 24px;
   }
 }
 .map__events-item {
@@ -123,6 +124,7 @@
 .map__events-item-button {
   margin-top: 24px;
   @media (max-width: 576px) {
+    padding: 16px 30px;
     margin-top: 30px;
   }
 }
