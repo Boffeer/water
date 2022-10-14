@@ -55,7 +55,7 @@ quizSlider.el.addEventListener("form_sent", () => {
 // #endregion quiz
 
 // #region scroller
-import {gsap, TweenMax, TimelineMax} from "gsap";
+import {gsap, TweenMax, TimelineMax, Linear} from "gsap";
 import ScrollMagic from "scrollmagic";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 
@@ -69,6 +69,8 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax); // Pass gsap import t
  * @thanks https://codepen.io/nailaahmad/pen/BpJPJg
  */
 function makeTimeline(pin, scroller) {
+  if (window.innerWidth < 1020) return;
+
   const controller = new ScrollMagic.Controller();
   const slidesContainer = new TimelineMax()
     .to(scroller, 1,   {x: "0%"}) 
@@ -147,6 +149,27 @@ const bulletsScroller = new TimelineMax()
     .setTween(bulletsScroller)
     .addTo(controller);
 // #endregion features
+
+// #region textParallax
+const parallaxController = new ScrollMagic.Controller();
+
+document.querySelectorAll('.js_section').forEach(section => {
+  const tl = new TimelineMax();
+  const title = section.querySelector('.section-title')
+  const suptitle = section.querySelector('.section-suptitle')
+
+  tl.to(suptitle, 1, { y: -100, ease: Linear.easeNone });
+  tl.to(title, 1, { y: -50, ease: Linear.easeNone });
+
+  var scene = new ScrollMagic.Scene({
+    triggerElement: section,
+    triggerHook: 0.4,
+    duration: "100%"
+  })
+    .setTween(tl)
+    .addTo(controller);
+})
+// #endregion textParallax
 
 // Аккордеон
 // const accordions = new DismalModules.Accordions()

@@ -149,3 +149,15 @@ body._lock {
   position: sticky;
   top: 0;
 }
+
+@media (max-width: 1020px;) {
+.h-scroller {
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+.h-scroller > div {
+
+  overflow-y: auto;
+  margin-bottom: -40px;
+}
+  }
