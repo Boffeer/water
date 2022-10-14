@@ -91,6 +91,63 @@ makeTimeline('.testimonials', '.testimonials__cards');
 makeTimeline('.research', '.research__cards');
 // #endregion scroller
 
+// #region features
+  const controller = new ScrollMagic.Controller();
+  const slidesContainer = new TimelineMax()
+    .to('.features__pic--top', 1,   {y: "0%"}) 
+    .to('.features__pic--top', 1,   {y: "-40%"})
+    .to('.features__pic--top', 1,   {y: "-80%"})
+    .to('.features__pic--top', 1,   {y: "-100%"})
+
+  // create scene to pin and link animation
+  new ScrollMagic.Scene({
+    triggerElement: '.features__scroller',
+    triggerHook: "onLeave",
+    duration: "400%"
+  })
+    .setPin('.features__scroller')
+    .setTween(slidesContainer)
+    .addTo(controller);
+
+function getTweenPercent(number) {
+  if (window.innerWidth < 768) {
+  if (number == 0) {
+    return "0%"
+  } else {
+  return 100 * number + "%"
+  }
+  } else {
+    return "0%"
+  }
+}
+
+const textScroller = new TimelineMax()
+    .to('.features__column-desc', 1,   {y: getTweenPercent(0)}) 
+    .to('.features__column-desc', 1,   {y: getTweenPercent(1)})
+    .to('.features__column-desc', 1,   {y: getTweenPercent(2), opacity: 0.5})
+    .to('.features__column-desc', 1,   {y: getTweenPercent(3), opacity: 0})
+  new ScrollMagic.Scene({
+    triggerElement: '.features__scroller',
+    triggerHook: "onLeave",
+    duration: "450%"
+  })
+    .setTween(textScroller)
+    .addTo(controller);
+
+const bulletsScroller = new TimelineMax()
+    .to('.features__column-bullets', 1,   {y: "0%"}) 
+    .to('.features__column-bullets', 1,   {y: "-100%"})
+    .to('.features__column-bullets', 1,   {y: "-200%"})
+    .to('.features__column-bullets', 1,   {y: "-300%"})
+  new ScrollMagic.Scene({
+    triggerElement: '.features__scroller',
+    triggerHook: "onLeave",
+    duration: "1200%"
+  })
+    .setTween(bulletsScroller)
+    .addTo(controller);
+// #endregion features
+
 // Аккордеон
 // const accordions = new DismalModules.Accordions()
 
