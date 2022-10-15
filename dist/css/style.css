@@ -3406,6 +3406,7 @@ body._lock {
 .map__events-item-pic {
   --size: 72px;
   display: block;
+  display: none;
   width: var(--size);
   min-width: var(--size);
   height: var(--size);
