@@ -113,21 +113,21 @@ makeTimeline('.research', '.research__cards');
 
 function getTweenPercent(number) {
   if (window.innerWidth < 768) {
-  if (number == 0) {
-    return "0%"
-  } else {
-  return 100 * number + "%"
-  }
+    if (number == 0) {
+      return "0%"
+    } else {
+    return 100 * number + "%"
+    }
   } else {
     return "0%"
   }
 }
 
 const textScroller = new TimelineMax()
-    .to('.features__column-desc', 1,   {y: getTweenPercent(0)}) 
-    .to('.features__column-desc', 1,   {y: getTweenPercent(1)})
-    .to('.features__column-desc', 1,   {y: getTweenPercent(2), opacity: 0.5})
-    .to('.features__column-desc', 1,   {y: getTweenPercent(3), opacity: 0})
+    .to('.features__column-desc', 1,   {y: getTweenPercent(-0)}) 
+    .to('.features__column-desc', 1,   {y: getTweenPercent(-1)})
+    .to('.features__column-desc', 1,   {y: getTweenPercent(-2), opacity: 0.5})
+    .to('.features__column-desc', 1,   {y: getTweenPercent(-3), opacity: 0})
   new ScrollMagic.Scene({
     triggerElement: '.features__scroller',
     triggerHook: "onLeave",
@@ -151,31 +151,21 @@ const bulletsScroller = new TimelineMax()
 // #endregion features
 
 // #region textParallax
-// const parallaxController = new ScrollMagic.Controller();
-
-// document.querySelectorAll('.js_section').forEach(section => {
-
-// const tl = new TimelineMax();
-// const heroTitle = document.querySelector('.hero__title');
-// const heroSuptitle = document.querySelector('.hero__suptitle');
-
-//   tl.to(heroSuptitle, 1, { y: 0, ease: Linear.easeNone })
-//     .to(heroSuptitle, 1, { y: -50, ease: Linear.easeNone })
-//     .to(heroSuptitle, 1, { y: -100, ease: Linear.easeNone });
-
-//   tl.to(heroTitle, 1, { y: 0, ease: Linear.easeNone })
-//     .to(heroTitle, 1, { y: -20, ease: Linear.easeNone })
-//     .to(heroTitle, 1, { y: -40, ease: Linear.easeNone });
-
-//   var scene = new ScrollMagic.Scene({
-//     triggerElement: '.header',
-//     triggerHook: 'onLeave',
-//   })
-//     .setTween(tl)
-//     .addTo(parallaxController);
-// })
 import lax from 'lax.js'
 window.onload = function () {
+    const DISABLE_ANIMAION_MEDIA = 1020;
+
+    let screenWidth = window.innerWidth
+    let screenHeight = window.innerHeight
+
+    let biggerSide = Math.max(screenWidth, screenHeight);
+
+    let customLaxModifier = 'screenHeight'
+    if (biggerSide === screenHeight) {
+      customLaxModifier = 'screenWidth';
+    }
+
+
     lax.init()
 
     // Add a driver that we use to control our animations
@@ -184,53 +174,55 @@ window.onload = function () {
     })
 
     // Add animation bindings to elements
-    lax.addElements('.hero__suptitle', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, '-(screenHeight/11)', '-(screenHeight/6)'],
-        ]
-      }
-    })
-    lax.addElements('.hero__title', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, '-(screenHeight/10)', '-(screenHeight/5)'],
-        ]
-      }
-    })
-    lax.addElements('.hero__gift', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, '-(screenHeight/10)', '-(screenHeight/5)'],
-        ]
-      }
-    })
-    lax.addElements('.hero__video', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, 'screenHeight/5', 'screenHeight'],
-        ]
-      }
-    })
-    lax.addElements('.hero__socials', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, '-screenHeight/2', '-screenHeight'],
-        ]
-      }
-    })
+    if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
+      lax.addElements('.hero__suptitle', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, `-(${customLaxModifier}/11)`, `-(${customLaxModifier}/6)`],
+          ]
+        }
+      })
+      lax.addElements('.hero__title', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, '-(screenHeight/10)', '-(screenHeight/5)'],
+          ]
+        }
+      })
+      lax.addElements('.hero__gift', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, '-(screenHeight/10)', '-(screenHeight/5)'],
+          ]
+        }
+      })
+      lax.addElements('.hero__video', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, 'screenHeight/5', 'screenHeight'],
+          ]
+        }
+      })
+      lax.addElements('.hero__socials', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, '-screenHeight/2', '-screenHeight'],
+          ]
+        }
+      })
+    }
 
 
     lax.addElements('.try__suptitle', {
       scrollY: {
         translateY: [
           ["elInY", "elCenterY", "elOutY"],
-          [0, '-screenHeight/10', '-screenHeight/5'],
+          [0, `-${customLaxModifier}/10`, `-${customLaxModifier}/5`],
         ]
       }
     })
@@ -247,7 +239,7 @@ window.onload = function () {
       scrollY: {
         translateY: [
           ["elInY-200", "elCenterY-200", "elOutY-200"],
-          [0, '-screenHeight/10', '-screenHeight/5'],
+          [0, `-${customLaxModifier}/10`, `-${customLaxModifier}/5`],
         ]
       }
     })
@@ -264,7 +256,7 @@ window.onload = function () {
       scrollY: {
         translateY: [
           ["elInY", "elCenterY", "elOutY"],
-          [0, '-screenHeight/6', '-screenHeight/3'],
+          [0, `-${customLaxModifier}/6`, `-${customLaxModifier}/3`],
         ]
       }
     })
@@ -286,75 +278,85 @@ window.onload = function () {
         ]
       }
     })
-    lax.addElements('.care__offer', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY+400", "elOutY+400"],
-          [ 'elWidth+(elWidth*0.5)', '-elWidth/2', '-elWidth'],
-        ]
-      }
-    })
 
-    lax.addElements('.video__suptitle', {
-      scrollY: {
-        translateY: [
-          ["elInY+200", "elCenterY+200", "elOutY+200"],
-          [0, '-elHeight*6', '-elHeight*12'],
-        ]
-      }
-    })
-    lax.addElements('.video__title', {
-      scrollY: {
-        translateY: [
-          ["elInY+200", "elCenterY+200", "elOutY+200"],
-          [0, '-elHeight/2', '-elHeight'],
-        ]
-      }
-    })
+    if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
+      lax.addElements('.care__offer', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY+400", "elOutY+400"],
+            [ 'elWidth+(elWidth*0.5)', '-elWidth/2', '-elWidth'],
+          ]
+        }
+      })
+    }
 
-
-    lax.addElements('.food__title', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, '-elHeight/2', '-elHeight'],
-        ]
-      }
-    })
-    lax.addElements('.food__offer', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY+400", "elOutY+400"],
-          [ 'elWidth', '-elWidth/2', '-elWidth'],
-        ]
-      }
-    })
+    if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
+      lax.addElements('.video__suptitle', {
+        scrollY: {
+          translateY: [
+            ["elInY+200", "elCenterY+200", "elOutY+200"],
+            [0, '-elHeight*6', '-elHeight*12'],
+          ]
+        }
+      })
+      lax.addElements('.video__title', {
+        scrollY: {
+          translateY: [
+            ["elInY+200", "elCenterY+200", "elOutY+200"],
+            [0, '-elHeight/2', '-elHeight'],
+          ]
+        }
+      })
+    }
 
 
-    lax.addElements('.gift__suptitle', {
-      scrollY: {
-        translateY: [
-          ["elInY+200", "elCenterY+200", "elOutY+200"],
-          [0, '-elHeight*6', '-elHeight*12'],
-        ]
-      }
+    if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
+      lax.addElements('.food__title', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, `-${customLaxModifier}/2`, `-${customLaxModifier}`],
+          ]
+        }
+      })
+
+      lax.addElements('.food__offer', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY+400", "elOutY+400"],
+            [ 'elWidth', '-elWidth/2', '-elWidth'],
+          ]
+        }
+      })
+    }
+
+
+    if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
+      lax.addElements('.gift__suptitle', {
+        scrollY: {
+          translateY: [
+            ["elInY+200", "elCenterY+200", "elOutY+200"],
+            [0, '-elHeight*6', '-elHeight*12'],
+          ]
+        }
+      })
+      lax.addElements('.gift__title', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, '-elHeight/2', '-elHeight'],
+          ]
+        }
+      })
+      lax.addElements('.gift__offer', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY+400", "elOutY+400"],
+            [ 'elWidth', '-elWidth/2', '-elWidth'],
+          ]
+        }
     })
-    lax.addElements('.gift__title', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, '-elHeight/2', '-elHeight'],
-        ]
-      }
-    })
-    lax.addElements('.gift__offer', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY+400", "elOutY+400"],
-          [ 'elWidth', '-elWidth/2', '-elWidth'],
-        ]
-      }
-    })
+    }
 
 
     lax.addElements('.magic__suptitle', {
@@ -374,14 +376,16 @@ window.onload = function () {
       }
     })
 
-    lax.addElements('.map__title', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, '-elHeight/2', '-elHeight'],
-        ]
-      }
-    })
+    if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
+      lax.addElements('.map__title', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, '-elHeight/2', '-elHeight'],
+          ]
+        }
+      })
+    }
   }
 
 // #endregion textParallax
