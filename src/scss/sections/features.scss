@@ -190,6 +190,9 @@
 .features__scene {
   position: relative;
   height: 92vh;
+  @media (min-width: 635px) and (max-width: 1020px) {
+    height: 52vh;
+  }
 }
 .features__pic {
   display: block;

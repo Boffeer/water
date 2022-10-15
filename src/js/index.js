@@ -151,24 +151,239 @@ const bulletsScroller = new TimelineMax()
 // #endregion features
 
 // #region textParallax
-const parallaxController = new ScrollMagic.Controller();
+// const parallaxController = new ScrollMagic.Controller();
 
-document.querySelectorAll('.js_section').forEach(section => {
-  const tl = new TimelineMax();
-  const title = section.querySelector('.section-title')
-  const suptitle = section.querySelector('.section-suptitle')
+// document.querySelectorAll('.js_section').forEach(section => {
 
-  tl.to(suptitle, 1, { y: -100, ease: Linear.easeNone });
-  tl.to(title, 1, { y: -50, ease: Linear.easeNone });
+// const tl = new TimelineMax();
+// const heroTitle = document.querySelector('.hero__title');
+// const heroSuptitle = document.querySelector('.hero__suptitle');
 
-  var scene = new ScrollMagic.Scene({
-    triggerElement: section,
-    triggerHook: 0.4,
-    duration: "100%"
-  })
-    .setTween(tl)
-    .addTo(controller);
-})
+//   tl.to(heroSuptitle, 1, { y: 0, ease: Linear.easeNone })
+//     .to(heroSuptitle, 1, { y: -50, ease: Linear.easeNone })
+//     .to(heroSuptitle, 1, { y: -100, ease: Linear.easeNone });
+
+//   tl.to(heroTitle, 1, { y: 0, ease: Linear.easeNone })
+//     .to(heroTitle, 1, { y: -20, ease: Linear.easeNone })
+//     .to(heroTitle, 1, { y: -40, ease: Linear.easeNone });
+
+//   var scene = new ScrollMagic.Scene({
+//     triggerElement: '.header',
+//     triggerHook: 'onLeave',
+//   })
+//     .setTween(tl)
+//     .addTo(parallaxController);
+// })
+import lax from 'lax.js'
+window.onload = function () {
+    lax.init()
+
+    // Add a driver that we use to control our animations
+    lax.addDriver('scrollY', function () {
+      return window.scrollY
+    })
+
+    // Add animation bindings to elements
+    lax.addElements('.hero__suptitle', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, '-(screenHeight/11)', '-(screenHeight/6)'],
+        ]
+      }
+    })
+    lax.addElements('.hero__title', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, '-(screenHeight/10)', '-(screenHeight/5)'],
+        ]
+      }
+    })
+    lax.addElements('.hero__gift', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, '-(screenHeight/10)', '-(screenHeight/5)'],
+        ]
+      }
+    })
+    lax.addElements('.hero__video', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, 'screenHeight/5', 'screenHeight'],
+        ]
+      }
+    })
+    lax.addElements('.hero__socials', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, '-screenHeight/2', '-screenHeight'],
+        ]
+      }
+    })
+
+
+    lax.addElements('.try__suptitle', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, '-screenHeight/10', '-screenHeight/5'],
+        ]
+      }
+    })
+    lax.addElements('.try__title', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, '-screenHeight/12', '-screenHeight/6'],
+        ]
+      }
+    })
+
+    lax.addElements('.history__suptitlte', {
+      scrollY: {
+        translateY: [
+          ["elInY-200", "elCenterY-200", "elOutY-200"],
+          [0, '-screenHeight/10', '-screenHeight/5'],
+        ]
+      }
+    })
+    // lax.addElements('.history__title', {
+    //   scrollY: {
+    //     translateY: [
+    //       ["elInY", "elCenterY", "elOutY"],
+    //       [0, '-screenHeight/18', '-screenHeight/9'],
+    //     ]
+    //   }
+    // })
+
+    lax.addElements('.history__card', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, '-screenHeight/6', '-screenHeight/3'],
+        ]
+      }
+    })
+
+
+    lax.addElements('.care__suptitle', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, '-elHeight/2', '-elHeight'],
+        ]
+      }
+    })
+    lax.addElements('.care__title', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, '-elHeight/2', '-elHeight'],
+        ]
+      }
+    })
+    lax.addElements('.care__offer', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY+400", "elOutY+400"],
+          [ 'elWidth+(elWidth*0.5)', '-elWidth/2', '-elWidth'],
+        ]
+      }
+    })
+
+    lax.addElements('.video__suptitle', {
+      scrollY: {
+        translateY: [
+          ["elInY+200", "elCenterY+200", "elOutY+200"],
+          [0, '-elHeight*6', '-elHeight*12'],
+        ]
+      }
+    })
+    lax.addElements('.video__title', {
+      scrollY: {
+        translateY: [
+          ["elInY+200", "elCenterY+200", "elOutY+200"],
+          [0, '-elHeight/2', '-elHeight'],
+        ]
+      }
+    })
+
+
+    lax.addElements('.food__title', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, '-elHeight/2', '-elHeight'],
+        ]
+      }
+    })
+    lax.addElements('.food__offer', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY+400", "elOutY+400"],
+          [ 'elWidth', '-elWidth/2', '-elWidth'],
+        ]
+      }
+    })
+
+
+    lax.addElements('.gift__suptitle', {
+      scrollY: {
+        translateY: [
+          ["elInY+200", "elCenterY+200", "elOutY+200"],
+          [0, '-elHeight*6', '-elHeight*12'],
+        ]
+      }
+    })
+    lax.addElements('.gift__title', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, '-elHeight/2', '-elHeight'],
+        ]
+      }
+    })
+    lax.addElements('.gift__offer', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY+400", "elOutY+400"],
+          [ 'elWidth', '-elWidth/2', '-elWidth'],
+        ]
+      }
+    })
+
+
+    lax.addElements('.magic__suptitle', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, '-elHeight/2', '-elHeight'],
+        ]
+      }
+    })
+    lax.addElements('.magic__title', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, '-elHeight/2', '-elHeight'],
+        ]
+      }
+    })
+
+    lax.addElements('.map__title', {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, '-elHeight/2', '-elHeight'],
+        ]
+      }
+    })
+  }
+
 // #endregion textParallax
 
 // Аккордеон

@@ -2645,6 +2645,11 @@ body._lock {
   position: relative;
   height: 92vh;
 }
+@media (min-width: 635px) and (max-width: 1020px) {
+  .features__scene {
+    height: 52vh;
+  }
+}
 
 .features__pic {
   display: block;
@@ -3124,7 +3129,7 @@ body._lock {
 
 .magic {
   padding-top: 53px;
-  padding-bottom: 96px;
+  padding-bottom: 146px;
 }
 @media (max-width: 1020px) {
   .magic {
@@ -3159,7 +3164,7 @@ body._lock {
 }
 
 .research {
-  padding-top: 106px;
+  padding-top: 56px;
   padding-bottom: 96px;
 }
 @media (max-width: 1020px) {
