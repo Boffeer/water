@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css?_v=20221015102329" />
+    <link rel="stylesheet" href="./css/style.css?_v=20221015110118" />
   </head>
   <body>
     <div class="wrapper">
@@ -575,7 +575,7 @@
                 </p>
                 <button
                   class="gift__offer-order-button button button--primary"
-                  data-poppa="gift-callback"
+                  data-poppa-open="pop-callback"
                 >
                   Заполнить
                 </button>
@@ -957,24 +957,113 @@
 
     </div>
 
-    
-
-<!-- <div class="snack" id="snack-cookies">
-  <div class="container gtc-2 snack__container">
-    <div class="snack__info">
-      <span class="snack__hl">Our Site Uses Cookies</span>
-      By clicking Agree, you agree to our
-      <a href="#" class="link link--inline">terms of service</a>,
-      <a href="#" class="link link--inline">privacy policy</a>
-      and
-      <a href="#" class="link link--inline">cookies policy</a>
+    <div id="pop-callback" class="poppa">
+  <form action="table" id="form-table" class="form form--table">
+    <div class="form__hidden">
+      <input type="text" name="page" hidden />
+      <input type="text" name="formname" hidden />
+      <input type="text" name="additional" hidden />
     </div>
-    <div class="snack__buttons flex">
-      <button class="snack__button button button--primary">Agree</button>
-    </div>
-  </div>
-</div> -->
+    <div class="form__inner">
+      <label class="input input--name">
+  <input
+    class="input__field"
+    name="user_name"
+    type="text"
+    placeholder="Имя"
+    data-value-missing="Заполните имя"
+    data-value-invalid="Что-то не так с введенным именем"
+    autocomplete="name"
+  />
+  <svg class="input__icon">
+    <use xlink:href="./img/icons/form-user.svg#user"></use>
+  </svg>
+  <span class="input__message">Ошибка</span>
+</label>
+ <label class="input input--tel">
+  <input
+    class="input__field"
+    required
+    name="user_tel"
+    type="tel"
+    placeholder="Телефон"
+    maxlength="25"
+    minlength="10"
+    data-value-missing="Напишите телефон"
+    data-value-invalid="Проверьте корректность телефона"
+    autocomplete="tel"
+  />
+  <svg class="input__icon">
+    <use xlink:href="./img/icons/form-tel.svg#tel"></use>
+  </svg>
+  <!-- <span class="input__message">Ошибка</span> -->
+</label>
 
-    <script src="./js/bundle.min.js?_v=20221015102329"></script>
+      <button
+        type="submit"
+        class="button button--primary poppa__button"
+        data-success="Message envoyé"
+      >
+        <span class="button__text">Получить подарок</span>
+      </button>
+    </div>
+  </form>
+</div>
+ <div id="callback-ball" class="poppa">
+  <h3 class="poppa__title">
+    Laissez vos coordonnées <br />
+    ou appeler au numéro <br />
+    <a class="link poppa__title-link" href="tel:0558709154">05 58 70 91 54</a>
+  </h3>
+  <form action="table" id="form-ball" class="form form--ball">
+    <div class="form__hidden">
+      <input type="text" name="page" hidden />
+      <input type="text" name="formname" hidden />
+      <input type="text" name="additional" hidden />
+    </div>
+    <div class="form__inner">
+      <label class="input input--name">
+  <input
+    class="input__field"
+    name="user_name"
+    type="text"
+    placeholder="Имя"
+    data-value-missing="Заполните имя"
+    data-value-invalid="Что-то не так с введенным именем"
+    autocomplete="name"
+  />
+  <svg class="input__icon">
+    <use xlink:href="./img/icons/form-user.svg#user"></use>
+  </svg>
+  <span class="input__message">Ошибка</span>
+</label>
+ <label class="input input--tel">
+  <input
+    class="input__field"
+    required
+    name="user_tel"
+    type="tel"
+    placeholder="Телефон"
+    maxlength="25"
+    minlength="10"
+    data-value-missing="Напишите телефон"
+    data-value-invalid="Проверьте корректность телефона"
+    autocomplete="tel"
+  />
+  <svg class="input__icon">
+    <use xlink:href="./img/icons/form-tel.svg#tel"></use>
+  </svg>
+  <!-- <span class="input__message">Ошибка</span> -->
+</label>
+
+      <button type="submit" class="button button--primary poppa__button" data-success="Message envoyé">
+        <span class="button__text">Envoyer le message</span>
+      </button>
+    </div>
+  </form>
+</div>
+
+
+    <script src="./js/bundle.min.js?_v=20221015110118"></script>
   </body>
 </html>

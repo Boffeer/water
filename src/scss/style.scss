@@ -172,3 +172,16 @@ body._lock {
     content: "";
   }
 }
+
+.poppa .input {
+  margin-bottom: 12px;
+}
+.poppa {
+  background-color: #101010;
+  border-radius: 0px;
+}
+
+.poppa .poppa__button {
+  padding-right: 10px;
+  padding-left: 10px;
+}
