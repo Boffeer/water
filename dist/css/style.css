@@ -2842,6 +2842,7 @@ body._lock {
   position: absolute;
   inset: 0;
   margin: auto;
+  transition: 0.3s ease;
 }
 
 .video__caption {
@@ -2856,6 +2857,15 @@ body._lock {
   .video__caption {
     font-size: 12px;
   }
+}
+
+.video__preview-img {
+  object-fit: cover;
+}
+
+.js_lazy-init .video-player__button {
+  pointer-events: none;
+  opacity: 0;
 }
 
 .food {

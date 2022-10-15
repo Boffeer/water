@@ -55,7 +55,7 @@ quizSlider.el.addEventListener("form_sent", () => {
 // #endregion quiz
 
 // #region scroller
-import {gsap, TweenMax, TimelineMax, Linear} from "gsap";
+import { gsap, TweenMax, TimelineMax, Linear } from "gsap";
 import ScrollMagic from "scrollmagic";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 
@@ -63,9 +63,9 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax); // Pass gsap import t
 
 /**
  * Передавай css селектоы
- * @pin — какой блок надо сделать стики. 
+ * @pin — какой блок надо сделать стики.
  * @scroller — какой блок надо прокручивать
- * 
+ *
  * @thanks https://codepen.io/nailaahmad/pen/BpJPJg
  */
 function makeTimeline(pin, scroller) {
@@ -73,311 +73,311 @@ function makeTimeline(pin, scroller) {
 
   const controller = new ScrollMagic.Controller();
   const slidesContainer = new TimelineMax()
-    .to(scroller, 1,   {x: "0%"}) 
-    .to(scroller, 1,   {x: "-40%"})
-    .to(scroller, 1,   {x: "-80%"})
-    .to(scroller, 1,   {x: "-120%"})
+    .to(scroller, 1, { x: "0%" })
+    .to(scroller, 1, { x: "-40%" })
+    .to(scroller, 1, { x: "-80%" })
+    .to(scroller, 1, { x: "-120%" });
 
   // create scene to pin and link animation
   new ScrollMagic.Scene({
     triggerElement: pin,
     triggerHook: "onLeave",
-    duration: "400%"
+    duration: "400%",
   })
     .setPin(pin)
     .setTween(slidesContainer)
     .addTo(controller);
 }
 
-makeTimeline('.testimonials', '.testimonials__cards');
-makeTimeline('.research', '.research__cards');
+makeTimeline(".testimonials", ".testimonials__cards");
+makeTimeline(".research", ".research__cards");
 // #endregion scroller
 
 // #region features
-  const controller = new ScrollMagic.Controller();
-  const slidesContainer = new TimelineMax()
-    .to('.features__pic--top', 1,   {y: "0%"}) 
-    .to('.features__pic--top', 1,   {y: "-40%"})
-    .to('.features__pic--top', 1,   {y: "-80%"})
-    .to('.features__pic--top', 1,   {y: "-100%"})
+const controller = new ScrollMagic.Controller();
+const slidesContainer = new TimelineMax()
+  .to(".features__pic--top", 1, { y: "0%" })
+  .to(".features__pic--top", 1, { y: "-40%" })
+  .to(".features__pic--top", 1, { y: "-80%" })
+  .to(".features__pic--top", 1, { y: "-100%" });
 
-  // create scene to pin and link animation
-  new ScrollMagic.Scene({
-    triggerElement: '.features__scroller',
-    triggerHook: "onLeave",
-    duration: "400%"
-  })
-    .setPin('.features__scroller')
-    .setTween(slidesContainer)
-    .addTo(controller);
+// create scene to pin and link animation
+new ScrollMagic.Scene({
+  triggerElement: ".features__scroller",
+  triggerHook: "onLeave",
+  duration: "400%",
+})
+  .setPin(".features__scroller")
+  .setTween(slidesContainer)
+  .addTo(controller);
 
 function getTweenPercent(number) {
   if (window.innerWidth < 768) {
     if (number == 0) {
-      return "0%"
+      return "0%";
     } else {
-    return 100 * number + "%"
+      return 100 * number + "%";
     }
   } else {
-    return "0%"
+    return "0%";
   }
 }
 
 const textScroller = new TimelineMax()
-    .to('.features__column-desc', 1,   {y: getTweenPercent(-0)}) 
-    .to('.features__column-desc', 1,   {y: getTweenPercent(-1)})
-    .to('.features__column-desc', 1,   {y: getTweenPercent(-2), opacity: 0.5})
-    .to('.features__column-desc', 1,   {y: getTweenPercent(-3), opacity: 0})
-  new ScrollMagic.Scene({
-    triggerElement: '.features__scroller',
-    triggerHook: "onLeave",
-    duration: "450%"
-  })
-    .setTween(textScroller)
-    .addTo(controller);
+  .to(".features__column-desc", 1, { y: getTweenPercent(-0) })
+  .to(".features__column-desc", 1, { y: getTweenPercent(-1) })
+  .to(".features__column-desc", 1, { y: getTweenPercent(-2), opacity: 0.5 })
+  .to(".features__column-desc", 1, { y: getTweenPercent(-3), opacity: 0 });
+new ScrollMagic.Scene({
+  triggerElement: ".features__scroller",
+  triggerHook: "onLeave",
+  duration: "450%",
+})
+  .setTween(textScroller)
+  .addTo(controller);
 
 const bulletsScroller = new TimelineMax()
-    .to('.features__column-bullets', 1,   {y: "0%"}) 
-    .to('.features__column-bullets', 1,   {y: "-100%"})
-    .to('.features__column-bullets', 1,   {y: "-200%"})
-    .to('.features__column-bullets', 1,   {y: "-300%"})
-  new ScrollMagic.Scene({
-    triggerElement: '.features__scroller',
-    triggerHook: "onLeave",
-    duration: "1200%"
-  })
-    .setTween(bulletsScroller)
-    .addTo(controller);
+  .to(".features__column-bullets", 1, { y: "0%" })
+  .to(".features__column-bullets", 1, { y: "-100%" })
+  .to(".features__column-bullets", 1, { y: "-200%" })
+  .to(".features__column-bullets", 1, { y: "-300%" });
+new ScrollMagic.Scene({
+  triggerElement: ".features__scroller",
+  triggerHook: "onLeave",
+  duration: "1200%",
+})
+  .setTween(bulletsScroller)
+  .addTo(controller);
 // #endregion features
 
 // #region textParallax
-import lax from 'lax.js'
+import lax from "lax.js";
 window.onload = function () {
-    const DISABLE_ANIMAION_MEDIA = 1020;
+  const DISABLE_ANIMAION_MEDIA = 1020;
 
-    let screenWidth = window.innerWidth
-    let screenHeight = window.innerHeight
+  let screenWidth = window.innerWidth;
+  let screenHeight = window.innerHeight;
 
-    let biggerSide = Math.max(screenWidth, screenHeight);
+  let biggerSide = Math.max(screenWidth, screenHeight);
 
-    let customLaxModifier = 'screenHeight'
-    if (biggerSide === screenHeight) {
-      customLaxModifier = 'screenWidth';
-    }
-
-
-    lax.init()
-
-    // Add a driver that we use to control our animations
-    lax.addDriver('scrollY', function () {
-      return window.scrollY
-    })
-
-    // Add animation bindings to elements
-    if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
-      lax.addElements('.hero__suptitle', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY", "elOutY"],
-            [0, `-(${customLaxModifier}/11)`, `-(${customLaxModifier}/6)`],
-          ]
-        }
-      })
-      lax.addElements('.hero__title', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY", "elOutY"],
-            [0, '-(screenHeight/10)', '-(screenHeight/5)'],
-          ]
-        }
-      })
-      lax.addElements('.hero__gift', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY", "elOutY"],
-            [0, '-(screenHeight/10)', '-(screenHeight/5)'],
-          ]
-        }
-      })
-      lax.addElements('.hero__video', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY", "elOutY"],
-            [0, 'screenHeight/5', 'screenHeight'],
-          ]
-        }
-      })
-      lax.addElements('.hero__socials', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY", "elOutY"],
-            [0, '-screenHeight/2', '-screenHeight'],
-          ]
-        }
-      })
-      
-      lax.addElements('.try__suptitle', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY", "elOutY"],
-            [0, `-${customLaxModifier}/10`, `-${customLaxModifier}/5`],
-          ]
-        }
-      })
-      lax.addElements('.try__title', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY", "elOutY"],
-            [0, '-screenHeight/12', '-screenHeight/6'],
-          ]
-        }
-      })
-
-      lax.addElements('.history__suptitlte', {
-        scrollY: {
-          translateY: [
-            ["elInY-200", "elCenterY-200", "elOutY-200"],
-            [0, `-${customLaxModifier}/10`, `-${customLaxModifier}/5`],
-          ]
-        }
-      })
-    }
-    // lax.addElements('.history__title', {
-    //   scrollY: {
-    //     translateY: [
-    //       ["elInY", "elCenterY", "elOutY"],
-    //       [0, '-screenHeight/18', '-screenHeight/9'],
-    //     ]
-    //   }
-    // })
-
-    if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
-      lax.addElements('.history__card', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY", "elOutY"],
-            [0, `-${customLaxModifier}/6`, `-${customLaxModifier}/3`],
-          ]
-        }
-      })
-
-
-      lax.addElements('.care__suptitle', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY", "elOutY"],
-            [0, '-elHeight/2', '-elHeight'],
-          ]
-        }
-      })
-      lax.addElements('.care__title', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY", "elOutY"],
-            [0, '-elHeight/2', '-elHeight'],
-          ]
-        }
-      })
-
-      lax.addElements('.care__offer', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY+400", "elOutY+400"],
-            [ 'elWidth+(elWidth*0.5)', '-elWidth/2', '-elWidth'],
-          ]
-        }
-      })
-
-      lax.addElements('.video__suptitle', {
-        scrollY: {
-          translateY: [
-            ["elInY+200", "elCenterY+200", "elOutY+200"],
-            [0, '-elHeight*6', '-elHeight*12'],
-          ]
-        }
-      })
-      lax.addElements('.video__title', {
-        scrollY: {
-          translateY: [
-            ["elInY+200", "elCenterY+200", "elOutY+200"],
-            [0, '-elHeight/2', '-elHeight'],
-          ]
-        }
-      })
-
-
-      lax.addElements('.food__title', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY", "elOutY"],
-            [0, `-${customLaxModifier}/2`, `-${customLaxModifier}`],
-          ]
-        }
-      })
-
-      lax.addElements('.food__offer', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY+400", "elOutY+400"],
-            [ 'elWidth', '-elWidth/2', '-elWidth'],
-          ]
-        }
-      })
-
-      lax.addElements('.gift__suptitle', {
-        scrollY: {
-          translateY: [
-            ["elInY+200", "elCenterY+200", "elOutY+200"],
-            [0, '-elHeight*6', '-elHeight*12'],
-          ]
-        }
-      })
-      lax.addElements('.gift__title', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY", "elOutY"],
-            [0, '-elHeight/2', '-elHeight'],
-          ]
-        }
-      })
-      lax.addElements('.gift__offer', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY+400", "elOutY+400"],
-            [ 'elWidth', '-elWidth/2', '-elWidth'],
-          ]
-        }
-      })
-
-      lax.addElements('.magic__suptitle', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY", "elOutY"],
-            [0, '-elHeight/2', '-elHeight'],
-          ]
-        }
-      })
-      lax.addElements('.magic__title', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY", "elOutY"],
-            [0, '-elHeight/2', '-elHeight'],
-          ]
-        }
-      })
-
-      lax.addElements('.map__title', {
-        scrollY: {
-          translateY: [
-            ["elInY", "elCenterY", "elOutY"],
-            [0, '-elHeight/2', '-elHeight'],
-          ]
-        }
-      })
-    }
+  let customLaxModifier = "screenHeight";
+  if (biggerSide === screenHeight) {
+    customLaxModifier = "screenWidth";
   }
 
+  lax.init();
+
+  // Add a driver that we use to control our animations
+  lax.addDriver("scrollY", function () {
+    return window.scrollY;
+  });
+
+  // Add animation bindings to elements
+  if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
+    lax.addElements(".hero__suptitle", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, `-(${customLaxModifier}/11)`, `-(${customLaxModifier}/6)`],
+        ],
+      },
+    });
+    lax.addElements(".hero__title", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, "-(screenHeight/10)", "-(screenHeight/5)"],
+        ],
+      },
+    });
+    lax.addElements(".hero__gift", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, "-(screenHeight/10)", "-(screenHeight/5)"],
+        ],
+      },
+    });
+    lax.addElements(".hero__video", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, "screenHeight/5", "screenHeight"],
+        ],
+      },
+    });
+    lax.addElements(".hero__socials", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, "-screenHeight/2", "-screenHeight"],
+        ],
+      },
+    });
+
+    lax.addElements(".try__suptitle", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, `-${customLaxModifier}/10`, `-${customLaxModifier}/5`],
+        ],
+      },
+    });
+    lax.addElements(".try__title", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, "-screenHeight/12", "-screenHeight/6"],
+        ],
+      },
+    });
+
+    lax.addElements(".history__suptitlte", {
+      scrollY: {
+        translateY: [
+          ["elInY-200", "elCenterY-200", "elOutY-200"],
+          [0, `-${customLaxModifier}/10`, `-${customLaxModifier}/5`],
+        ],
+      },
+    });
+  }
+  // lax.addElements('.history__title', {
+  //   scrollY: {
+  //     translateY: [
+  //       ["elInY", "elCenterY", "elOutY"],
+  //       [0, '-screenHeight/18', '-screenHeight/9'],
+  //     ]
+  //   }
+  // })
+
+  if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
+    lax.addElements(".history__card", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, `-${customLaxModifier}/6`, `-${customLaxModifier}/3`],
+        ],
+      },
+    });
+
+    lax.addElements(".care__suptitle", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, "-elHeight/2", "-elHeight"],
+        ],
+      },
+    });
+    lax.addElements(".care__title", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, "-elHeight/2", "-elHeight"],
+        ],
+      },
+    });
+
+    lax.addElements(".care__offer", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY+400", "elOutY+400"],
+          ["elWidth+(elWidth*0.5)", "-elWidth/2", "-elWidth"],
+        ],
+      },
+    });
+
+    lax.addElements(".video__suptitle", {
+      scrollY: {
+        translateY: [
+          ["elInY+200", "elCenterY+200", "elOutY+200"],
+          [0, "-elHeight*6", "-elHeight*12"],
+        ],
+      },
+    });
+    lax.addElements(".video__title", {
+      scrollY: {
+        translateY: [
+          ["elInY+200", "elCenterY+200", "elOutY+200"],
+          [0, "-elHeight/2", "-elHeight"],
+        ],
+      },
+    });
+
+    lax.addElements(".food__title", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, `-${customLaxModifier}/2`, `-${customLaxModifier}`],
+        ],
+      },
+    });
+
+    lax.addElements(".food__offer", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY+400", "elOutY+400"],
+          ["elWidth", "-elWidth/2", "-elWidth"],
+        ],
+      },
+    });
+
+    lax.addElements(".gift__suptitle", {
+      scrollY: {
+        translateY: [
+          ["elInY+200", "elCenterY+200", "elOutY+200"],
+          [0, "-elHeight*6", "-elHeight*12"],
+        ],
+      },
+    });
+    lax.addElements(".gift__title", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, "-elHeight/2", "-elHeight"],
+        ],
+      },
+    });
+    lax.addElements(".gift__offer", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY+400", "elOutY+400"],
+          ["elWidth", "-elWidth/2", "-elWidth"],
+        ],
+      },
+    });
+
+    lax.addElements(".magic__suptitle", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, "-elHeight/2", "-elHeight"],
+        ],
+      },
+    });
+    lax.addElements(".magic__title", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, "-elHeight/2", "-elHeight"],
+        ],
+      },
+    });
+
+    lax.addElements(".map__title", {
+      scrollY: {
+        translateY: [
+          ["elInY", "elCenterY", "elOutY"],
+          [0, "-elHeight/2", "-elHeight"],
+        ],
+      },
+    });
+  }
+};
+
 // #endregion textParallax
+//
+
+import "./b_lazy_yt.js";
 
 // Аккордеон
 // const accordions = new DismalModules.Accordions()

@@ -6,10 +6,10 @@
 
 window.addEventListener("DOMContentLoaded", (event) => {
   const lazyYT = {
-    videoParents: document.querySelectorAll(".big-card__media"),
+    videoParents: document.querySelectorAll(".js_lazy-media"),
     videoPicClassName: "picture",
-    videoImgClassName: ".js_lazy__preview",
-    videoIframeClassName: ".js_lazy__content",
+    videoImgClassName: "img",
+    videoIframeClassName: "iframe",
   };
   setupLazyYT(lazyYT);
 });
@@ -51,7 +51,6 @@ function setupLazyYT($) {
       // if (review.classList.contains("js_lazy-init"))
       review.classList.add("js_lazy-init");
       video.src = video.getAttribute("data-src");
-      debugger;
       review.removeEventListener("click", initVideo);
     }
     review.addEventListener("click", initVideo);
