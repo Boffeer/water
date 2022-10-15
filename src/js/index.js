@@ -101,13 +101,18 @@ const slidesContainer = new TimelineMax()
   .to(".features__pic--top", 1, { y: "-80%" })
   .to(".features__pic--top", 1, { y: "-100%" });
 
+let pinClass = ".features__scroller";
+if (window.innerWidth < 1020 && window.innerWidth > 576) {
+  pinClass = ".features__container";
+}
+
 // create scene to pin and link animation
 new ScrollMagic.Scene({
-  triggerElement: ".features__scroller",
+  triggerElement: pinClass,
   triggerHook: "onLeave",
   duration: "400%",
 })
-  .setPin(".features__scroller")
+  .setPin(pinClass)
   .setTween(slidesContainer)
   .addTo(controller);
 
