@@ -22,8 +22,8 @@
   @media (max-width: 1020px) {
     max-width: 380px;
     margin-right: auto;
-    margin-left: auto;
     margin-bottom: 20px;
+    margin-left: auto;
   }
 }
 .features__desc {
@@ -193,6 +193,9 @@
   @media (min-width: 635px) and (max-width: 1020px) {
     height: 52vh;
   }
+  @media (max-width: 635px) {
+    height: 80vh;
+  }
 }
 .features__pic {
   display: block;
@@ -202,9 +205,9 @@
 .features__pic--top {
   position: absolute;
   inset: 0;
+  top: -3.5%;
   z-index: 2;
   width: 107%;
-  top: -3.5%;
 }
 .features__pic--bottom {
   z-index: 1;
