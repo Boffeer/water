@@ -215,34 +215,33 @@ window.onload = function () {
           ]
         }
       })
+      
+      lax.addElements('.try__suptitle', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, `-${customLaxModifier}/10`, `-${customLaxModifier}/5`],
+          ]
+        }
+      })
+      lax.addElements('.try__title', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, '-screenHeight/12', '-screenHeight/6'],
+          ]
+        }
+      })
+
+      lax.addElements('.history__suptitlte', {
+        scrollY: {
+          translateY: [
+            ["elInY-200", "elCenterY-200", "elOutY-200"],
+            [0, `-${customLaxModifier}/10`, `-${customLaxModifier}/5`],
+          ]
+        }
+      })
     }
-
-
-    lax.addElements('.try__suptitle', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, `-${customLaxModifier}/10`, `-${customLaxModifier}/5`],
-        ]
-      }
-    })
-    lax.addElements('.try__title', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, '-screenHeight/12', '-screenHeight/6'],
-        ]
-      }
-    })
-
-    lax.addElements('.history__suptitlte', {
-      scrollY: {
-        translateY: [
-          ["elInY-200", "elCenterY-200", "elOutY-200"],
-          [0, `-${customLaxModifier}/10`, `-${customLaxModifier}/5`],
-        ]
-      }
-    })
     // lax.addElements('.history__title', {
     //   scrollY: {
     //     translateY: [
@@ -252,34 +251,34 @@ window.onload = function () {
     //   }
     // })
 
-    lax.addElements('.history__card', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, `-${customLaxModifier}/6`, `-${customLaxModifier}/3`],
-        ]
-      }
-    })
-
-
-    lax.addElements('.care__suptitle', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, '-elHeight/2', '-elHeight'],
-        ]
-      }
-    })
-    lax.addElements('.care__title', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, '-elHeight/2', '-elHeight'],
-        ]
-      }
-    })
-
     if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
+      lax.addElements('.history__card', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, `-${customLaxModifier}/6`, `-${customLaxModifier}/3`],
+          ]
+        }
+      })
+
+
+      lax.addElements('.care__suptitle', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, '-elHeight/2', '-elHeight'],
+          ]
+        }
+      })
+      lax.addElements('.care__title', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, '-elHeight/2', '-elHeight'],
+          ]
+        }
+      })
+
       lax.addElements('.care__offer', {
         scrollY: {
           translateY: [
@@ -288,9 +287,7 @@ window.onload = function () {
           ]
         }
       })
-    }
 
-    if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
       lax.addElements('.video__suptitle', {
         scrollY: {
           translateY: [
@@ -307,10 +304,8 @@ window.onload = function () {
           ]
         }
       })
-    }
 
 
-    if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
       lax.addElements('.food__title', {
         scrollY: {
           translateY: [
@@ -328,10 +323,7 @@ window.onload = function () {
           ]
         }
       })
-    }
 
-
-    if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
       lax.addElements('.gift__suptitle', {
         scrollY: {
           translateY: [
@@ -355,28 +347,25 @@ window.onload = function () {
             [ 'elWidth', '-elWidth/2', '-elWidth'],
           ]
         }
-    })
-    }
+      })
 
+      lax.addElements('.magic__suptitle', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, '-elHeight/2', '-elHeight'],
+          ]
+        }
+      })
+      lax.addElements('.magic__title', {
+        scrollY: {
+          translateY: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, '-elHeight/2', '-elHeight'],
+          ]
+        }
+      })
 
-    lax.addElements('.magic__suptitle', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, '-elHeight/2', '-elHeight'],
-        ]
-      }
-    })
-    lax.addElements('.magic__title', {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, '-elHeight/2', '-elHeight'],
-        ]
-      }
-    })
-
-    if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
       lax.addElements('.map__title', {
         scrollY: {
           translateY: [
