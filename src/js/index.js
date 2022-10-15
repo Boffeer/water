@@ -177,32 +177,32 @@ window.onload = function () {
     lax.addElements(".hero__suptitle", {
       scrollY: {
         translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, `-(${customLaxModifier}/11)`, `-(${customLaxModifier}/6)`],
+          ["elInY+500", "elCenterY+500", "elOutY+500"],
+          [0, "-200", "-400"],
         ],
       },
     });
     lax.addElements(".hero__title", {
       scrollY: {
         translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, "-(screenHeight/10)", "-(screenHeight/5)"],
+          ["elInY+500", "elCenterY+500", "elOutY+500"],
+          [0, "-100", "-200"],
         ],
       },
     });
     lax.addElements(".hero__gift", {
       scrollY: {
         translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, "-(screenHeight/10)", "-(screenHeight/5)"],
+          ["elInY+500", "elCenterY+500", "elOutY+500"],
+          [0, "screenHeight/5", "screenHeight/1.5"],
         ],
       },
     });
     lax.addElements(".hero__video", {
       scrollY: {
         translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, "screenHeight/5", "screenHeight"],
+          ["elInY+500", "elCenterY+500", "elOutY+500"],
+          [0, "screenHeight/5", "screenHeight/1.5"],
         ],
       },
     });
@@ -306,8 +306,8 @@ window.onload = function () {
     lax.addElements(".food__title", {
       scrollY: {
         translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, `-${customLaxModifier}/2`, `-${customLaxModifier}`],
+          ["elInY+500", "elCenterY+500", "elOutY+500"],
+          [0, "-200", "-400"],
         ],
       },
     });
@@ -324,16 +324,16 @@ window.onload = function () {
     lax.addElements(".gift__suptitle", {
       scrollY: {
         translateY: [
-          ["elInY+200", "elCenterY+200", "elOutY+200"],
-          [0, "-elHeight*6", "-elHeight*12"],
+          ["elInY+400", "elCenterY+400", "elOutY+400"],
+          [0, "-100", "-200"],
         ],
       },
     });
     lax.addElements(".gift__title", {
       scrollY: {
         translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, "-elHeight/2", "-elHeight"],
+          ["elInY+500", "elCenterY+500", "elOutY+500"],
+          [0, "-100", "-200"],
         ],
       },
     });
