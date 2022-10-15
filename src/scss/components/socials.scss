@@ -70,3 +70,16 @@
   height: 36px;
   --icon-color: #fff;
 }
+
+.socials--big .socials__link:hover {
+  @media (any-hover: hover) {
+    background: #fff;
+    transition: 0s;
+  }
+}
+.socials--big .socials__link:hover .socials__icon {
+  @media (any-hover: hover) {
+    --icon-color: #474747;
+    transition: 0s;
+  }
+}

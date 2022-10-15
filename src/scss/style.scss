@@ -151,13 +151,20 @@ body._lock {
 }
 
 @media (max-width: 1020px) {
-.h-scroller {
-  overflow: hidden;
-  padding-bottom: 20px;
-}
-.h-scroller > div {
-
-  overflow-y: auto;
-  margin-bottom: -40px;
-}
+  .h-scroller {
+    padding-bottom: 20px;
+    overflow: hidden;
   }
+  .h-scroller > div {
+    margin-bottom: -40px;
+
+    overflow-y: auto;
+  }
+}
+
+.h-scroller div::after {
+  display: block;
+  min-width: 200px;
+  height: 200px;
+  content: "";
+}

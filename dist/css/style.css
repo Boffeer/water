@@ -739,6 +739,20 @@
   --icon-color: #fff;
 }
 
+@media (any-hover: hover) {
+  .socials--big .socials__link:hover {
+    background: #fff;
+    transition: 0s;
+  }
+}
+
+@media (any-hover: hover) {
+  .socials--big .socials__link:hover .socials__icon {
+    --icon-color: #474747;
+    transition: 0s;
+  }
+}
+
 .bullets-card {
   position: relative;
   margin-bottom: 64px;
@@ -3816,12 +3830,18 @@ body._lock {
 
 @media (max-width: 1020px) {
   .h-scroller {
-    overflow: hidden;
     padding-bottom: 20px;
+    overflow: hidden;
   }
   .h-scroller > div {
-    overflow-y: auto;
     margin-bottom: -40px;
+    overflow-y: auto;
   }
+}
+.h-scroller div::after {
+  display: block;
+  min-width: 200px;
+  height: 200px;
+  content: "";
 }
 /*# sourceMappingURL=../maps/style.css.map */
