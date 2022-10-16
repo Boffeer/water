@@ -72,11 +72,7 @@ function makeTimeline(pin, scroller) {
   if (window.innerWidth < 1020) return;
 
   const controller = new ScrollMagic.Controller();
-  const slidesContainer = new TimelineMax()
-    .to(scroller, 1, { x: "0%" })
-    .to(scroller, 1, { x: "-40%" })
-    .to(scroller, 1, { x: "-80%" })
-    .to(scroller, 1, { x: "-120%" });
+  const slidesContainer = new TimelineMax().to(scroller, 1, { x: "-120%" });
 
   // create scene to pin and link animation
   new ScrollMagic.Scene({
@@ -95,11 +91,9 @@ makeTimeline(".research", ".research__cards");
 
 // #region features
 const controller = new ScrollMagic.Controller();
-const slidesContainer = new TimelineMax()
-  .to(".features__pic--top", 1, { y: "0%" })
-  .to(".features__pic--top", 1, { y: "-40%" })
-  .to(".features__pic--top", 1, { y: "-80%" })
-  .to(".features__pic--top", 1, { y: "-100%" });
+const slidesContainer = new TimelineMax().to(".features__pic--top", 1, {
+  y: "-100%",
+});
 
 let pinClass = ".features__scroller";
 if (window.innerWidth < 1020 && window.innerWidth > 576) {
@@ -128,11 +122,10 @@ function getTweenPercent(number) {
   }
 }
 
-const textScroller = new TimelineMax()
-  .to(".features__column-desc", 1, { y: getTweenPercent(-0) })
-  .to(".features__column-desc", 1, { y: getTweenPercent(-1) })
-  .to(".features__column-desc", 1, { y: getTweenPercent(-2), opacity: 0.5 })
-  .to(".features__column-desc", 1, { y: getTweenPercent(-3), opacity: 0 });
+const textScroller = new TimelineMax().to(".features__column-desc", 1, {
+  y: getTweenPercent(-3),
+  opacity: 0,
+});
 new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
   triggerHook: "onLeave",
@@ -141,11 +134,9 @@ new ScrollMagic.Scene({
   .setTween(textScroller)
   .addTo(controller);
 
-const bulletsScroller = new TimelineMax()
-  .to(".features__column-bullets", 1, { y: "0%" })
-  .to(".features__column-bullets", 1, { y: "-100%" })
-  .to(".features__column-bullets", 1, { y: "-200%" })
-  .to(".features__column-bullets", 1, { y: "-300%" });
+const bulletsScroller = new TimelineMax().to(".features__column-bullets", 1, {
+  y: "-300%",
+});
 new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
   triggerHook: "onLeave",
