@@ -1120,7 +1120,6 @@ body._lock {
   flex-direction: column;
   width: 100%;
   min-height: 100%;
-  overflow: hidden;
 }
 .wrapper > .content {
   position: relative;
@@ -5679,10 +5678,12 @@ body._lock {
 }
 
 .hero__offer {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 270px 325px;
   column-gap: 70px;
   align-items: grid-template;
+  align-items: start;
   justify-content: space-between;
 }
 @media (max-width: 1020px) {
@@ -5695,6 +5696,8 @@ body._lock {
 }
 
 .hero__gift {
+  position: sticky;
+  top: 20px;
   padding-top: 40px;
 }
 @media (max-width: 1020px) {
@@ -5726,7 +5729,7 @@ body._lock {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  height: 56vh;
+  height: 100%;
 }
 @media (max-width: 1020px) {
   .hero__media {
@@ -5742,6 +5745,8 @@ body._lock {
 }
 
 .hero__video {
+  position: sticky;
+  top: 20px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -5773,11 +5778,13 @@ body._lock {
 }
 
 .hero__socials {
+  position: absolute;
+  top: 50%;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   margin-left: auto;
-  transform: translate(35px, 4px);
+  transform: translate(35px, 50%);
 }
 @media (max-width: 1020px) {
   .hero__socials {
@@ -5866,6 +5873,7 @@ body._lock {
 
 .testimonials {
   padding-top: 45px;
+  overflow-x: hidden;
 }
 @media (max-width: 576px) {
   .testimonials {
@@ -6880,6 +6888,7 @@ body._lock {
 .research {
   padding-top: 56px;
   padding-bottom: 96px;
+  overflow-x: hidden;
 }
 @media (max-width: 1020px) {
   .research {
