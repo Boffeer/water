@@ -31,7 +31,9 @@
               >
                 <h3 class="section-text-bold">Для вас — подарок</h3>
                 <p class="section-text">От Haswater и Four Seasons</p>
-                <a href="" class="button button--secondary hero__button-gift"
+                <a
+                  href="#gift"
+                  class="button button--secondary hero__button-gift button--open-quiz"
                   >Забрать</a
                 >
               </div>
@@ -155,12 +157,12 @@
                     выдается бесплатно.
                   </p>
                 </article>
-                <button
-                  class="button button--secondary try__button-feedback"
-                  data-poppa-open="quiz-feedback"
+                <a
+                  class="button button--secondary try__button-feedback button--open-quiz"
+                  href="#gift"
                 >
                   оставить отзыв
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -520,7 +522,7 @@
           </div>
         </section>
 
-        <section class="gift js_section">
+        <section class="gift js_section" id="gift">
           <div class="container gift__container">
             <p
               class="section-suptitle gift__suptitle animate__fadeInUp wow animate__animated"
@@ -556,7 +558,7 @@
                 </p>
                 <button
                   class="gift__offer-order-button button button--primary animate__fadeInUp wow animate__animated"
-                  data-poppa-open="pop-callback"
+                  data-poppa-open="quiz-feedback"
                   data-wow-delay="200ms"
                 >
                   Заполнить

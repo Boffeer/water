@@ -35,6 +35,11 @@ if (document.querySelector(".langpicker-select")) {
 import "./utils/smooth-anchors.js";
 
 // #region quiz
+document.querySelector(".button--open-quiz").addEventListener("click", () => {
+  setTimeout(() => {
+    window.poppa.openPop("quiz-feedback");
+  }, 1500);
+});
 let quizSlider = new Swiper(".quiz-slider", {
   modules: [Navigation, EffectCreative],
   effect: "creative",
@@ -62,7 +67,7 @@ let quizSlider = new Swiper(".quiz-slider", {
 document
   .querySelector(".quiz-slider__skip-button")
   .addEventListener("click", () => {
-    quizSlider.slideTo(3);
+    quizSlider.slideTo(2);
   });
 quizSlider.on("slideChange", () => {
   let isBeforeResultsSlide =

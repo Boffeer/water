@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css?_v=20221020142633" />
+    <link rel="stylesheet" href="./css/style.css?_v=20221021002604" />
   </head>
   <body>
     <div class="wrapper">
@@ -131,7 +131,9 @@
               >
                 <h3 class="section-text-bold">Для вас — подарок</h3>
                 <p class="section-text">От Haswater и Four Seasons</p>
-                <a href="" class="button button--secondary hero__button-gift"
+                <a
+                  href="#gift"
+                  class="button button--secondary hero__button-gift button--open-quiz"
                   >Забрать</a
                 >
               </div>
@@ -255,12 +257,12 @@
                     выдается бесплатно.
                   </p>
                 </article>
-                <button
-                  class="button button--secondary try__button-feedback"
-                  data-poppa-open="quiz-feedback"
+                <a
+                  class="button button--secondary try__button-feedback button--open-quiz"
+                  href="#gift"
                 >
                   оставить отзыв
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -620,7 +622,7 @@
           </div>
         </section>
 
-        <section class="gift js_section">
+        <section class="gift js_section" id="gift">
           <div class="container gift__container">
             <p
               class="section-suptitle gift__suptitle animate__fadeInUp wow animate__animated"
@@ -656,7 +658,7 @@
                 </p>
                 <button
                   class="gift__offer-order-button button button--primary animate__fadeInUp wow animate__animated"
-                  data-poppa-open="pop-callback"
+                  data-poppa-open="quiz-feedback"
                   data-wow-delay="200ms"
                 >
                   Заполнить
@@ -1060,7 +1062,9 @@
         </div>
         <div class="quiz-slider__skip">
           У меня нет времени проходить тест, хочу просто
-          <button class="quiz-slider__skip-button link">забрать подарок</button>
+          <button class="quiz-slider__skip-button link" type="button">
+            забрать подарок
+          </button>
         </div>
       </div>
     </form>
@@ -1176,6 +1180,6 @@
 </div>
 
 
-    <script src="./js/bundle.min.js?_v=20221020142633"></script>
+    <script src="./js/bundle.min.js?_v=20221021002604"></script>
   </body>
 </html>
