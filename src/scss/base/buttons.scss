@@ -19,16 +19,16 @@
   }
 }
 
-.link {
-  transition: $tr;
+// .link {
+//   transition: $tr;
 
-  @media (any-hover: hover) {
-    &:hover {
-      color: $accent;
-    }
-  }
+//   @media (any-hover: hover) {
+//     &:hover {
+//       color: $accent;
+//     }
+//   }
 
-  &:active {
-    color: brig-color($accent, active);
-  }
-}
+//   &:active {
+//     color: brig-color($accent, active);
+//   }
+// }

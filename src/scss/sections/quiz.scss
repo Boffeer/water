@@ -44,7 +44,10 @@
   }
 }
 .quiz-slider__slide {
+  height: 100%;
+  max-height: 100%;
   counter-increment: quizQuestion;
+  background-color: #101010;
 }
 .quiz-slider__slide::before {
   margin-bottom: 32px;
@@ -174,7 +177,9 @@
   }
 }
 .quiz-slider__answer:last-of-type {
-  margin-bottom: 0;
+  @media (max-width: 1020px) {
+    margin-bottom: 0;
+  }
 }
 
 .quiz-slider__answer-check {

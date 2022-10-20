@@ -175,7 +175,9 @@ body._lock {
 }
 
 .poppa .input {
-  margin-bottom: 12px;
+  @media (max-width: 1020px) {
+    margin-bottom: 12px;
+  }
 }
 .poppa {
   background-color: #101010;
@@ -186,6 +188,17 @@ body._lock {
   padding-right: 10px;
   padding-left: 10px;
 }
-.poppa .poppa__closer {
+.poppa__closer {
   background-color: transparent;
+}
+.poppa__closer::before,
+.poppa__closer::after {
+  border-radius: 0;
+}
+
+.poppa__closer:hover::before,
+.poppa__closer:hover::after {
+  // @media (any-hover: hover) {
+  background-color: #fff;
+  // }
 }

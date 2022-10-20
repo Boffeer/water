@@ -6,7 +6,7 @@
 
 /* stylelint-disable */
 .link {
-  --link-color: #fff;
+  --link-color: #ccc;
   color: var(--link-color);
   transition: all var(--tr) ease-in-out;
   padding: 0;
@@ -21,8 +21,9 @@
 }
 
 .link:hover {
-  @media (min-width: $minHover) {
+  @media (any-hover: hover) {
     // --link-color: var(--c-accent);
+    --link-color: #fff;
   }
 }
 .link:active {

@@ -38,11 +38,12 @@
 
 .button--primary {
   color: #323232;
-  background: #fff;
+  background: #ccc;
 }
 
 .button--primary:hover {
-  @media (min-width: $minHover) {
+  @media (any-hover: hover) {
+    background: #fff;
   }
 }
 

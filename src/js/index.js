@@ -4,7 +4,7 @@
 // import DismalModules, { acc } from "./utils/modules.js";
 
 import "./unstable/formich.js";
-import Swiper, { Navigation } from "swiper";
+import Swiper, { Navigation, EffectCreative } from "swiper";
 import "./unstable/burger.js";
 
 import WOW from "wow.js";
@@ -36,13 +36,34 @@ import "./utils/smooth-anchors.js";
 
 // #region quiz
 let quizSlider = new Swiper(".quiz-slider", {
-  modules: [Navigation],
+  modules: [Navigation, EffectCreative],
+  effect: "creative",
+  creativeEffect: {
+    prev: {
+      shadow: false,
+      origin: "left center",
+      translate: ["-5%", 0, -200],
+      // rotate: [0, 100, 0],
+      opacity: 0,
+    },
+    next: {
+      origin: "right center",
+      translate: ["5%", 0, -200],
+      // rotate: [0, -100, 0],
+      opacity: 0,
+    },
+  },
   navigation: {
     nextEl: ".quiz-slider__button-next",
     prevEl: ".quiz-slider__button-prev",
   },
   allowTouchMove: false,
 });
+document
+  .querySelector(".quiz-slider__skip-button")
+  .addEventListener("click", () => {
+    quizSlider.slideTo(3);
+  });
 quizSlider.on("slideChange", () => {
   let isBeforeResultsSlide =
     quizSlider.activeIndex === quizSlider.slides.length - 2;
