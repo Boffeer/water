@@ -345,8 +345,35 @@
   font-size: inherit;
 }
 
+/* Стили анимации пульсации кругов */
+@keyframes pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+/* Стили кроссбраузерной анимации пульсации кругов */
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
 .button--play {
-  --size: 96px;
   position: relative;
   display: block;
   width: var(--size);
@@ -358,6 +385,10 @@
   background-position: center;
   background-position-x: 53%;
   background-size: 20px 18px;
+  animation-name: pulse;
+  animation-duration: 1.8s;
+  animation-iteration-count: infinite;
+  --size: 96px;
 }
 
 .button--play::before {
@@ -392,61 +423,6 @@
 
 .button--play:hover::after {
   border-color: #929292;
-}
-
-.button__icon {
-  display: block;
-  width: var(--button-icon-size);
-  min-width: var(--button-icon-size);
-  max-width: var(--button-icon-size);
-  height: var(--button-icon-size);
-  background-color: var(--icon-color);
-  fill: transparent;
-  stroke: var(--icon-color);
-  transition: all var(--tr) ease;
-}
-
-.button--icon-fill .button__icon {
-  fill: var(--icon-color);
-  stroke: none;
-}
-
-.button--icon-left .button__icon {
-  order: -1;
-  margin-right: 0.57em;
-}
-
-.button--icon-right .button__icon {
-  order: 5;
-  margin-left: 0.57em;
-}
-
-.button__icon path {
-  stroke: var(--button-color);
-}
-
-.button--icon-plus .button__icon {
-  -webkit-mask: url("../img/icons/plus.svg");
-  mask: url("../img/icons/plus.svg");
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-
-@media (min-width: 1100px) {
-  .button--icon-plus:hover .button__icon {
-    transform: rotate(180deg);
-  }
-}
-
-@media (min-width: 1100px) {
-  .button--icon-plus:hover {
-    --icon-color: var(--c-accent);
-    --button-color: var(--c-accent);
-  }
 }
 
 .logo {
@@ -6471,14 +6447,10 @@ body._lock {
   }
 }
 
-.care__pic {
-  transform: translate(-30px, 0);
-}
 @media (max-width: 1020px) {
   .care__pic {
     max-width: 216px;
     margin-bottom: 24px;
-    transform: none;
   }
 }
 

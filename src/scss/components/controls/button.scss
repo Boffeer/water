@@ -154,8 +154,36 @@
   font-size: inherit;
 }
 
+/* Стили анимации пульсации кругов */
+@keyframes pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+/* Стили кроссбраузерной анимации пульсации кругов */
+@-webkit-keyframes pulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
 .button--play {
-  --size: 96px;
   position: relative;
   display: block;
   width: var(--size);
@@ -167,6 +195,11 @@
   background-position: center;
   background-position-x: 53%;
   background-size: 20px 18px;
+  animation-name: pulse;
+  animation-duration: 1.8s;
+
+  animation-iteration-count: infinite;
+  --size: 96px;
 }
 .button--play::before {
   position: absolute;
@@ -197,51 +230,4 @@
 }
 .button--play:hover::after {
   border-color: #929292;
-}
-
-// ===========
-.button__icon {
-  display: block;
-  width: var(--button-icon-size);
-  min-width: var(--button-icon-size);
-  max-width: var(--button-icon-size);
-  height: var(--button-icon-size);
-  background-color: var(--icon-color);
-  fill: transparent;
-  stroke: var(--icon-color);
-  transition: all var(--tr) ease;
-}
-.button--icon-fill .button__icon {
-  fill: var(--icon-color);
-  stroke: none;
-}
-
-.button--icon-left .button__icon {
-  order: -1;
-  margin-right: 0.57em;
-}
-
-.button--icon-right .button__icon {
-  order: 5;
-  margin-left: 0.57em;
-}
-
-.button__icon path {
-  stroke: var(--button-color);
-}
-
-.button--icon-plus .button__icon {
-  @include getmask("../img/icons/plus.svg");
-}
-.button--icon-plus:hover .button__icon {
-  @media (min-width: $minHover) {
-    transform: rotate(180deg);
-  }
-}
-
-.button--icon-plus:hover {
-  @media (min-width: $minHover) {
-    --icon-color: var(--c-accent);
-    --button-color: var(--c-accent);
-  }
 }

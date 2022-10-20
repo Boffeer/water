@@ -67,11 +67,11 @@
   }
 }
 .care__pic {
-  transform: translate(-30px, 0);
+  // transform: translate(-30px, 0);
   @media (max-width: 1020px) {
     max-width: 216px;
     margin-bottom: 24px;
-    transform: none;
+    // transform: none;
   }
 }
 .care__watch-video {
