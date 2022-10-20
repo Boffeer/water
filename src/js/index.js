@@ -35,10 +35,12 @@ if (document.querySelector(".langpicker-select")) {
 import "./utils/smooth-anchors.js";
 
 // #region quiz
-document.querySelector(".button--open-quiz").addEventListener("click", () => {
-  setTimeout(() => {
-    window.poppa.openPop("quiz-feedback");
-  }, 1500);
+document.querySelectorAll(".button--open-quiz").forEach((button) => {
+  button.addEventListener("click", () => {
+    setTimeout(() => {
+      window.poppa.openPop("quiz-feedback");
+    }, 1200);
+  });
 });
 let quizSlider = new Swiper(".quiz-slider", {
   modules: [Navigation, EffectCreative],
