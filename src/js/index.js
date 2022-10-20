@@ -7,6 +7,9 @@ import "./unstable/formich.js";
 import Swiper, { Navigation } from "swiper";
 import "./unstable/burger.js";
 
+import WOW from "wow.js";
+new WOW().init();
+
 /**
  * Modals
  */
@@ -90,6 +93,7 @@ makeTimeline(".research", ".research__cards");
 // #endregion scroller
 
 // #region features
+/*
 const controller = new ScrollMagic.Controller();
 const slidesContainer = new TimelineMax().to(".features__pic--top", 1, {
   y: "-100%",
@@ -369,7 +373,7 @@ window.onload = function () {
     });
   }
 };
-
+*/
 // #endregion textParallax
 //
 
