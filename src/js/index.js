@@ -99,21 +99,22 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax); // Pass gsap import t
  *
  * @thanks https://codepen.io/nailaahmad/pen/BpJPJg
  */
+
+const scrollController = new ScrollMagic.Controller();
 function makeTimeline(pin, scroller) {
   if (window.innerWidth < 1020) return;
 
-  const controller = new ScrollMagic.Controller();
   const slidesContainer = new TimelineMax().to(scroller, 1, { x: "-120%" });
 
   // create scene to pin and link animation
   new ScrollMagic.Scene({
     triggerElement: pin,
     triggerHook: "onLeave",
-    duration: "400%",
+    duration: "100%",
   })
     .setPin(pin)
     .setTween(slidesContainer)
-    .addTo(controller);
+    .addTo(scrollController);
 }
 
 makeTimeline(".testimonials", ".testimonials__cards");
@@ -121,8 +122,7 @@ makeTimeline(".research", ".research__cards");
 // #endregion scroller
 
 // #region features
-/*
-const controller = new ScrollMagic.Controller();
+// const controller = new ScrollMagic.Controller();
 const slidesContainer = new TimelineMax().to(".features__pic--top", 1, {
   y: "-100%",
 });
@@ -136,11 +136,11 @@ if (window.innerWidth < 1020 && window.innerWidth > 576) {
 new ScrollMagic.Scene({
   triggerElement: pinClass,
   triggerHook: "onLeave",
-  duration: "400%",
+  duration: "100%",
 })
   .setPin(pinClass)
   .setTween(slidesContainer)
-  .addTo(controller);
+  .addTo(scrollController);
 
 function getTweenPercent(number) {
   if (window.innerWidth < 768) {
@@ -155,30 +155,45 @@ function getTweenPercent(number) {
 }
 
 const textScroller = new TimelineMax().to(".features__column-desc", 1, {
-  y: getTweenPercent(-3),
   opacity: 0,
 });
 new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
   triggerHook: "onLeave",
-  duration: "450%",
+  duration: "50%",
 })
   .setTween(textScroller)
-  .addTo(controller);
+  .addTo(scrollController);
 
 const bulletsScroller = new TimelineMax().to(".features__column-bullets", 1, {
-  y: "-300%",
+  opacity: 0,
 });
 new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
   triggerHook: "onLeave",
-  duration: "1200%",
+  duration: "50%",
 })
   .setTween(bulletsScroller)
-  .addTo(controller);
+  .addTo(scrollController);
+
+const bigBulletsScroller = new TimelineMax()
+  .from(".features__column-big-bullets", 1, {
+    y: "200%",
+  })
+  .to(".features__column-big-bullets", 1, {
+    y: "-200%",
+  });
+new ScrollMagic.Scene({
+  triggerElement: ".features__scroller",
+  triggerHook: "onLeave",
+  duration: "300%",
+})
+  .setTween(bigBulletsScroller)
+  .addTo(scrollController);
 // #endregion features
 
 // #region textParallax
+/*
 import lax from "lax.js";
 window.onload = function () {
   const DISABLE_ANIMAION_MEDIA = 1020;

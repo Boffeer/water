@@ -6134,15 +6134,13 @@ body._lock {
 .features__columns {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 278px 290px 265px;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 50px;
 }
 @media (max-width: 1020px) {
   .features__columns {
-    display: flex;
-    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
     padding-top: 24px;
@@ -6159,6 +6157,10 @@ body._lock {
   .features__columns {
     flex-direction: column;
   }
+}
+
+.features__column {
+  max-width: 290px;
 }
 
 .features__column-desc {
@@ -6295,6 +6297,22 @@ body._lock {
     max-width: 174px;
     line-height: 1.6;
   }
+}
+
+.features__column-big-bullets {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.features__column-big-bullets .bullets-card {
+  max-width: 340px;
+}
+
+.features__column-big-bullets .bullets-card:nth-child(2) {
+  margin-left: auto;
 }
 
 .features__column-bullets .bullets-card:nth-child(1) {
