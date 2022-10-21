@@ -1,6 +1,7 @@
 .testimonials {
   padding-top: 45px;
   overflow-x: hidden;
+  transition: all 0.3s ease;
   @media (max-width: 576px) {
     padding-top: 82px;
   }

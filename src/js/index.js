@@ -8,7 +8,15 @@ import Swiper, { Navigation, EffectCreative } from "swiper";
 import "./unstable/burger.js";
 
 import WOW from "wow.js";
-new WOW().init();
+
+const wow = new WOW({
+  boxClass: "wow",
+  animateClass: "animated",
+  offset: 0,
+  mobile: true,
+  live: true,
+});
+wow.init();
 
 /**
  * Modals
@@ -104,7 +112,9 @@ const scrollController = new ScrollMagic.Controller();
 function makeTimeline(pin, scroller) {
   if (window.innerWidth < 1020) return;
 
-  const slidesContainer = new TimelineMax().to(scroller, 1, { x: "-120%" });
+  const slidesContainer = new TimelineMax().to(scroller, 1, {
+    x: "-120%",
+  });
 
   // create scene to pin and link animation
   new ScrollMagic.Scene({
@@ -115,6 +125,19 @@ function makeTimeline(pin, scroller) {
     .setPin(pin)
     .setTween(slidesContainer)
     .addTo(scrollController);
+
+  const pinElement = document.querySelector(pin);
+  window.addEventListener("scroll", () => {
+    const pinWidth = pinElement.style.width;
+    const pinBound = pinElement.getBoundingClientRect();
+    console.log(pinBound.top);
+
+    if (pinWidth == "100%" && pinBound.top < -200) {
+      pinElement.style.opacity = "0";
+    } else {
+      pinElement.style.opacity = "1";
+    }
+  });
 }
 
 makeTimeline(".testimonials", ".testimonials__cards");
