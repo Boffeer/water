@@ -267,6 +267,40 @@ new ScrollMagic.Scene({
 // #endregion features
 
 // #region textParallax
+
+// .from(".history__card", 1, {
+//   y: "50%",
+// })
+if (window.innerWidth > 1020) {
+  const historyCard = new TimelineMax();
+  historyCard.to(".history__card", 1, {
+    y: "-100%",
+  });
+  new ScrollMagic.Scene({
+    triggerElement: ".history",
+    triggerHook: "onLeave",
+    duration: "100%",
+  })
+    .setTween(historyCard)
+    .addTo(scrollController);
+}
+if (window.innerWidth > 1020) {
+  const careCard = new TimelineMax();
+  careCard
+    .from(".care__offer", 1, {
+      y: "40%",
+    })
+    .to(".care__offer", 1, {
+      y: "-50%",
+    });
+  new ScrollMagic.Scene({
+    triggerElement: ".care",
+    triggerHook: "onLeave",
+    duration: "100%",
+  })
+    .setTween(careCard)
+    .addTo(scrollController);
+}
 /*
 import lax from "lax.js";
 window.onload = function () {
@@ -291,38 +325,6 @@ window.onload = function () {
 
   // Add animation bindings to elements
   if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
-    lax.addElements(".hero__suptitle", {
-      scrollY: {
-        translateY: [
-          ["elInY+500", "elCenterY+500", "elOutY+500"],
-          [0, "-200", "-400"],
-        ],
-      },
-    });
-    lax.addElements(".hero__title", {
-      scrollY: {
-        translateY: [
-          ["elInY+500", "elCenterY+500", "elOutY+500"],
-          [0, "-100", "-200"],
-        ],
-      },
-    });
-    lax.addElements(".hero__gift", {
-      scrollY: {
-        translateY: [
-          ["elInY+500", "elCenterY+500", "elOutY+500"],
-          [0, "screenHeight/5", "screenHeight/1.5"],
-        ],
-      },
-    });
-    lax.addElements(".hero__video", {
-      scrollY: {
-        translateY: [
-          ["elInY+500", "elCenterY+500", "elOutY+500"],
-          [0, "screenHeight/5", "screenHeight/1.5"],
-        ],
-      },
-    });
     lax.addElements(".hero__socials", {
       scrollY: {
         translateY: [
@@ -331,41 +333,7 @@ window.onload = function () {
         ],
       },
     });
-
-    lax.addElements(".try__suptitle", {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, `-${customLaxModifier}/10`, `-${customLaxModifier}/5`],
-        ],
-      },
-    });
-    lax.addElements(".try__title", {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, "-screenHeight/12", "-screenHeight/6"],
-        ],
-      },
-    });
-
-    lax.addElements(".history__suptitlte", {
-      scrollY: {
-        translateY: [
-          ["elInY-200", "elCenterY-200", "elOutY-200"],
-          [0, `-${customLaxModifier}/10`, `-${customLaxModifier}/5`],
-        ],
-      },
-    });
   }
-  // lax.addElements('.history__title', {
-  //   scrollY: {
-  //     translateY: [
-  //       ["elInY", "elCenterY", "elOutY"],
-  //       [0, '-screenHeight/18', '-screenHeight/9'],
-  //     ]
-  //   }
-  // })
 
   if (window.innerWidth > DISABLE_ANIMAION_MEDIA) {
     lax.addElements(".history__card", {
@@ -462,35 +430,9 @@ window.onload = function () {
         ],
       },
     });
-
-    lax.addElements(".magic__suptitle", {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, "-elHeight/2", "-elHeight"],
-        ],
-      },
-    });
-    lax.addElements(".magic__title", {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, "-elHeight/2", "-elHeight"],
-        ],
-      },
-    });
-
-    lax.addElements(".map__title", {
-      scrollY: {
-        translateY: [
-          ["elInY", "elCenterY", "elOutY"],
-          [0, "-elHeight/2", "-elHeight"],
-        ],
-      },
-    });
   }
-};
-*/
+};*/
+
 // #endregion textParallax
 //
 
