@@ -187,39 +187,74 @@ function getTweenPercent(number) {
   }
 }
 
-const textScroller = new TimelineMax().to(".features__column-desc", 1, {
-  opacity: 0,
-});
+const textScroller = new TimelineMax();
+if (window.innerWidth < 1020) {
+  textScroller.to(".features__column-desc", 1, {
+    y: -1600,
+    opacity: 0,
+  });
+} else {
+  textScroller.to(".features__column-desc", 1, {
+    opacity: 0,
+  });
+}
+
+let featuresTextDuration = "50%";
+if (window.innerWidth < 1020) {
+  featuresTextDuration = "200%";
+}
+
 new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
   triggerHook: "onLeave",
-  duration: "50%",
+  duration: featuresTextDuration,
 })
   .setTween(textScroller)
   .addTo(scrollController);
 
-const bulletsScroller = new TimelineMax().to(".features__column-bullets", 1, {
-  opacity: 0,
-});
+const bulletsScroller = new TimelineMax();
+if (window.innerWidth < 1020) {
+  bulletsScroller.to(".features__column-bullets", 1, {
+    y: -800,
+  });
+} else {
+  bulletsScroller.to(".features__column-bullets", 1, {
+    opacity: 0,
+  });
+}
+
 new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
   triggerHook: "onLeave",
-  duration: "50%",
+  duration: featuresTextDuration,
 })
   .setTween(bulletsScroller)
   .addTo(scrollController);
 
-const bigBulletsScroller = new TimelineMax()
-  .from(".features__column-big-bullets", 1, {
-    y: "200%",
-  })
-  .to(".features__column-big-bullets", 1, {
-    y: "-200%",
-  });
+const bigBulletsScroller = new TimelineMax();
+let bigBulletsScrollerDuration = "300%";
+if (window.innerWidth < 1020) {
+  bigBulletsScrollerDuration = "500%";
+  bigBulletsScroller
+    .from(".features__column-big-bullets", 1, {
+      y: "300%",
+    })
+    .to(".features__column-big-bullets", 1, {
+      y: "-100%",
+    });
+} else {
+  bigBulletsScroller
+    .from(".features__column-big-bullets", 1, {
+      y: "200%",
+    })
+    .to(".features__column-big-bullets", 1, {
+      y: "-200%",
+    });
+}
 new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
   triggerHook: "onLeave",
-  duration: "300%",
+  duration: bigBulletsScrollerDuration,
 })
   .setTween(bigBulletsScroller)
   .addTo(scrollController);
