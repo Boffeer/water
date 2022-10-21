@@ -720,9 +720,15 @@
 .socials--big .socials__icon {
   position: relative;
   z-index: 2;
-  width: 36px;
-  height: 36px;
+  width: 50px;
+  height: 50px;
   --icon-color: #fff;
+}
+@media (max-width: 1020px) {
+  .socials--big .socials__icon {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 .socials--big .socials__link::before {
@@ -748,6 +754,10 @@
   .socials--big .socials__link:hover .socials__icon {
     --icon-color: #474747;
   }
+}
+
+.socials__link--facebook {
+  transform: scale(1.1);
 }
 
 .bullets-card {
@@ -6908,7 +6918,7 @@ body._lock {
 }
 
 .magic__title {
-  margin-bottom: 32px;
+  margin-bottom: 22px;
 }
 @media (max-width: 1020px) {
   .magic__title {
@@ -6918,8 +6928,8 @@ body._lock {
 }
 
 .magic__suptitle {
-  margin-bottom: 58px;
-  line-height: 1.6;
+  margin-bottom: 60px;
+  line-height: 1.7;
 }
 @media (max-width: 1020px) {
   .magic__suptitle {

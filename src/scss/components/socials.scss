@@ -70,9 +70,13 @@
 .socials--big .socials__icon {
   position: relative;
   z-index: 2;
-  width: 36px;
-  height: 36px;
+  width: 50px;
+  height: 50px;
   --icon-color: #fff;
+  @media (max-width: 1020px) {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 .socials--big .socials__link::before {
@@ -96,4 +100,8 @@
   @media (any-hover: hover) {
     --icon-color: #474747;
   }
+}
+
+.socials__link--facebook {
+  transform: scale(1.1);
 }
