@@ -116,7 +116,13 @@ function makeTimeline(pin, scroller, card = ".card") {
   const scrollerContainer = document.querySelector(scroller);
   const cards = [...scrollerContainer.querySelectorAll(card)].length;
 
-  if (window.innerWidth < 1020) {
+  if (window.innerWidth < 340) {
+    xTo = `-${100 * (cards - 1)}%`;
+    scrollDuration = "300%";
+  } else if (window.innerWidth < 400) {
+    xTo = `-${100 * (cards - 1.5)}%`;
+    scrollDuration = "200%";
+  } else if (window.innerWidth < 1020) {
     xTo = `-${100 * (cards - 2.5)}%`;
     // xTo = "-500%";
     scrollDuration = "200%";

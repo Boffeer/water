@@ -6007,6 +6007,11 @@ body._lock {
     margin-bottom: 32px;
   }
 }
+@media (max-width: 390px) {
+  .history__title {
+    margin-bottom: 282px;
+  }
+}
 @media (max-width: 375px) {
   .history__title {
     font-size: 20px;
@@ -6311,6 +6316,12 @@ body._lock {
   min-width: 100%;
   max-width: 100%;
 }
+@media (max-width: 390px) {
+  .features__column-big-bullets {
+    margin-top: -200px;
+  }
+}
+
 @media (max-width: 1020px) {
   .features__column-big-bullets .features__bullets {
     display: block;

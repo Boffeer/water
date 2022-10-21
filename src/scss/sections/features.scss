@@ -183,6 +183,9 @@
   @media (max-width: 1020px) {
     // position: static;
   }
+  @media (max-width: 390px) {
+    margin-top: -200px;
+  }
 }
 .features__column-big-bullets .features__bullets {
   @media (max-width: 1020px) {
