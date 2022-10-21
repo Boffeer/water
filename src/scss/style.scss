@@ -143,36 +143,36 @@ body._lock {
   }
 }
 
-.scroll-wrapper {
-  position: relative;
-}
-.scroll-wrapper > div {
-  position: sticky;
-  top: 0;
-}
+// .scroll-wrapper {
+//   position: relative;
+// }
+// .scroll-wrapper > div {
+//   position: sticky;
+//   top: 0;
+// }
 
-@media (max-width: 1020px) {
-  .h-scroller {
-    width: calc(100% + 30px);
-    padding-bottom: 20px;
-    margin-left: -15px;
-    overflow: hidden;
-  }
-  .h-scroller > div {
-    padding-left: 15px;
-    margin-bottom: -40px;
-    overflow-y: auto;
-  }
-}
+// @media (max-width: 1020px) {
+//   .h-scroller {
+//     width: calc(100% + 30px);
+//     padding-bottom: 20px;
+//     margin-left: -15px;
+//     overflow: hidden;
+//   }
+//   .h-scroller > div {
+//     padding-left: 15px;
+//     margin-bottom: -40px;
+//     overflow-y: auto;
+//   }
+// }
 
-.h-scroller div::after {
-  @media (min-width: 577px) {
-    display: block;
-    min-width: 200px;
-    height: 200px;
-    content: "";
-  }
-}
+// .h-scroller div::after {
+//   @media (min-width: 577px) {
+//     display: block;
+//     min-width: 200px;
+//     height: 200px;
+//     content: "";
+//   }
+// }
 
 .poppa .input {
   @media (max-width: 1020px) {

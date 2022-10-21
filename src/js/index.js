@@ -109,18 +109,28 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax); // Pass gsap import t
  */
 
 const scrollController = new ScrollMagic.Controller();
-function makeTimeline(pin, scroller) {
-  if (window.innerWidth < 1020) return;
+function makeTimeline(pin, scroller, card = ".card") {
+  let xTo = "-120%";
+  let scrollDuration = "100%";
+
+  const scrollerContainer = document.querySelector(scroller);
+  const cards = [...scrollerContainer.querySelectorAll(card)].length;
+
+  if (window.innerWidth < 1020) {
+    xTo = `-${100 * (cards - 2.5)}%`;
+    // xTo = "-500%";
+    scrollDuration = "200%";
+  }
 
   const slidesContainer = new TimelineMax().to(scroller, 1, {
-    x: "-120%",
+    x: xTo,
   });
 
   // create scene to pin and link animation
   new ScrollMagic.Scene({
     triggerElement: pin,
     triggerHook: "onLeave",
-    duration: "100%",
+    duration: scrollDuration,
   })
     .setPin(pin)
     .setTween(slidesContainer)
