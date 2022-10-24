@@ -23,6 +23,30 @@ window.addEventListener("DOMContentLoaded", (event) => {
   document.querySelector(".hero__wings").classList.add("hero__wings--start");
 });
 
+// const faders = document.querySelectorAll(".section__fader");
+// window.addEventListener("scroll", () => {
+//   faders.forEach((fader) => {
+//     const rect = fader.getBoundingClientRect();
+//     const isTopInScreen = () => rect.top < 300 && rect.top > -600;
+//     if (isTopInScreen()) {
+//       console.log("Появись", rect.top, rect.height);
+//       if (fader.classList.contains("is-hidden")) {
+//         fader.classList.remove("is-hidden");
+//       }
+//     }
+
+//     const isBottomInScreen = () =>
+//       (rect.bottom < 920 && !isTopInScreen()) ||
+//       (rect.top > 520 && !isTopInScreen());
+//     if (isBottomInScreen()) {
+//       console.log("Скройся", rect.bottom);
+//       if (!fader.classList.contains("is-hidden")) {
+//         fader.classList.add("is-hidden");
+//       }
+//     }
+//   });
+// });
+
 /**
  * Modals
  */
@@ -155,7 +179,7 @@ function makeTimeline(pin, scroller, card = ".card") {
   window.addEventListener("scroll", () => {
     const pinWidth = pinElement.style.width;
     const pinBound = pinElement.getBoundingClientRect();
-    console.log(pinBound.top);
+    // console.log(pinBound.top);
 
     if (pinWidth == "100%" && pinBound.top < -200) {
       pinElement.style.opacity = "0";
@@ -264,6 +288,18 @@ new ScrollMagic.Scene({
 // #endregion features
 
 // #region textParallax
+
+document.querySelectorAll(".section__fader").forEach((fader) => {
+  const faderTween = new TimelineMax()
+    .to(fader, 0.5, { opacity: 0 })
+    .to(fader, 1, { opacity: 1 });
+  new ScrollMagic.Scene({
+    triggerElement: fader,
+    duration: "160%",
+  })
+    .setTween(faderTween)
+    .addTo(scrollController);
+});
 
 // .from(".history__card", 1, {
 //   y: "50%",
