@@ -116,9 +116,10 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax); // Pass gsap import t
 const scrollController = new ScrollMagic.Controller();
 // function makeTimeline(pin, scroller, card = ".card", fader) {
 function makeTimeline(timeline) {
-  let { pin, scroller, card, fader } = timeline;
+  let { pin, scroller, scrollerParent, card, fader } = timeline;
   card = card == undefined ? ".card" : card;
-  fader = fader == undefined ? ".section__fader" : fader;
+  // fader = fader == undefined ? ".section__fader" : fader;
+  fader = document.querySelector(pin).querySelector(".section__fader");
 
   let xTo = "-120%";
   let scrollDuration = "250%";
@@ -146,8 +147,8 @@ function makeTimeline(timeline) {
     .to(scroller, 1, { x: "-80%" })
     .to(scroller, 1, { x: "-115%" })
     .to(scroller, 1, { x: "-120%" })
-    .to(pin, 2, { opacity: 0 })
-    .to(fader, 1.2, { opacity: 0 });
+    .to(scrollerParent, 2, { opacity: 0 })
+    .to(fader, 2, { opacity: 0 });
   new ScrollMagic.Scene({
     triggerElement: pin,
     triggerHook: "onLeave",
@@ -172,14 +173,16 @@ function makeTimeline(timeline) {
 }
 
 const testimonialsTimeline = {
-  pin: ".testimonials",
+  pin: ".combiner-testimonials .combiner__inner",
   scroller: ".testimonials__cards",
+  scrollerParent: ".testimonials",
 };
 makeTimeline(testimonialsTimeline);
 
 const researchTimeline = {
-  pin: ".research",
+  pin: ".combiner-research .combiner__inner",
   scroller: ".research__cards",
+  scrollerParent: ".research",
 };
 makeTimeline(researchTimeline);
 // #endregion scroller

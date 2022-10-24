@@ -1,5 +1,10 @@
 .map {
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
   padding-top: 96px;
   padding-bottom: 76px;
   background-image: url("../img/map/map.jpg");
