@@ -1,11 +1,13 @@
 .history {
   position: relative;
-  padding-top: 98px;
+  padding-top: 298px;
   padding-bottom: 380px;
+  margin-top: -400px;
   background-image: url("../img/history/story.png");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: contain;
+  // opacity: 0;
   @media (max-width: 1020px) {
     padding-top: 64px;
     padding-bottom: 24px;
@@ -31,7 +33,7 @@
   }
 }
 .history__title {
-  margin-bottom: 205px;
+  // margin-bottom: 205px;
   font-size: 48px;
   line-height: 1.4;
   @media (max-width: 1020px) {

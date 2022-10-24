@@ -23,30 +23,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
   document.querySelector(".hero__wings").classList.add("hero__wings--start");
 });
 
-// const faders = document.querySelectorAll(".section__fader");
-// window.addEventListener("scroll", () => {
-//   faders.forEach((fader) => {
-//     const rect = fader.getBoundingClientRect();
-//     const isTopInScreen = () => rect.top < 300 && rect.top > -600;
-//     if (isTopInScreen()) {
-//       console.log("Появись", rect.top, rect.height);
-//       if (fader.classList.contains("is-hidden")) {
-//         fader.classList.remove("is-hidden");
-//       }
-//     }
-
-//     const isBottomInScreen = () =>
-//       (rect.bottom < 920 && !isTopInScreen()) ||
-//       (rect.top > 520 && !isTopInScreen());
-//     if (isBottomInScreen()) {
-//       console.log("Скройся", rect.bottom);
-//       if (!fader.classList.contains("is-hidden")) {
-//         fader.classList.add("is-hidden");
-//       }
-//     }
-//   });
-// });
-
 /**
  * Modals
  */
@@ -163,7 +139,8 @@ function makeTimeline(pin, scroller, card = ".card") {
   const slidesContainer = new TimelineMax()
     .to(scroller, 1, { x: "-40%" })
     .to(scroller, 1, { x: "-80%" })
-    .to(scroller, 1, { x: "-120%" });
+    .to(scroller, 1, { x: "-120%" })
+    .to(pin, 1.2, { opacity: 0 });
 
   // create scene to pin and link animation
   new ScrollMagic.Scene({
@@ -175,18 +152,18 @@ function makeTimeline(pin, scroller, card = ".card") {
     .setTween(slidesContainer)
     .addTo(scrollController);
 
-  const pinElement = document.querySelector(pin);
-  window.addEventListener("scroll", () => {
-    const pinWidth = pinElement.style.width;
-    const pinBound = pinElement.getBoundingClientRect();
-    // console.log(pinBound.top);
+  // const pinElement = document.querySelector(pin);
+  // window.addEventListener("scroll", () => {
+  //   const pinWidth = pinElement.style.width;
+  //   const pinBound = pinElement.getBoundingClientRect();
+  //   // console.log(pinBound.top);
 
-    if (pinWidth == "100%" && pinBound.top < -200) {
-      pinElement.style.opacity = "0";
-    } else {
-      pinElement.style.opacity = "1";
-    }
-  });
+  //   if (pinWidth == "100%" && pinBound.top < -200) {
+  //     pinElement.style.opacity = "0";
+  //   } else {
+  //     pinElement.style.opacity = "1";
+  //   }
+  // });
 }
 
 makeTimeline(".testimonials", ".testimonials__cards");
@@ -259,7 +236,7 @@ new ScrollMagic.Scene({
   .addTo(scrollController);
 
 const bigBulletsScroller = new TimelineMax();
-let bigBulletsScrollerDuration = "300%";
+let bigBulletsScrollerDuration = "350%";
 if (window.innerWidth < 1020) {
   bigBulletsScrollerDuration = "500%";
   bigBulletsScroller
@@ -272,10 +249,12 @@ if (window.innerWidth < 1020) {
 } else {
   bigBulletsScroller
     .from(".features__column-big-bullets", 1, {
-      y: "200%",
+      y: "150%",
+      opacity: 0,
     })
     .to(".features__column-big-bullets", 1, {
       y: "-200%",
+      opacity: 1,
     });
 }
 new ScrollMagic.Scene({
@@ -290,31 +269,75 @@ new ScrollMagic.Scene({
 // #region textParallax
 
 document.querySelectorAll(".section__fader").forEach((fader) => {
+  const section = fader.parentElement.querySelector(".container");
+
   const faderTween = new TimelineMax()
-    .to(fader, 0.5, { opacity: 0 })
-    .to(fader, 1, { opacity: 1 });
+    .to(fader, 0.3, { opacity: 1 })
+    .to(fader, 0.7, { opacity: 0 })
+    .to(fader, 0.3, { opacity: 0.5 })
+    .to(fader, 0.5, { opacity: 1 });
   new ScrollMagic.Scene({
-    triggerElement: fader,
-    duration: "160%",
+    triggerElement: fader.parentElement,
+    duration: "120%",
+    // triggerHook: "onCenter",
   })
     .setTween(faderTween)
     .addTo(scrollController);
 });
 
-// .from(".history__card", 1, {
-//   y: "50%",
-// })
 if (window.innerWidth > 1020) {
   const historyCard = new TimelineMax();
-  historyCard.to(".history__card", 1, {
-    y: "-100%",
-  });
+  historyCard
+    .from(".history__card", 1, {
+      y: 500,
+    })
+    .to(".history__card", 1, {
+      y: -200,
+    });
   new ScrollMagic.Scene({
     triggerElement: ".history",
     triggerHook: "onLeave",
-    duration: "100%",
+    duration: "80%",
+    offset: -100,
   })
     .setTween(historyCard)
+    .addTo(scrollController);
+
+  const historyTitle = new TimelineMax();
+  historyTitle
+    .from(".history__title", 1, {
+      opacity: 0,
+      y: 200,
+    })
+    .to(".history__title", 1, {
+      y: -700,
+      opacity: 1,
+    });
+  new ScrollMagic.Scene({
+    triggerElement: ".history",
+    // triggerHook: "onEnter",
+    duration: "115%",
+    offset: -20,
+  })
+    .setTween(historyTitle)
+    .addTo(scrollController);
+
+  const historySuptitle = new TimelineMax();
+  historySuptitle
+    .from(".history__suptitle", 1, {
+      opacity: 0,
+      y: 200,
+    })
+    .to(".history__suptitle", 1, {
+      y: -700,
+      opacity: 1,
+    });
+  new ScrollMagic.Scene({
+    triggerElement: ".history",
+    // triggerHook: "onLeave",
+    duration: "110%",
+  })
+    .setTween(historySuptitle)
     .addTo(scrollController);
 }
 if (window.innerWidth > 1020) {
@@ -322,9 +345,11 @@ if (window.innerWidth > 1020) {
   careCard
     .from(".care__offer", 1, {
       y: "40%",
+      opacity: 0,
     })
     .to(".care__offer", 1, {
       y: "-50%",
+      opacity: 1,
     });
   new ScrollMagic.Scene({
     triggerElement: ".care",
