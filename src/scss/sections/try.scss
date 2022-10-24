@@ -33,6 +33,9 @@
   }
 }
 .try__pic {
+  @media (min-width: 1021px) {
+    min-height: 700px;
+  }
   @media (max-width: 576px) {
     max-width: 216px;
   }

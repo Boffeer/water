@@ -5637,6 +5637,11 @@ body._lock {
     background-position-y: 2vh;
   }
 }
+@media (min-width: 1020px) {
+  .hero {
+    min-height: 1300px;
+  }
+}
 
 .hero__container {
   max-width: 1090px;
@@ -5650,6 +5655,7 @@ body._lock {
   margin-bottom: 24px;
   font-size: 36px;
   letter-spacing: 0.32em;
+  opacity: 0;
 }
 @media (max-width: 1020px) {
   .hero__suptitle {
@@ -5663,13 +5669,12 @@ body._lock {
   font-size: 96px;
   line-height: 1;
   letter-spacing: 0.32em;
-  transform: translate(17px, 0px);
+  opacity: 0;
 }
 @media (max-width: 1020px) {
   .hero__title {
     margin-bottom: 14px;
     font-size: 36px;
-    transform: none;
   }
 }
 @media (max-width: 375px) {
@@ -5700,6 +5705,7 @@ body._lock {
   position: sticky;
   top: 20px;
   padding-top: 40px;
+  opacity: 0;
 }
 @media (max-width: 1020px) {
   .hero__gift {
@@ -5717,6 +5723,14 @@ body._lock {
   }
 }
 
+.hero__pic {
+  opacity: 0;
+}
+@media (min-width: 1021px) {
+  .hero__pic {
+    min-height: 1000px;
+  }
+}
 @media (max-width: 1020px) {
   .hero__pic {
     order: -2;
@@ -5753,6 +5767,7 @@ body._lock {
   justify-content: flex-start;
   max-width: 330px;
   padding-top: 30px;
+  opacity: 0;
 }
 @media (max-width: 1020px) {
   .hero__video {
@@ -5833,6 +5848,11 @@ body._lock {
   }
 }
 
+@media (min-width: 1021px) {
+  .try__pic {
+    min-height: 700px;
+  }
+}
 @media (max-width: 576px) {
   .try__pic {
     max-width: 216px;

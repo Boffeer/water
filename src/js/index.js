@@ -7,16 +7,20 @@ import "./unstable/formich.js";
 import Swiper, { Navigation, EffectCreative } from "swiper";
 import "./unstable/burger.js";
 
-import WOW from "wow.js";
-
-const wow = new WOW({
-  boxClass: "wow",
-  animateClass: "animated",
-  offset: 0,
-  mobile: true,
-  live: true,
+const heroTitle = document.querySelector(".hero__title");
+const heroSuptitle = document.querySelector(".hero__suptitle");
+const heroGift = document.querySelector(".hero__gift");
+const heroPic = document.querySelector(".hero__pic");
+const heroVideo = document.querySelector(".hero__video");
+const heroAnimates = [heroSuptitle, heroTitle, heroPic, heroGift, heroVideo];
+heroAnimates.forEach((el) => {
+  el.classList.add("animate__fadeInUp", "animate__animated");
 });
-wow.init();
+
+import WOW from "wow.js";
+window.addEventListener("DOMContentLoaded", (event) => {
+  new WOW().init();
+});
 
 /**
  * Modals
@@ -111,7 +115,7 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax); // Pass gsap import t
 const scrollController = new ScrollMagic.Controller();
 function makeTimeline(pin, scroller, card = ".card") {
   let xTo = "-120%";
-  let scrollDuration = "100%";
+  let scrollDuration = "250%";
 
   const scrollerContainer = document.querySelector(scroller);
   const cards = [...scrollerContainer.querySelectorAll(card)].length;
@@ -128,9 +132,13 @@ function makeTimeline(pin, scroller, card = ".card") {
     scrollDuration = "200%";
   }
 
-  const slidesContainer = new TimelineMax().to(scroller, 1, {
-    x: xTo,
-  });
+  // const slidesContainer = new TimelineMax().to(scroller, 2, {
+  //   x: xTo,
+  // });
+  const slidesContainer = new TimelineMax()
+    .to(scroller, 1, { x: "-40%" })
+    .to(scroller, 1, { x: "-80%" })
+    .to(scroller, 1, { x: "-120%" });
 
   // create scene to pin and link animation
   new ScrollMagic.Scene({
