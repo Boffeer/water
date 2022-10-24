@@ -10,16 +10,16 @@
     padding-top: 56px;
     padding-bottom: 56px;
   }
-  @media (max-width: 576px) {
-    background-position-x: 46%;
-    background-position-y: 14vh;
-    background-size: 250%;
-  }
-  @media (max-width: 375px) {
-    background-position-x: 56%;
-    background-position-y: 2vh;
-  }
-  @media (min-width: 1020px) {
+  // @media (max-width: 576px) {
+  //   background-position-x: 46%;
+  //   background-position-y: 14vh;
+  //   background-size: 250%;
+  // }
+  // @media (max-width: 375px) {
+  //   background-position-x: 56%;
+  //   background-position-y: 2vh;
+  // }
+  @media (min-width: 1021px) {
     min-height: 1300px;
   }
 }
@@ -171,12 +171,14 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background-color: #010101;
 }
 
 .hero__wings-pic {
   display: block;
   width: 100%;
   height: 100%;
+  mix-blend-mode: screen;
   opacity: 0;
   transition: all 1.4s ease;
 }
@@ -191,17 +193,21 @@
   transition: all 1.3s ease;
 }
 .hero__wings-left {
-  transform: translate(290px, 390px);
+  transform: translate(-60px, 200px);
+  // transform: translate(290px, 390px);
 }
 .hero__wings-right {
-  transform: translate(-290px, 390px);
+  transform: translate(60px, 200px);
+  // transform: translate(-290px, 390px);
 }
 .hero__wings-left .hero__wings-pic {
   transform: rotate(-90deg);
+  transform-origin: right center;
   // transform: rotate(-90deg) translate(-770px, 230px);
 }
 .hero__wings-right .hero__wings-pic {
   transform: rotate(90deg);
+  transform-origin: left center;
   // transform: rotate(90deg) translate(770px, 230px);
 }
 

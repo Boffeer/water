@@ -5622,20 +5622,7 @@ body._lock {
     padding-bottom: 56px;
   }
 }
-@media (max-width: 576px) {
-  .hero {
-    background-position-x: 46%;
-    background-position-y: 14vh;
-    background-size: 250%;
-  }
-}
-@media (max-width: 375px) {
-  .hero {
-    background-position-x: 56%;
-    background-position-y: 2vh;
-  }
-}
-@media (min-width: 1020px) {
+@media (min-width: 1021px) {
   .hero {
     min-height: 1300px;
   }
@@ -5819,12 +5806,14 @@ body._lock {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  background-color: #010101;
 }
 
 .hero__wings-pic {
   display: block;
   width: 100%;
   height: 100%;
+  mix-blend-mode: screen;
   opacity: 0;
   transition: all 1.4s ease;
 }
@@ -5842,19 +5831,21 @@ body._lock {
 }
 
 .hero__wings-left {
-  transform: translate(290px, 390px);
+  transform: translate(-60px, 200px);
 }
 
 .hero__wings-right {
-  transform: translate(-290px, 390px);
+  transform: translate(60px, 200px);
 }
 
 .hero__wings-left .hero__wings-pic {
   transform: rotate(-90deg);
+  transform-origin: right center;
 }
 
 .hero__wings-right .hero__wings-pic {
   transform: rotate(90deg);
+  transform-origin: left center;
 }
 
 .hero__wings--start .hero__wings-left .hero__wings-pic {
