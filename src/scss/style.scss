@@ -212,5 +212,9 @@ body._lock {
   height: 100%;
   pointer-events: none;
   background-color: #010101;
-  // transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.combiner {
+  position: relative;
 }

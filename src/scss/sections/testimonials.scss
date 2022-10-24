@@ -1,4 +1,6 @@
 .testimonials {
+  position: relative;
+  z-index: 2;
   padding-top: 45px;
   overflow-x: hidden;
   transition: all 0.3s ease;

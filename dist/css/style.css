@@ -5967,6 +5967,8 @@ body._lock {
 }
 
 .testimonials {
+  position: relative;
+  z-index: 2;
   padding-top: 45px;
   overflow-x: hidden;
   transition: all 0.3s ease;
@@ -6069,10 +6071,14 @@ body._lock {
 }
 
 .history {
-  position: relative;
-  padding-top: 298px;
+  position: absolute;
+  right: 0;
+  bottom: -200px;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  padding-top: 98px;
   padding-bottom: 380px;
-  margin-top: -400px;
   background-image: url("../img/history/story.png");
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -6111,6 +6117,7 @@ body._lock {
 }
 
 .history__title {
+  margin-bottom: 205px;
   font-size: 48px;
   line-height: 1.4;
 }
@@ -7740,5 +7747,10 @@ body._lock {
   height: 100%;
   pointer-events: none;
   background-color: #010101;
+  transition: all 0.3s ease;
+}
+
+.combiner {
+  position: relative;
 }
 /*# sourceMappingURL=../maps/style.css.map */

@@ -114,7 +114,12 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax); // Pass gsap import t
  */
 
 const scrollController = new ScrollMagic.Controller();
-function makeTimeline(pin, scroller, card = ".card") {
+// function makeTimeline(pin, scroller, card = ".card", fader) {
+function makeTimeline(timeline) {
+  let { pin, scroller, card, fader } = timeline;
+  card = card == undefined ? ".card" : card;
+  fader = fader == undefined ? ".section__fader" : fader;
+
   let xTo = "-120%";
   let scrollDuration = "250%";
 
@@ -139,10 +144,10 @@ function makeTimeline(pin, scroller, card = ".card") {
   const slidesContainer = new TimelineMax()
     .to(scroller, 1, { x: "-40%" })
     .to(scroller, 1, { x: "-80%" })
+    .to(scroller, 1, { x: "-115%" })
     .to(scroller, 1, { x: "-120%" })
-    .to(pin, 1.2, { opacity: 0 });
-
-  // create scene to pin and link animation
+    .to(pin, 2, { opacity: 0 })
+    .to(fader, 1.2, { opacity: 0 });
   new ScrollMagic.Scene({
     triggerElement: pin,
     triggerHook: "onLeave",
@@ -166,8 +171,17 @@ function makeTimeline(pin, scroller, card = ".card") {
   // });
 }
 
-makeTimeline(".testimonials", ".testimonials__cards");
-makeTimeline(".research", ".research__cards");
+const testimonialsTimeline = {
+  pin: ".testimonials",
+  scroller: ".testimonials__cards",
+};
+makeTimeline(testimonialsTimeline);
+
+const researchTimeline = {
+  pin: ".research",
+  scroller: ".research__cards",
+};
+makeTimeline(researchTimeline);
 // #endregion scroller
 
 // #region features
@@ -268,78 +282,23 @@ new ScrollMagic.Scene({
 
 // #region textParallax
 
-document.querySelectorAll(".section__fader").forEach((fader) => {
-  const section = fader.parentElement.querySelector(".container");
+// document.querySelectorAll(".section__fader").forEach((fader) => {
+//   const section = fader.parentElement.querySelector(".container");
 
-  const faderTween = new TimelineMax()
-    .to(fader, 0.3, { opacity: 1 })
-    .to(fader, 0.7, { opacity: 0 })
-    .to(fader, 0.3, { opacity: 0.5 })
-    .to(fader, 0.5, { opacity: 1 });
-  new ScrollMagic.Scene({
-    triggerElement: fader.parentElement,
-    duration: "120%",
-    // triggerHook: "onCenter",
-  })
-    .setTween(faderTween)
-    .addTo(scrollController);
-});
+//   const faderTween = new TimelineMax()
+//     .to(fader, 0.3, { opacity: 1 })
+//     .to(fader, 0.7, { opacity: 0 })
+//     .to(fader, 0.3, { opacity: 0.5 })
+//     .to(fader, 0.5, { opacity: 1 });
+//   new ScrollMagic.Scene({
+//     triggerElement: fader.parentElement,
+//     duration: "120%",
+//     // triggerHook: "onCenter",
+//   })
+//     .setTween(faderTween)
+//     .addTo(scrollController);
+// });
 
-if (window.innerWidth > 1020) {
-  const historyCard = new TimelineMax();
-  historyCard
-    .from(".history__card", 1, {
-      y: 500,
-    })
-    .to(".history__card", 1, {
-      y: -200,
-    });
-  new ScrollMagic.Scene({
-    triggerElement: ".history",
-    triggerHook: "onLeave",
-    duration: "80%",
-    offset: -100,
-  })
-    .setTween(historyCard)
-    .addTo(scrollController);
-
-  const historyTitle = new TimelineMax();
-  historyTitle
-    .from(".history__title", 1, {
-      opacity: 0,
-      y: 200,
-    })
-    .to(".history__title", 1, {
-      y: -700,
-      opacity: 1,
-    });
-  new ScrollMagic.Scene({
-    triggerElement: ".history",
-    // triggerHook: "onEnter",
-    duration: "115%",
-    offset: -20,
-  })
-    .setTween(historyTitle)
-    .addTo(scrollController);
-
-  const historySuptitle = new TimelineMax();
-  historySuptitle
-    .from(".history__suptitle", 1, {
-      opacity: 0,
-      y: 200,
-    })
-    .to(".history__suptitle", 1, {
-      y: -700,
-      opacity: 1,
-    });
-  new ScrollMagic.Scene({
-    triggerElement: ".history",
-    // triggerHook: "onLeave",
-    duration: "110%",
-  })
-    .setTween(historySuptitle)
-    .addTo(scrollController);
-}
 if (window.innerWidth > 1020) {
   const careCard = new TimelineMax();
   careCard
