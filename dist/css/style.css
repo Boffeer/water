@@ -5817,7 +5817,7 @@ body._lock {
   height: 100%;
   mix-blend-mode: screen;
   opacity: 0;
-  transition: all 1.4s ease;
+  transition: all 1.5s ease;
 }
 
 .hero__wings-img {
