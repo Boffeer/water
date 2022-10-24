@@ -104,7 +104,10 @@
 .features__column-img::after {
   @media (max-width: 1020px) {
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: 2;
     display: block;
     width: 100%;
@@ -257,8 +260,10 @@
 }
 .features__pic--top {
   position: absolute;
-  inset: 0;
   top: -3.5%;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 2;
   width: 107%;
 }

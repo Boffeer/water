@@ -25,6 +25,7 @@
                 name="q-1"
                 class="quiz-slider__answer-input"
                 checked
+                value="Да, мне понравился вкус и эффект"
               />
               <div class="quiz-slider__answer-check"></div>
               <p class="quiz-slider__answer-text">
@@ -35,6 +36,7 @@
               <input
                 type="radio"
                 name="q-1"
+                value="Да, мне не понравилось"
                 class="quiz-slider__answer-input"
               />
               <div class="quiz-slider__answer-check"></div>
@@ -45,6 +47,7 @@
                 type="radio"
                 name="q-1"
                 class="quiz-slider__answer-input"
+                value="Ещё не пробовал(а)"
               />
               <div class="quiz-slider__answer-check"></div>
               <p class="quiz-slider__answer-text">Ещё не пробовал(а)</p>
@@ -63,6 +66,7 @@
                 name="q-2"
                 class="quiz-slider__answer-input"
                 checked
+                value="Мне все нравится"
               />
               <div class="quiz-slider__answer-check"></div>
               <p class="quiz-slider__answer-text">Мне все нравится</p>
@@ -72,9 +76,20 @@
                 type="radio"
                 name="q-2"
                 class="quiz-slider__answer-input"
+                value="Мне не нравится"
               />
               <div class="quiz-slider__answer-check"></div>
               <p class="quiz-slider__answer-text">Мне не нравится</p>
+            </label>
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-2"
+                class="quiz-slider__answer-input"
+                value="Ещё не пробовал(а)"
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">Ещё не пробовал(а)</p>
             </label>
           </div>
         </div>
@@ -110,6 +125,12 @@
           <p class="quiz-slider__desc">
             Просто скажите его администратору на ресепшене
           </p>
+          <button
+            class="button button--primary quiz__close-results"
+            data-poppa-close="quiz-feedback"
+          >
+            Ок
+          </button>
         </div>
       </div>
       <div

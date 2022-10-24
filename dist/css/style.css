@@ -393,7 +393,10 @@
 
 .button--play::before {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: block;
   width: 75%;
   height: 75%;
@@ -410,7 +413,10 @@
 
 .button--play::after {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: block;
   width: 100%;
   height: 100%;
@@ -906,7 +912,10 @@
 
 .card__pic::before {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 2;
   display: block;
   width: 100%;
@@ -6331,7 +6340,10 @@ body._lock {
 @media (max-width: 1020px) {
   .features__column-img::after {
     position: absolute;
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: 2;
     display: block;
     width: 100%;
@@ -6519,8 +6531,10 @@ body._lock {
 
 .features__pic--top {
   position: absolute;
-  inset: 0;
   top: -3.5%;
+  right: 0;
+  bottom: 0;
+  left: 0;
   z-index: 2;
   width: 107%;
 }
@@ -6690,14 +6704,20 @@ body._lock {
 .video-player__content,
 .video-player__preview {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 }
 
 .video-player__button {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   margin: auto;
   transition: 0.3s ease;
 }
@@ -7402,7 +7422,10 @@ body._lock {
 
 .quiz .slider__button {
   position: static;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: auto;
   padding-top: 24px;
   padding-right: 48px;
@@ -7657,6 +7680,15 @@ body._lock {
 @media (max-width: 576px) {
   .quiz-slider__desc {
     font-size: 16px;
+  }
+}
+
+.quiz__close-results {
+  width: 100%;
+}
+@media (max-width: 576px) {
+  .quiz__close-results {
+    max-width: 100%;
   }
 }
 

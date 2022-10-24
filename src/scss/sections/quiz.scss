@@ -65,7 +65,10 @@
 
 .quiz .slider__button {
   position: static;
-  inset: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   width: auto;
   padding-top: 24px;
   padding-right: 48px;
@@ -279,5 +282,12 @@
 .quiz-slider__slide--results .quiz-slider__desc:first-child {
   @media (max-width: 576px) {
     // padding-top: 80px;
+  }
+}
+
+.quiz__close-results {
+  width: 100%;
+  @media (max-width: 576px) {
+    max-width: 100%;
   }
 }
