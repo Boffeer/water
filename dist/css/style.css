@@ -6439,7 +6439,7 @@ body._lock {
 }
 
 .features__column-big-bullets {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 5;
@@ -6487,7 +6487,12 @@ body._lock {
 }
 
 .features__column-big-bullets .bullets-card:nth-child(2) {
+  margin-top: -100px;
   margin-left: auto;
+}
+
+.features__column-big-bullets .bullets-card:nth-child(3) {
+  margin-top: -150px;
 }
 
 .features__column-bullets .bullets-card:nth-child(1) {

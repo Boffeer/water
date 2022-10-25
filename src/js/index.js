@@ -188,7 +188,6 @@ makeTimeline(researchTimeline);
 // #endregion scroller
 
 // #region features
-// const controller = new ScrollMagic.Controller();
 const slidesContainer = new TimelineMax().to(".features__pic--top", 1, {
   y: "-100%",
 });
@@ -197,12 +196,10 @@ let pinClass = ".features__scroller";
 if (window.innerWidth < 1020 && window.innerWidth > 576) {
   pinClass = ".features__container";
 }
-
-// create scene to pin and link animation
 new ScrollMagic.Scene({
   triggerElement: pinClass,
   triggerHook: "onLeave",
-  duration: "100%",
+  duration: "300%",
 })
   .setPin(pinClass)
   .setTween(slidesContainer)
@@ -215,16 +212,18 @@ if (window.innerWidth < 1020) {
     opacity: 0,
   });
 } else {
-  textScroller.to(".features__column-desc", 1, {
-    opacity: 0,
-  });
+  textScroller
+    .from(".features__column-desc", 0.5, {
+      y: 500,
+    })
+    .to(".features__column-desc", 3, {
+      opacity: 0,
+    });
 }
-
-let featuresTextDuration = "50%";
+let featuresTextDuration = "300%";
 if (window.innerWidth < 1020) {
   featuresTextDuration = "200%";
 }
-
 new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
   triggerHook: "onLeave",
@@ -239,21 +238,26 @@ if (window.innerWidth < 1020) {
     y: -800,
   });
 } else {
-  bulletsScroller.to(".features__column-bullets", 1, {
-    opacity: 0,
-  });
+  bulletsScroller
+    .from(".features__column-bullets", 0.5, {
+      opacity: 0,
+      y: 600,
+    })
+    .to(".features__column-bullets", 1, {
+      opacity: 0,
+    });
 }
-
 new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
   triggerHook: "onLeave",
-  duration: featuresTextDuration,
+  duration: "250%",
 })
   .setTween(bulletsScroller)
   .addTo(scrollController);
 
 const bigBulletsScroller = new TimelineMax();
-let bigBulletsScrollerDuration = "350%";
+const bigBulletsSingle = new TimelineMax();
+let bigBulletsScrollerDuration = "300%";
 if (window.innerWidth < 1020) {
   bigBulletsScrollerDuration = "500%";
   bigBulletsScroller
@@ -266,20 +270,41 @@ if (window.innerWidth < 1020) {
 } else {
   bigBulletsScroller
     .from(".features__column-big-bullets", 1, {
-      y: "150%",
+      // y: "150%",
       opacity: 0,
     })
     .to(".features__column-big-bullets", 1, {
       y: "-200%",
       opacity: 1,
     });
+  bigBulletsSingle
+    .from(".bullets-card-big--1", 1, { y: "30%", opacity: 0 })
+    .from(".bullets-card-big--2", 1, { y: "70%", opacity: 0 })
+    .from(".bullets-card-big--3", 1, { y: "70%", opacity: 0 })
+    .to(".bullets-card-big--1", 1, { y: "20%" })
+    .to(".bullets-card-big--2", 1, { y: "30%" })
+    .to(".bullets-card-big--3", 1, { y: "30%" })
+    .to(".bullets-card-big--1", 0.1, { opacity: 1 })
+    .to(".bullets-card-big--2", 0.1, { y: "-50%", opacity: 1 })
+    .to(".bullets-card-big--3", 0.1, { y: "-20%", opacity: 1 })
+    .to(".bullets-card-big--1", 1.2, { opacity: 0 })
+    .to(".bullets-card-big--2", 1.5, { y: "0%", opacity: 0 })
+    .to(".bullets-card-big--3", 1.8, { y: "0%", opacity: 0 });
 }
-new ScrollMagic.Scene({
+const leftBullets = new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
   triggerHook: "onLeave",
   duration: bigBulletsScrollerDuration,
 })
   .setTween(bigBulletsScroller)
+  .addTo(scrollController);
+
+const singleBigBullets = new ScrollMagic.Scene({
+  triggerElement: ".features__scroller",
+  triggerHook: "onCenter",
+  duration: "400%",
+})
+  .setTween(bigBulletsSingle)
   .addTo(scrollController);
 // #endregion features
 
