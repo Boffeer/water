@@ -105,6 +105,8 @@ import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax); // Pass gsap import to Scrollmagic
 
+import { ScrollMagicPluginIndicator } from "scrollmagic-plugins";
+ScrollMagicPluginIndicator(ScrollMagic);
 /**
  * Передавай css селектоы
  * @pin — какой блок надо сделать стики.
@@ -313,6 +315,145 @@ const singleBigBullets = new ScrollMagic.Scene({
 // #endregion features
 
 // #region textParallax
+function defaultParallaxFrom(y = 150) {
+  return {
+    opacity: 0,
+    y,
+  };
+}
+function defaultParallaxTo(y = 0) {
+  return {
+    opacity: 1,
+    y,
+  };
+}
+function makeDefaultScene(
+  trigger,
+  tween,
+  triggerHook = 0.35,
+  indicate = false,
+  offset = 0
+) {
+  const defaultScene = new ScrollMagic.Scene({
+    triggerElement: trigger,
+    duration: document.querySelector(trigger).getBoundingClientRect().height,
+    triggerHook,
+    offset,
+  })
+    .setTween(tween)
+    .addTo(scrollController);
+  if (indicate) {
+    defaultScene.addIndicators({ name: indicate, color: "#ffffff" });
+  }
+}
+function getHeightDifference(bigger, less, modifier = 0) {
+  return (
+    document.querySelector(bigger).getBoundingClientRect().height -
+    document.querySelector(less).getBoundingClientRect().height -
+    modifier
+  );
+}
+
+const historyTitle = gsap
+  .timeline()
+  .from(".history__title", defaultParallaxFrom(200))
+  .to(".history__title", defaultParallaxTo());
+const historySuptitle = gsap
+  .timeline()
+  .from(".history__suptitle", defaultParallaxFrom(100))
+  .to(".history__suptitle", defaultParallaxTo());
+const historyCard = gsap
+  .timeline()
+  .from(".history__card", defaultParallaxFrom())
+  .to(".history__card", defaultParallaxTo(-200));
+
+makeDefaultScene(
+  ".combiner-testimonials",
+  historyTitle,
+  0.2,
+  false,
+  getHeightDifference(".combiner-testimonials", ".history", 700)
+);
+makeDefaultScene(
+  ".combiner-testimonials",
+  historySuptitle,
+  0.2,
+  false,
+  getHeightDifference(".combiner-testimonials", ".history", 700)
+);
+makeDefaultScene(
+  ".combiner-testimonials",
+  historyCard,
+  0.2,
+  false,
+  getHeightDifference(".combiner-testimonials", ".history", 700)
+);
+
+const foodTitle = gsap
+  .timeline()
+  .from(".food__title", { y: 200, opacity: 0 })
+  .to(".food__title", { y: -200, opacity: 1 });
+const foodOffer = gsap
+  .timeline()
+  .from(".food__offer", { y: 200, opacity: 0 })
+  .to(".food__offer", { y: -200, opacity: 1 });
+const foodPic = gsap
+  .timeline()
+  .from(".food__pic", { y: 100, opacity: 0 })
+  .to(".food__pic", { y: -100, opacity: 1 });
+
+const foodTitleScroll = new ScrollMagic.Scene({
+  triggerElement: ".food",
+  duration: 350,
+  triggerHook: 0.35,
+})
+  .setTween(foodTitle)
+  .addTo(scrollController);
+
+const foodOfferScroll = new ScrollMagic.Scene({
+  triggerElement: ".food",
+  duration: 300,
+  triggerHook: 0.35,
+})
+  .setTween(foodOffer)
+  .addTo(scrollController);
+
+const foodPicScroll = new ScrollMagic.Scene({
+  triggerElement: ".food",
+  duration: 400,
+  triggerHook: 0.35,
+})
+  .setTween(foodPic)
+  .addTo(scrollController);
+
+const giftFader = gsap
+  .timeline()
+  .to(".gift__fader", { opacity: 0 })
+  .to(".gift__fader", { opacity: 1 });
+const giftFaderScene = new ScrollMagic.Scene({
+  triggerElement: ".gift",
+  duration: document.querySelector(".gift").getBoundingClientRect().height,
+  triggerHook: 0.35,
+})
+  .setTween(giftFader)
+  .addTo(scrollController);
+
+const giftTitle = gsap
+  .timeline()
+  .from(".gift__title", defaultParallaxFrom())
+  .to(".gift__title", defaultParallaxTo());
+const giftSuptitle = gsap
+  .timeline()
+  .from(".gift__suptitle", defaultParallaxFrom(100))
+  .to(".gift__suptitle", defaultParallaxTo());
+const giftOffer = gsap
+  .timeline()
+  .from(".gift__offer", defaultParallaxFrom(200))
+  .to(".gift__offer", defaultParallaxTo());
+
+makeDefaultScene(".gift", giftTitle);
+makeDefaultScene(".gift", giftSuptitle, 0.4);
+makeDefaultScene(".gift", giftOffer, 0.45);
 
 // document.querySelectorAll(".section__fader").forEach((fader) => {
 //   const section = fader.parentElement.querySelector(".container");

@@ -59,6 +59,7 @@
     "lax.js": "^2.0.3",
     "scrollmagic": "^2.0.8",
     "scrollmagic-plugin-gsap": "^1.0.4",
+    "scrollmagic-plugins": "^1.0.8",
     "swiper": "^8.3.1",
     "wow.js": "^1.2.2"
   }
