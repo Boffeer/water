@@ -24,7 +24,7 @@
   --container-padding: 15px;
   --ff-regular: "RF Dewi Extended", sans-serif;
   --ff-title: "RF Dewi Extended", sans-serif;
-  --fz-button: 10px;
+  --fz-button: 14px;
   --lh-button: 100%;
 }
 @media (max-width: 1100px) {
@@ -240,11 +240,10 @@
   font-size: var(--fz-button);
   font-weight: var(--fw-normal);
   line-height: var(--lh-button);
+  color: #fff;
   text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.32em;
   cursor: pointer;
-  border: 1px solid var(--button-color);
+  border-radius: 4px;
   transition: all 0.3s ease;
 }
 @media (max-width: 768px) {
@@ -267,8 +266,8 @@
 }
 
 .button--primary {
-  color: #323232;
-  background: #ccc;
+  background: linear-gradient(90deg, #2bccff 0%, #0057a7 100%);
+  box-shadow: 0px 16px 48px rgba(64, 134, 167, 0.2);
 }
 
 @media (any-hover: hover) {
@@ -289,9 +288,8 @@
 }
 
 .button--secondary {
-  --button-color: #fff;
-  color: var(--button-color);
-  border: 1px solid #323232;
+  background: #121f28;
+  backdrop-filter: blur(12px);
 }
 
 @media (min-width: 1100px) {
@@ -431,8 +429,20 @@
   border-color: #929292;
 }
 
+.button--icon-play::before {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-right: 12px;
+  content: "";
+  background-image: url("../img/common/play.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .logo {
-  --size: 48px;
+  --size: 50px;
   display: block;
   width: var(--size);
   height: var(--size);
@@ -5453,7 +5463,6 @@ body._lock {
   font-weight: 700;
   line-height: 150%;
   text-align: center;
-  text-transform: uppercase;
   letter-spacing: 0.24em;
   background: linear-gradient(90deg, #ffffff 0%, #838383 100%);
   -webkit-background-clip: text;
@@ -5496,10 +5505,9 @@ body._lock {
   font-family: "RF Dewi Extended", sans-serif;
   font-size: 14px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 100%;
   color: #ffffff;
-  text-transform: uppercase;
   letter-spacing: 0.32em;
 }
 
@@ -5594,8 +5602,8 @@ body._lock {
 .header {
   position: relative;
   z-index: 2;
-  padding-top: 78px;
-  padding-bottom: 74px;
+  padding-top: 30px;
+  padding-bottom: 65px;
 }
 @media (max-width: 1020px) {
   .header {
@@ -5652,7 +5660,7 @@ body._lock {
 .hero__suptitle {
   margin-bottom: 24px;
   font-size: 36px;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.2em;
   opacity: 0;
 }
 @media (max-width: 1020px) {
@@ -5666,6 +5674,7 @@ body._lock {
 .hero__title {
   font-size: 96px;
   line-height: 1;
+  text-transform: uppercase;
   letter-spacing: 0.32em;
   opacity: 0;
 }
@@ -5684,11 +5693,11 @@ body._lock {
 .hero__offer {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 270px 325px;
+  grid-template-columns: 270px 360px 256px;
   column-gap: 70px;
-  align-items: grid-template;
   align-items: start;
   justify-content: space-between;
+  padding-top: 42px;
 }
 @media (max-width: 1020px) {
   .hero__offer {
@@ -5702,7 +5711,8 @@ body._lock {
 .hero__gift {
   position: sticky;
   top: 20px;
-  padding-top: 40px;
+  z-index: 2;
+  padding-top: 105px;
   opacity: 0;
 }
 @media (max-width: 1020px) {
@@ -5712,16 +5722,23 @@ body._lock {
   }
 }
 
-.hero__gift .section-text {
-  margin-bottom: 16px;
+.hero__gift-title {
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: 180%;
+}
+
+.hero__gift-desc {
+  margin-bottom: 30px;
 }
 @media (max-width: 1020px) {
-  .hero__gift .section-text {
+  .hero__gift-desc {
     margin-bottom: 23px;
   }
 }
 
 .hero__pic {
+  position: relative;
   opacity: 0;
 }
 @media (min-width: 1021px) {
@@ -5735,6 +5752,22 @@ body._lock {
     max-width: 144px;
     margin-bottom: -218px;
   }
+}
+
+.hero__pic::before {
+  --size: 520px;
+  position: absolute;
+  right: 0;
+  bottom: 315px;
+  left: 0;
+  width: var(--size);
+  height: var(--size);
+  margin-right: auto;
+  margin-left: auto;
+  content: "";
+  background: #56abf9;
+  filter: blur(360px);
+  border-radius: 960px;
 }
 
 .hero__media {
@@ -5760,11 +5793,9 @@ body._lock {
 .hero__video {
   position: sticky;
   top: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
   max-width: 330px;
-  padding-top: 30px;
+  padding-top: 105px;
+  padding-left: 40px;
   opacity: 0;
 }
 @media (max-width: 1020px) {
@@ -5777,7 +5808,14 @@ body._lock {
   }
 }
 
-.hero__video .section-text {
+.hero__video-title {
+  margin-bottom: 16px;
+  font-size: 21px;
+  line-height: 180%;
+}
+
+.hero__video-desc {
+  margin-bottom: 28px;
   font-size: 14px;
 }
 

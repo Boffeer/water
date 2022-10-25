@@ -20,7 +20,6 @@ heroAnimates.forEach((el) => {
 import WOW from "wow.js";
 window.addEventListener("DOMContentLoaded", (event) => {
   new WOW().init();
-  document.querySelector(".hero__wings").classList.add("hero__wings--start");
 });
 
 /**

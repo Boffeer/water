@@ -12,11 +12,10 @@
   font-size: var(--fz-button);
   font-weight: var(--fw-normal);
   line-height: var(--lh-button);
+  color: #fff;
   text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.32em;
   cursor: pointer;
-  border: 1px solid var(--button-color);
+  border-radius: 4px;
   transition: all 0.3s ease;
   @media (max-width: 768px) {
     max-width: 280px;
@@ -37,10 +36,9 @@
 }
 
 .button--primary {
-  color: #323232;
-  background: #ccc;
+  background: linear-gradient(90deg, #2bccff 0%, #0057a7 100%);
+  box-shadow: 0px 16px 48px rgba(64, 134, 167, 0.2);
 }
-
 .button--primary:hover {
   @media (any-hover: hover) {
     background: #fff;
@@ -74,9 +72,8 @@
 // }
 
 .button--secondary {
-  --button-color: #fff;
-  color: var(--button-color);
-  border: 1px solid #323232;
+  background: #121f28;
+  backdrop-filter: blur(12px);
 }
 
 .button--secondary:hover {
@@ -238,4 +235,16 @@
 }
 .button--play:hover::after {
   border-color: #929292;
+}
+
+.button--icon-play::before {
+  display: block;
+  width: 10px;
+  height: 10px;
+  margin-right: 12px;
+  content: "";
+  background-image: url("../img/common/play.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
