@@ -16,6 +16,7 @@
   left: 0;
   display: block;
   width: 640px;
+  max-width: 99vw;
   height: 640px;
   content: "";
   background: #56abf9;
@@ -23,6 +24,10 @@
   border-radius: 960px;
   opacity: 0.6;
   transform: translateY(-50%);
+  @media (max-width: 576px) {
+    width: 230px;
+    height: 400px;
+  }
 }
 .history__container {
   max-width: 1158px;

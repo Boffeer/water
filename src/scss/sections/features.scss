@@ -270,6 +270,7 @@
   z-index: 0;
   display: block;
   width: 520px;
+  max-width: 99vw;
   height: 720px;
   margin-right: auto;
   margin-left: auto;
@@ -279,6 +280,10 @@
   border-radius: 960px;
   opacity: 0.6;
   transform: translateY(-50%);
+  @media (max-width: 576px) {
+    width: 230px;
+    height: 400px;
+  }
 }
 .features__pic {
   display: block;

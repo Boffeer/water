@@ -58,6 +58,7 @@
   z-index: 1;
   display: block;
   width: 400px;
+  max-width: 99vw;
   height: 528px;
   margin: auto;
   content: "";
@@ -65,6 +66,10 @@
   filter: blur(160px);
   border-radius: 960px;
   opacity: 0.4;
+  @media (max-width: 576px) {
+    width: 230px;
+    height: 400px;
+  }
 }
 .gift__img {
   position: relative;
