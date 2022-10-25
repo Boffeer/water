@@ -42,10 +42,8 @@
 }
 .try__img {
   display: block;
-  max-width: 83.2%;
   margin-left: auto;
   @media (max-width: 576px) {
-    max-width: 100%;
     margin-right: auto;
   }
 }

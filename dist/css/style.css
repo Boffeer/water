@@ -5935,12 +5935,10 @@ body._lock {
 
 .try__img {
   display: block;
-  max-width: 83.2%;
   margin-left: auto;
 }
 @media (max-width: 576px) {
   .try__img {
-    max-width: 100%;
     margin-right: auto;
   }
 }
