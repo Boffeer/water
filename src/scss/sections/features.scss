@@ -1,7 +1,7 @@
 .features {
   padding-top: 96px;
   padding-bottom: 125px;
-  // margin-bottom: -750px;
+  margin-bottom: -550px;
   @media (max-width: 1020px) {
     padding-top: 56px;
     padding-bottom: 56px;
@@ -261,6 +261,24 @@
   @media (max-width: 635px) {
     height: 80vh;
   }
+}
+.features__scene::before {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  z-index: 0;
+  display: block;
+  width: 520px;
+  height: 720px;
+  margin-right: auto;
+  margin-left: auto;
+  content: "";
+  background: #56abf9;
+  filter: blur(480px);
+  border-radius: 960px;
+  opacity: 0.6;
+  transform: translateY(-50%);
 }
 .features__pic {
   display: block;

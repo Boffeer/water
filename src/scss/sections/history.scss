@@ -1,4 +1,5 @@
 .history {
+  position: relative;
   z-index: 1;
   width: 100%;
   padding-top: 98px;
@@ -9,24 +10,36 @@
     padding-bottom: 24px;
   }
 }
+.history::before {
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  display: block;
+  width: 640px;
+  height: 640px;
+  content: "";
+  background: #56abf9;
+  filter: blur(540px);
+  border-radius: 960px;
+  opacity: 0.6;
+  transform: translateY(-50%);
+}
 .history__container {
   max-width: 1158px;
 }
 .history__suptitle {
-  margin-bottom: 24px;
-  font-size: 24px;
+  margin-bottom: 32px;
+  // font-size: 24px;
   @media (max-width: 1020px) {
     font-size: 14px;
     line-height: 1.8;
   }
 }
 .history__title {
-  margin-bottom: 205px;
-  font-size: 48px;
-  line-height: 1.4;
+  margin-bottom: 48px;
+  // font-size: 48px;
+  // line-height: 1.4;
   @media (max-width: 1020px) {
-    margin-bottom: 172px;
-    font-size: 28px;
     line-height: 1.5;
   }
   @media (max-width: 1020px) and (min-width: 576px) {

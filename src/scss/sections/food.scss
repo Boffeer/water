@@ -6,6 +6,20 @@
     padding-bottom: 64px;
   }
 }
+.food::before {
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  display: block;
+  width: 720px;
+  height: 720px;
+  content: "";
+  background: #56abf9;
+  filter: blur(320px);
+  border-radius: 960px;
+  opacity: 0.3;
+  transform: translateY(-50%);
+}
 .food__container {
   max-width: 1050px;
 }

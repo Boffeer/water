@@ -207,7 +207,8 @@ if (window.innerWidth < 1020 && window.innerWidth > 576) {
 new ScrollMagic.Scene({
   triggerElement: pinClass,
   triggerHook: "onLeave",
-  duration: "200%",
+  duration:
+    document.querySelector(".features").getBoundingClientRect().height - 500,
 })
   .setPin(pinClass)
   .setTween(slidesContainer)
@@ -287,30 +288,36 @@ if (window.innerWidth < 1020) {
     });
   bigBulletsSingle
     .from(".bullets-card-big--1", 1, { y: "30%", opacity: 0 })
-    .from(".bullets-card-big--2", 1, { y: "70%", opacity: 0 })
+    .from(".bullets-card-big--2", 1, { y: "50%", opacity: 0 })
     .from(".bullets-card-big--3", 1, { y: "70%", opacity: 0 })
     .to(".bullets-card-big--1", 1, { y: "20%" })
     .to(".bullets-card-big--2", 1, { y: "30%" })
-    .to(".bullets-card-big--3", 1, { y: "30%" })
+    .to(".bullets-card-big--3", 1, { y: "50%" })
     .to(".bullets-card-big--1", 0.1, { opacity: 1 })
-    .to(".bullets-card-big--2", 0.1, { y: "-50%", opacity: 1 })
+    .to(".bullets-card-big--2", 0.1, { y: "-40%", opacity: 1 })
     .to(".bullets-card-big--3", 0.1, { y: "-20%", opacity: 1 })
     .to(".bullets-card-big--1", 1.2, { opacity: 0 })
-    .to(".bullets-card-big--2", 1.5, { y: "0%", opacity: 0 })
-    .to(".bullets-card-big--3", 1.8, { y: "-10%", opacity: 0 });
+    .to(".bullets-card-big--2", 1.5, { y: "-50%", opacity: 0 })
+    .to(".bullets-card-big--3", 1.8, { y: "-30%", opacity: 0 });
 }
 const leftBullets = new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
-  triggerHook: "onLeave",
-  duration: bigBulletsScrollerDuration,
+  triggerHook: 0.1,
+  duration:
+    document.querySelector(".features").getBoundingClientRect().height / 2,
+  // duration: bigBulletsScrollerDuration,
 })
   .setTween(bigBulletsScroller)
   .addTo(scrollController);
 
 const singleBigBullets = new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
-  triggerHook: "onCenter",
-  duration: "400%",
+  triggerHook: 0.4,
+  // duration: "400%",
+  duration:
+    document.querySelector(".features").getBoundingClientRect().height / 2,
+  offset: 600,
+  // duration: "400%",
 })
   .setTween(bigBulletsSingle)
   .addTo(scrollController);

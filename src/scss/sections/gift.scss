@@ -41,13 +41,34 @@
 }
 
 .gift__pic {
+  position: relative;
+  z-index: 1;
   @media (max-width: 1020px) {
     max-width: 164px;
     margin-right: auto;
     margin-left: auto;
   }
 }
+.gift__pic::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
+  width: 400px;
+  height: 528px;
+  margin: auto;
+  content: "";
+  background: #56abf9;
+  filter: blur(160px);
+  border-radius: 960px;
+  opacity: 0.4;
+}
 .gift__img {
+  position: relative;
+  z-index: 2;
   display: block;
   max-width: 83%;
   margin-left: auto;

@@ -41,7 +41,7 @@
 }
 .button--primary:hover {
   @media (any-hover: hover) {
-    background: #fff;
+    background: linear-gradient(90deg, #009bcc 0%, #0071d9 100%);
   }
 }
 
@@ -78,8 +78,7 @@
 
 .button--secondary:hover {
   @media (min-width: $minHover) {
-    color: #323232;
-    background-color: var(--button-color);
+    background-color: #28465c;
   }
 }
 
