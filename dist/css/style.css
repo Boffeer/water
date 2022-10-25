@@ -24,6 +24,7 @@
   --container-padding: 15px;
   --ff-regular: "RF Dewi Extended", sans-serif;
   --ff-title: "RF Dewi Extended", sans-serif;
+  --ff-sf: "SFProDisplay", sans-serif;
   --fz-button: 14px;
   --lh-button: 100%;
 }
@@ -1010,6 +1011,14 @@
   font-weight: 400;
   font-stretch: 100%;
   src: url("../resources/fonts/Inter-Regular.woff2") format("woff2"), url("../resources/fonts/Inter-Regular.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "SFProDisplay";
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  src: url("../resources/fonts/SFProDisplay-Regular.woff2") format("woff2"), url("../resources/fonts/SFProDisplay-Regular.woff") format("woff");
   font-display: swap;
 }
 @font-face {
@@ -5723,9 +5732,10 @@ body._lock {
 }
 
 .hero__gift-title {
-  margin-bottom: 20px;
-  font-size: 21px;
-  line-height: 180%;
+  margin-bottom: 16px;
+  font-family: var(--ff-sf);
+  font-size: 24px;
+  line-height: 160%;
 }
 
 .hero__gift-desc {
@@ -5810,8 +5820,9 @@ body._lock {
 
 .hero__video-title {
   margin-bottom: 16px;
-  font-size: 21px;
-  line-height: 180%;
+  font-family: var(--ff-sf);
+  font-size: 24px;
+  line-height: 160%;
 }
 
 .hero__video-desc {

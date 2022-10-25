@@ -74,9 +74,10 @@
   }
 }
 .hero__gift-title {
-  margin-bottom: 20px;
-  font-size: 21px;
-  line-height: 180%;
+  margin-bottom: 16px;
+  font-family: var(--ff-sf);
+  font-size: 24px;
+  line-height: 160%;
 }
 .hero__gift-desc {
   margin-bottom: 30px;
@@ -147,8 +148,9 @@
 
 .hero__video-title {
   margin-bottom: 16px;
-  font-size: 21px;
-  line-height: 180%;
+  font-family: var(--ff-sf);
+  font-size: 24px;
+  line-height: 160%;
 }
 .hero__video-desc {
   margin-bottom: 28px;

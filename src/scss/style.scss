@@ -14,6 +14,12 @@
 );
 @include font("Inter", normal, 400, "../resources/fonts/Inter-Regular");
 @include font(
+  "SFProDisplay",
+  normal,
+  400,
+  "../resources/fonts/SFProDisplay-Regular"
+);
+@include font(
   "RF Dewi Extended",
   normal,
   600,
