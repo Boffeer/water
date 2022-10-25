@@ -6233,6 +6233,10 @@ body._lock {
   }
 }
 
+.combiner-features {
+  z-index: 2;
+}
+
 .features__container {
   max-width: 1158px;
 }
@@ -6272,6 +6276,7 @@ body._lock {
   flex-wrap: wrap;
   justify-content: space-between;
   padding-top: 50px;
+  pointer-events: none;
 }
 @media (max-width: 1020px) {
   .features__columns {

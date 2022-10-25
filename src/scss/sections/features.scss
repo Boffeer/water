@@ -10,6 +10,9 @@
     padding-bottom: 28px;
   }
 }
+.combiner-features {
+  z-index: 2;
+}
 .features__container {
   max-width: 1158px;
 }
@@ -43,6 +46,7 @@
   // grid-template-columns: 278px 290px 265px;
   justify-content: space-between;
   padding-top: 50px;
+  pointer-events: none;
   @media (max-width: 1020px) {
     align-items: flex-start;
     justify-content: space-between;

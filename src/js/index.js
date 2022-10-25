@@ -149,7 +149,7 @@ function makeTimeline(timeline) {
     .to(scroller, 1, { x: "-80%" })
     .to(scroller, 1, { x: "-115%" })
     .to(scroller, 1, { x: "-120%" })
-    .to(scrollerParent, 2, { opacity: 0 })
+    .to(scrollerParent, 2, { opacity: 0, pointerEvents: "none" })
     .to(fader, 2, { opacity: 0 });
   new ScrollMagic.Scene({
     triggerElement: pin,
