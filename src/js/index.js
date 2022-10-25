@@ -148,8 +148,12 @@ function makeTimeline(timeline) {
     .to(scroller, 1, { x: "-80%" })
     .to(scroller, 1, { x: "-115%" })
     .to(scroller, 1, { x: "-120%" })
-    .to(scrollerParent, 2, { opacity: 0, pointerEvents: "none" })
-    .to(fader, 2, { opacity: 0 });
+    .to(scrollerParent, 2, { opacity: 0, pointerEvents: "none" });
+
+  if (fader) {
+    slidesContainer.to(fader, 2, { opacity: 0 });
+  }
+
   new ScrollMagic.Scene({
     triggerElement: pin,
     triggerHook: "onLeave",
@@ -174,7 +178,7 @@ function makeTimeline(timeline) {
 }
 
 const testimonialsTimeline = {
-  pin: ".combiner-testimonials .combiner__inner",
+  pin: ".testimonials",
   scroller: ".testimonials__cards",
   scrollerParent: ".testimonials",
 };
@@ -193,8 +197,8 @@ const slidesContainer = new TimelineMax()
   .to(".features__pic--top", 1, {
     y: "-100%",
   })
-  .to(".features__pic", 0.3, { opacity: 0 })
-  .to(".care__fader", 0.2, { opacity: 0 });
+  .to(".features__pic", 0.3, { opacity: 0 });
+// .to(".care__fader", 0.2, { opacity: 0 });
 
 let pinClass = ".features__scroller";
 if (window.innerWidth < 1020 && window.innerWidth > 576) {
@@ -363,95 +367,100 @@ function getHeightDifference(bigger, less, modifier = 0) {
 // #endregion gsapHelpers
 
 // #region gsapHistory
-const historySuptitle = gsap
-  .timeline()
-  .from(".history__suptitle", defaultParallaxFrom(300))
-  .to(".history__suptitle", defaultParallaxTo());
-const historyTitle = gsap
-  .timeline()
-  .from(".history__title", defaultParallaxFrom(400))
-  .to(".history__title", defaultParallaxTo());
-const historyCard = gsap
-  .timeline()
-  .from(".history__card", defaultParallaxFrom())
-  .to(".history__card", defaultParallaxTo(-200));
+import Masonry from "masonry-layout";
+const historyMasonry = new Masonry(".history__gallery", {
+  itemSelectory: ".history__gallery-card",
+  gutter: 24,
+});
+// const historySuptitle = gsap
+//   .timeline()
+//   .from(".history__suptitle", defaultParallaxFrom(300))
+//   .to(".history__suptitle", defaultParallaxTo());
+// const historyTitle = gsap
+//   .timeline()
+//   .from(".history__title", defaultParallaxFrom(400))
+//   .to(".history__title", defaultParallaxTo());
+// const historyCard = gsap
+//   .timeline()
+//   .from(".history__card", defaultParallaxFrom())
+//   .to(".history__card", defaultParallaxTo(-200));
 
-makeDefaultScene(
-  ".combiner-testimonials",
-  historySuptitle,
-  0.4,
-  false,
-  getHeightDifference(".combiner-testimonials", ".history", 700),
-  document.querySelector(".history").getBoundingClientRect().height * 2
-);
-makeDefaultScene(
-  ".combiner-testimonials",
-  historyTitle,
-  0.4,
-  false,
-  getHeightDifference(".combiner-testimonials", ".history", 700),
-  document.querySelector(".history").getBoundingClientRect().height * 2
-);
-makeDefaultScene(
-  ".combiner-testimonials",
-  historyCard,
-  0.2,
-  false,
-  getHeightDifference(".combiner-testimonials", ".history", 700),
-  document.querySelector(".history").getBoundingClientRect().height * 2
-);
+// makeDefaultScene(
+//   ".combiner-testimonials",
+//   historySuptitle,
+//   0.4,
+//   false,
+//   getHeightDifference(".combiner-testimonials", ".history", 700),
+//   document.querySelector(".history").getBoundingClientRect().height * 2
+// );
+// makeDefaultScene(
+//   ".combiner-testimonials",
+//   historyTitle,
+//   0.4,
+//   false,
+//   getHeightDifference(".combiner-testimonials", ".history", 700),
+//   document.querySelector(".history").getBoundingClientRect().height * 2
+// );
+// makeDefaultScene(
+//   ".combiner-testimonials",
+//   historyCard,
+//   0.2,
+//   false,
+//   getHeightDifference(".combiner-testimonials", ".history", 700),
+//   document.querySelector(".history").getBoundingClientRect().height * 2
+// );
 // #endregion gsapHistory
 
 // #region gsapCare
-const careSuptitle = gsap
-  .timeline()
-  .from(".care__suptitle", defaultParallaxFrom(200))
-  .to(".care__suptitle", defaultParallaxTo());
-const careTitle = gsap
-  .timeline()
-  .from(".care__title", defaultParallaxFrom(200))
-  .to(".care__title", defaultParallaxTo());
-const careCard = gsap
-  .timeline()
-  .from(".care__offer", defaultParallaxFrom())
-  .to(".care__offer", defaultParallaxTo(-200));
-const carePic = gsap
-  .timeline()
-  .from(".care__pic", defaultParallaxFrom())
-  .to(".care__pic", defaultParallaxTo());
+// const careSuptitle = gsap
+//   .timeline()
+//   .from(".care__suptitle", defaultParallaxFrom(200))
+//   .to(".care__suptitle", defaultParallaxTo());
+// const careTitle = gsap
+//   .timeline()
+//   .from(".care__title", defaultParallaxFrom(200))
+//   .to(".care__title", defaultParallaxTo());
+// const careCard = gsap
+//   .timeline()
+//   .from(".care__offer", defaultParallaxFrom())
+//   .to(".care__offer", defaultParallaxTo(-200));
+// const carePic = gsap
+//   .timeline()
+//   .from(".care__pic", defaultParallaxFrom())
+//   .to(".care__pic", defaultParallaxTo());
 
-makeDefaultScene(
-  ".combiner-features",
-  careSuptitle,
-  0.2,
-  false,
-  getHeightDifference(".combiner-features", ".care", 950),
-  document.querySelector(".care").getBoundingClientRect().height
-);
-makeDefaultScene(
-  ".combiner-features",
-  careTitle,
-  0.3,
-  false,
-  getHeightDifference(".combiner-features", ".care", 950),
-  document.querySelector(".care").getBoundingClientRect().height
-);
-makeDefaultScene(
-  ".combiner-features",
-  careCard,
-  0.4,
-  false,
-  getHeightDifference(".combiner-features", ".care", 950),
-  document.querySelector(".care").getBoundingClientRect().height
-);
-makeDefaultScene(
-  ".combiner-features",
-  carePic,
-  0.4,
-  false,
-  getHeightDifference(".combiner-features", ".care", 950),
-  document.querySelector(".care").getBoundingClientRect().height
-);
+// makeDefaultScene(
+//   ".combiner-features",
+//   careSuptitle,
+//   0.2,
+//   false,
+//   getHeightDifference(".combiner-features", ".care", 950),
+//   document.querySelector(".care").getBoundingClientRect().height
+// );
+// makeDefaultScene(
+//   ".combiner-features",
+//   careTitle,
+//   0.3,
+//   false,
+//   getHeightDifference(".combiner-features", ".care", 950),
+//   document.querySelector(".care").getBoundingClientRect().height
+// );
+// makeDefaultScene(
+//   ".combiner-features",
+//   careCard,
+//   0.4,
+//   false,
+//   getHeightDifference(".combiner-features", ".care", 950),
+//   document.querySelector(".care").getBoundingClientRect().height
+// );
+// makeDefaultScene(
+//   ".combiner-features",
+//   carePic,
+//   0.4,
+//   false,
+//   getHeightDifference(".combiner-features", ".care", 950),
+//   document.querySelector(".care").getBoundingClientRect().height
+// );
 // #endregion gsapCare
 
 // #region gsapFood
@@ -461,8 +470,8 @@ const foodTitle = gsap
   .to(".food__title", { y: -200, opacity: 1 });
 const foodOffer = gsap
   .timeline()
-  .from(".food__offer", { y: 200, opacity: 0 })
-  .to(".food__offer", { y: -200, opacity: 1 });
+  .from(".food-offer", { y: 200, opacity: 0 })
+  .to(".food-offer", { y: -200, opacity: 1 });
 const foodPic = gsap
   .timeline()
   .from(".food__pic", { y: 100, opacity: 0 })

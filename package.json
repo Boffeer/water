@@ -57,6 +57,7 @@
   "dependencies": {
     "gsap": "^3.11.3",
     "lax.js": "^2.0.3",
+    "masonry-layout": "^4.2.2",
     "scrollmagic": "^2.0.8",
     "scrollmagic-plugin-gsap": "^1.0.4",
     "scrollmagic-plugins": "^1.0.8",

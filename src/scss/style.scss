@@ -20,6 +20,12 @@
   "../resources/fonts/SFProDisplay-Regular"
 );
 @include font(
+  "SFProDisplay",
+  normal,
+  500,
+  "../resources/fonts/SFProDisplay-Medium"
+);
+@include font(
   "RF Dewi Extended",
   normal,
   600,
