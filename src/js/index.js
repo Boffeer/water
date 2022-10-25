@@ -315,6 +315,8 @@ const singleBigBullets = new ScrollMagic.Scene({
 // #endregion features
 
 // #region textParallax
+
+// #region gsapHelpers
 function defaultParallaxFrom(y = 150) {
   return {
     opacity: 0,
@@ -332,11 +334,17 @@ function makeDefaultScene(
   tween,
   triggerHook = 0.35,
   indicate = false,
-  offset = 0
+  offset = 0,
+  duration = 0
 ) {
+  duration =
+    duration == 0
+      ? document.querySelector(trigger).getBoundingClientRect().height
+      : duration;
+  // console.log(trigger, duration);
   const defaultScene = new ScrollMagic.Scene({
     triggerElement: trigger,
-    duration: document.querySelector(trigger).getBoundingClientRect().height,
+    duration,
     triggerHook,
     offset,
   })
@@ -353,15 +361,17 @@ function getHeightDifference(bigger, less, modifier = 0) {
     modifier
   );
 }
+// #endregion gsapHelpers
 
-const historyTitle = gsap
-  .timeline()
-  .from(".history__title", defaultParallaxFrom(200))
-  .to(".history__title", defaultParallaxTo());
+// #region gsapHistory
 const historySuptitle = gsap
   .timeline()
-  .from(".history__suptitle", defaultParallaxFrom(100))
+  .from(".history__suptitle", defaultParallaxFrom(300))
   .to(".history__suptitle", defaultParallaxTo());
+const historyTitle = gsap
+  .timeline()
+  .from(".history__title", defaultParallaxFrom(400))
+  .to(".history__title", defaultParallaxTo());
 const historyCard = gsap
   .timeline()
   .from(".history__card", defaultParallaxFrom())
@@ -369,26 +379,83 @@ const historyCard = gsap
 
 makeDefaultScene(
   ".combiner-testimonials",
-  historyTitle,
-  0.2,
+  historySuptitle,
+  0.4,
   false,
-  getHeightDifference(".combiner-testimonials", ".history", 700)
+  getHeightDifference(".combiner-testimonials", ".history", 700),
+  document.querySelector(".history").getBoundingClientRect().height * 2
 );
 makeDefaultScene(
   ".combiner-testimonials",
-  historySuptitle,
-  0.2,
+  historyTitle,
+  0.4,
   false,
-  getHeightDifference(".combiner-testimonials", ".history", 700)
+  getHeightDifference(".combiner-testimonials", ".history", 700),
+  document.querySelector(".history").getBoundingClientRect().height * 2
 );
 makeDefaultScene(
   ".combiner-testimonials",
   historyCard,
   0.2,
   false,
-  getHeightDifference(".combiner-testimonials", ".history", 700)
+  getHeightDifference(".combiner-testimonials", ".history", 700),
+  document.querySelector(".history").getBoundingClientRect().height * 2
 );
+// #endregion gsapHistory
 
+// #region gsapCare
+const careSuptitle = gsap
+  .timeline()
+  .from(".care__suptitle", defaultParallaxFrom(200))
+  .to(".care__suptitle", defaultParallaxTo());
+const careTitle = gsap
+  .timeline()
+  .from(".care__title", defaultParallaxFrom(200))
+  .to(".care__title", defaultParallaxTo());
+const careCard = gsap
+  .timeline()
+  .from(".care__offer", defaultParallaxFrom())
+  .to(".care__offer", defaultParallaxTo(-200));
+const carePic = gsap
+  .timeline()
+  .from(".care__pic", defaultParallaxFrom())
+  .to(".care__pic", defaultParallaxTo());
+
+makeDefaultScene(
+  ".combiner-features",
+  careSuptitle,
+  0.2,
+  false,
+  getHeightDifference(".combiner-features", ".care", 950),
+  document.querySelector(".care").getBoundingClientRect().height
+);
+makeDefaultScene(
+  ".combiner-features",
+  careTitle,
+  0.3,
+  false,
+  getHeightDifference(".combiner-features", ".care", 950),
+  document.querySelector(".care").getBoundingClientRect().height
+);
+makeDefaultScene(
+  ".combiner-features",
+  careCard,
+  0.4,
+  false,
+  getHeightDifference(".combiner-features", ".care", 950),
+  document.querySelector(".care").getBoundingClientRect().height
+);
+makeDefaultScene(
+  ".combiner-features",
+  carePic,
+  0.4,
+  false,
+  getHeightDifference(".combiner-features", ".care", 950),
+  document.querySelector(".care").getBoundingClientRect().height
+);
+// #endregion gsapCare
+
+// #region gsapFood
 const foodTitle = gsap
   .timeline()
   .from(".food__title", { y: 200, opacity: 0 })
@@ -425,7 +492,9 @@ const foodPicScroll = new ScrollMagic.Scene({
 })
   .setTween(foodPic)
   .addTo(scrollController);
+// #endregion gsapFood
 
+// #region gsapGift
 const giftFader = gsap
   .timeline()
   .to(".gift__fader", { opacity: 0 })
@@ -454,45 +523,9 @@ const giftOffer = gsap
 makeDefaultScene(".gift", giftTitle);
 makeDefaultScene(".gift", giftSuptitle, 0.4);
 makeDefaultScene(".gift", giftOffer, 0.45);
+// #endregion gsapGift
 
-// document.querySelectorAll(".section__fader").forEach((fader) => {
-//   const section = fader.parentElement.querySelector(".container");
-
-//   const faderTween = new TimelineMax()
-//     .to(fader, 0.3, { opacity: 1 })
-//     .to(fader, 0.7, { opacity: 0 })
-//     .to(fader, 0.3, { opacity: 0.5 })
-//     .to(fader, 0.5, { opacity: 1 });
-//   new ScrollMagic.Scene({
-//     triggerElement: fader.parentElement,
-//     duration: "120%",
-//     // triggerHook: "onCenter",
-//   })
-//     .setTween(faderTween)
-//     .addTo(scrollController);
-// });
-
-if (window.innerWidth > 1020) {
-  const careCard = new TimelineMax();
-  careCard
-    .from(".care__offer", 1, {
-      // y: "20%",
-      opacity: 0,
-    })
-    .to(".care__offer", 1, {
-      // y: "-50%",
-      opacity: 1,
-    });
-  new ScrollMagic.Scene({
-    triggerElement: ".care",
-    // triggerHook: "onLeave",
-    duration: "100%",
-  })
-    .setTween(careCard)
-    .addTo(scrollController);
-}
 // #endregion textParallax
-//
 
 import "./b_lazy_yt.js";
 
