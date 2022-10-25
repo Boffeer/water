@@ -1,6 +1,6 @@
 .try {
-  padding-top: 38px;
-  padding-bottom: 50px;
+  padding-top: 90px;
+  padding-bottom: 100px;
   @media (max-width: 1020px) {
     padding-top: 56px;
     padding-bottom: 64px;
@@ -8,9 +8,9 @@
 }
 .try__content {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  column-gap: 90px;
-  max-width: 888px;
+  grid-template-columns: 1.2fr 0.88fr;
+  column-gap: 60px;
+  max-width: 1070px;
   padding-top: 48px;
   margin-right: auto;
   margin-left: auto;
@@ -33,6 +33,9 @@
   }
 }
 .try__pic {
+  max-width: 360px;
+  margin-right: auto;
+  margin-left: auto;
   @media (min-width: 1021px) {
     min-height: 700px;
   }
@@ -48,11 +51,9 @@
   }
 }
 .try__bullets {
-  max-width: 310px;
-  padding-top: 102px;
-  padding-right: 10px;
+  max-width: 370px;
+  padding-top: 120px;
   margin-right: auto;
-  margin-left: auto;
   @media (max-width: 1020px) {
     padding-top: 0;
   }

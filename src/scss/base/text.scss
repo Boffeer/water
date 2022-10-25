@@ -1,8 +1,8 @@
 .section-suptitle {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   font-family: "RF Dewi Extended", sans-serif;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 300;
   line-height: 100%;
   text-align: center;
@@ -24,12 +24,11 @@
 }
 .section-title {
   display: block;
-  font-family: "RF Dewi Extended", sans-serif;
-  font-size: 40px;
-  font-weight: 700;
+  font-family: var(--ff-sf);
+  font-size: 64px;
   line-height: 150%;
+  line-height: 110%;
   text-align: center;
-  letter-spacing: 0.24em;
   background: linear-gradient(90deg, #ffffff 0%, #838383 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -74,4 +73,12 @@
   -webkit-text-fill-color: #a0a0a0;
   // position: relative;
   text-decoration: line-through;
+}
+
+.section-text--color {
+  background: linear-gradient(90deg, #4ed4ef 0%, #006ae7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
 }
