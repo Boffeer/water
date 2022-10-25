@@ -6219,6 +6219,7 @@ body._lock {
 .features {
   padding-top: 150px;
   padding-bottom: 125px;
+  margin-bottom: -900px;
 }
 @media (max-width: 1020px) {
   .features {
@@ -6266,7 +6267,7 @@ body._lock {
 
 .features__columns {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -6564,7 +6565,11 @@ body._lock {
 }
 
 .care {
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
   padding-top: 65px;
   padding-bottom: 20px;
   background-image: url("../img/care/background.jpg");

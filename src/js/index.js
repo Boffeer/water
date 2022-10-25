@@ -188,9 +188,12 @@ makeTimeline(researchTimeline);
 // #endregion scroller
 
 // #region features
-const slidesContainer = new TimelineMax().to(".features__pic--top", 1, {
-  y: "-100%",
-});
+const slidesContainer = new TimelineMax()
+  .to(".features__pic--top", 1, {
+    y: "-100%",
+  })
+  .to(".features__pic", 0.3, { opacity: 0 })
+  .to(".care__fader", 0.2, { opacity: 0 });
 
 let pinClass = ".features__scroller";
 if (window.innerWidth < 1020 && window.innerWidth > 576) {
@@ -199,7 +202,7 @@ if (window.innerWidth < 1020 && window.innerWidth > 576) {
 new ScrollMagic.Scene({
   triggerElement: pinClass,
   triggerHook: "onLeave",
-  duration: "300%",
+  duration: "200%",
 })
   .setPin(pinClass)
   .setTween(slidesContainer)
@@ -250,14 +253,14 @@ if (window.innerWidth < 1020) {
 new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
   triggerHook: "onLeave",
-  duration: "250%",
+  duration: "150%",
 })
   .setTween(bulletsScroller)
   .addTo(scrollController);
 
 const bigBulletsScroller = new TimelineMax();
 const bigBulletsSingle = new TimelineMax();
-let bigBulletsScrollerDuration = "300%";
+let bigBulletsScrollerDuration = "200%";
 if (window.innerWidth < 1020) {
   bigBulletsScrollerDuration = "500%";
   bigBulletsScroller
@@ -274,7 +277,7 @@ if (window.innerWidth < 1020) {
       opacity: 0,
     })
     .to(".features__column-big-bullets", 1, {
-      y: "-200%",
+      y: "-210%",
       opacity: 1,
     });
   bigBulletsSingle
@@ -289,7 +292,7 @@ if (window.innerWidth < 1020) {
     .to(".bullets-card-big--3", 0.1, { y: "-20%", opacity: 1 })
     .to(".bullets-card-big--1", 1.2, { opacity: 0 })
     .to(".bullets-card-big--2", 1.5, { y: "0%", opacity: 0 })
-    .to(".bullets-card-big--3", 1.8, { y: "0%", opacity: 0 });
+    .to(".bullets-card-big--3", 1.8, { y: "-10%", opacity: 0 });
 }
 const leftBullets = new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
@@ -306,6 +309,7 @@ const singleBigBullets = new ScrollMagic.Scene({
 })
   .setTween(bigBulletsSingle)
   .addTo(scrollController);
+
 // #endregion features
 
 // #region textParallax
@@ -331,16 +335,16 @@ if (window.innerWidth > 1020) {
   const careCard = new TimelineMax();
   careCard
     .from(".care__offer", 1, {
-      y: "40%",
+      // y: "20%",
       opacity: 0,
     })
     .to(".care__offer", 1, {
-      y: "-50%",
+      // y: "-50%",
       opacity: 1,
     });
   new ScrollMagic.Scene({
     triggerElement: ".care",
-    triggerHook: "onLeave",
+    // triggerHook: "onLeave",
     duration: "100%",
   })
     .setTween(careCard)
