@@ -471,7 +471,7 @@ const foodPic = gsap
 
 const foodTitleScroll = new ScrollMagic.Scene({
   triggerElement: ".food",
-  duration: 350,
+  duration: 550,
   triggerHook: 0.35,
 })
   .setTween(foodTitle)
@@ -479,7 +479,7 @@ const foodTitleScroll = new ScrollMagic.Scene({
 
 const foodOfferScroll = new ScrollMagic.Scene({
   triggerElement: ".food",
-  duration: 300,
+  duration: 500,
   triggerHook: 0.35,
 })
   .setTween(foodOffer)
@@ -487,7 +487,7 @@ const foodOfferScroll = new ScrollMagic.Scene({
 
 const foodPicScroll = new ScrollMagic.Scene({
   triggerElement: ".food",
-  duration: 400,
+  duration: 600,
   triggerHook: 0.35,
 })
   .setTween(foodPic)

@@ -6217,7 +6217,7 @@ body._lock {
 .features {
   padding-top: 150px;
   padding-bottom: 125px;
-  margin-bottom: -900px;
+  margin-bottom: -750px;
 }
 @media (max-width: 1020px) {
   .features {
