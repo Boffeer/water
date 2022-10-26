@@ -7,6 +7,10 @@
     padding-top: 10px;
     padding-bottom: 64px;
     overflow: hidden;
+    margin-top: -600px;
+  }
+  @media (max-width: 576px) {
+    padding-top: 70px;
   }
   @media (max-width: 375px) {
     padding-bottom: 28px;

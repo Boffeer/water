@@ -139,7 +139,7 @@ function makeTimeline(timeline) {
   // console.log(track);
 
   if (window.innerWidth < 576) {
-    scrollDuration = `${(cardsCount - 4) * 50}%`;
+    scrollDuration = `${(cardsCount - 1) * 100}%`;
   } else if (window.innerWidth >= 1020) {
     scrollDuration = `${(cardsCount - 3) * 50}%`;
   } else if (window.innerWidth < 1020) {
@@ -279,7 +279,7 @@ if (window.innerWidth < 1020) {
       y: "20%",
     })
     .to(".features__column-big-bullets", 1, {
-      y: "-100%",
+      y: "-190%",
     });
 } else {
   bigBulletsScroller
@@ -392,7 +392,6 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 document.querySelectorAll('.history__img').forEach(img => {
-  console.log(img)
   const historyPics = gsap.timeline()
     .from(img, {filter: 'grayscale(1)'})
     .to(img, {filter: 'grayscale(1)'})
@@ -421,6 +420,7 @@ makeDefaultScene(".history", historyTitle, 0.3, false, -800);
 const foodTitle = gsap.timeline();
 const foodOffer = gsap.timeline();
 const foodPic = gsap.timeline();
+let foodOffset = -300;
 if (window.innerWidth > 1020) {
   foodTitle
     .from(".food__title", { y: 200, opacity: 0 })
@@ -434,16 +434,16 @@ if (window.innerWidth > 1020) {
 } else {
   foodTitle
     .from(".food__title", { y: 200, opacity: 0 })
-    .to(".food__title", { y: 0, opacity: 1 });
   foodOffer
     .from(".food-offer", { y: 200, opacity: 0 })
-    .to(".food-offer", { y: 0, opacity: 1 });
-  foodPic.from(".food__pic", { y: 50, opacity: 0 });
+  foodPic.from(".food__pic", { y: 200, opacity: 0 });
+
+  foodOffset = -100;
 }
 
-makeDefaultScene(".food", foodTitle, 0.45, false, -300, 750);
-makeDefaultScene(".food", foodOffer, 0.45, false, -300, 700);
-makeDefaultScene(".food", foodPic, 0.45, false, -300, 700);
+makeDefaultScene(".food", foodTitle, 0.45, false, foodOffer, 750);
+makeDefaultScene(".food", foodOffer, 0.45, false, foodOffer, 700);
+makeDefaultScene(".food", foodPic, 0.45, false, foodOffset + 100, 700);
 
 // #endregion gsapFood
 
