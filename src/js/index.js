@@ -269,12 +269,13 @@ const bigBulletsSingle = new TimelineMax();
 let bigBulletsScrollerDuration = "200%";
 if (window.innerWidth < 1020) {
   bigBulletsScrollerDuration = "500%";
-  bigBulletsScroller.to(".features__column-big-bullets", 1, {
-    y: "-100%",
-  });
-  // .from(".features__column-big-bullets", 1, {
-  //   y: "0",
-  // })
+  bigBulletsScroller
+    .from(".features__column-big-bullets", 1, {
+      y: "20%",
+    })
+    .to(".features__column-big-bullets", 1, {
+      y: "-100%",
+    });
 } else {
   bigBulletsScroller
     .from(".features__column-big-bullets", 1, {

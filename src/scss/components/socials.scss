@@ -61,10 +61,12 @@
   background-color: #fff;
   border: 1px solid #474747;
   @media (max-width: 1020px) {
-    // --size: 96px;
     margin-right: 0;
     margin-bottom: 24px;
     margin-left: 0;
+  }
+  @media (max-width: 374px) {
+    --size: 126px;
   }
 }
 .socials--big .socials__icon {

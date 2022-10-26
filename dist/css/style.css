@@ -732,6 +732,11 @@
     margin-left: 0;
   }
 }
+@media (max-width: 374px) {
+  .socials--big .socials__link {
+    --size: 126px;
+  }
+}
 
 .socials--big .socials__icon {
   position: relative;
@@ -5503,12 +5508,6 @@ body._lock {
     margin-left: auto;
   }
 }
-@media (max-width: 375px) {
-  .section-title {
-    font-size: 18px;
-  }
-}
-
 .section-text {
   font-family: "Inter", sans-serif;
   font-size: 14px;
@@ -6156,7 +6155,6 @@ body._lock {
 }
 @media (max-width: 576px) {
   .history__suptitle {
-    max-width: 280px;
     margin-right: auto;
     margin-bottom: 12px;
     margin-left: auto;
@@ -6169,22 +6167,8 @@ body._lock {
 @media (max-width: 1020px) {
   .history__title {
     margin-bottom: 28px;
+    font-size: 32px;
     line-height: 1.1;
-  }
-}
-@media (max-width: 1020px) and (min-width: 576px) {
-  .history__title {
-    margin-bottom: 32px;
-  }
-}
-@media (max-width: 390px) {
-  .history__title {
-    margin-bottom: 282px;
-  }
-}
-@media (max-width: 375px) {
-  .history__title {
-    font-size: 20px;
   }
 }
 
@@ -6198,6 +6182,16 @@ body._lock {
     margin-left: auto;
   }
 }
+@media (max-width: 390px) {
+  .history__gallery {
+    max-width: 304px;
+  }
+}
+@media (max-width: 359px) {
+  .history__gallery {
+    max-width: 284px;
+  }
+}
 
 .history__pic {
   display: block;
@@ -6206,6 +6200,11 @@ body._lock {
 @media (max-width: 576px) {
   .history__pic {
     height: 205px;
+  }
+}
+@media (max-width: 359px) {
+  .history__pic {
+    height: 185px;
   }
 }
 
@@ -6236,6 +6235,16 @@ body._lock {
   .history__gallery-card {
     max-width: 168px;
     margin-bottom: 32px;
+  }
+}
+@media (max-width: 390px) {
+  .history__gallery-card {
+    max-width: 140px;
+  }
+}
+@media (max-width: 359px) {
+  .history__gallery-card {
+    max-width: 130px;
   }
 }
 
@@ -7378,7 +7387,7 @@ body._lock {
 @media (max-width: 375px) {
   .map {
     padding-bottom: 425px;
-    background-position: -653px;
+    background-position: -733px;
     background-position-y: 110%;
     background-size: 390%;
   }
@@ -7493,6 +7502,11 @@ body._lock {
   font-weight: 400;
   line-height: 180%;
   color: #878787;
+}
+@media (max-width: 576px) {
+  .map__events-item-desc {
+    max-width: 200px;
+  }
 }
 
 .map__events-item-title {
