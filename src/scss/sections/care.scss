@@ -1,5 +1,5 @@
 .care {
-  top: 200px;
+  top: 0;
   right: 0;
   left: 0;
   position: absolute;
@@ -10,7 +10,6 @@
   @media (max-width: 1020px) {
     padding-top: 64px;
     padding-bottom: 64px;
-    top: 0;
   }
   @media (max-width: 375px) {
     padding-top: 28px;

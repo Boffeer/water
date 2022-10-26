@@ -205,7 +205,7 @@ makeTimeline(researchTimeline);
 
 // #region features
 
-let careOpacityDuration = 1.5;
+let careOpacityDuration = 1.3;
 if (window.innerWidth < 1020) {
   careOpacityDuration = 1.3;
 }
@@ -216,14 +216,14 @@ const slidesContainer = gsap
     y: "-100%",
   })
   .to(".care", { opacity: 1 }, careOpacityDuration)
-  .to(".features__pic", { opacity: 0}, 1.3)
+  .to(".features__columns", { opacity: 0}, 0.9)
 
 let pinClass = ".features__scroller";
 if (window.innerWidth < 1020 && window.innerWidth > 576) {
   pinClass = ".features__container";
 }
 
-let featuresDuration = document.querySelector(".features").getBoundingClientRect().height * 1.7;
+let featuresDuration = document.querySelector(".features").getBoundingClientRect().height * 1.6;
 if (window.innerWidth < 1020) {
   featuresDuration = document.querySelector(".features").getBoundingClientRect().height * 1.2;
 }
@@ -315,9 +315,9 @@ if (window.innerWidth < 1020) {
     .from(".bullets-card-big--1", 1, { opacity: 0 })
     .from(".bullets-card-big--2", 1, { opacity: 0 })
     .from(".bullets-card-big--3", 1, { opacity: 0 })
-    // .to(".bullets-card-big--1", 1, { opacity: 1 })
-    // .to(".bullets-card-big--2", 2, { opacity: 1 })
-    // .to(".bullets-card-big--3", 3, { opacity: 1 })
+    .to(".bullets-card-big--1", 1, { opacity: 1 })
+    .to(".bullets-card-big--2", 1, { opacity: 1 })
+    .to(".bullets-card-big--3", 1, { opacity: 1 })
     .to(".bullets-card-big--1", 1, { opacity: 0 })
     .to(".bullets-card-big--2", 1, {y: "-10%", opacity: 0 })
     .to(".bullets-card-big--3", 1, {y: "-30%", opacity: 0 });
@@ -326,10 +326,11 @@ if (window.innerWidth < 1020) {
     triggerElement: ".features",
     triggerHook: 0.7,
     duration:
-      document.querySelector(".features").getBoundingClientRect().height / 2 - 600,
-    offset: 1600,
+      document.querySelector(".features").getBoundingClientRect().height / 2 - 1000,
+    offset: 1800,
   })
     .setTween(bigBulletsSingle)
+    // .addIndicators({name: 'bullets'})
     .addTo(scrollController);
 
 }
@@ -337,11 +338,12 @@ const leftBullets = new ScrollMagic.Scene({
   triggerElement: ".features",
   triggerHook: 0.3,
   duration:
-    document.querySelector(".features").getBoundingClientRect().height / 2,
+    document.querySelector(".features").getBoundingClientRect().height / 2 - 200,
   // duration: bigBulletsScrollerDuration,
   offset: leftBulletsOffset,
 })
   .setTween(bigBulletsScroller)
+  .addIndicators({name: 'big'})
   .addTo(scrollController);
 
 // #endregion features
