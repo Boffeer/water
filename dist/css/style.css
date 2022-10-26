@@ -7103,7 +7103,7 @@ body._lock {
   max-width: 99vw;
   height: 720px;
   content: "";
-  filter: blur(30px);
+  filter: blur(20px);
   background-image: url("../img/common/light-left.png"), url("../img/common/light-left.png");
   background-size: cover;
   background-position: center left;
