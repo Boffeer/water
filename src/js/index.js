@@ -280,6 +280,7 @@ new ScrollMagic.Scene({
 const bigBulletsScroller = new TimelineMax();
 const bigBulletsSingle = new TimelineMax();
 let bigBulletsScrollerDuration = "200%";
+let  leftBulletsOffset = 300
 if (window.innerWidth < 1020) {
   bigBulletsScrollerDuration = "500%";
   bigBulletsScroller
@@ -289,6 +290,7 @@ if (window.innerWidth < 1020) {
     .to(".features__column-big-bullets", 1, {
       y: "-190%",
     });
+  leftBulletsOffset = 100
 } else {
   bigBulletsScroller
     .from(".features__column-big-bullets", 1, {
@@ -319,6 +321,7 @@ if (window.innerWidth < 1020) {
   })
     .setTween(bigBulletsSingle)
     .addTo(scrollController);
+
 }
 const leftBullets = new ScrollMagic.Scene({
   triggerElement: ".features",
@@ -326,7 +329,7 @@ const leftBullets = new ScrollMagic.Scene({
   duration:
     document.querySelector(".features").getBoundingClientRect().height / 2,
   // duration: bigBulletsScrollerDuration,
-  offset: 300,
+  offset: leftBulletsOffset,
 })
   .setTween(bigBulletsScroller)
   .addTo(scrollController);
