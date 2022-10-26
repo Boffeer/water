@@ -390,35 +390,21 @@ const historyMasonry = new Masonry(".history__gallery", {
   itemSelectory: ".history__gallery-card",
   gutter: 24,
 });
-// const historySuptitle = gsap
-//   .timeline()
-//   .from(".history__suptitle", defaultParallaxFrom(300))
-//   .to(".history__suptitle", defaultParallaxTo());
-// const historyTitle = gsap
-//   .timeline()
-//   .from(".history__title", defaultParallaxFrom(400))
-//   .to(".history__title", defaultParallaxTo());
+const historySuptitle = gsap
+  .timeline()
+  .from(".history__suptitle", defaultParallaxFrom(300))
+  .to(".history__suptitle", defaultParallaxTo());
+const historyTitle = gsap
+  .timeline()
+  .from(".history__title", defaultParallaxFrom(400))
+  .to(".history__title", defaultParallaxTo());
 // const historyCard = gsap
 //   .timeline()
 //   .from(".history__card", defaultParallaxFrom())
 //   .to(".history__card", defaultParallaxTo(-200));
 
-// makeDefaultScene(
-//   ".combiner-testimonials",
-//   historySuptitle,
-//   0.4,
-//   false,
-//   getHeightDifference(".combiner-testimonials", ".history", 700),
-//   document.querySelector(".history").getBoundingClientRect().height * 2
-// );
-// makeDefaultScene(
-//   ".combiner-testimonials",
-//   historyTitle,
-//   0.4,
-//   false,
-//   getHeightDifference(".combiner-testimonials", ".history", 700),
-//   document.querySelector(".history").getBoundingClientRect().height * 2
-// );
+makeDefaultScene(".history", historySuptitle, 0.4, false, -800);
+makeDefaultScene(".history", historyTitle, 0.4, false, -700);
 // makeDefaultScene(
 //   ".combiner-testimonials",
 //   historyCard,
