@@ -343,7 +343,7 @@ const leftBullets = new ScrollMagic.Scene({
   offset: leftBulletsOffset,
 })
   .setTween(bigBulletsScroller)
-  .addIndicators({name: 'big'})
+  // .addIndicators({name: 'big'})
   .addTo(scrollController);
 
 // #endregion features
