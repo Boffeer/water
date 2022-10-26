@@ -2,8 +2,8 @@
   padding-top: 90px;
   padding-bottom: 100px;
   @media (max-width: 1020px) {
-    padding-top: 56px;
-    padding-bottom: 64px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 .try__content {
@@ -24,12 +24,18 @@
   }
 }
 
+.try__title br {
+  display: initial;
+}
 .try__suptitle {
   @media (max-width: 1020px) {
     max-width: 320px;
     margin-right: auto;
     margin-left: auto;
     line-height: 1.8;
+  }
+  br {
+    display: initial;
   }
 }
 .try__pic {
@@ -40,7 +46,8 @@
     min-height: 700px;
   }
   @media (max-width: 576px) {
-    max-width: 216px;
+    max-width: 168px;
+    margin-bottom: -24px;
   }
 }
 .try__img {
@@ -56,12 +63,17 @@
   margin-right: auto;
   @media (max-width: 1020px) {
     padding-top: 0;
+    margin-left: auto;
+  }
+  @media (max-width: 576px) {
+    max-width: 340px;
   }
 }
 
 .try__button-feedback {
   @media (max-width: 1020px) {
     display: flex;
+    max-width: 180px;
     margin-right: auto;
     margin-left: auto;
   }

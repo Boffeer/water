@@ -3,8 +3,9 @@
   padding-bottom: 125px;
   margin-bottom: -550px;
   @media (max-width: 1020px) {
-    padding-top: 56px;
+    padding-top: 16px;
     padding-bottom: 56px;
+    margin-bottom: -660px;
   }
   @media (max-width: 375px) {
     padding-bottom: 28px;
@@ -19,7 +20,7 @@
 .features__suptitle {
   margin-bottom: 24px;
   @media (max-width: 1020px) {
-    margin-bottom: 18px;
+    margin-bottom: 12px;
   }
 }
 .features__title {
@@ -135,7 +136,7 @@
 }
 .features__bullets {
   @media (max-width: 1020px) {
-    // display: grid;
+    display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
     justify-content: center;
@@ -146,19 +147,17 @@
   }
 }
 .features__column-bullets-title {
-  margin-bottom: 50px;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 160%;
-  text-transform: uppercase;
-  letter-spacing: 0.32em;
+  margin-bottom: 48px;
+  font-family: var(--ff-sf);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 120%;
   @media (max-width: 1020px) {
-    max-width: 220px;
+    max-width: 180px;
     margin-right: auto;
-    margin-bottom: 46px;
+    margin-bottom: 36px;
     margin-left: auto;
-    font-size: 12px;
-    line-height: 1.8;
+    font-size: 24px;
     text-align: center;
   }
   @media (max-width: 1020px) and (min-width: 635px) {
@@ -196,7 +195,7 @@
     // position: static;
   }
   @media (max-width: 390px) {
-    margin-top: -200px;
+    // margin-top: -200px;
   }
 }
 .features__column-big-bullets .features__bullets {
@@ -213,22 +212,27 @@
 .features__column-big-bullets .bullets-card__title {
   font-size: 24px;
   @media (max-width: 1020px) {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 .features__column-big-bullets .bullets-card__desc {
   font-size: 14px;
   @media (max-width: 1020px) {
-    max-width: 100%;
-    font-size: 12px;
+    max-width: 340px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 .features__column-big-bullets .bullets-card:nth-child(2) {
-  margin-top: -100px;
-  margin-left: auto;
+  @media (min-width: 1020px) {
+    margin-top: -100px;
+    margin-left: auto;
+  }
 }
 .features__column-big-bullets .bullets-card:nth-child(3) {
-  margin-top: -150px;
+  @media (min-width: 1020px) {
+    margin-top: -150px;
+  }
 }
 
 .features__column-bullets .bullets-card:nth-child(1) {
@@ -298,6 +302,9 @@
   left: 0;
   z-index: 2;
   width: 107%;
+  @media (max-width: 576px) {
+    top: 6.5%;
+  }
 }
 .features__pic--bottom {
   z-index: 1;

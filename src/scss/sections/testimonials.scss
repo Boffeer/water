@@ -43,7 +43,11 @@
 .testimonials__suptitle {
   margin-bottom: 25px;
   @media (max-width: 576px) {
+    max-width: 280px;
+    margin-right: auto;
     margin-bottom: 16px;
+    margin-left: auto;
+    line-height: 1.6;
   }
 }
 .testimonials__title {

@@ -17,6 +17,8 @@
     margin-bottom: 14px;
     font-size: 14px;
     line-height: 1.8;
+    letter-spacing: 0.24em;
+
     br {
       display: none;
     }
@@ -35,7 +37,7 @@
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
   @media (max-width: 1020px) {
-    font-size: 28px;
+    font-size: 32px;
     br {
       display: none;
     }

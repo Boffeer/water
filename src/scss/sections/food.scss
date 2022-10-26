@@ -3,7 +3,7 @@
   padding-bottom: 50px;
   @media (max-width: 1020px) {
     padding-top: 48px;
-    padding-bottom: 64px;
+    padding-bottom: 0;
   }
 }
 .food::before {
@@ -47,6 +47,7 @@
   @media (max-width: 1020px) {
     max-width: 325px;
     padding-top: 0;
+    padding-top: 60px;
     padding-left: 0;
     margin-right: auto;
     margin-left: auto;
@@ -61,8 +62,10 @@
   line-height: 120%;
   color: #ffffff;
   @media (max-width: 1020px) {
-    margin-bottom: 15px;
-    font-size: 14px;
+    max-width: 280px;
+    margin-bottom: 24px;
+    font-size: 24px;
+    line-height: 140%;
   }
 }
 .food-offer__desc {
@@ -75,7 +78,7 @@
   @media (max-width: 1020px) {
     max-width: 280px;
     margin-right: auto;
-    margin-bottom: 13px;
+    margin-bottom: 24px;
     margin-left: auto;
     font-size: 12px;
   }
@@ -86,7 +89,8 @@
 .food__pic {
   // transform: translateX(-10px);
   @media (max-width: 1020px) {
-    max-width: 360px;
+    max-width: 280px;
+    margin-top: -60px;
     margin-right: auto;
     margin-bottom: 8px;
     margin-left: auto;

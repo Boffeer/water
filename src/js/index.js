@@ -269,13 +269,12 @@ const bigBulletsSingle = new TimelineMax();
 let bigBulletsScrollerDuration = "200%";
 if (window.innerWidth < 1020) {
   bigBulletsScrollerDuration = "500%";
-  bigBulletsScroller
-    .from(".features__column-big-bullets", 1, {
-      y: "300%",
-    })
-    .to(".features__column-big-bullets", 1, {
-      y: "-100%",
-    });
+  bigBulletsScroller.to(".features__column-big-bullets", 1, {
+    y: "-100%",
+  });
+  // .from(".features__column-big-bullets", 1, {
+  //   y: "0",
+  // })
 } else {
   bigBulletsScroller
     .from(".features__column-big-bullets", 1, {
@@ -299,6 +298,19 @@ if (window.innerWidth < 1020) {
     .to(".bullets-card-big--1", 1.2, { opacity: 0 })
     .to(".bullets-card-big--2", 1.5, { y: "-50%", opacity: 0 })
     .to(".bullets-card-big--3", 1.8, { y: "-30%", opacity: 0 });
+
+  const singleBigBullets = new ScrollMagic.Scene({
+    triggerElement: ".features__scroller",
+    triggerHook: 0.4,
+    // duration: "400%",
+    duration:
+      document.querySelector(".features").getBoundingClientRect().height / 2,
+    offset: 600,
+    // duration: "400%",
+  })
+    .setTween(bigBulletsSingle)
+    .addTo(scrollController)
+    .addIndicators({ name: "bullets" });
 }
 const leftBullets = new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
@@ -308,18 +320,6 @@ const leftBullets = new ScrollMagic.Scene({
   // duration: bigBulletsScrollerDuration,
 })
   .setTween(bigBulletsScroller)
-  .addTo(scrollController);
-
-const singleBigBullets = new ScrollMagic.Scene({
-  triggerElement: ".features__scroller",
-  triggerHook: 0.4,
-  // duration: "400%",
-  duration:
-    document.querySelector(".features").getBoundingClientRect().height / 2,
-  offset: 600,
-  // duration: "400%",
-})
-  .setTween(bigBulletsSingle)
   .addTo(scrollController);
 
 // #endregion features

@@ -17,7 +17,7 @@
     padding-bottom: 0;
     padding-bottom: 575px;
     background-position: -693px;
-    background-position-y: 100%;
+    background-position-y: 90%;
     background-size: 320%;
   }
   @media (max-width: 1020px) and (min-width: 577px) {
@@ -41,18 +41,10 @@
 .map__title {
   margin-bottom: 46px;
   @media (max-width: 1020px) {
-    margin-bottom: 26px;
-    line-height: 1.4;
-    letter-spacing: 0.24em;
+    line-height: 1.1;
   }
 }
 
-.map__cards {
-  @media (max-width: 1020px) {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-}
 .map__card {
   width: 100%;
   max-width: 456px;
@@ -79,6 +71,7 @@
 
 .map__card-title {
   margin-bottom: 16px;
+  font-family: var(--ff-sf);
   font-size: 20px;
   font-weight: 500;
   line-height: 120%;

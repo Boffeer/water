@@ -3,8 +3,8 @@
   z-index: 1;
   padding-bottom: 28px;
   @media (max-width: 1020px) {
-    padding-top: 56px;
-    padding-bottom: 56px;
+    padding-top: 32px;
+    padding-bottom: 10px;
   }
   @media (min-width: 1021px) {
     min-height: 1300px;
@@ -26,23 +26,23 @@
   letter-spacing: 0.2em;
   opacity: 0;
   @media (max-width: 1020px) {
-    margin-bottom: 20px;
-    font-size: 16px;
+    margin-bottom: 16px;
+    font-size: 20px;
     line-height: 1;
+    letter-spacing: 0.18em;
   }
 }
 .hero__title {
-  font-size: 96px;
+  font-size: 104px;
   line-height: 1;
   text-transform: uppercase;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.24em;
   opacity: 0;
   @media (max-width: 1020px) {
-    margin-bottom: 14px;
-    font-size: 36px;
+    font-size: 48px;
   }
   @media (max-width: 375px) {
-    font-size: 30px;
+    font-size: 36px;
   }
 }
 
@@ -59,6 +59,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding-top: 10px;
   }
 }
 
@@ -94,8 +95,8 @@
   }
   @media (max-width: 1020px) {
     order: -2;
-    max-width: 144px;
-    margin-bottom: -218px;
+    max-width: 168px;
+    margin-bottom: 38px;
   }
 }
 .hero__pic::before {
@@ -149,6 +150,29 @@
     padding-top: 0;
     text-align: center;
   }
+  @media (max-width: 576px) {
+    order: -1;
+    max-width: 340px;
+    padding-top: 23px;
+    padding-right: 20px;
+    padding-bottom: 22px;
+    padding-left: 20px;
+    margin-bottom: 37px;
+    background: radial-gradient(
+          50% 56.34% at 100% 100%,
+          rgba(30, 49, 62, 0.5) 0%,
+          rgba(22, 42, 55, 0) 100%
+        )
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      radial-gradient(
+          50% 56.34% at 0% 0%,
+          rgba(35, 69, 91, 0.5) 0%,
+          rgba(35, 69, 91, 0) 100%
+        )
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      #0b0b0b;
+    border-radius: 8px;
+  }
 }
 
 .hero__video-title {
@@ -160,12 +184,14 @@
 .hero__video-desc {
   margin-bottom: 28px;
   font-size: 14px;
+  @media (max-width: 576px) {
+    margin-bottom: 20px;
+  }
 }
 .hero__video-button {
   margin-right: 27px;
   @media (max-width: 1020px) {
     margin-right: 0;
-    margin-bottom: 32px;
   }
 }
 .hero__socials {
@@ -178,83 +204,5 @@
   transform: translate(35px, 50%);
   @media (max-width: 1020px) {
     display: none;
-  }
-}
-
-.hero__wings {
-  position: absolute;
-  top: -200px;
-  left: 0;
-  z-index: 1;
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: #010101;
-}
-
-.hero__wings-pic {
-  display: block;
-  width: 100%;
-  height: 100%;
-  mix-blend-mode: screen;
-  opacity: 0;
-  transition: all 1.5s ease;
-}
-.hero__wings-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  border-radius: 100%;
-  object-fit: contain;
-  transition: all 1.3s ease;
-  transform: scale(0.8);
-}
-.hero__wings-left,
-.hero__wings-right {
-  width: 50%;
-  transition: all 1.3s ease;
-}
-.hero__wings-left {
-  transform: translate(0, 200px);
-  // transform: translate(-60px, 200px);
-  // transform: translate(290px, 390px);
-}
-.hero__wings-right {
-  transform: translate(0, 200px);
-  // transform: translate(60px, 200px);
-  // transform: translate(-290px, 390px);
-}
-.hero__wings-left .hero__wings-pic {
-  transform: rotate(-90deg);
-  transform-origin: right center;
-  // transform: rotate(-90deg) translate(-770px, 230px);
-}
-.hero__wings-right .hero__wings-pic {
-  transform: rotate(90deg);
-  transform-origin: left center;
-  // transform: rotate(90deg) translate(770px, 230px);
-}
-
-.hero__wings--start {
-  .hero__wings-left .hero__wings-pic {
-    opacity: 1;
-    transform: rotate(0);
-  }
-  .hero__wings-right .hero__wings-pic {
-    opacity: 1;
-    transform: rotate(0);
-  }
-  .hero__wings-left {
-    transform: translate(0);
-  }
-  .hero__wings-right {
-    transform: translate(0);
-  }
-  .hero__wings-img {
-    border-radius: 0;
-    transform: scale(1);
   }
 }

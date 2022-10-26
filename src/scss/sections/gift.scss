@@ -2,15 +2,8 @@
   position: relative;
   padding-top: 50px;
   padding-bottom: 63px;
-  // background-image: url("../img/gift/background.jpg");
-  // background-repeat: no-repeat;
-  // background-position: center;
-  // background-position-x: -50px;
-  // background-position-y: 290px;
-  // background-size: contain;
-
   @media (max-width: 1020px) {
-    padding-top: 46px;
+    padding-top: 0;
     padding-bottom: 23px;
   }
 }
@@ -23,8 +16,8 @@
 .gift__title {
   margin-bottom: 64px;
   @media (max-width: 1020px) {
-    margin-bottom: 20px;
-    line-height: 1.4;
+    margin-bottom: 40px;
+    line-height: 1.1;
   }
 }
 
@@ -44,8 +37,9 @@
   position: relative;
   z-index: 1;
   @media (max-width: 1020px) {
-    max-width: 164px;
+    max-width: 214px;
     margin-right: auto;
+    margin-bottom: 20px;
     margin-left: auto;
   }
 }
@@ -109,8 +103,8 @@
   color: #ffffff;
   @media (max-width: 1020px) {
     margin-bottom: 12px;
-    font-size: 12px;
-    line-height: 1.8;
+    font-size: 24px;
+    line-height: 1.4;
   }
 }
 .gift__offer-desc {
@@ -122,8 +116,9 @@
   line-height: 180%;
   color: #616e79;
   @media (max-width: 1020px) {
-    margin-bottom: 12px;
-    line-height: 1.6;
+    margin-bottom: 24px;
+    font-size: 12px;
+    line-height: 1.8;
   }
 }
 .gift__offer-order-button {
