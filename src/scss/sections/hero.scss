@@ -117,10 +117,6 @@
   background: #56abf9;
   filter: blur(260px);
   border-radius: 960px;
-  animation-name: pulse;
-  animation-duration: 1.8s;
-
-  animation-iteration-count: infinite;
   opacity: 0.8;
   transform: translate3d(0, 0, 0);
   @media (max-width: 576px) {

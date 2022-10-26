@@ -295,6 +295,9 @@
   left: 0;
   z-index: 2;
   width: 107%;
+  transform: translate3d(0,0,0);
+  will-change: transform;
+  transition: all 0.3s ease;
   @media (max-width: 768px) {
     top: 6.5%;
   }
