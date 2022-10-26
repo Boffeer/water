@@ -6798,10 +6798,14 @@ body._lock {
 }
 
 .care {
-  position: relative;
+  top: 200px;
+  right: 0;
+  left: 0;
+  position: absolute;
   z-index: 3;
   padding-top: 65px;
   padding-bottom: 105px;
+  opacity: 0;
 }
 @media (max-width: 1020px) {
   .care {
@@ -6910,6 +6914,7 @@ body._lock {
   position: relative;
   padding-top: 90px;
   padding-bottom: 96px;
+  margin-top: -770px;
 }
 @media (max-width: 1020px) {
   .video {
