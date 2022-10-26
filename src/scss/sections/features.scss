@@ -6,6 +6,7 @@
     padding-top: 16px;
     padding-bottom: 56px;
     margin-bottom: -660px;
+    overflow: hidden;
   }
   @media (max-width: 375px) {
     padding-bottom: 28px;
@@ -272,10 +273,14 @@
   margin-right: auto;
   margin-left: auto;
   content: "";
-  background: #56abf9;
-  filter: blur(90px);
-  border-radius: 960px;
-  opacity: 0.2;
+  // background: #56abf9;
+  // filter: blur(90px);
+  // border-radius: 960px;
+  // opacity: 0.2;
+  background-image: url('../img/common/light-rect.png'), url('../img/common/light-rect.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   transform: translateY(-50%) translate3d(0, 0, 0);
   @media (max-width: 576px) {
     width: 230px;
@@ -298,6 +303,10 @@
   transform: translate3d(0,0,0);
   will-change: transform;
   transition: all 0.3s;
+  background-image: url('../img/features/features-light.png'), url('../img/features/features-light.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   @media (max-width: 768px) {
     top: 6.5%;
   }

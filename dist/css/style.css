@@ -5797,23 +5797,25 @@ body._lock {
   position: absolute;
   top: 315px;
   right: 0;
-  left: 0;
+  left: -5%;
   width: var(--size);
   max-width: 99vw;
   height: var(--size);
   margin-right: auto;
   margin-left: auto;
   content: "";
-  background: #56abf9;
-  filter: blur(260px);
-  border-radius: 960px;
-  opacity: 0.8;
-  transform: translate3d(0, 0, 0);
+  background-image: url("../img/common/light-rect.png"), url("../img/common/light-rect.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translate3d(0, 0, 0) scale(3);
 }
 @media (max-width: 576px) {
   .hero__pic::before {
     width: 230px;
     height: 400px;
+    top: 165px;
+    transform: translate3d(0, 0, 0) scale(1, 3);
   }
 }
 
@@ -5928,6 +5930,7 @@ body._lock {
   .try {
     padding-top: 10px;
     padding-bottom: 10px;
+    overflow: hidden;
   }
 }
 
@@ -5996,10 +5999,11 @@ body._lock {
   content: "";
   width: 320px;
   height: 256px;
-  background: #56ABF9;
-  filter: blur(60px);
-  border-radius: 960px;
-  transform: translateY(-50%) translate3d(0, 0, 0);
+  transform: translateY(-50%) translate3d(0, 0, 0) scale(2.5);
+  background-image: url("../img/try/try-light.png"), url("../img/try/try-light.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 @media (max-width: 576px) {
   .try__pic::before {
@@ -6174,23 +6178,24 @@ body._lock {
   .history {
     padding-top: 64px;
     padding-bottom: 24px;
+    overflow: hidden;
   }
 }
 
 .history::before {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 15%;
   display: block;
   width: 640px;
   max-width: 99vw;
   height: 640px;
   content: "";
-  background: #56abf9;
-  filter: blur(370px);
-  border-radius: 960px;
-  opacity: 0.6;
-  transform: translateY(-50%) translate3d(0, 0, 0);
+  transform: translateY(-50%) translate3d(0, 0, 0) scale(2);
+  background-image: url("../img/common/light-left.png"), url("../img/common/light-left.png");
+  background-size: contain;
+  background-position: center left;
+  background-repeat: no-repeat;
 }
 @media (max-width: 576px) {
   .history::before {
@@ -6233,6 +6238,13 @@ body._lock {
 
 .history__gallery {
   width: 100%;
+}
+@media (max-width: 1200px) {
+  .history__gallery {
+    max-width: 924px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 @media (max-width: 576px) {
   .history__gallery {
@@ -6289,6 +6301,11 @@ body._lock {
 .history__gallery-card {
   max-width: 552px;
   margin-bottom: 24px;
+}
+@media (max-width: 1200px) {
+  .history__gallery-card {
+    max-width: 450px;
+  }
 }
 @media (max-width: 576px) {
   .history__gallery-card {
@@ -6388,6 +6405,7 @@ body._lock {
     padding-top: 16px;
     padding-bottom: 56px;
     margin-bottom: -660px;
+    overflow: hidden;
   }
 }
 @media (max-width: 375px) {
@@ -6721,10 +6739,10 @@ body._lock {
   margin-right: auto;
   margin-left: auto;
   content: "";
-  background: #56abf9;
-  filter: blur(90px);
-  border-radius: 960px;
-  opacity: 0.2;
+  background-image: url("../img/common/light-rect.png"), url("../img/common/light-rect.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   transform: translateY(-50%) translate3d(0, 0, 0);
 }
 @media (max-width: 576px) {
@@ -6751,6 +6769,10 @@ body._lock {
   transform: translate3d(0, 0, 0);
   will-change: transform;
   transition: all 0.3s;
+  background-image: url("../img/features/features-light.png"), url("../img/features/features-light.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 @media (max-width: 768px) {
   .features__pic--top {
@@ -6893,6 +6915,7 @@ body._lock {
   .video {
     padding-top: 10px;
     padding-bottom: 64px;
+    overflow: hidden;
   }
 }
 @media (max-width: 375px) {
@@ -6903,7 +6926,7 @@ body._lock {
 
 .video::before {
   position: absolute;
-  top: -200px;
+  top: 100px;
   right: 0;
   left: 0;
   display: block;
@@ -6913,16 +6936,19 @@ body._lock {
   margin-right: auto;
   margin-left: auto;
   content: "";
-  background: #56abf9;
-  filter: blur(360px);
-  border-radius: 960px;
-  transform: translate3d(0, 0, 0);
-  opacity: 0.4;
+  transform: translateY(-50%) translate3d(0, 0, 0) scale(2);
+  background-image: url("../img/common/light-rect.png"), url("../img/common/light-rect.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
 }
 @media (max-width: 576px) {
   .video::before {
     width: 230px;
-    height: 400px;
+    height: 300px;
+    top: 170px;
+    z-index: 2;
   }
 }
 
@@ -7030,6 +7056,7 @@ body._lock {
 @media (max-width: 1020px) {
   .food {
     padding-top: 48px;
+    overflow: hidden;
   }
 }
 
@@ -7043,10 +7070,10 @@ body._lock {
   max-width: 99vw;
   height: 720px;
   content: "";
-  background: #56abf9;
-  filter: blur(250px);
-  border-radius: 960px;
-  opacity: 0.3;
+  background-image: url("../img/common/light-left.png"), url("../img/common/light-left.png");
+  background-size: contain;
+  background-position: center left;
+  background-repeat: no-repeat;
 }
 @media (max-width: 576px) {
   .food::before {
@@ -7150,6 +7177,7 @@ body._lock {
 @media (max-width: 1020px) {
   .gift {
     padding-bottom: 23px;
+    overflow: hidden;
   }
 }
 
@@ -7212,10 +7240,10 @@ body._lock {
   height: 528px;
   margin: auto;
   content: "";
-  background: #56abf9;
-  filter: blur(160px);
-  border-radius: 960px;
-  opacity: 0.4;
+  background-image: url("../img/common/light-rect.png"), url("../img/common/light-rect.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
   transform: translate3d(0, 0, 0);
 }
 @media (max-width: 576px) {

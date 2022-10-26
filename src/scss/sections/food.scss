@@ -5,6 +5,7 @@
   padding-bottom: 0;
   @media (max-width: 1020px) {
     padding-top: 48px;
+    overflow: hidden;
   }
 }
 .food::before {
@@ -17,10 +18,14 @@
   max-width: 99vw;
   height: 720px;
   content: "";
-  background: #56abf9;
-  filter: blur(250px);
-  border-radius: 960px;
-  opacity: 0.3;
+  // background: #56abf9;
+  // filter: blur(250px);
+  // border-radius: 960px;
+  // opacity: 0.3;
+  background-image: url('../img/common/light-left.png'), url('../img/common/light-left.png');
+  background-size: contain;
+  background-position: center left;
+  background-repeat: no-repeat;
   @media (max-width: 576px) {
     width: 230px;
     height: 400px;

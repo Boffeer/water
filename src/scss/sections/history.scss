@@ -8,22 +8,27 @@
   @media (max-width: 1020px) {
     padding-top: 64px;
     padding-bottom: 24px;
+    overflow: hidden;
   }
 }
 .history::before {
   position: absolute;
   top: 50%;
-  left: 0;
+  left: 15%;
   display: block;
   width: 640px;
   max-width: 99vw;
   height: 640px;
   content: "";
-  background: #56abf9;
-  filter: blur(370px);
-  border-radius: 960px;
-  opacity: 0.6;
-  transform: translateY(-50%) translate3d(0, 0, 0);
+  // background: #56abf9;
+  // filter: blur(370px);
+  // border-radius: 960px;
+  // opacity: 0.6;
+  transform: translateY(-50%) translate3d(0, 0, 0) scale(2);
+  background-image: url('../img/common/light-left.png'), url('../img/common/light-left.png');
+  background-size: contain;
+  background-position: center left;
+  background-repeat: no-repeat;
   @media (max-width: 576px) {
     width: 230px;
     height: 400px;
@@ -56,6 +61,11 @@
 
 .history__gallery {
   width: 100%;
+  @media (max-width: 1200px) {
+    max-width: 924px;
+    margin-left: auto;
+    margin-right: auto;
+  }
   @media (max-width: 576px) {
     max-width: 360px;
     margin-right: auto;
@@ -96,6 +106,9 @@
 .history__gallery-card {
   max-width: 552px;
   margin-bottom: 24px;
+  @media (max-width: 1200px) {
+    max-width: 450px;
+  }
   @media (max-width: 576px) {
     max-width: 168px;
     margin-bottom: 32px;
