@@ -5808,7 +5808,7 @@ body._lock {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  transform: translate3d(0, 0, 0) scale(3);
+  transform: translate3d(0, 0, 0) scale(2);
 }
 @media (max-width: 576px) {
   .hero__pic::before {
