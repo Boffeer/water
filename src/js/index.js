@@ -157,7 +157,7 @@ function makeTimeline(timeline) {
     // .to(scroller, 1, { x: "-80%" })
     // .to(scroller, 1, { x: "-115%" })
     // .to(scroller, 1, { x: "-120%" })
-    .to(scrollerParent, 1, { opacity: 0, pointerEvents: "none" });
+    .to(scrollerParent, 1.5, { opacity: 0, pointerEvents: "none" });
 
   if (fader) {
     slidesContainer.to(fader, 2, { opacity: 0 });

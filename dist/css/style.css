@@ -5508,6 +5508,12 @@ body._lock {
     margin-left: auto;
   }
 }
+@media (max-width: 375px) {
+  .section-title {
+    font-size: 20px;
+  }
+}
+
 .section-text {
   font-family: "Inter", sans-serif;
   font-size: 14px;
@@ -7294,11 +7300,6 @@ body._lock {
     line-height: 1.1;
   }
 }
-@media (max-width: 375px) {
-  .research__title {
-    font-size: 20px;
-  }
-}
 
 .research__suptitle {
   margin-bottom: 32px;
@@ -7540,6 +7541,11 @@ body._lock {
   .footer {
     padding-top: 245px;
     padding-bottom: 52px;
+  }
+}
+@media (max-width: 360px) {
+  .footer {
+    padding-top: 345px;
   }
 }
 
