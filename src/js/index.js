@@ -138,9 +138,7 @@ function makeTimeline(timeline) {
   }
   // console.log(track);
 
-  if (window.innerWidth < 576) {
-    scrollDuration = `${(cardsCount - 1) * 100}%`;
-  } else if (window.innerWidth >= 1020) {
+  if (window.innerWidth >= 1020) {
     scrollDuration = `${(cardsCount - 3) * 50}%`;
   } else if (window.innerWidth < 1020) {
     scrollDuration = `${(cardsCount - 1) * 100}%`;
