@@ -60,6 +60,7 @@
   filter: blur(160px);
   border-radius: 960px;
   opacity: 0.4;
+  transform: translate3d(0, 0, 0);
   @media (max-width: 576px) {
     width: 230px;
     height: 400px;

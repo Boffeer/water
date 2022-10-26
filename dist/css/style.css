@@ -5810,6 +5810,7 @@ body._lock {
   animation-duration: 1.8s;
   animation-iteration-count: infinite;
   opacity: 0.8;
+  transform: translate3d(0, 0, 0);
 }
 @media (max-width: 576px) {
   .hero__pic::before {
@@ -5972,6 +5973,7 @@ body._lock {
   max-width: 360px;
   margin-right: auto;
   margin-left: auto;
+  position: relative;
 }
 @media (min-width: 1021px) {
   .try__pic {
@@ -5983,6 +5985,21 @@ body._lock {
     max-width: 168px;
     margin-bottom: -24px;
   }
+}
+
+.try__pic::before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  content: "";
+  width: 320px;
+  height: 256px;
+  background: #56ABF9;
+  filter: blur(120px);
+  border-radius: 960px;
+  transform: translate3d(0, 0, 0);
 }
 
 .try__img {
@@ -6066,6 +6083,11 @@ body._lock {
   height: 480px;
   margin-bottom: 32px;
 }
+@media (max-height: 900px) {
+  .testimonials-card__pic {
+    height: 400px;
+  }
+}
 @media (max-width: 576px) {
   .testimonials-card__pic {
     height: 350px;
@@ -6075,6 +6097,7 @@ body._lock {
 
 .testimonials-card__img {
   object-fit: cover;
+  object-position: top;
 }
 
 .testimonials__suptitle {
@@ -6156,7 +6179,7 @@ body._lock {
   filter: blur(370px);
   border-radius: 960px;
   opacity: 0.6;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translate3d(0, 0, 0);
 }
 @media (max-width: 576px) {
   .history::before {
@@ -6691,7 +6714,7 @@ body._lock {
   filter: blur(90px);
   border-radius: 960px;
   opacity: 0.2;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translate3d(0, 0, 0);
 }
 @media (max-width: 576px) {
   .features__scene::before {
@@ -6879,6 +6902,7 @@ body._lock {
   background: #56abf9;
   filter: blur(360px);
   border-radius: 960px;
+  transform: translate3d(0, 0, 0);
   opacity: 0.4;
 }
 @media (max-width: 576px) {
@@ -6996,6 +7020,7 @@ body._lock {
 }
 
 .food::before {
+  transform: translate3d(0, 0, 0);
   position: absolute;
   top: 0;
   left: 0;
@@ -7177,6 +7202,7 @@ body._lock {
   filter: blur(160px);
   border-radius: 960px;
   opacity: 0.4;
+  transform: translate3d(0, 0, 0);
 }
 @media (max-width: 576px) {
   .gift__pic::before {

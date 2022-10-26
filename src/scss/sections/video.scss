@@ -25,6 +25,7 @@
   background: #56abf9;
   filter: blur(360px);
   border-radius: 960px;
+  transform: translate3d(0, 0, 0);
   opacity: 0.4;
   @media (max-width: 576px) {
     width: 230px;

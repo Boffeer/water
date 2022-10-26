@@ -42,6 +42,7 @@
   max-width: 360px;
   margin-right: auto;
   margin-left: auto;
+  position: relative;
   @media (min-width: 1021px) {
     min-height: 700px;
   }
@@ -49,6 +50,20 @@
     max-width: 168px;
     margin-bottom: -24px;
   }
+}
+.try__pic::before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  content: "";
+  width: 320px;
+  height: 256px;
+  background: #56ABF9;
+  filter: blur(120px);
+  border-radius: 960px;
+  transform: translate3d(0, 0, 0);
 }
 .try__img {
   display: block;

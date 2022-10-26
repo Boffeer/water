@@ -32,6 +32,9 @@
   display: block;
   height: 480px;
   margin-bottom: 32px;
+  @media (max-height: 900px) {
+    height: 400px;
+  }
   @media (max-width: 576px) {
     height: 350px;
     margin-bottom: 18px;
@@ -39,6 +42,7 @@
 }
 .testimonials-card__img {
   object-fit: cover;
+  object-position: top;
 }
 .testimonials__suptitle {
   margin-bottom: 25px;

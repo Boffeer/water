@@ -146,18 +146,11 @@ function makeTimeline(timeline) {
     scrollDuration = `${(cardsCount - 1) * 100}%`;
   }
 
-  // const slidesContainer = new TimelineMax().to(scroller, 2, {
-  //   x: xTo,
-  // });
   const slidesContainer = new TimelineMax()
     .to(scroller, 1, { x: getTrack(cardsCount / 4) })
     .to(scroller, 1, { x: getTrack((cardsCount / 4) * 2) })
     .to(scroller, 1, { x: getTrack((cardsCount / 4) * 3) })
     .to(scroller, 1, { x: getTrack(cardsCount / 4 * 3.5) })
-    // .to(scroller, 1, { x: "-40%" })
-    // .to(scroller, 1, { x: "-80%" })
-    // .to(scroller, 1, { x: "-115%" })
-    // .to(scroller, 1, { x: "-120%" })
     .to(scrollerParent, 1.3, { opacity: 0, pointerEvents: "none" });
 
   if (fader) {
@@ -403,11 +396,11 @@ const historySuptitle = gsap
   .to(".history__suptitle", defaultParallaxTo());
 const historyTitle = gsap
   .timeline()
-  .from(".history__title", defaultParallaxFrom(400))
+  .from(".history__title", defaultParallaxFrom(200))
   .to(".history__title", defaultParallaxTo());
 
-makeDefaultScene(".history", historySuptitle, 0.4, false, -800);
-makeDefaultScene(".history", historyTitle, 0.4, false, -700);
+makeDefaultScene(".history", historySuptitle, 0.3, false, -900);
+makeDefaultScene(".history", historyTitle, 0.3, false, -800);
 // #endregion gsapHistory
 
 // #region gsapFood
