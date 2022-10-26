@@ -300,7 +300,7 @@ if (window.innerWidth < 1020) {
     .to(".features__column-big-bullets", 1, {
       y: "-190%",
     });
-  leftBulletsOffset = 100
+  // leftBulletsOffset = 100
 } else {
   bigBulletsScroller
     .from(".features__column-big-bullets", 1, {
@@ -428,11 +428,11 @@ makeDefaultScene(".history", historySection, 0.3,false, 0, 300);
 const historySuptitle = gsap
   .timeline()
   .from(".history__suptitle", defaultParallaxFrom(0))
-  .to(".history__suptitle", defaultParallaxTo(-100));
+  .to(".history__suptitle", defaultParallaxTo(-50));
 const historyTitle = gsap
   .timeline()
   .from(".history__title", defaultParallaxFrom(0))
-  .to(".history__title", defaultParallaxTo(-100));
+  .to(".history__title", defaultParallaxTo(-50));
 
 makeDefaultScene(".history", historySuptitle, 0.3, false, -900);
 makeDefaultScene(".history", historyTitle, 0.3, false, -800);

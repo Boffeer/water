@@ -37,7 +37,8 @@
 
 .socials__link:hover {
   @media (min-width: $minHover) {
-    --icon-color: #fff;
+    // --icon-color: #fff;
+    --icon-color: #2bccff;
     // fill: var(--c-accent);
     // stroke: var(--icon-color);
   }
