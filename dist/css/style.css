@@ -772,7 +772,7 @@
 
 @media (any-hover: hover) {
   .socials--big .socials__link:hover .socials__icon {
-    --icon-color: #474747;
+    --icon-color: #2bccff;
   }
 }
 
