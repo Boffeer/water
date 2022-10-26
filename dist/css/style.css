@@ -6322,12 +6322,12 @@ body._lock {
 }
 @media (max-width: 390px) {
   .history__gallery-card {
-    max-width: 140px;
+    width: 140px;
   }
 }
 @media (max-width: 359px) {
   .history__gallery-card {
-    max-width: 130px;
+    width: 130px;
   }
 }
 
@@ -6343,6 +6343,7 @@ body._lock {
     padding: 0;
     text-align: center;
     background: none;
+    width: 100%;
   }
 }
 
@@ -6929,7 +6930,7 @@ body._lock {
     padding-top: 10px;
     padding-bottom: 64px;
     overflow: hidden;
-    margin-top: -600px;
+    margin-top: 0;
   }
 }
 @media (max-width: 576px) {
