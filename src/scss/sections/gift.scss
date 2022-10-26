@@ -58,11 +58,11 @@
   margin: auto;
   content: "";
   background-image: url('../img/common/light-rect.png'), url('../img/common/light-rect.png');
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   // background: #56abf9;
-  // filter: blur(160px);
+  filter: blur(60px);
   // border-radius: 960px;
   // opacity: 0.4;
   transform: translate3d(0, 0, 0);

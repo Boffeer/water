@@ -107,15 +107,17 @@
   position: absolute;
   top: 315px;
   right: 0;
-  left: -5%;
+  left: -20%;
+  transform-origin: center;
   width: var(--size);
   max-width: 99vw;
   height: var(--size);
   margin-right: auto;
   margin-left: auto;
   content: "";
+  z-index: 1;
   // background: #56abf9;
-  // filter: blur(260px);
+  filter: blur(20px);
   // border-radius: 960px;
   // opacity: 0.8;
   background-image: url('../img/common/light-rect.png'), url('../img/common/light-rect.png');
@@ -131,6 +133,8 @@
   }
 }
 .hero__img {
+  position: relative;
+  z-index: 2;
   @media (max-width: 1500px) and (min-width: 577px) {
     max-width: 80%;
     margin-left: auto;

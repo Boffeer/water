@@ -119,7 +119,7 @@ function makeTimeline(timeline) {
   let { pin, scroller, scrollerParent, card, fader } = timeline;
   card = card == undefined ? ".card" : card;
   // fader = fader == undefined ? ".section__fader" : fader;
-  fader = document.querySelector(pin).querySelector(".section__fader");
+  fader = !fader ? document.querySelector(pin).querySelector(".section__fader") : document.querySelector(fader);
 
   let scrollDuration = "250%";
 
@@ -192,6 +192,7 @@ const testimonialsTimeline = {
   pin: ".testimonials",
   scroller: ".testimonials__cards",
   scrollerParent: ".testimonials",
+  fader: '.history__fader'
 };
 makeTimeline(testimonialsTimeline);
 
@@ -216,7 +217,8 @@ const slidesContainer = gsap
     y: "-100%",
   })
   .to(".care", { opacity: 1 }, careOpacityDuration)
-  .to(".features__columns", { opacity: 0 }, 0.9)
+  .to(".care__fader", { opacity: 0}, careOpacityDuration + 0.1)
+  .to(".features__columns", { opacity: 0}, 0.9)
 
 let pinClass = ".features__scroller";
 if (window.innerWidth < 1020 && window.innerWidth > 576) {
@@ -401,7 +403,11 @@ function getHeightDifference(bigger, less, modifier = 0) {
 // #region gsapHero
 const heroSocials = gsap.timeline();
 heroSocials.to(".hero__socials", defaultParallaxFrom(0));
-makeDefaultScene(".hero", heroSocials, 0.25, false, 500, 250);
+if (window.innerWidth < 1600) {
+  makeDefaultScene(".hero", heroSocials, 0.25, false, 300, 250);
+} else {
+  makeDefaultScene(".hero", heroSocials, 0.25, false, 500, 250);
+}
 // #endregion gsapHero
 
 // #region gsapHistory
@@ -421,10 +427,10 @@ document.querySelectorAll('.history__img').forEach((img, index) => {
     .to(img, {filter: 'grayscale(1)'})
   makeDefaultScene(img, historyPics, 0.1, false, -200, 1000);
 })
-const historySection = gsap
-  .timeline()
-  .from(".history", {opacity: 0})
-makeDefaultScene(".history", historySection, 0.3, false, 50, 300);
+// const historySection = gsap
+//   .timeline()
+//   .from(".history", {opacity: 0})
+// makeDefaultScene(".history", historySection, 0.3, false, 50, 300);
 
 
 const historySuptitle = gsap

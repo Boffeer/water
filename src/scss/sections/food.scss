@@ -14,16 +14,16 @@
   top: 0;
   left: 0;
   display: block;
-  width: 720px;
+  width: 920px;
   max-width: 99vw;
   height: 720px;
   content: "";
   // background: #56abf9;
-  // filter: blur(250px);
+  filter: blur(30px);
   // border-radius: 960px;
   // opacity: 0.3;
   background-image: url('../img/common/light-left.png'), url('../img/common/light-left.png');
-  background-size: contain;
+  background-size: cover;
   background-position: center left;
   background-repeat: no-repeat;
   @media (max-width: 576px) {

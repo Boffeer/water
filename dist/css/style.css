@@ -772,7 +772,7 @@
 
 @media (any-hover: hover) {
   .socials--big .socials__link:hover .socials__icon {
-    --icon-color: #41a2fc;
+    --icon-color: #0773e8;
   }
 }
 
@@ -5797,13 +5797,16 @@ body._lock {
   position: absolute;
   top: 315px;
   right: 0;
-  left: -5%;
+  left: -20%;
+  transform-origin: center;
   width: var(--size);
   max-width: 99vw;
   height: var(--size);
   margin-right: auto;
   margin-left: auto;
   content: "";
+  z-index: 1;
+  filter: blur(20px);
   background-image: url("../img/common/light-rect.png"), url("../img/common/light-rect.png");
   background-size: contain;
   background-position: center;
@@ -5819,6 +5822,10 @@ body._lock {
   }
 }
 
+.hero__img {
+  position: relative;
+  z-index: 2;
+}
 @media (max-width: 1500px) and (min-width: 577px) {
   .hero__img {
     max-width: 80%;
@@ -5999,6 +6006,7 @@ body._lock {
   content: "";
   width: 320px;
   height: 256px;
+  filter: blur(60px);
   transform: translateY(-50%) translate3d(0, 0, 0) scale(2.5);
   background-image: url("../img/try/try-light.png"), url("../img/try/try-light.png");
   background-size: contain;
@@ -6169,7 +6177,7 @@ body._lock {
 }
 
 .history {
-  margin-top: -750px;
+  margin-top: -830px;
   position: relative;
   z-index: 1;
   width: 100%;
@@ -6194,6 +6202,7 @@ body._lock {
   max-width: 99vw;
   height: 640px;
   content: "";
+  filter: blur(40px);
   transform: translateY(-50%) translate3d(0, 0, 0) scale(2);
   background-image: url("../img/common/light-left.png"), url("../img/common/light-left.png");
   background-size: contain;
@@ -6739,20 +6748,21 @@ body._lock {
   position: absolute;
   top: 50%;
   right: 0;
-  left: 0;
+  left: -20vw;
   z-index: 0;
   display: block;
-  width: 520px;
+  width: 720px;
   max-width: 99vw;
   height: 720px;
   margin-right: auto;
   margin-left: auto;
   content: "";
+  filter: blur(20px);
   background-image: url("../img/common/light-rect.png"), url("../img/common/light-rect.png");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  transform: translateY(-50%) translate3d(0, 0, 0);
+  transform: translateY(-50%) translate3d(0, 0, 0) scale(1.6);
 }
 @media (max-width: 576px) {
   .features__scene::before {
@@ -6779,7 +6789,7 @@ body._lock {
   will-change: transform;
   transition: all 0.3s;
   background-image: url("../img/features/features-light.png"), url("../img/features/features-light.png");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
@@ -6796,6 +6806,7 @@ body._lock {
 
 .features__pic--bottom {
   z-index: 1;
+  position: relative;
 }
 
 .features__img {
@@ -6957,6 +6968,7 @@ body._lock {
   margin-right: auto;
   margin-left: auto;
   content: "";
+  filter: blur(60px);
   transform: translateY(-50%) translate3d(0, 0, 0) scale(2);
   background-image: url("../img/common/light-rect.png"), url("../img/common/light-rect.png");
   background-size: contain;
@@ -7087,12 +7099,13 @@ body._lock {
   top: 0;
   left: 0;
   display: block;
-  width: 720px;
+  width: 920px;
   max-width: 99vw;
   height: 720px;
   content: "";
+  filter: blur(30px);
   background-image: url("../img/common/light-left.png"), url("../img/common/light-left.png");
-  background-size: contain;
+  background-size: cover;
   background-position: center left;
   background-repeat: no-repeat;
 }
@@ -7260,9 +7273,10 @@ body._lock {
   margin: auto;
   content: "";
   background-image: url("../img/common/light-rect.png"), url("../img/common/light-rect.png");
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  filter: blur(60px);
   transform: translate3d(0, 0, 0);
 }
 @media (max-width: 576px) {
@@ -7676,15 +7690,12 @@ body._lock {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Inter", sans-serif;
+  font-family: var(--ff-sf);
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
   line-height: 160%;
   color: #717171;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.26em;
 }
 @media (max-width: 576px) {
   .footer__container {
