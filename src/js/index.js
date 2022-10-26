@@ -205,23 +205,34 @@ makeTimeline(researchTimeline);
 // #endregion scroller
 
 // #region features
+
+let careOpacityDuration = 1.5;
+if (window.innerWidth < 1020) {
+  careOpacityDuration = 1.3;
+}
+
 const slidesContainer = gsap
   .timeline()
   .to(".features__pic--top", {
     y: "-100%",
   })
-  .to(".care", { opacity: 1 }, 1.5)
+  .to(".care", { opacity: 1 }, careOpacityDuration)
   .to(".features__pic", { opacity: 0}, 1.3)
 
 let pinClass = ".features__scroller";
 if (window.innerWidth < 1020 && window.innerWidth > 576) {
   pinClass = ".features__container";
 }
+
+let featuresDuration = document.querySelector(".features").getBoundingClientRect().height * 1.7;
+if (window.innerWidth < 1020) {
+  featuresDuration = document.querySelector(".features").getBoundingClientRect().height * 1.2;
+}
+
 new ScrollMagic.Scene({
   triggerElement: pinClass,
   triggerHook: "onLeave",
-  duration:
-    document.querySelector(".features").getBoundingClientRect().height * 1.7,
+  duration: featuresDuration
 })
   .setPin(pinClass)
   .setTween(slidesContainer)
