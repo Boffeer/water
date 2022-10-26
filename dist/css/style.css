@@ -5795,9 +5795,9 @@ body._lock {
 .hero__pic::before {
   --size: 520px;
   position: absolute;
-  top: 315px;
-  right: 0;
-  left: -20%;
+  bottom: 315px;
+  right: unset;
+  left: -23%;
   transform-origin: center;
   width: var(--size);
   max-width: 99vw;
@@ -5806,12 +5806,11 @@ body._lock {
   margin-left: auto;
   content: "";
   z-index: 1;
-  filter: blur(20px);
-  background-image: url("../img/common/light-rect.png"), url("../img/common/light-rect.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: #56abf9;
+  filter: blur(360px);
+  border-radius: 960px;
   transform: translate3d(0, 0, 0) scale(2);
+  opacity: 0.2;
 }
 @media (max-width: 576px) {
   .hero__pic::before {
@@ -5998,20 +5997,19 @@ body._lock {
 .try__pic::before {
   position: absolute;
   z-index: 1;
-  top: 50%;
-  left: 0;
+  top: 40%;
+  left: -10%;
+  left: -10%;
   right: 0;
   margin-left: auto;
   margin-right: auto;
   content: "";
   width: 320px;
   height: 256px;
-  filter: blur(60px);
-  transform: translateY(-50%) translate3d(0, 0, 0) scale(2.5);
-  background-image: url("../img/try/try-light.png"), url("../img/try/try-light.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: #56ABF9;
+  filter: blur(160px);
+  border-radius: 960px;
+  transform: translateY(-50%) translate3d(0, 0, 0);
 }
 @media (max-width: 576px) {
   .try__pic::before {
@@ -6196,18 +6194,17 @@ body._lock {
 .history::before {
   position: absolute;
   top: 50%;
-  left: 15%;
+  left: -20vw;
   display: block;
   width: 640px;
   max-width: 99vw;
   height: 640px;
   content: "";
-  filter: blur(40px);
-  transform: translateY(-50%) translate3d(0, 0, 0) scale(2);
-  background-image: url("../img/common/light-left.png"), url("../img/common/light-left.png");
-  background-size: contain;
-  background-position: center left;
-  background-repeat: no-repeat;
+  background: #56abf9;
+  filter: blur(340px);
+  border-radius: 960px;
+  opacity: 0.3;
+  transform: translateY(-50%) translate3d(0, 0, 0);
 }
 @media (max-width: 576px) {
   .history::before {
@@ -6757,12 +6754,11 @@ body._lock {
   margin-right: auto;
   margin-left: auto;
   content: "";
-  filter: blur(20px);
-  background-image: url("../img/common/light-rect.png"), url("../img/common/light-rect.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  transform: translateY(-50%) translate3d(0, 0, 0) scale(1.6);
+  background: #56abf9;
+  filter: blur(220px);
+  border-radius: 960px;
+  opacity: 0.2;
+  transform: translateY(-50%) translate3d(0, 0, 0);
 }
 @media (max-width: 576px) {
   .features__scene::before {
@@ -6784,14 +6780,10 @@ body._lock {
   bottom: 0;
   left: 0;
   z-index: 2;
-  width: 107%;
+  width: 100%;
   transform: translate3d(0, 0, 0);
   will-change: transform;
   transition: all 0.3s;
-  background-image: url("../img/features/features-light.png"), url("../img/features/features-light.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 @media (max-width: 768px) {
   .features__pic--top {
@@ -6968,12 +6960,11 @@ body._lock {
   margin-right: auto;
   margin-left: auto;
   content: "";
-  filter: blur(60px);
-  transform: translateY(-50%) translate3d(0, 0, 0) scale(2);
-  background-image: url("../img/common/light-rect.png"), url("../img/common/light-rect.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: #56abf9;
+  filter: blur(260px);
+  border-radius: 960px;
+  opacity: 0.2;
+  transform: translateY(-50%) translate3d(0, 0, 0);
   pointer-events: none;
 }
 @media (max-width: 576px) {
@@ -7096,18 +7087,17 @@ body._lock {
 .food::before {
   transform: translate3d(0, 0, 0);
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 120px;
+  left: -24%;
   display: block;
-  width: 920px;
+  width: 680px;
   max-width: 99vw;
-  height: 720px;
+  height: 680px;
   content: "";
-  filter: blur(20px);
-  background-image: url("../img/common/light-left.png"), url("../img/common/light-left.png");
-  background-size: cover;
-  background-position: center left;
-  background-repeat: no-repeat;
+  background: #56abf9;
+  filter: blur(320px);
+  border-radius: 960px;
+  opacity: 0.2;
 }
 @media (max-width: 576px) {
   .food::before {
@@ -7272,11 +7262,10 @@ body._lock {
   height: 528px;
   margin: auto;
   content: "";
-  background-image: url("../img/common/light-rect.png"), url("../img/common/light-rect.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(60px);
+  background: #56abf9;
+  filter: blur(260px);
+  border-radius: 960px;
+  opacity: 0.4;
   transform: translate3d(0, 0, 0);
 }
 @media (max-width: 576px) {
@@ -7478,6 +7467,35 @@ body._lock {
 @media (max-width: 576px) {
   .research__card {
     min-width: 264px;
+  }
+}
+
+.research__cards-scroller {
+  position: relative;
+}
+
+.research__cards-scroller::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -20vw;
+  z-index: 0;
+  display: block;
+  width: 400px;
+  max-width: 99vw;
+  height: 528px;
+  margin: auto;
+  content: "";
+  background: #56abf9;
+  filter: blur(260px);
+  border-radius: 960px;
+  opacity: 0.4;
+  transform: translate3d(0, 0, 0);
+}
+@media (max-width: 576px) {
+  .research__cards-scroller::before {
+    width: 230px;
+    height: 400px;
   }
 }
 

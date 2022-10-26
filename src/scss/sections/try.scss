@@ -55,26 +55,23 @@
 .try__pic::before {
   position: absolute;
   z-index: 1;
-  top: 50%;
-  left: 0;
+  top: 40%;
+  left: -10%;
+  left: -10%;
   right: 0;
   margin-left: auto;
   margin-right: auto;
   content: "";
   width: 320px;
   height: 256px;
-  // background: #56ABF9;
-  filter: blur(60px);
-  // border-radius: 960px;
-  transform: translateY(-50%) translate3d(0, 0, 0) scale(2.5);
-  background-image: url('../img/try/try-light.png'), url('../img/try/try-light.png');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: #56ABF9;
+  filter: blur(160px);
+  border-radius: 960px;
+  transform: translateY(-50%) translate3d(0, 0, 0);
   @media (max-width: 576px) {
     width: 280px;
     left: -55px;
-  transform: translateY(-50%) translate3d(0, 0, 0) scale(1.6);
+    transform: translateY(-50%) translate3d(0, 0, 0) scale(1.6);
   }
 }
 .try__img {

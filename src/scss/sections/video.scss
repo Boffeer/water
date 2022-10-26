@@ -29,15 +29,11 @@
   margin-right: auto;
   margin-left: auto;
   content: "";
-  // background: #56abf9;
-  filter: blur(60px);
-  // border-radius: 960px;
-  // opacity: 0.4;
-  transform: translateY(-50%) translate3d(0, 0, 0) scale(2);
-  background-image: url('../img/common/light-rect.png'), url('../img/common/light-rect.png');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: #56abf9;
+  filter: blur(260px);
+  border-radius: 960px;
+  opacity: 0.2;
+  transform: translateY(-50%) translate3d(0, 0, 0);
   pointer-events: none;
   @media (max-width: 576px) {
     width: 230px;

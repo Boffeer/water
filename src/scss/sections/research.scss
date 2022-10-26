@@ -66,3 +66,29 @@
     min-width: 264px;
   }
 }
+
+.research__cards-scroller {
+  position: relative;
+}
+.research__cards-scroller::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -20vw;
+  z-index: 0;
+  display: block;
+  width: 400px;
+  max-width: 99vw;
+  height: 528px;
+  margin: auto;
+  content: "";
+  background: #56abf9;
+  filter: blur(260px);
+  border-radius: 960px;
+  opacity: 0.4;
+  transform: translate3d(0, 0, 0);
+  @media (max-width: 576px) {
+    width: 230px;
+    height: 400px;
+  }
+}

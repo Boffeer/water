@@ -11,21 +11,17 @@
 .food::before {
   transform: translate3d(0, 0, 0);
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 120px;
+  left: -24%;
   display: block;
-  width: 920px;
+  width: 680px;
   max-width: 99vw;
-  height: 720px;
+  height: 680px;
   content: "";
-  // background: #56abf9;
-  filter: blur(20px);
-  // border-radius: 960px;
-  // opacity: 0.3;
-  background-image: url('../img/common/light-left.png'), url('../img/common/light-left.png');
-  background-size: cover;
-  background-position: center left;
-  background-repeat: no-repeat;
+  background: #56abf9;
+  filter: blur(320px);
+  border-radius: 960px;
+  opacity: 0.2;
   @media (max-width: 576px) {
     width: 230px;
     height: 400px;
