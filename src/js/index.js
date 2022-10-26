@@ -147,11 +147,21 @@ function makeTimeline(timeline) {
   }
 
   const slidesContainer = new TimelineMax()
-    .to(scroller, 1, { x: getTrack(cardsCount / 4) })
-    .to(scroller, 1, { x: getTrack((cardsCount / 4) * 2) })
-    .to(scroller, 1, { x: getTrack((cardsCount / 4) * 3) })
-    .to(scroller, 1, { x: getTrack(cardsCount / 4 * 3.5) })
-    .to(scrollerParent, 1.3, { opacity: 0, pointerEvents: "none" });
+  if (window.innerWidth > 1020) {
+    slidesContainer
+      .to(scroller, 1, { x: getTrack(cardsCount / 4) })
+      .to(scroller, 1, { x: getTrack((cardsCount / 4) * 2) })
+      .to(scroller, 1, { x: getTrack((cardsCount / 4) * 3) })
+      .to(scroller, 1, { x: getTrack(cardsCount / 4 * 3.5) })
+      .to(scrollerParent, 1.3, { opacity: 0, pointerEvents: "none" });
+  } else {
+    slidesContainer
+      .to(scroller, 1, { x: getTrack(cardsCount / 4) })
+      .to(scroller, 1, { x: getTrack((cardsCount / 4) * 2) })
+      .to(scroller, 1, { x: getTrack((cardsCount / 4) * 3) })
+      .to(scroller, 1, { x: getTrack(cardsCount) })
+      .to(scrollerParent, 1.3, { opacity: 0, pointerEvents: "none" });
+  }
 
   if (fader) {
     slidesContainer.to(fader, 2, { opacity: 0 });
@@ -352,7 +362,6 @@ function makeDefaultScene(
     duration == 0
       ? document.querySelector(trigger).getBoundingClientRect().height
       : duration;
-  // console.log(trigger, duration);
   const defaultScene = new ScrollMagic.Scene({
     triggerElement: trigger,
     duration,
@@ -441,8 +450,8 @@ if (window.innerWidth > 1020) {
   foodOffset = -100;
 }
 
-makeDefaultScene(".food", foodTitle, 0.45, false, foodOffer, 750);
-makeDefaultScene(".food", foodOffer, 0.45, false, foodOffer, 700);
+makeDefaultScene(".food", foodTitle, 0.45, false, foodOffset, 750);
+makeDefaultScene(".food", foodOffer, 0.45, false, foodOffset, 700);
 makeDefaultScene(".food", foodPic, 0.45, false, foodOffset + 100, 700);
 
 // #endregion gsapFood
