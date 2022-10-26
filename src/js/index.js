@@ -141,7 +141,7 @@ function makeTimeline(timeline) {
   if (window.innerWidth >= 1020) {
     scrollDuration = `${(cardsCount - 3) * 50}%`;
   } else if (window.innerWidth < 1020) {
-    scrollDuration = `${(cardsCount - 1) * 100}%`;
+    scrollDuration = `${(cardsCount - 1.5) * 100}%`;
   }
 
   const slidesContainer = new TimelineMax()
@@ -409,7 +409,7 @@ window.addEventListener('DOMContentLoaded', () => {
       itemSelectory: ".history__gallery-card",
       gutter: 24,
     });
-  }, 400)
+  }, 1000)
 })
 
 document.querySelectorAll('.history__img').forEach(img => {
