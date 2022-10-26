@@ -6168,11 +6168,12 @@ body._lock {
 }
 
 .history {
+  margin-top: -500px;
   position: relative;
   z-index: 1;
   width: 100%;
   padding-top: 98px;
-  padding-bottom: 96;
+  padding-bottom: 96px;
 }
 @media (max-width: 1020px) {
   .history {

@@ -310,7 +310,6 @@ if (window.innerWidth < 1020) {
     offset: 1600,
   })
     .setTween(bigBulletsSingle)
-    .addIndicators({name: 'aaaaa'})
     .addTo(scrollController);
 }
 const leftBullets = new ScrollMagic.Scene({
@@ -322,7 +321,6 @@ const leftBullets = new ScrollMagic.Scene({
   offset: 300,
 })
   .setTween(bigBulletsScroller)
-  .addIndicators({name: 'bullets'})
   .addTo(scrollController);
 
 // #endregion features
@@ -385,11 +383,19 @@ makeDefaultScene(".hero", heroSocials, 0.25, false, 500, 250);
 // #region gsapHistory
 import Masonry from "masonry-layout";
 window.addEventListener('DOMContentLoaded', () => {
-  const historyMasonry = new Masonry(".history__gallery", {
-    itemSelectory: ".history__gallery-card",
-    gutter: 24,
-  });
+  setTimeout(() => {
+    const historyMasonry = new Masonry(".history__gallery", {
+      itemSelectory: ".history__gallery-card",
+      gutter: 24,
+    });
+  }, 400)
 })
+
+const historySection = gsap
+  .timeline()
+  .from(".history", {opacity: 0})
+makeDefaultScene(".history", historySection, 0.3, 'history', 0, 300);
+
 const historySuptitle = gsap
   .timeline()
   .from(".history__suptitle", defaultParallaxFrom(300))
