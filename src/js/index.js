@@ -122,33 +122,42 @@ function makeTimeline(timeline) {
   // fader = fader == undefined ? ".section__fader" : fader;
   fader = document.querySelector(pin).querySelector(".section__fader");
 
-  let xTo = "-120%";
   let scrollDuration = "250%";
 
   const scrollerContainer = document.querySelector(scroller);
-  const cards = [...scrollerContainer.querySelectorAll(card)].length;
+  const cards = [...scrollerContainer.querySelectorAll(card)];
+  const cardsCount = cards.length;
 
-  if (window.innerWidth < 340) {
-    xTo = `-${100 * (cards - 1)}%`;
-    scrollDuration = "300%";
-  } else if (window.innerWidth < 400) {
-    xTo = `-${100 * (cards - 1.5)}%`;
-    scrollDuration = "200%";
+  const cardStyles = cards[0].currentStyle || window.getComputedStyle(cards[0]);
+  const cardMarginRight = +cardStyles.marginRight.replace(/\D/g, "");
+
+  function getTrack(count = cardsCount) {
+    const track =
+      cards[0].getBoundingClientRect().width * (count - 1) +
+      cardMarginRight * (count - 2);
+    return -track;
+  }
+  // console.log(track);
+
+  if (window.innerWidth >= 1020) {
+    scrollDuration = `${(cardsCount - 3) * 50}%`;
   } else if (window.innerWidth < 1020) {
-    xTo = `-${100 * (cards - 2.5)}%`;
-    // xTo = "-500%";
-    scrollDuration = "200%";
+    scrollDuration = `${(cardsCount - 1) * 100}%`;
   }
 
   // const slidesContainer = new TimelineMax().to(scroller, 2, {
   //   x: xTo,
   // });
   const slidesContainer = new TimelineMax()
-    .to(scroller, 1, { x: "-40%" })
-    .to(scroller, 1, { x: "-80%" })
-    .to(scroller, 1, { x: "-115%" })
-    .to(scroller, 1, { x: "-120%" })
-    .to(scrollerParent, 2, { opacity: 0, pointerEvents: "none" });
+    .to(scroller, 1, { x: getTrack(cardsCount / 4) })
+    .to(scroller, 1, { x: getTrack((cardsCount / 4) * 2) })
+    .to(scroller, 1, { x: getTrack((cardsCount / 4) * 3) })
+    .to(scroller, 1, { x: getTrack(cardsCount) })
+    // .to(scroller, 1, { x: "-40%" })
+    // .to(scroller, 1, { x: "-80%" })
+    // .to(scroller, 1, { x: "-115%" })
+    // .to(scroller, 1, { x: "-120%" })
+    .to(scrollerParent, 1, { opacity: 0, pointerEvents: "none" });
 
   if (fader) {
     slidesContainer.to(fader, 2, { opacity: 0 });
@@ -158,6 +167,7 @@ function makeTimeline(timeline) {
     triggerElement: pin,
     triggerHook: "onLeave",
     duration: scrollDuration,
+    // duration: scrollDuration,
   })
     .setPin(pin)
     .setTween(slidesContainer)
