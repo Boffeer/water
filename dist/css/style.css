@@ -6001,6 +6001,12 @@ body._lock {
   border-radius: 960px;
   transform: translateY(-50%) translate3d(0, 0, 0);
 }
+@media (max-width: 576px) {
+  .try__pic::before {
+    width: 280px;
+    left: -55px;
+  }
+}
 
 .try__img {
   position: relative;
