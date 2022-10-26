@@ -216,7 +216,8 @@ const slidesContainer = gsap
     y: "-100%",
   })
   .to(".care", { opacity: 1 }, careOpacityDuration)
-  .to(".features__columns", { opacity: 0}, 0.9)
+  .to(".features__columns", { opacity: 0 }, 0.9)
+  .to(".combiner-features", { pointerEvents: 'none'}, 0.1)
 
 let pinClass = ".features__scroller";
 if (window.innerWidth < 1020 && window.innerWidth > 576) {
@@ -290,8 +291,9 @@ new ScrollMagic.Scene({
 const bigBulletsScroller = new TimelineMax();
 const bigBulletsSingle = new TimelineMax();
 let bigBulletsScrollerDuration = "200%";
-let  leftBulletsOffset = 300
+let  leftBulletsOffset = 100
 if (window.innerWidth < 1020) {
+  leftBulletsOffset = 300
   bigBulletsScrollerDuration = "500%";
   bigBulletsScroller
     .from(".features__column-big-bullets", 1, {
@@ -308,7 +310,7 @@ if (window.innerWidth < 1020) {
       opacity: 0,
     })
     .to(".features__column-big-bullets", 1, {
-      y: "-230%",
+      y: "-130%",
       opacity: 1,
     });
   bigBulletsSingle
@@ -327,7 +329,7 @@ if (window.innerWidth < 1020) {
     triggerHook: 0.7,
     duration:
       document.querySelector(".features").getBoundingClientRect().height / 2 - 1000,
-    offset: 1800,
+    offset: 1900,
   })
     .setTween(bigBulletsSingle)
     // .addIndicators({name: 'bullets'})
@@ -417,12 +419,12 @@ document.querySelectorAll('.history__img').forEach((img, index) => {
   const historyPics = gsap.timeline()
     .from(img, {filter: 'grayscale(1)'})
     .to(img, {filter: 'grayscale(1)'})
-  makeDefaultScene(img, historyPics, 0.1, false, -100, 900);
+  makeDefaultScene(img, historyPics, 0.1, false, -200, 1000);
 })
 const historySection = gsap
   .timeline()
   .from(".history", {opacity: 0})
-makeDefaultScene(".history", historySection, 0.3,false, 0, 300);
+makeDefaultScene(".history", historySection, 0.3, false, 50, 300);
 
 
 const historySuptitle = gsap
