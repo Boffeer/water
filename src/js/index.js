@@ -391,10 +391,18 @@ window.addEventListener('DOMContentLoaded', () => {
   }, 400)
 })
 
+document.querySelectorAll('.history__img').forEach(img => {
+  console.log(img)
+  const historyPics = gsap.timeline()
+    .from(img, {filter: 'grayscale(1)'})
+    .to(img, {filter: 'grayscale(1)'})
+  makeDefaultScene(img, historyPics, 0.3, false, -100, 500);
+})
 const historySection = gsap
   .timeline()
   .from(".history", {opacity: 0})
-makeDefaultScene(".history", historySection, 0.3, 'history', 0, 300);
+makeDefaultScene(".history", historySection, 0.3,false, 0, 300);
+
 
 const historySuptitle = gsap
   .timeline()
