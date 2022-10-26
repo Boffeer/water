@@ -203,11 +203,12 @@ makeTimeline(researchTimeline);
 // #endregion scroller
 
 // #region features
-const slidesContainer = new TimelineMax()
-  .to(".features__pic--top", 1, {
+const slidesContainer = gsap
+  .timeline()
+  .to(".features__pic--top", {
     y: "-100%",
   })
-  .to(".features__pic", 0.3, { opacity: 0 });
+  .to(".features__pic", { opacity: 0 });
 // .to(".care__fader", 0.2, { opacity: 0 });
 
 let pinClass = ".features__scroller";
@@ -313,15 +314,12 @@ if (window.innerWidth < 1020) {
   const singleBigBullets = new ScrollMagic.Scene({
     triggerElement: ".features__scroller",
     triggerHook: 0.4,
-    // duration: "400%",
     duration:
       document.querySelector(".features").getBoundingClientRect().height / 2,
     offset: 600,
-    // duration: "400%",
   })
     .setTween(bigBulletsSingle)
     .addTo(scrollController);
-  // .addIndicators({ name: "bullets" });
 }
 const leftBullets = new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
@@ -398,74 +396,10 @@ const historyTitle = gsap
   .timeline()
   .from(".history__title", defaultParallaxFrom(400))
   .to(".history__title", defaultParallaxTo());
-// const historyCard = gsap
-//   .timeline()
-//   .from(".history__card", defaultParallaxFrom())
-//   .to(".history__card", defaultParallaxTo(-200));
 
 makeDefaultScene(".history", historySuptitle, 0.4, false, -800);
 makeDefaultScene(".history", historyTitle, 0.4, false, -700);
-// makeDefaultScene(
-//   ".combiner-testimonials",
-//   historyCard,
-//   0.2,
-//   false,
-//   getHeightDifference(".combiner-testimonials", ".history", 700),
-//   document.querySelector(".history").getBoundingClientRect().height * 2
-// );
 // #endregion gsapHistory
-
-// #region gsapCare
-// const careSuptitle = gsap
-//   .timeline()
-//   .from(".care__suptitle", defaultParallaxFrom(200))
-//   .to(".care__suptitle", defaultParallaxTo());
-// const careTitle = gsap
-//   .timeline()
-//   .from(".care__title", defaultParallaxFrom(200))
-//   .to(".care__title", defaultParallaxTo());
-// const careCard = gsap
-//   .timeline()
-//   .from(".care__offer", defaultParallaxFrom())
-//   .to(".care__offer", defaultParallaxTo(-200));
-// const carePic = gsap
-//   .timeline()
-//   .from(".care__pic", defaultParallaxFrom())
-//   .to(".care__pic", defaultParallaxTo());
-
-// makeDefaultScene(
-//   ".combiner-features",
-//   careSuptitle,
-//   0.2,
-//   false,
-//   getHeightDifference(".combiner-features", ".care", 950),
-//   document.querySelector(".care").getBoundingClientRect().height
-// );
-// makeDefaultScene(
-//   ".combiner-features",
-//   careTitle,
-//   0.3,
-//   false,
-//   getHeightDifference(".combiner-features", ".care", 950),
-//   document.querySelector(".care").getBoundingClientRect().height
-// );
-// makeDefaultScene(
-//   ".combiner-features",
-//   careCard,
-//   0.4,
-//   false,
-//   getHeightDifference(".combiner-features", ".care", 950),
-//   document.querySelector(".care").getBoundingClientRect().height
-// );
-// makeDefaultScene(
-//   ".combiner-features",
-//   carePic,
-//   0.4,
-//   false,
-//   getHeightDifference(".combiner-features", ".care", 950),
-//   document.querySelector(".care").getBoundingClientRect().height
-// );
-// #endregion gsapCare
 
 // #region gsapFood
 const foodTitle = gsap.timeline();
@@ -491,23 +425,21 @@ if (window.innerWidth > 1020) {
   foodPic.from(".food__pic", { y: 50, opacity: 0 });
 }
 
-const foodTitleScroll = new ScrollMagic.Scene({
+new ScrollMagic.Scene({
   triggerElement: ".food",
   duration: 550,
   triggerHook: 0.35,
 })
   .setTween(foodTitle)
   .addTo(scrollController);
-
-const foodOfferScroll = new ScrollMagic.Scene({
+new ScrollMagic.Scene({
   triggerElement: ".food",
   duration: 500,
   triggerHook: 0.35,
 })
   .setTween(foodOffer)
   .addTo(scrollController);
-
-const foodPicScroll = new ScrollMagic.Scene({
+new ScrollMagic.Scene({
   triggerElement: ".food",
   duration: 600,
   triggerHook: 0.35,
@@ -521,7 +453,7 @@ const giftFader = gsap
   .timeline()
   .to(".gift__fader", { opacity: 0 })
   .to(".gift__fader", { opacity: 1 });
-const giftFaderScene = new ScrollMagic.Scene({
+new ScrollMagic.Scene({
   triggerElement: ".gift",
   duration:
     document.querySelector(".gift").getBoundingClientRect().height + 1000,
