@@ -240,7 +240,7 @@ if (window.innerWidth < 1020) {
       opacity: 0,
     });
 }
-let featuresTextDuration = "300%";
+let featuresTextDuration = "200%";
 if (window.innerWidth < 1020) {
   featuresTextDuration = "200%";
 }

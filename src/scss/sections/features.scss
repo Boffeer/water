@@ -43,8 +43,6 @@
   z-index: 2;
   display: flex;
   flex-wrap: wrap;
-  // display: grid;
-  // grid-template-columns: 278px 290px 265px;
   justify-content: space-between;
   padding-top: 50px;
   pointer-events: none;
@@ -52,11 +50,6 @@
     align-items: flex-start;
     justify-content: space-between;
     padding-top: 24px;
-  }
-  @media (min-width: 635px) and (max-width: 1020px) {
-    // display: grid;
-    // grid-template-columns: 278px 380px;
-    // justify-content: center;
   }
   @media (max-width: 576px) {
     flex-direction: column;

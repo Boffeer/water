@@ -9,6 +9,29 @@
   background-color: #101010;
   border-radius: 0;
 }
+.quiz::before {
+  position: absolute;
+  top: 50%;
+  left: -300px;
+  z-index: 3;
+  display: block;
+  width: 520px;
+  max-width: 99vw;
+  height: 720px;
+  margin-right: auto;
+  pointer-events: none;
+  content: "";
+  background: #56abf9;
+  filter: blur(90px);
+  border-radius: 960px;
+  opacity: 0.2;
+  transform: translateY(-50%);
+  @media (max-width: 576px) {
+    left: -100px;
+    width: 230px;
+    height: 400px;
+  }
+}
 
 .poppa__overlay--quiz-feedback .poppa__aligner {
   padding: 0;
@@ -74,12 +97,7 @@
   padding-right: 48px;
   padding-bottom: 24px;
   padding-left: 48px;
-  font-family: "Inter", sans-serif;
-  font-size: 10px;
-  font-weight: 700;
   line-height: 100%;
-  text-transform: uppercase;
-  letter-spacing: 0.32em;
   white-space: nowrap;
   cursor: pointer;
   @media (max-width: 576px) {
@@ -171,6 +189,7 @@
   margin-bottom: 32px;
   cursor: pointer;
   border: 1px solid #1e1e1e;
+  border-radius: 8px;
   @media (max-width: 768px) {
     width: 100%;
     max-width: 100%;
@@ -192,6 +211,7 @@
   height: 12px;
   margin-right: 24px;
   background: #323232;
+  border-radius: 50%;
   transition: all 0.3s ease-in;
   @media (max-width: 1020px) {
     margin-right: 12px;
@@ -205,18 +225,16 @@
   appearance: none;
 }
 .quiz-slider__answer-input:checked ~ .quiz-slider__answer-check {
-  background-color: #fff;
+  // background: linear-gradient(90deg, #2bccff 0%, #0057a7 100%);
+  background: #2bccff;
 }
 
 .quiz-slider__answer-text {
-  font-family: "RF Dewi Extended", sans-serif;
+  font-family: var(--ff-sf);
   font-size: 14px;
   font-style: normal;
-  font-weight: 600;
   line-height: 100%;
   color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
   @media (max-width: 1020px) {
     font-size: 12px;
   }
@@ -243,7 +261,7 @@
   @media (max-width: 768px) {
     max-width: 100%;
     margin-right: 0;
-    --padding: 24px 12px;
+    --padding: 24px 22px;
     --fz: 14px;
     --lh: 1.25;
     margin-bottom: 12px;
@@ -287,6 +305,7 @@
 
 .quiz__close-results {
   width: 100%;
+  max-width: 280px;
   @media (max-width: 576px) {
     max-width: 100%;
   }

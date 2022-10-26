@@ -1,6 +1,6 @@
 .input {
   --border-color: #1e1e1e;
-  --border-radius: 0px;
+  --border-radius: 8px;
   --text-color: #fff;
   --fz: 14px;
   --lh: 1;
@@ -16,10 +16,10 @@
   position: relative;
   display: block;
   width: 100%;
-  font-family: "RF Dewi Extended", sans-serif;
+  font-family: var(--ff-sf);
   font-weight: 600;
   @media (max-width: 768px) {
-    --padding: 13px 13px 13px 46px;
+    --padding: 13px 20px 20px 46px;
     --fz: 15px;
     --lh: 22px;
   }
@@ -63,8 +63,6 @@
   font-size: var(--fz);
   line-height: var(--lh);
   color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 0.16em;
   background-color: #030303;
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
