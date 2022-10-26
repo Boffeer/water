@@ -5912,9 +5912,9 @@ body._lock {
   top: 40%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-left: auto;
-  transform: translate(35px, 50%);
+  transform: translate(0, 50%);
 }
 @media (max-width: 1020px) {
   .hero__socials {
@@ -6169,7 +6169,7 @@ body._lock {
 }
 
 .history {
-  margin-top: -500px;
+  margin-top: -850px;
   position: relative;
   z-index: 1;
   width: 100%;
@@ -6181,6 +6181,7 @@ body._lock {
     padding-top: 64px;
     padding-bottom: 24px;
     overflow: hidden;
+    margin-top: -500px;
   }
 }
 

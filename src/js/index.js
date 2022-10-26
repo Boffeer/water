@@ -145,12 +145,11 @@ function makeTimeline(timeline) {
   }
 
   const slidesContainer = new TimelineMax()
-  if (window.innerWidth > 1020) {
+  if (window.innerWidth >= 1020) {
     slidesContainer
       .to(scroller, 1, { x: getTrack(cardsCount / 4) })
       .to(scroller, 1, { x: getTrack((cardsCount / 4) * 2) })
       .to(scroller, 1, { x: getTrack((cardsCount / 4) * 3) })
-      .to(scroller, 1, { x: getTrack(cardsCount / 4 * 3.5) })
       .to(scrollerParent, 1.3, { opacity: 0, pointerEvents: "none" });
   } else {
     slidesContainer
@@ -412,11 +411,11 @@ window.addEventListener('DOMContentLoaded', () => {
   }, 1000)
 })
 
-document.querySelectorAll('.history__img').forEach(img => {
+document.querySelectorAll('.history__img').forEach((img, index) => {
   const historyPics = gsap.timeline()
     .from(img, {filter: 'grayscale(1)'})
     .to(img, {filter: 'grayscale(1)'})
-  makeDefaultScene(img, historyPics, 0.3, false, -100, 500);
+  makeDefaultScene(img, historyPics, 0.1, false, -100, 900);
 })
 const historySection = gsap
   .timeline()
@@ -426,12 +425,12 @@ makeDefaultScene(".history", historySection, 0.3,false, 0, 300);
 
 const historySuptitle = gsap
   .timeline()
-  .from(".history__suptitle", defaultParallaxFrom(300))
-  .to(".history__suptitle", defaultParallaxTo());
+  .from(".history__suptitle", defaultParallaxFrom(0))
+  .to(".history__suptitle", defaultParallaxTo(-100));
 const historyTitle = gsap
   .timeline()
-  .from(".history__title", defaultParallaxFrom(200))
-  .to(".history__title", defaultParallaxTo());
+  .from(".history__title", defaultParallaxFrom(0))
+  .to(".history__title", defaultParallaxTo(-100));
 
 makeDefaultScene(".history", historySuptitle, 0.3, false, -900);
 makeDefaultScene(".history", historyTitle, 0.3, false, -800);
