@@ -6051,7 +6051,7 @@ body._lock {
   z-index: 2;
   padding-top: 20px;
   overflow-x: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
 @media (max-width: 576px) {
   .testimonials {
@@ -6750,7 +6750,7 @@ body._lock {
   width: 107%;
   transform: translate3d(0, 0, 0);
   will-change: transform;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
 @media (max-width: 768px) {
   .features__pic--top {
@@ -7389,7 +7389,7 @@ body._lock {
   padding-top: 46px;
   transform: translate3d(0, 0, 0);
   will-change: transform;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
 @media (max-width: 1020px) {
   .research__cards {
