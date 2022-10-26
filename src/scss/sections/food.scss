@@ -1,9 +1,8 @@
 .food {
   padding-top: 96px;
-  padding-bottom: 50px;
+  padding-bottom: 0;
   @media (max-width: 1020px) {
     padding-top: 48px;
-    padding-bottom: 0;
   }
 }
 .food::before {

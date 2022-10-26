@@ -1,9 +1,8 @@
 .gift {
   position: relative;
-  padding-top: 50px;
+  padding-top: 0;
   padding-bottom: 63px;
   @media (max-width: 1020px) {
-    padding-top: 0;
     padding-bottom: 23px;
   }
 }

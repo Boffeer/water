@@ -6949,12 +6949,11 @@ body._lock {
 
 .food {
   padding-top: 96px;
-  padding-bottom: 50px;
+  padding-bottom: 0;
 }
 @media (max-width: 1020px) {
   .food {
     padding-top: 48px;
-    padding-bottom: 0;
   }
 }
 
@@ -7067,12 +7066,11 @@ body._lock {
 
 .gift {
   position: relative;
-  padding-top: 50px;
+  padding-top: 0;
   padding-bottom: 63px;
 }
 @media (max-width: 1020px) {
   .gift {
-    padding-top: 0;
     padding-bottom: 23px;
   }
 }

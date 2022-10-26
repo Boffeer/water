@@ -320,8 +320,8 @@ if (window.innerWidth < 1020) {
     // duration: "400%",
   })
     .setTween(bigBulletsSingle)
-    .addTo(scrollController)
-    .addIndicators({ name: "bullets" });
+    .addTo(scrollController);
+  // .addIndicators({ name: "bullets" });
 }
 const leftBullets = new ScrollMagic.Scene({
   triggerElement: ".features__scroller",
@@ -482,18 +482,28 @@ const historyMasonry = new Masonry(".history__gallery", {
 // #endregion gsapCare
 
 // #region gsapFood
-const foodTitle = gsap
-  .timeline()
-  .from(".food__title", { y: 200, opacity: 0 })
-  .to(".food__title", { y: -200, opacity: 1 });
-const foodOffer = gsap
-  .timeline()
-  .from(".food-offer", { y: 200, opacity: 0 })
-  .to(".food-offer", { y: -200, opacity: 1 });
-const foodPic = gsap
-  .timeline()
-  .from(".food__pic", { y: 100, opacity: 0 })
-  .to(".food__pic", { y: -100, opacity: 1 });
+const foodTitle = gsap.timeline();
+const foodOffer = gsap.timeline();
+const foodPic = gsap.timeline();
+if (window.innerWidth > 1020) {
+  foodTitle
+    .from(".food__title", { y: 200, opacity: 0 })
+    .to(".food__title", { y: -200, opacity: 1 });
+  foodOffer
+    .from(".food-offer", { y: 200, opacity: 0 })
+    .to(".food-offer", { y: -200, opacity: 1 });
+  foodPic
+    .from(".food__pic", { y: 100, opacity: 0 })
+    .to(".food__pic", { y: -100, opacity: 1 });
+} else {
+  foodTitle
+    .from(".food__title", { y: 200, opacity: 0 })
+    .to(".food__title", { y: -200, opacity: 1 });
+  foodOffer
+    .from(".food-offer", { y: 200, opacity: 0 })
+    .to(".food-offer", { y: -100, opacity: 1 });
+  foodPic.from(".food__pic", { y: 50, opacity: 0 });
+}
 
 const foodTitleScroll = new ScrollMagic.Scene({
   triggerElement: ".food",
@@ -527,15 +537,17 @@ const giftFader = gsap
   .to(".gift__fader", { opacity: 1 });
 const giftFaderScene = new ScrollMagic.Scene({
   triggerElement: ".gift",
-  duration: document.querySelector(".gift").getBoundingClientRect().height,
+  duration:
+    document.querySelector(".gift").getBoundingClientRect().height + 1000,
   triggerHook: 0.35,
+  offset: -500,
 })
   .setTween(giftFader)
   .addTo(scrollController);
 
 const giftTitle = gsap
   .timeline()
-  .from(".gift__title", defaultParallaxFrom())
+  .from(".gift__title", defaultParallaxFrom(50))
   .to(".gift__title", defaultParallaxTo());
 const giftSuptitle = gsap
   .timeline()
@@ -546,9 +558,9 @@ const giftOffer = gsap
   .from(".gift__offer", defaultParallaxFrom(200))
   .to(".gift__offer", defaultParallaxTo());
 
-makeDefaultScene(".gift", giftTitle);
-makeDefaultScene(".gift", giftSuptitle, 0.4);
-makeDefaultScene(".gift", giftOffer, 0.45);
+makeDefaultScene(".gift", giftTitle, 0.35, false, -400);
+makeDefaultScene(".gift", giftSuptitle, 0.4, false, -400);
+makeDefaultScene(".gift", giftOffer, 0.45, false, -400);
 // #endregion gsapGift
 
 // #endregion textParallax
