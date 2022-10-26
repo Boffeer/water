@@ -772,7 +772,7 @@
 
 @media (any-hover: hover) {
   .socials--big .socials__link:hover .socials__icon {
-    --icon-color: #2bccff;
+    --icon-color: #41a2fc;
   }
 }
 
@@ -6921,6 +6921,7 @@ body._lock {
 
 .video {
   position: relative;
+  z-index: 2;
   padding-top: 90px;
   padding-bottom: 96px;
   margin-top: -770px;

@@ -217,7 +217,6 @@ const slidesContainer = gsap
   })
   .to(".care", { opacity: 1 }, careOpacityDuration)
   .to(".features__columns", { opacity: 0 }, 0.9)
-  .to(".combiner-features", { pointerEvents: 'none'}, 0.1)
 
 let pinClass = ".features__scroller";
 if (window.innerWidth < 1020 && window.innerWidth > 576) {
@@ -278,6 +277,7 @@ if (window.innerWidth < 1020) {
     })
     .to(".features__column-bullets", 1, {
       opacity: 0,
+      y: -100
     });
 }
 new ScrollMagic.Scene({
