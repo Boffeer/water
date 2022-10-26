@@ -73,6 +73,9 @@
     padding-top: 0;
     text-align: center;
   }
+  @media (max-width: 576px) {
+    position: static;
+  }
 }
 .hero__gift-title {
   margin-bottom: 16px;
@@ -102,8 +105,8 @@
 .hero__pic::before {
   --size: 520px;
   position: absolute;
+  top: 315px;
   right: 0;
-  bottom: 315px;
   left: 0;
   width: var(--size);
   max-width: 99vw;
@@ -112,11 +115,25 @@
   margin-left: auto;
   content: "";
   background: #56abf9;
-  filter: blur(360px);
+  filter: blur(260px);
   border-radius: 960px;
+  animation-name: pulse;
+  animation-duration: 1.8s;
+
+  animation-iteration-count: infinite;
+  opacity: 0.8;
   @media (max-width: 576px) {
     width: 230px;
     height: 400px;
+  }
+}
+.hero__img {
+  @media (max-width: 1500px) and (min-width: 577px) {
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: block;
   }
 }
 
@@ -151,6 +168,7 @@
     text-align: center;
   }
   @media (max-width: 576px) {
+    position: static;
     order: -1;
     max-width: 340px;
     padding-top: 23px;
@@ -196,7 +214,7 @@
 }
 .hero__socials {
   position: absolute;
-  top: 50%;
+  top: 40%;
   display: flex;
   align-items: center;
   justify-content: flex-end;

@@ -90,7 +90,7 @@
   object-fit: cover;
   border-radius: 16px;
   @media (max-width: 576px) {
-    border-radius: 0;
+    border-radius: 4px;
   }
 }
 .history__gallery-card {

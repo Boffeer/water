@@ -115,7 +115,6 @@ ScrollMagicPluginIndicator(ScrollMagic);
  */
 
 const scrollController = new ScrollMagic.Controller();
-// function makeTimeline(pin, scroller, card = ".card", fader) {
 function makeTimeline(timeline) {
   let { pin, scroller, scrollerParent, card, fader } = timeline;
   card = card == undefined ? ".card" : card;
@@ -139,7 +138,9 @@ function makeTimeline(timeline) {
   }
   // console.log(track);
 
-  if (window.innerWidth >= 1020) {
+  if (window.innerWidth < 576) {
+    scrollDuration = `${(cardsCount - 4) * 50}%`;
+  } else if (window.innerWidth >= 1020) {
     scrollDuration = `${(cardsCount - 3) * 50}%`;
   } else if (window.innerWidth < 1020) {
     scrollDuration = `${(cardsCount - 1) * 100}%`;
@@ -152,12 +153,12 @@ function makeTimeline(timeline) {
     .to(scroller, 1, { x: getTrack(cardsCount / 4) })
     .to(scroller, 1, { x: getTrack((cardsCount / 4) * 2) })
     .to(scroller, 1, { x: getTrack((cardsCount / 4) * 3) })
-    .to(scroller, 1, { x: getTrack(cardsCount) })
+    .to(scroller, 1, { x: getTrack(cardsCount / 4 * 3.5) })
     // .to(scroller, 1, { x: "-40%" })
     // .to(scroller, 1, { x: "-80%" })
     // .to(scroller, 1, { x: "-115%" })
     // .to(scroller, 1, { x: "-120%" })
-    .to(scrollerParent, 1.5, { opacity: 0, pointerEvents: "none" });
+    .to(scrollerParent, 1.3, { opacity: 0, pointerEvents: "none" });
 
   if (fader) {
     slidesContainer.to(fader, 2, { opacity: 0 });
@@ -382,12 +383,20 @@ function getHeightDifference(bigger, less, modifier = 0) {
 }
 // #endregion gsapHelpers
 
+// #region gsapHero
+const heroSocials = gsap.timeline();
+heroSocials.to(".hero__socials", defaultParallaxFrom(0));
+makeDefaultScene(".hero", heroSocials, 0.25, false, 500, 250);
+// #endregion gsapHero
+
 // #region gsapHistory
 import Masonry from "masonry-layout";
-const historyMasonry = new Masonry(".history__gallery", {
-  itemSelectory: ".history__gallery-card",
-  gutter: 24,
-});
+window.addEventListener('DOMContentLoaded', () => {
+  const historyMasonry = new Masonry(".history__gallery", {
+    itemSelectory: ".history__gallery-card",
+    gutter: 24,
+  });
+})
 const historySuptitle = gsap
   .timeline()
   .from(".history__suptitle", defaultParallaxFrom(300))
@@ -408,44 +417,27 @@ const foodPic = gsap.timeline();
 if (window.innerWidth > 1020) {
   foodTitle
     .from(".food__title", { y: 200, opacity: 0 })
-    .to(".food__title", { y: -200, opacity: 1 });
+    .to(".food__title", { y: 0, opacity: 1 });
   foodOffer
     .from(".food-offer", { y: 200, opacity: 0 })
-    .to(".food-offer", { y: -200, opacity: 1 });
+    .to(".food-offer", { y: 0, opacity: 1 });
   foodPic
     .from(".food__pic", { y: 100, opacity: 0 })
-    .to(".food__pic", { y: -100, opacity: 1 });
+    .to(".food__pic", { y: 0, opacity: 1 });
 } else {
   foodTitle
     .from(".food__title", { y: 200, opacity: 0 })
-    .to(".food__title", { y: -200, opacity: 1 });
+    .to(".food__title", { y: 0, opacity: 1 });
   foodOffer
     .from(".food-offer", { y: 200, opacity: 0 })
-    .to(".food-offer", { y: -100, opacity: 1 });
+    .to(".food-offer", { y: 0, opacity: 1 });
   foodPic.from(".food__pic", { y: 50, opacity: 0 });
 }
 
-new ScrollMagic.Scene({
-  triggerElement: ".food",
-  duration: 550,
-  triggerHook: 0.35,
-})
-  .setTween(foodTitle)
-  .addTo(scrollController);
-new ScrollMagic.Scene({
-  triggerElement: ".food",
-  duration: 500,
-  triggerHook: 0.35,
-})
-  .setTween(foodOffer)
-  .addTo(scrollController);
-new ScrollMagic.Scene({
-  triggerElement: ".food",
-  duration: 600,
-  triggerHook: 0.35,
-})
-  .setTween(foodPic)
-  .addTo(scrollController);
+makeDefaultScene(".food", foodTitle, 0.45, false, -300, 750);
+makeDefaultScene(".food", foodOffer, 0.45, false, -300, 700);
+makeDefaultScene(".food", foodPic, 0.45, false, -300, 700);
+
 // #endregion gsapFood
 
 // #region gsapGift
