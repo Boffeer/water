@@ -11,7 +11,7 @@
     padding-top: 104px;
     padding-bottom: 24px;
     overflow: hidden;
-    margin-top: -500px;
+    margin-top: -1300px;
   }
 }
 .history::before {
@@ -30,7 +30,8 @@
   transform: translateY(-50%) translate3d(0, 0, 0);
   @media (max-width: 576px) {
     width: 230px;
-    height: 400px;
+    height: 320px;
+    top: 60%;
   }
 }
 .history__container {

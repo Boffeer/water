@@ -292,19 +292,19 @@ new ScrollMagic.Scene({
 
 const bigBulletsScroller = new TimelineMax();
 const bigBulletsSingle = new TimelineMax();
-let bigBulletsScrollerDuration = "200%";
+let bigBulletsScrollerDuration = document.querySelector(".features").getBoundingClientRect().height / 2 - 200;
 let  leftBulletsOffset = 100
 if (window.innerWidth < 1020) {
-  leftBulletsOffset = 300
-  bigBulletsScrollerDuration = "500%";
+  leftBulletsOffset = 300;
+  bigBulletsScrollerDuration = document.querySelector(".features").getBoundingClientRect().height / 1.5;
   bigBulletsScroller
-    .from(".features__column-big-bullets", 1, {
-      y: "20%",
+    .from(".features__column-big-bullets", 0.5, {
+      y: "10%",
+      opacity: 0,
     })
-    .to(".features__column-big-bullets", 1, {
-      y: "-190%",
+    .to(".features__column-big-bullets", 2, {
+      y: "-140%",
     });
-  // leftBulletsOffset = 100
 } else {
   bigBulletsScroller
     .from(".features__column-big-bullets", 1, {
@@ -341,9 +341,7 @@ if (window.innerWidth < 1020) {
 const leftBullets = new ScrollMagic.Scene({
   triggerElement: ".features",
   triggerHook: 0.3,
-  duration:
-    document.querySelector(".features").getBoundingClientRect().height / 2 - 200,
-  // duration: bigBulletsScrollerDuration,
+  duration: bigBulletsScrollerDuration,
   offset: leftBulletsOffset,
 })
   .setTween(bigBulletsScroller)
@@ -451,6 +449,7 @@ const foodTitle = gsap.timeline();
 const foodOffer = gsap.timeline();
 const foodPic = gsap.timeline();
 let foodOffset = -300;
+let foodTrigger = 0.45;
 if (window.innerWidth > 1020) {
   foodTitle
     .from(".food__title", { y: 200, opacity: 0 })
@@ -469,11 +468,12 @@ if (window.innerWidth > 1020) {
   foodPic.from(".food__pic", { y: 200, opacity: 0 });
 
   foodOffset = -100;
+  foodTrigger = 0.95;
 }
 
-makeDefaultScene(".food", foodTitle, 0.45, false, foodOffset, 750);
-makeDefaultScene(".food", foodOffer, 0.45, false, foodOffset, 700);
-makeDefaultScene(".food", foodPic, 0.45, false, foodOffset + 100, 700);
+makeDefaultScene(".food", foodTitle, foodTrigger, false, foodOffset, 750);
+makeDefaultScene(".food", foodOffer, foodTrigger, false, foodOffset, 700);
+makeDefaultScene(".food", foodPic, foodTrigger, false, foodOffset + 100, 700);
 
 // #endregion gsapFood
 
@@ -482,10 +482,16 @@ const giftFader = gsap
   .timeline()
   .to(".gift__fader", { opacity: 0 })
   .to(".gift__fader", { opacity: 1 });
+
+let giftDurationModifier = 1000;
+if (window.innerWidth < 1020) {
+  giftDurationModifier = 1500;
+}
+
 new ScrollMagic.Scene({
   triggerElement: ".gift",
   duration:
-    document.querySelector(".gift").getBoundingClientRect().height + 1000,
+    document.querySelector(".gift").getBoundingClientRect().height + giftDurationModifier,
   triggerHook: 0.35,
   offset: -500,
 })
