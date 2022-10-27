@@ -6014,6 +6014,7 @@ body._lock {
   width: 320px;
   height: 256px;
   background: #56ABF9;
+  filter: blur(160px);
   border-radius: 960px;
   transform: translateY(-50%) translate3d(0, 0, 0);
 }
