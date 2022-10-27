@@ -39,8 +39,13 @@ let lazyLoadInstance = new LazyLoad();
  * Dropdown Select
  */
 import "./libs/custom-select.min.js";
-if (document.querySelector(".langpicker-select")) {
+const langpicker = document.querySelector(".langpicker-select")
+if (langpicker) {
   customSelect(".langpicker-select");
+
+  langpicker.addEventListener("change", (e) => {
+    window.location.href = e.target.value
+  })
 }
 
 /**
