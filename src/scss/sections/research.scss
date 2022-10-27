@@ -48,6 +48,11 @@
     padding-top: 48px;
   }
 }
+.os-macos .research__cards {
+  will-change: initial;
+  transition: initial;
+}
+
 
 .research__cards .card__pic {
   height: 320px;

@@ -6,12 +6,15 @@
  * Нужно для фиксов, специфичных только для конкретной платформы
  * - [ ] tested
  */
-let os = "Unknown";
-if (navigator.appVersion.indexOf("Win") != -1) os = "windows";
-if (navigator.appVersion.indexOf("Mac") != -1) os = "macos";
-if (navigator.appVersion.indexOf("X11") != -1) os = "unix";
-if (navigator.appVersion.indexOf("Linux") != -1) os = "linux";
-document.body.classList.add("os-" + os);
+export function detectPlatform() {
+  let os = "Unknown";
+  if (navigator.appVersion.indexOf("Win") != -1) os = "windows";
+  if (navigator.appVersion.indexOf("Mac") != -1) os = "macos";
+  if (navigator.appVersion.indexOf("X11") != -1) os = "unix";
+  if (navigator.appVersion.indexOf("Linux") != -1) os = "linux";
+  document.body.classList.add("os-" + os);
+  return 'os-' + os
+}
 //#endregion PlatformDetect
 
 /**

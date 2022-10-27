@@ -2,6 +2,8 @@
 
 // import { removeAllClasses, bodyLock } from "./utils/functions.js";
 // import DismalModules, { acc } from "./utils/modules.js";
+import {detectPlatform} from "./utils/helpers.js"
+detectPlatform();
 
 import "./unstable/formich.js";
 import Swiper, { Navigation, EffectCreative } from "swiper";

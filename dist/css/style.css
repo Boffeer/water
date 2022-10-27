@@ -6085,13 +6085,18 @@ body._lock {
   padding-bottom: 96px;
   transform: translate3d(0, 0, 0);
   will-change: transform;
-  transition: all 0.3s ease;
+  transition: all 0.3s;
 }
 @media (max-width: 576px) {
   .testimonials__cards {
     padding-top: 24px;
     padding-bottom: 46px;
   }
+}
+
+.os-macos .testimonials__cards {
+  will-change: initial;
+  transition: initial;
 }
 
 .testimonials-card {
@@ -6801,6 +6806,11 @@ body._lock {
   }
 }
 
+.os-macos .features__pic--top {
+  will-change: initial;
+  transition: initial;
+}
+
 .features__pic--bottom {
   z-index: 1;
   position: relative;
@@ -7450,6 +7460,11 @@ body._lock {
   .research__cards {
     padding-top: 48px;
   }
+}
+
+.os-macos .research__cards {
+  will-change: initial;
+  transition: initial;
 }
 
 .research__cards .card__pic {

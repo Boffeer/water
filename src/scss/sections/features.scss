@@ -307,6 +307,10 @@
     top: 4.5%;
   }
 }
+.os-macos .features__pic--top {
+  will-change: initial;
+  transition: initial;
+}
 .features__pic--bottom {
   z-index: 1;
   position: relative;
