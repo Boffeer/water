@@ -283,6 +283,7 @@
   @media (max-width: 576px) {
     width: 230px;
     height: 400px;
+    filter: blur(60px);
   }
 }
 .features__pic {

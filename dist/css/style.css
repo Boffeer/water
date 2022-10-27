@@ -6014,7 +6014,7 @@ body._lock {
   width: 320px;
   height: 256px;
   background: #56ABF9;
-  filter: blur(10px);
+  filter: blur(50px);
   border-radius: 960px;
   transform: translateY(-50%) translate3d(0, 0, 0);
 }
@@ -6233,8 +6233,7 @@ body._lock {
     width: 230px;
     height: 320px;
     top: 60%;
-    filter: blur(340px);
-    -webkit-filter: blur(340px);
+    filter: blur(70px);
   }
 }
 
@@ -6790,6 +6789,7 @@ body._lock {
   .features__scene::before {
     width: 230px;
     height: 400px;
+    filter: blur(60px);
   }
 }
 
@@ -7004,6 +7004,7 @@ body._lock {
     height: 300px;
     top: 280px;
     z-index: 2;
+    filter: blur(60px);
   }
 }
 
@@ -7131,6 +7132,7 @@ body._lock {
   .food::before {
     width: 230px;
     height: 400px;
+    filter: blur(50px);
   }
 }
 
@@ -7302,6 +7304,7 @@ body._lock {
   .gift__pic::before {
     width: 230px;
     height: 400px;
+    filter: blur(50px);
   }
 }
 
