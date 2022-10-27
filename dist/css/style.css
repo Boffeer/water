@@ -5800,6 +5800,7 @@ body._lock {
   right: unset;
   left: -23%;
   transform-origin: center;
+  pointer-events: none;
   width: var(--size);
   max-width: 99vw;
   height: var(--size);
