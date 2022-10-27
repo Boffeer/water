@@ -74,14 +74,14 @@
 }
 .research__cards-scroller::before {
   position: absolute;
-  top: 0;
+  top: 100px;
   bottom: 0;
   left: -20vw;
   z-index: 0;
   display: block;
-  width: 370px;
+  width: 320px;
   max-width: 99vw;
-  height: 370px;
+  height: 320px;
   margin: auto;
   content: "";
   background: #56abf9;
