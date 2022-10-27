@@ -164,8 +164,13 @@ function makeTimeline(timeline) {
   }
 
   if (fader) {
-    slidesContainer
-      .to(fader, faderSpeed, { opacity: 0 });
+    if (window.innerWidth < 1020) {
+      slidesContainer
+        .to(fader, faderSpeed * 2, { opacity: 0 });
+    } else {
+      slidesContainer
+        .to(fader, faderSpeed, { opacity: 0 });
+    }
   }
 
   new ScrollMagic.Scene({
