@@ -65,17 +65,14 @@
   width: 320px;
   height: 256px;
   background: #56ABF9;
-  filter: blur(160px);
-  -webkit-filter: blur(160px);
+  // filter: blur(160px);
   border-radius: 960px;
   transform: translateY(-50%) translate3d(0, 0, 0);
   @media (max-width: 576px) {
-    width: 160px;
-    height: 60px;
+    width: 200px;
+    height: 100px;
     left: -15px;
     top: 30%;
-    filter: blur(160px);
-    -webkit-filter: blur(160px);
     transform: translateY(-50%) translate3d(0, 0, 0);
   }
 }
