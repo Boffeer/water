@@ -24,9 +24,9 @@ foreach ($_POST as $key => $value) {
 	if (($key != 'file') && ($value != "") && ($key != "project_name") && ($key != "form_subject")  && ($key != "sendMail")) {
 		$customkey = $key;
 		if ($key == 'user_name') {
-			$customkey = "Nom";
+			$customkey = "İsim";
 		} elseif ($key == 'user_tel') {
-			$customkey = 'Téléphone';
+			$customkey = 'Telefon';
 		} elseif ($key == 'user_email') {
 			$customkey = 'E-mail:';
 		} elseif ($key == 'user_city') {
