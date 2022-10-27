@@ -118,10 +118,11 @@ ScrollMagicPluginIndicator(ScrollMagic);
 
 const scrollController = new ScrollMagic.Controller();
 function makeTimeline(timeline) {
-  let { pin, scroller, scrollerParent, card, fader } = timeline;
+  let { pin, scroller, scrollerParent, card, fader, faderSpeed } = timeline;
   card = card == undefined ? ".card" : card;
   // fader = fader == undefined ? ".section__fader" : fader;
   fader = !fader ? document.querySelector(pin).querySelector(".section__fader") : document.querySelector(fader);
+  faderSpeed = !faderSpeed ? 2 : faderSpeed;
 
   let scrollDuration = "250%";
 
@@ -163,7 +164,8 @@ function makeTimeline(timeline) {
   }
 
   if (fader) {
-    slidesContainer.to(fader, 2, { opacity: 0 });
+    slidesContainer
+      .to(fader, faderSpeed, { opacity: 0 });
   }
 
   new ScrollMagic.Scene({
@@ -190,11 +192,16 @@ function makeTimeline(timeline) {
   // });
 }
 
+let faderSpeed = 2;
+if (window.innerWidth < 1020) {
+  faderSpeed = 3;
+}
 const testimonialsTimeline = {
   pin: ".testimonials",
   scroller: ".testimonials__cards",
   scrollerParent: ".testimonials",
-  fader: '.history__fader'
+  fader: '.history__fader',
+  faderSpeed: faderSpeed
 };
 makeTimeline(testimonialsTimeline);
 
