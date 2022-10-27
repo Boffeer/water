@@ -435,12 +435,12 @@ document.querySelectorAll('.history__img').forEach((img, index) => {
 
 const historySuptitle = gsap
   .timeline()
-  .from(".history__suptitle", defaultParallaxFrom(0))
-  .to(".history__suptitle", defaultParallaxTo(-50));
+  .from(".history__suptitle", defaultParallaxFrom(50))
+  .to(".history__suptitle", defaultParallaxTo());
 const historyTitle = gsap
   .timeline()
-  .from(".history__title", defaultParallaxFrom(0))
-  .to(".history__title", defaultParallaxTo(-50));
+  .from(".history__title", defaultParallaxFrom(50))
+  .to(".history__title", defaultParallaxTo());
 
 makeDefaultScene(".history", historySuptitle, 0.3, false, -900);
 makeDefaultScene(".history", historyTitle, 0.3, false, -800);

@@ -1,6 +1,7 @@
 .history {
   // margin-top: -750px;
-  margin-top: -830px;
+  // margin-top: -830px;
+  margin-top: -1130px;
   position: relative;
   z-index: 1;
   width: 100%;
@@ -25,6 +26,7 @@
   content: "";
   background: #56abf9;
   filter: blur(340px);
+  -webkit-filter: blur(340px);
   border-radius: 960px;
   opacity: 0.3;
   transform: translateY(-50%) translate3d(0, 0, 0);

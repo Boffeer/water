@@ -10,17 +10,18 @@
 .food::before {
   transform: translate3d(0, 0, 0);
   position: absolute;
-  top: 120px;
+  top: 170px;
   left: -24%;
   display: block;
-  width: 680px;
+  width: 550px;
   max-width: 99vw;
-  height: 680px;
+  height: 550px;
   content: "";
   background: #56abf9;
-  filter: blur(320px);
+  filter: blur(360px);
+  -webkit-filter: blur(360px);
   border-radius: 960px;
-  opacity: 0.2;
+  opacity: 0.3;
   @media (max-width: 576px) {
     width: 230px;
     height: 400px;

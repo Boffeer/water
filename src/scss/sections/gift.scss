@@ -55,11 +55,12 @@
   display: block;
   width: 400px;
   max-width: 99vw;
-  height: 528px;
+  height: 448px;
   margin: auto;
   content: "";
   background: #56abf9;
   filter: blur(260px);
+  -webkit-filter: blur(260px);
   border-radius: 960px;
   opacity: 0.4;
   transform: translate3d(0, 0, 0);

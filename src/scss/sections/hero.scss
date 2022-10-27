@@ -118,15 +118,16 @@
   z-index: 1;
   background: #56abf9;
   filter: blur(360px);
+  -webkit-filter: blur(360px);
   border-radius: 960px;
   transform: translate3d(0, 0, 0) scale(2);
   opacity: 0.2;
   @media (max-width: 576px) {
-    opacity: 0.5;
-    width: 230px;
+    opacity: 0.8;
+    width: 280px;
     height: 230px;
     top: 125px;
-    filter: blur(160px);
+    filter: blur(165px);
     left: -18%;
     transform: translate3d(0, 0, 0) scale(1);
   }
@@ -166,6 +167,7 @@
   padding-top: 105px;
   padding-left: 40px;
   opacity: 0;
+  z-index: 2;
   @media (max-width: 1020px) {
     flex-direction: column;
     align-items: center;

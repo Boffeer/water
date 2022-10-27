@@ -22,7 +22,8 @@
   pointer-events: none;
   content: "";
   background: #56abf9;
-  filter: blur(90px);
+  filter: blur(290px);
+  -webkit-filter: blur(290px);
   border-radius: 960px;
   opacity: 0.2;
   transform: translateY(-50%);

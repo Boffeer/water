@@ -35,9 +35,6 @@
 }
 
 .research__cards {
-  // display: grid;
-  // grid-template-columns: repeat(3, 1fr);
-  // column-gap: 24px;
   display: flex;
   align-items: flex-start;
   padding-top: 46px;
@@ -82,13 +79,14 @@
   left: -20vw;
   z-index: 0;
   display: block;
-  width: 400px;
+  width: 370px;
   max-width: 99vw;
-  height: 528px;
+  height: 370px;
   margin: auto;
   content: "";
   background: #56abf9;
-  filter: blur(260px);
+  filter: blur(230px);
+  -webkit-filter: blur(230px);
   border-radius: 960px;
   opacity: 0.4;
   transform: translate3d(0, 0, 0);

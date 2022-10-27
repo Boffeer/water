@@ -276,6 +276,7 @@
   content: "";
   background: #56abf9;
   filter: blur(220px);
+  -webkit-filter: blur(220px);
   border-radius: 960px;
   opacity: 0.2;
   transform: translateY(-50%) translate3d(0, 0, 0);
