@@ -6763,6 +6763,7 @@ body._lock {
 @media (max-width: 635px) {
   .features__scene {
     height: 638px;
+    z-index: 1;
   }
 }
 
