@@ -1,7 +1,15 @@
 .history {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+
   // margin-top: -750px;
   // margin-top: -830px;
-  margin-top: -1130px;
+  // margin-top: -1130px;
+  margin-top: -850px;
   position: relative;
   z-index: 1;
   width: 100%;
@@ -12,7 +20,9 @@
     padding-top: 0;
     padding-bottom: 24px;
     overflow: hidden;
-    margin-top: -1450px;
+    // margin-top: -1450px;
+    margin-top: -590px;
+    margin-bottom: 590px;
   }
 }
 .history::before {

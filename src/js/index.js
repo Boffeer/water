@@ -192,16 +192,12 @@ function makeTimeline(timeline) {
   // });
 }
 
-let faderSpeed = 2;
-if (window.innerWidth < 1020) {
-  faderSpeed = 3;
-}
 const testimonialsTimeline = {
-  pin: ".testimonials",
+  pin: ".combiner-testimonials .combiner__inner",
   scroller: ".testimonials__cards",
   scrollerParent: ".testimonials",
-  fader: '.history__fader',
-  faderSpeed: faderSpeed
+  // fader: '.history__fader',
+  // faderSpeed: faderSpeed
 };
 makeTimeline(testimonialsTimeline);
 
