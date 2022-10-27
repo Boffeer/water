@@ -1,0 +1,160 @@
+<footer class="footer">
+  <div class="container footer__container">
+    <a href="#" class="footer__link">Gizlilik politikası</a>
+    <p class="footer__copy">Tüm © HAS haklarını korunmaktadır</p>
+  </div>
+</footer>
+
+<section class="quiz poppa" id="quiz-feedback">
+  <div class="container">
+    <form
+      method="post"
+      id="quiz-form"
+      action="./mail.php"
+      class="swiper quiz-slider"
+    >
+      <div class="swiper-wrapper">
+        <div class="swiper-slide quiz-slider__slide">
+          <h3 class="quiz-slider__question section-title">
+            Has WATER denedeniz mi?
+          </h3>
+          <div class="quiz-slider__answers">
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-1"
+                class="quiz-slider__answer-input"
+                checked
+                value="Evet, tadını ve etkisi beğendim"
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">
+                Evet, tadını ve etkisi beğendim
+              </p>
+            </label>
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-1"
+                value="Evet, fakat beğenmedim"
+                class="quiz-slider__answer-input"
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">Evet, fakat beğenmedim</p>
+            </label>
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-1"
+                class="quiz-slider__answer-input"
+                value="Henüz daha denemedim "
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">Henüz daha denemedim</p>
+            </label>
+          </div>
+        </div>
+
+        <div class="swiper-slide quiz-slider__slide">
+          <h3 class="quiz-slider__question section-title">
+            Как вам Four seasons и качество еды?
+          </h3>
+          <div class="quiz-slider__answers">
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-2"
+                class="quiz-slider__answer-input"
+                checked
+                value="Herşeyi beğendim"
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">Herşeyi beğendim</p>
+            </label>
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-2"
+                class="quiz-slider__answer-input"
+                value="Beğenmedim"
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">Beğenmedim</p>
+            </label>
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-2"
+                class="quiz-slider__answer-input"
+                value="Henüz daha denemedim"
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">Henüz daha denemedim</p>
+            </label>
+          </div>
+        </div>
+
+        <div class="swiper-slide quiz-slider__slide">
+          <h3 class="quiz-slider__question section-title">
+            Telefon numaranızı bırakın ve biz size hediye için özel kod gönderilim
+          </h3>
+          <div class="quiz-slider__answers quiz-slider__answers-contacts">
+            <label class="input quiz__input">
+              <input
+                required
+                type="tel"
+                name="user_tel"
+                placeholder="Telefon numaranız"
+                class="input__field"
+                min="10"
+              />
+            </label>
+            <button class="button button--primary quiz__submit" type="submit">
+              Kod al
+            </button>
+          </div>
+        </div>
+        <div
+          class="swiper-slide quiz-slider__slide quiz-slider__slide--results"
+        >
+          <p class="quiz-slider__desc">Ankete katıldığınız için teşekkür ederiz!</p>
+          <h3 class="quiz-slider__question section-title">
+            Resepsiyondan Hediye almanız için özel kodunuz:
+          </h3>
+          <p class="quiz-slider__code section-title">WOJENAS32</p>
+          <p class="quiz-slider__desc">
+            Resepsiyonda yetkili kişiye kodu söylemeniz yeterli olur
+          </p>
+          <button
+            class="button button--primary quiz__close-results"
+            data-poppa-close="quiz-feedback"
+          >
+            ОК
+          </button>
+        </div>
+      </div>
+      <div
+        class="swiper-pagination quiz-slider__pagination slider__pagination"
+      ></div>
+      <div class="quiz-slider__buttons">
+        <div
+          class="quiz-slider__button-prev slider__button slider__button-prev button button--secondary"
+        >
+          ← Geri
+        </div>
+        <div
+          class="quiz-slider__button-next slider__button slider__button-next button button--primary"
+        >
+          Bir sonraki soru
+        </div>
+        <div class="quiz-slider__skip">
+          Ankete katılmaya zamanım yok, sadece
+          <button class="quiz-slider__skip-button link" type="button">
+            hediye almak
+          </button>
+           istiyorum
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
