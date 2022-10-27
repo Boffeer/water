@@ -14,6 +14,9 @@
     padding-bottom: 28px;
   }
 }
+.lang-tr .research {
+  display: none;
+}
 .research__container {
   max-width: 1158px;
 }
@@ -94,4 +97,7 @@
     width: 230px;
     height: 400px;
   }
+}
+.research .card__desc {
+  display: none;
 }

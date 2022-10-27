@@ -216,7 +216,9 @@ const researchTimeline = {
   scroller: ".research__cards",
   scrollerParent: ".research",
 };
-makeTimeline(researchTimeline);
+if (!document.querySelector('.research--hidden')) {
+  makeTimeline(researchTimeline);
+}
 // #endregion scroller
 
 // #region features

@@ -1,741 +1,1174 @@
 <!DOCTYPE html>
-<html lang="RU">
+<html lang="tr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Project</title>
-    <meta name="description" content="Description" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap&_v=20221027083952"
-      rel="stylesheet"
-    />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        border: 0;
-      }
-      *,
-      *:before,
-      *:after {
-        -moz-box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        box-sizing: border-box;
-      }
-      :focus,
-      :active {
-        outline: none;
-      }
-      :focus-visible {
-        outline: none;
-      }
-      nav,
-      footer,
-      header,
-      aside {
-        display: block;
-      }
-      html,
-      body {
-        height: 100%;
-        width: 100%;
-        font-size: 100%;
-        line-height: 1;
-        -ms-text-size-adjust: 100%;
-        -moz-text-size-adjust: 100%;
-        -webkit-text-size-adjust: 100%;
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      }
-      input,
-      button,
-      textarea {
-        font-family: inherit;
-      }
-      input::-ms-clear {
-        display: none;
-      }
-      input[type="submit"] {
-        cursor: pointer;
-      }
-      button {
-        background: none;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-      button::-moz-focus-inner {
-        padding: 0;
-        border: 0;
-      }
-      a {
-        color: inherit;
-      }
-      a,
-      a:visited {
-        text-decoration: none;
-      }
-      ul li {
-        list-style: none;
-        list-style-position: inside;
-      }
-      ol li {
-        list-style-position: inside;
-      }
-      img,
-      svg {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        vertical-align: top;
-      }
-      svg {
-        fill: transparent;
-        stroke: transparent;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-size: inherit;
-        font-weight: inherit;
-      }
-      body {
-        font-family: "Inter", "Roboto", sans-serif;
-        color: #333;
-        font-size: 16px;
-        font-weight: 600;
-        font-style: normal;
-        line-height: 1.2;
-        background: #fafafa;
-      }
-      body._lock {
-        overflow: hidden;
-      }
-      .wrapper {
-        position: relative;
-        width: 100%;
-        min-height: 100%;
-        display: flex;
-        flex-direction: column;
-        overflow-x: hidden;
-      }
-      .wrapper > .content {
-        flex: 1 0 auto;
-      }
-      .content {
-        margin-top: 48px;
-      }
-      .container {
-        max-width: 1076px;
-        width: 100%;
-        padding-left: 24px;
-        padding-right: 24px;
-        margin: 0 auto;
-      }
-      @media (max-width: 425px) {
-        .container {
-          padding-left: 16px;
-          padding-right: 16px;
-        }
-      }
-      .container_l {
-        max-width: 1176px;
-      }
-      .container_main {
-        max-width: 1208px;
-      }
-      @keyframes spinAround {
-        from {
-          transform: rotate(0);
-        }
-        to {
-          transform: rotate(360deg);
-        }
-      }
-      .s-header {
-        margin-bottom: 32px;
-      }
-      @media (max-width: 425px) {
-        .s-header {
-          margin-bottom: 24px;
-        }
-      }
-      .icon {
-        position: relative;
-        width: 32px;
-        height: 32px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 8px;
-        transition: 0.3s;
-      }
-      @media (max-width: 425px) {
-        .icon {
-          width: 28px;
-          height: 28px;
-        }
-      }
-      @media (min-width: 769px) {
-        .icon:hover {
-          background: #ededed;
-        }
-      }
-      .icon:active {
-        background: #ededed;
-      }
-      @media (min-width: 769px) {
-        .icon:active {
-          background: #e6e6e6;
-        }
-      }
-      .icon::before {
-        content: "";
-        display: block;
-        padding-top: 100%;
-      }
-      .icon svg,
-      .icon img {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 62%;
-        height: 62%;
-      }
-      .icon_fill {
-        background: #f5f5f5;
-      }
-      .sc-block-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 20px;
-      }
-      @media (max-width: 425px) {
-        .sc-block-header {
-          margin-bottom: 16px;
-        }
-      }
-      .sc-block__list {
-        display: flex;
-        flex-direction: column;
-      }
-      .sc-block__list > *:not(:last-child) {
-        margin-bottom: 12px;
-      }
-      .sc-card {
-        width: 100%;
-        background: #fff;
-        border: 1px solid #efefef;
-        border-radius: 4px;
-        transition: 0.3s;
-      }
-      @media (min-width: 769px) {
-        .sc-card:hover {
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        }
-      }
-      .sc-card__header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .sc-card__header-content {
-        flex: 1 0 auto;
-        padding: 15px 20px 15px 24px;
-      }
-      @media (max-width: 425px) {
-        .sc-card__header-content {
-          padding: 14px 16px 14px 16px;
-        }
-      }
-      @media (min-width: 769px) {
-        .sc-card__header-content:hover .sc-card__title {
-          color: #d86b6b;
-        }
-      }
-      @media (min-width: 769px) {
-        .sc-card__header-content:active .sc-card__title {
-          color: #e39393;
-        }
-      }
-      .sc-card__header-content:active .sc-card__title {
-        color: #d86b6b;
-      }
-      .sc-card__title {
-        font-size: 17px;
-        font-weight: 600;
-        color: #333;
-        transition: 0.3s;
-      }
-      @media (max-width: 425px) {
-        .sc-card__title {
-          font-size: 15px;
-        }
-      }
-      .sc-card__url {
-        font-size: 13px;
-        font-weight: 500;
-        color: #858585;
-      }
-      @media (max-width: 425px) {
-        .sc-card__url {
-          font-size: 12px;
-        }
-      }
-      .sc-card__tools {
-        display: flex;
-        align-items: center;
-        padding: 15px 24px 15px 0;
-      }
-      @media (max-width: 425px) {
-        .sc-card__tools {
-          padding: 14px 16px 14px 0;
-        }
-      }
-      .sc-card__tools::before {
-        content: "";
-        width: 1px;
-        height: 27px;
-        background: #efefef;
-        margin: 0 20px;
-      }
-      .sc-card__validator {
-        position: relative;
-      }
-      .sc-card__validator-icon {
-        position: relative;
-      }
-      .sc-card__validator-icon::after {
-        content: "";
-        position: absolute;
-        top: -2px;
-        right: -2px;
-        width: 10px;
-        height: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 16px;
-        color: #fff;
-        border-radius: 50%;
-        background: #bdbdbd;
-        pointer-events: none;
-      }
-      .sc-card__validator-icon._valid::after {
-        background: #6bd8aa;
-      }
-      .sc-card__validator-icon._not-valid::after {
-        background: #d86b6b;
-      }
-      .sc-card__validator-icon._not-founded::after {
-        content: "-";
-        background: #d86b6b;
-      }
-      .sc-card__validator-icon:hover + .validator-tooltip {
-        opacity: 1;
-        pointer-events: all;
-      }
-      .validator-tooltip {
-        position: absolute;
-        top: -8px;
-        left: 50%;
-        transform: translate(-50%, -100%);
-        width: max-content;
-        background: #fff;
-        border-radius: 4px;
-        padding: 12px 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        pointer-events: none;
-        transition: 0.3s;
-      }
-      @media (max-width: 1110px) {
-        .validator-tooltip {
-          top: 50%;
-          left: -8px;
-          transform: translate(-100%, -50%);
-        }
-      }
-      .validator-tooltip__item {
-        position: relative;
-        font-size: 12px;
-        font-weight: 400;
-        padding-left: 12px;
-      }
-      .validator-tooltip__item::before {
-        content: "";
-        position: absolute;
-        top: 3px;
-        left: 0;
-        width: 8px;
-        height: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 15px;
-        color: #fff;
-        border-radius: 50%;
-      }
-      .validator-tooltip__item:not(:last-child) {
-        margin-bottom: 4px;
-      }
-      .validator-tooltip__item_nfp::before {
-        content: "-";
-        background: #d86b6b;
-      }
-      .validator-tooltip__item_error::before {
-        background: #d86b6b;
-      }
-      .validator-tooltip__item_warning::before {
-        background: #d8d36b;
-      }
-      .validator-tooltip__item_valid::before {
-        background: #6bd8aa;
-      }
-      .validator-tooltip__item span {
-        font-weight: 500;
-      }
-      .title_h2 {
-        font-size: 32px;
-        font-weight: 500;
-      }
-      @media (max-width: 768px) {
-        .title_h2 {
-          font-size: 28px;
-        }
-      }
-      @media (max-width: 425px) {
-        .title_h2 {
-          font-size: 24px;
-        }
-      }
-      .title_h3 {
-        font-size: 24px;
-        font-weight: 400;
-      }
-      @media (max-width: 768px) {
-        .title_h3 {
-          font-size: 22px;
-        }
-      }
-      @media (max-width: 425px) {
-        .title_h3 {
-          font-size: 18px;
-        }
-      }
-      .header {
-        width: 100%;
-        height: 64px;
-        display: flex;
-        align-items: center;
-        background: #fff;
-        border-bottom: 1px solid #efefef;
-        padding: 0 48px;
-      }
-      @media (max-width: 1200px) {
-        .header {
-          padding: 0 24px;
-        }
-      }
-      @media (max-width: 425px) {
-        .header {
-          padding: 0 16px;
-        }
-      }
-      .guide {
-        display: flex;
-        align-items: center;
-      }
-      .guide__logo {
-        height: 30px;
-        display: flex;
-        align-items: center;
-        filter: grayscale(1);
-      }
-      @media (max-width: 425px) {
-        .guide__logo {
-          height: 28px;
-        }
-      }
-      .guide__logo::after {
-        content: "";
-        display: block;
-        width: 12px;
-        height: 2px;
-        background: #5c5c5c;
-        margin-left: 8px;
-      }
-      @media (max-width: 425px) {
-        .guide__logo::after {
-          height: 1px;
-        }
-      }
-      .guide__title {
-        font-size: 14px;
-        font-weight: 600;
-        font-style: italic;
-        color: #858585;
-        margin-left: 8px;
-      }
-      @media (max-width: 425px) {
-        .guide__title {
-          font-size: 12px;
-        }
-      }
-      .s-catalog__list > *:not(:last-child) {
-        margin-bottom: 48px;
-      }
-      @media (max-width: 768px) {
-        .s-catalog__list > *:not(:last-child) {
-          margin-bottom: 32px;
-        }
-      }
-      @media (max-width: 425px) {
-        .s-catalog__list > *:not(:last-child) {
-          margin-bottom: 24px;
-        }
-      }
-      .footer {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 24px 48px;
-        border-top: 1px solid #efefef;
-        margin-top: 96px;
-      }
-      @media (max-width: 768px) {
-        .footer {
-          padding: 24px;
-          margin-top: 64px;
-        }
-      }
-      @media (max-width: 500px) {
-        .footer {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-      }
-      @media (max-width: 425px) {
-        .footer {
-          padding: 24px 16px;
-          margin-top: 48px;
-        }
-      }
-      .footer__info-label {
-        font-size: 12px;
-        font-weight: 500;
-        color: #858585;
-      }
-      .footer__info-name {
-        font-size: 18px;
-        font-weight: 500;
-        color: #333;
-        margin-top: 2px;
-        white-space: nowrap;
-      }
-      .footer__contacts {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: flex-end;
-      }
-      @media (max-width: 500px) {
-        .footer__contacts {
-          flex-direction: column-reverse;
-          align-items: flex-start;
-          margin-top: 16px;
-        }
-      }
-      .footer__contacts-correction {
-        font-size: 14px;
-        font-weight: 500;
-        font-style: italic;
-        color: #858585;
-        text-align: right;
-        margin: 10px 0;
-      }
-      @media (max-width: 425px) {
-        .footer__contacts-correction {
-          font-size: 12px;
-        }
-      }
-      .footer__contacts-list {
-        display: flex;
-        align-items: center;
-        margin-left: 32px;
-      }
-      .footer__contacts-list > *:not(:last-child) {
-        margin-right: 16px;
-      }
-      @media (max-width: 500px) {
-        .footer__contacts-list {
-          margin-left: 0;
-        }
-      }
-    </style>
-
-    <script>
-      const config = {
-        title: "Project",
-        githubNick: "boffeer",
-        titleRep: "<rep>/dist",
-      };
-
-      const catalog = {
-        "Общие страницы": {
-          "Главная страница": "main.html",
-          "Главная страница Тур.": "main-tr.html",
-        },
-      };
-    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Su 2.0 | HasWater</title>
+    <link rel="stylesheet" href="./css/style.css?_v=20221027095827" />
+    <meta property="og:title" content="Su 2.0 | HasWater" />
+    <meta property="og:url" content="https://haswater.com" />
+    <meta property="og:image" content="https://haswater.com/img/og-tr.jpg" />
   </head>
-  <body>
+  <body class="lang-tr">
     <div class="wrapper">
-      <div class="content">
-        <aside class="sidebar"></aside>
-        <div class="info">
-          <section class="section s-catalog">
-            <div class="container">
-              <div class="s-catalog__wrap">
-                <div class="s-header">
-                  <h2 class="title_h2 s-header__title">Каталог страниц</h2>
+      <header class="header">
+  <div class="header__container container">
+    <a href="#" class="header__logo logo">
+      <img src="./img/common/logo-white.svg" alt="Logo" class="logo__img" />
+    </a>
+    <form class="langpicker header__langpicker">
+      <select name="" id="" class="header__langpicker-select langpicker-select">
+        <option value="http://haswater.com">Tr</option>
+        <option value="http://haswater.com/ru.html">Ru</option>
+      </select>
+    </form>
+  </div>
+</header>
+<!--[if lte IE 9]>
+  Для старый браузеров
+  <div class="ie">
+    <h1>Внимание! Вы используете устаревший браузер!</h1>
+    <div>
+      Данный сайт построен на передовых, современных технологиях и не
+      поддерживает старые версии браузеров!
+    </div>
+    <div>
+      Настоятельно Вам рекомендуем выбрать и установить любой из современных
+      браузеров. Это бесплатно и займет всего несколько минут.
+    </div>
+    <table>
+      <tr>
+        <td>
+          <a href="http://google.com/chrome"
+            ><img
+              src="https://www.google.com/chrome/static/images/chrome-logo.svg"
+              alt="Скачать Google Chrome"
+          /></a>
+        </td>
+        <td>
+          <a href="http://mozilla.org/ru/firefox/"
+            ><img
+              src="https://www.mozilla.org/media/protocol/img/logos/firefox/logo.fedb52c912d6.svg"
+              alt="Скачать Mozilla Firefox"
+          /></a>
+        </td>
+        <td>
+          <a href="http://opera.com/download/"
+            ><img
+              src="https://cdn-production-opera-website.operacdn.com/staticfiles/assets/images/logo/logo-o.a06775d40b97.svg"
+              alt="Скачать Opera"
+          /></a>
+        </td>
+        <td>
+          <a href="https://www.microsoft.com/ru-ru/edge"
+            ><img
+              src="https://upload.wikimedia.org/wikipedia/ru/thumb/9/98/Microsoft_Edge_logo_%282019%29.svg/1200px-Microsoft_Edge_logo_%282019%29.svg.png"
+              alt="Скачать Internet Explorer 9"
+          /></a>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <style type="text/css">
+    .ie {
+      position: fixed;
+      z-index: 1000000;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+    }
+    .ie h1 {
+      font-size: 25px;
+      margin: 50px 0 30px 0;
+      color: #000000;
+      text-align: center;
+    }
+    .ie div {
+      padding: 10px 50px;
+      text-align: center;
+      font-size: 16px;
+    }
+    .ie table {
+      border-collapse: collapse;
+      border: 0;
+      width: 900px;
+      margin: 30px auto 0;
+    }
+    .ie table td {
+      padding: 5px;
+      text-align: center;
+    }
+    .ie table td a img {
+      width: 48px;
+      height: auto;
+    }
+    #wrapper {
+      display: none !important;
+    }
+    #footer {
+      display: none !important;
+    }
+  </style>
+<![endif]-->
+
+
+      <main class="main">
+        <section class="hero js_section">
+          <div class="container hero__container">
+            <h1 class="hero__heading">
+              <span class="hero__suptitle section-suptitle">Su 2.0</span>
+              <span class="hero__title section-title">Haswater</span>
+            </h1>
+            <div class="hero__offer">
+              <div class="hero__video">
+                <h3 class="hero__video-title">
+                  HAS ile ilgili tanıtım
+                  videosudur
+                </h3>
+                <p class="section-text hero__video-desc">
+                  İzleme süresi - 45 dakikadır
+                </p>
+                <a
+                  href="#video"
+                  class="button button--secondary hero__video-button button--icon-play"
+                >
+                  <span class="button__text">İzlemek</span>
+                </a>
+              </div>
+              <picture class="hero__pic"
+                ><img src="./img/hero/bottle-new.png" alt="" class="hero__img"
+              /></picture>
+              <div class="hero__media">
+                <div class="hero__gift">
+                  <h3 class="hero__gift-title">
+                    HASWATER dan
+                    Four&nbsp;Seasons özel hediye
+                  <p class="section-text hero__gift-desc">
+                    Almak için kısa bir  formu doldurun.
+                  </p>
+                  <a
+                    href="#gift"
+                    class="button button--primary hero__button-gift button--open-quiz"
+                    >Hediye alın</a
+                  >
                 </div>
-                <div class="s-catalog__list"></div>
+                <div class="hero__socials socials">
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="socials__link"
+                  >
+                    <svg class="socials__icon">
+                      <use
+                        xlink:href="./img/common/facebook.svg#facebook"
+                      ></use>
+                    </svg>
+                  </a>
+                  <a
+                    href="https://t.me/laleccc_07"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="socials__link"
+                  >
+                    <svg class="socials__icon">
+                      <use
+                        xlink:href="./img/common/telegram.svg#telegram"
+                      ></use>
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="socials__link"
+                  >
+                    <svg class="socials__icon">
+                      <use xlink:href="./img/common/twitter.svg#twitter"></use>
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="socials__link"
+                  >
+                    <svg class="socials__icon">
+                      <use xlink:href="./img/common/vk.svg#vk"></use>
+                    </svg>
+                  </a>
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="socials__link"
+                  >
+                    <svg class="socials__icon">
+                      <use xlink:href="./img/common/youtube.svg#youtube"></use>
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
+
+        <section class="try">
+          <div class="container try__container">
+            <p
+              class="section-suptitle try__suptitle animate__fadeInUp wow animate__animated"
+            >
+              Four&nbsp;Seasons sa&nbsp;HOŞGELDİNİZ
+            </p>
+            <h2
+              class="section-title try__title animate__fadeInUp wow animate__animated"
+            >
+              Uzun bir yolculuktan <br />
+              sonra yoruldunuz mu?
+            </h2>
+            <div class="try__content">
+              <picture class="try__pic"
+                ><img
+                  src="./img/try/product-newer.png"
+                  alt=""
+                  class="try__img"
+              /></picture>
+              <div class="bullets try__bullets">
+                <article
+                  class="bullets-card animate__fadeInUp wow animate__animated"
+                >
+                  <h3 class="bullets-card__title">
+                    Gerçek Laboratuvarda
+                    kanıtlanmış
+                  </h3>
+                  <p class="bullets-card__desc">
+                    HAS Water - doğal bir antioksidan olarak kabul
+                    edilmektedir ve iyileşme için  8 saatlik uykudan
+                    daha etkilidir
+                  </p>
+                </article>
+                <article
+                  class="bullets-card animate__fadeInUp wow animate__animated"
+                  data-wow-delay="150"
+                >
+                  <h3 class="bullets-card__title">HAS Suyu deneyin</h3>
+                  <p class="bullets-card__desc">
+                    Ve onarıcı etkiyi hissedin. Otelimizde
+                    ücretsiz&nbsp;olarak verilmektedir.
+                  </p>
+                </article>
+                <a
+                  class="button button--primary try__button-feedback button--open-quiz animate__fadeInUp wow animate__animated"
+                  href="#gift"
+                  data-wow-delay="300"
+                >
+                  Geribildirim bırak
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="combiner combiner-testimonials">
+          <div class="combiner__inner">
+        <section class="testimonials">
+          <div class="testimonials__container container">
+            <p
+              class="section-suptitle testimonials__suptitle animate__fadeInUp wow animate__animated"
+            >
+              <!-- Profesyonel sporcular -->
+              Dünyaca ünlü insanlar
+            </p>
+            <h2
+              class="section-title testimonials__title animate__fadeInUp wow animate__animated"
+            >
+            bu suyu her gün KULLANYORLAR
+<!--               Antrenmanda sonra <br>
+              HAS Suyu kullanın
+ -->            </h2>
+            <div class="h-scroller testimonials__cards-scroller">
+              <div class="testimonials__cards">
+                <article class="testimonials-card card">
+                  <picture class="card__pic testimonials-card__pic"
+                    ><img
+                      src="./img/testimonials/1.jpg"
+                      alt=""
+                      class="testimonials-card__img card__img"
+                  /></picture>
+                  <h3 class="testimonials-card__title">Conor McGregor</h3>
+                  <p class="testimonials-card__desc">
+                    Profesyonel UFC savaşçısı
+                  </p>
+                </article>
+                <article class="testimonials-card card">
+                  <picture class="testimonials-card__pic card__pic"
+                    ><img
+                      src="./img/testimonials/2.jpg"
+                      alt=""
+                      class="testimonials-card__img card__img"
+                  /></picture>
+                  <h3 class="testimonials-card__title">Polina Miller</h3>
+                  <p class="testimonials-card__desc">
+                    Dünya standartlarında atletizm
+                  </p>
+                </article>
+                <article class="testimonials-card card">
+                  <picture class="testimonials-card__pic card__pic"
+                    ><img
+                      src="./img/testimonials/3.jpg"
+                      alt=""
+                      class="testimonials-card__img card__img"
+                  /></picture>
+                  <h3 class="testimonials-card__title">Usain Bolt</h3>
+                  <p class="testimonials-card__desc">
+                    Dünya standartlarında atletizm
+                  </p>
+                </article>
+
+                <article class="testimonials-card card">
+                  <picture class="card__pic testimonials-card__pic"
+                    ><img
+                      src="./img/testimonials/robert.jpg"
+                      alt=""
+                      class="testimonials-card__img card__img"
+                  /></picture>
+                  <h3 class="testimonials-card__title">Robert Downey Jr.</h3>
+                  <p class="testimonials-card__desc">
+                    Aktör
+                  </p>
+                </article>
+                <article class="testimonials-card card">
+                  <picture class="testimonials-card__pic card__pic"
+                    ><img
+                      src="./img/testimonials/leo.jpg"
+                      alt=""
+                      class="testimonials-card__img card__img"
+                  /></picture>
+                  <h3 class="testimonials-card__title">Leonardo DiCaprio</h3>
+                  <p class="testimonials-card__desc">
+                    Aktör
+                  </p>
+                </article>
+                <article class="testimonials-card card">
+                  <picture class="testimonials-card__pic card__pic"
+                    ><img
+                      src="./img/testimonials/sandra.jpg"
+                      alt=""
+                      class="testimonials-card__img card__img"
+                  /></picture>
+                  <h3 class="testimonials-card__title">Sandra Bullock</h3>
+                  <p class="testimonials-card__desc">
+                    Aktör
+                  </p>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="history">
+          <div class="history__container container">
+            <p class="section-suptitle history__suptitle">
+              BİZ SİZE DÜNYACA ÜNLÜ İNSANLARI GÖSTERDİK
+            </p>
+            <h2 class="section-title history__title">
+              Ve şimdi milyonlarca <br />
+              insanlari  göstericeğiz
+            </h2>
+            <div class="history__gallery">
+              <picture class="history__pic history__gallery-card">
+                <!-- <source data-srcset="./img/history/history-1.webp," type="image/webp" /> -->
+                <img
+                  class="history__img"
+                  src="./img/history/history-1.jpg"
+                  alt=""
+                />
+              </picture>
+              <picture class="history__pic history__gallery-card">
+                <!-- <source data-srcset="./img/history/history-2.webp," type="image/webp" /> -->
+                <img
+                  class="history__img"
+                  src="./img/history/history-2.jpg"
+                  alt=""
+                />
+              </picture>
+              <article class="history-card history__gallery-card">
+                <h3 class="history-card__title">
+                  Her saniye sakini
+                  Japonya'da&nbsp;içme suyu,
+                  hidrojenle doymuş
+                </h3>
+                <div class="history-card__row">
+                  <p class="section-text history-card__desc">
+                    İstatistiklere dayanarak Japonya da insan
+                    yaş ortalaması 84 yaştur
+                  </p>
+                  <p class="section-text history-card__desc">
+                    Bu yaş yaklaşık dünyanın ortalama yaş
+                    suresinden %19 daha fazdladır
+                  </p>
+                </div>
+                <p class="section-text history-card__caption">
+                  Bu araştırmalar 2007 yılından bu yana sürmektedir
+                </p>
+              </article>
+              <picture class="history__pic history__gallery-card">
+                <!-- <source data-srcset="./img/history/history-3.webp," type="image/webp" /> -->
+                <img
+                  class="history__img"
+                  src="./img/history/history-3.jpg"
+                  alt=""
+                />
+              </picture>
+              <picture class="history__pic history__gallery-card">
+                <!-- <source data-srcset="./img/history/history-4.webp," type="image/webp" /> -->
+                <img
+                  class="history__img"
+                  src="./img/history/history-4.jpg"
+                  alt=""
+                />
+              </picture>
+            </div>
+          </div>
+          <div class="section__fader history__fader"></div>
+        </section>
       </div>
     </div>
 
-    <script>
-      (() => {
-        "use strict";
-        var t = {};
-        (t.g = (function () {
-          if ("object" == typeof globalThis) return globalThis;
-          try {
-            return this || new Function("return this")();
-          } catch (t) {
-            if ("object" == typeof window) return window;
-          }
-        })()),
-          t.p;
-        const a = document.querySelector(".s-catalog__list");
-        a.innerHTML = Object.entries(catalog)
-          .map(
-            ([t, a]) =>
-              `\n    <div class="sc-block">\n        <div class="sc-block-header">\n            <h3 class="title_h3 sc-block-header__title">${t}</h3>\n        </div>\n        <div class="sc-block__list">${Object.entries(
-                a
-              )
-                .map(([t, a]) => {
-                  const l = `https%3A%2F%2F${config.githubNick}.github.io%2F${config.titleRep}%2F${a}`;
-                  return `\n        <div class="sc-card" id="page-${a.replace(
-                    ".html",
-                    ""
-                  )}">\n            <div class="sc-card__header">\n                <a href="./${a}" class="sc-card__header-content">\n                    <h4 class="sc-card__title">${t}</h4> \n                    <p class="sc-card__url">${a}</p>\n                </a>\n                \x3c!-- <div class="sc-card__tools">\n                    <a href="https://validator.w3.org/nu/?doc=${l}" class="icon icon_fill sc-card__validator">\n                        <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">\n                            <path d="M4.56047 14L0 0H2.1811L4.75875 7.86301L6.34501 2.87671L5.3536 0H7.33641L10.1124 8.24658L12.69 0H19.6299V1.53425L17.2505 5.36986C17.2505 5.36986 19.0908 6.5886 19.6299 7.86301C20.1576 9.11075 20.0879 10.0418 19.6299 11.3151C19.4197 11.8992 18.9779 12.5191 18.5646 13.0159C18.0112 13.6811 17.1659 14 16.3007 14C15.2708 14 14.2958 13.5359 13.6464 12.7365L13.1389 12.1118C12.8223 11.722 12.9846 11.1363 13.4566 10.9651L13.4866 10.9542C13.8289 10.8301 14.211 10.9695 14.4327 11.2585C14.73 11.646 15.1822 12.1321 15.6642 12.274C16.1828 12.4266 16.5578 12.4889 17.0522 12.274C17.6597 12.0098 18.0436 10.9315 18.0436 10.9315C18.0436 10.9315 18.5284 9.18441 18.0436 8.24658C17.7008 7.58343 17.3632 7.18927 16.6556 6.90411C16.2875 6.75574 15.7725 6.76021 15.3597 6.79944C15.005 6.83314 14.6728 6.56491 14.6728 6.20867C14.6728 5.91064 14.7528 5.61807 14.9044 5.36148L17.0522 1.72603H14.078L10.3106 14L7.33641 5.75342L4.56047 14Z" fill="#5C5C5C"/>\n                        </svg>                                                        \n                    </a>\n                </div> --\x3e\n                <div class="sc-card__tools">\n                <div class="sc-card__validator">\n                    <a  class="icon icon_fill sc-card__validator-icon" href="https://validator.w3.org/nu/?doc=${l}">\n                        <svg width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">\n                            <path d="M4.56047 14L0 0H2.1811L4.75875 7.86301L6.34501 2.87671L5.3536 0H7.33641L10.1124 8.24658L12.69 0H19.6299V1.53425L17.2505 5.36986C17.2505 5.36986 19.0908 6.5886 19.6299 7.86301C20.1576 9.11075 20.0879 10.0418 19.6299 11.3151C19.4197 11.8992 18.9779 12.5191 18.5646 13.0159C18.0112 13.6811 17.1659 14 16.3007 14C15.2708 14 14.2958 13.5359 13.6464 12.7365L13.1389 12.1118C12.8223 11.722 12.9846 11.1363 13.4566 10.9651L13.4866 10.9542C13.8289 10.8301 14.211 10.9695 14.4327 11.2585C14.73 11.646 15.1822 12.1321 15.6642 12.274C16.1828 12.4266 16.5578 12.4889 17.0522 12.274C17.6597 12.0098 18.0436 10.9315 18.0436 10.9315C18.0436 10.9315 18.5284 9.18441 18.0436 8.24658C17.7008 7.58343 17.3632 7.18927 16.6556 6.90411C16.2875 6.75574 15.7725 6.76021 15.3597 6.79944C15.005 6.83314 14.6728 6.56491 14.6728 6.20867C14.6728 5.91064 14.7528 5.61807 14.9044 5.36148L17.0522 1.72603H14.078L10.3106 14L7.33641 5.75342L4.56047 14Z" fill="#5C5C5C"></path>\n                        </svg>                                                        \n                    </a>\n                </div>\n            </div>\n            </div>\n        </div>\n        `;
-                })
-                .join("")}</div>\n    </div>\n    `
-          )
-          .join("");
-        const l = a.querySelectorAll(".sc-card__validator-icon");
-        if (
-          new Date().getTime() -
-            localStorage.getItem("lastTimeCheckValidHTML") >
-            18e5 ||
-          (null == localStorage.getItem("dataValid") &&
-            "" == localStorage.getItem("dataValid"))
-        ) {
-          console.log("прошло больше времени"),
-            localStorage.setItem("dataValid", "");
-          for (let t = 0; t < l.length; t++) {
-            const a = l[t],
-              n = a.closest(".sc-card");
-            let r;
-            o(a.href).then((t) => {
-              "error" === t[0] &&
-                (a.classList.add("_not-valid"), (r = "error")),
-                "nfp" === t[0] &&
-                  (a.classList.add("_not-founded"), (r = "nfp")),
-                "valid" === t[0] && (a.classList.add("_valid"), (r = "valid"));
-              const l =
-                  null != localStorage.getItem("dataValid") &&
-                  "" != localStorage.getItem("dataValid")
-                    ? JSON.parse(localStorage.getItem("dataValid"))
-                    : [],
-                o = { id: n.id, valid: r, info: { ...e(t[1]) } };
-              i(o),
-                l.push(o),
-                localStorage.setItem("dataValid", JSON.stringify(l));
-            });
-          }
-          localStorage.setItem("lastTimeCheckValidHTML", new Date().getTime());
-        } else {
-          console.log("прошло меньше времени");
-          const t = JSON.parse(localStorage.getItem("dataValid"));
-          for (let a = 0; a < t.length; a++) {
-            const l = t[a],
-              e = document
-                .getElementById(l.id)
-                .querySelector(".sc-card__validator-icon");
-            "error" === l.valid && e.classList.add("_not-valid"),
-              "nfp" === l.valid && e.classList.add("_not-founded"),
-              "valid" === l.valid && e.classList.add("_valid"),
-              i(l);
-          }
-        }
-        function e(t) {
-          const a = t.filter((t) => "error" === t.type).length,
-            l = t.filter((t) => "info" === t.type).length;
-          return { error: 0 != a ? a : null, warning: 0 != l ? l : null };
-        }
-        function i(t) {
-          const a = document
-            .getElementById(t.id)
-            .querySelector(".sc-card__validator");
-          let l = "";
-          "error" === t.valid &&
-            (0 != t.info.error &&
-              (l += `<li class="validator-tooltip__item validator-tooltip__item_error"><span>${t.info.error}</span> ошибки</li>`),
-            0 != t.info.warning &&
-              (l += `<li class="validator-tooltip__item validator-tooltip__item_warning"><span>${t.info.warning}</span> предупреждения</li>`)),
-            "nfp" === t.valid &&
-              (l +=
-                '<li class="validator-tooltip__item validator-tooltip__item_nfp"><span>404</span> страница не найдена</li>'),
-            "valid" === t.valid &&
-              (l +=
-                '<li class="validator-tooltip__item validator-tooltip__item_valid">Ошибок нет!</li>'),
-            a.insertAdjacentHTML(
-              "beforeend",
-              `\n    <div class="validator-tooltip">\n        <ul class="validator-tooltip__list">${l}</ul>\n    </div>\n    `
-            );
-        }
-        async function o(t) {
-          return (
-            (t += "&out=json"),
-            await fetch(t)
-              .then((t) => t.json())
-              .then((t) => {
-                let a;
-                return (
-                  (a =
-                    0 == t.messages.length
-                      ? "valid"
-                      : "non-document-error" == t.messages[0].type
-                      ? "nfp"
-                      : "error"),
-                  [a, t.messages]
-                );
-              })
-          );
-        }
-      })();
-    </script>
+        <div class="combiner combiner-features">
+          <div class="combiner__inner">
+            <section class="features">
+              <div class="features__container container">
+                <p class="section-suptitle features__suptitle">
+                  Sade su susuzluğu kurtarır
+                </p>
+                <h2 class="section-title features__title">
+                  Su 2.0 - yaşam <br>
+                  kalitesini artırır
+                </h2>
+                <div class="features__scroller">
+                  <div class="features__columns">
+                    <div class="features__column features__column-desc">
+                      <p
+                        class="section-text features__desc animate__fadeInUp wow animate__animated"
+                      >
+                        Hidrojen açısından zengin suyun, restoratif
+                        etkisinin yanı sıra, yaşamı tamamen yeni bir
+                        düzeye getirmeye yardımcı olan başka
+                        olumlu etkileride vardır
+                      </p>
+                    </div>
+                    <div class="features__column features__column-img">
+                      <div class="features__scene">
+                        <picture class="features__pic features__pic--top">
+                          <!-- <source
+                      srcset="./img/features/features-hero.webp"
+                      type="image/webp"
+                    /> -->
+                          <img
+                            class="features__img"
+                            src="./img/features/bottle-cup.png"
+                            alt=""
+                          />
+                        </picture>
+                        <picture class="features__pic features__pic--bottom">
+                          <!-- <source
+                      srcset="./img/features/features-hero.webp"
+                      type="image/webp"
+                    /> -->
+                          <img
+                            class="features__img"
+                            src="./img/features/bottle-box.png"
+                            alt=""
+                          />
+                        </picture>
+                      </div>
+                    </div>
+                    <div class="features__column features__column-bullets">
+                      <div class="features__column-contnet">
+                        <h3
+                          class="features__column-bullets-title"
+                        >
+                          BUNLAR, OLUMLU
+                          ETKİLERİNDEN SADECE
+                          BİR PARÇASIDIR:
+                        </h3>
+                        <div class="bullets features__bullets">
+                          <article
+                            class="bullets-card"
+                          >
+                            <p class="bullets-card__desc">
+                              Gözle görünür doğal gençleşme
+                              etkisi bırakır
+                            </p>
+                          </article>
+                          <article
+                            class="bullets-card"
+                          >
+                            <p class="bullets-card__desc">
+                              Vücudu normal sudan 6
+                              kat daha iyi nemlendirir
+                            </p>
+                          </article>
+                          <article
+                            class="bullets-card"
+                          >
+                            <p class="bullets-card__desc">
+                              Sigara,alkol gibi toksinlerin
+                              atılması sağlar
+                            </p>
+                          </article>
+                          <article
+                            class="bullets-card"
+                          >
+                            <p class="bullets-card__desc">
+                              Kan şekerini ve insülin
+                              seviyelerini dengeler
+                            </p>
+                          </article>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="features__column features__column-big-bullets">
+                      <div class="bullets features__bullets">
+                        <article class="bullets-card bullets-card-big--1">
+                          <h3 class="bullets-card__title">
+                            HAS - Doğal Enerjidir
+                          </h3>
+                          <p class="bullets-card__desc">
+                            Negatif iyon yükü nedeniyle, tüketicilerimizin %83'ü ilk kullanım günlerinde şunları tasdik ederler : <br>
+                            — gün boyunca yaşam enerjisinin yükseldiğini, <br>
+                            — antremandan sonrası hızla güç yenilemesi, <br>
+                            — daha iyi odaklanması, <br>
+                            — uyku kalitesini yükseltir <br>
+                          </p>
+                        </article>
+                        <article class="bullets-card bullets-card-big--2">
+                          <h3 class="bullets-card__title">
+                            Vücudun metabolizmı hızlandırması
+                          </h3>
+                          <p class="bullets-card__desc">
+                            HAS Water dengeli bileşimi sayesinde sindirimi ve metabolizmayı iyileştirir.  Kimyasal bileşim çoğu ülkenin tüm kalite standartlarını karşılar ve böylece en yüksek kategorideki suyunun anahtarı olur.
+                          </p>
+                        </article>
+                        <article class="bullets-card bullets-card-big--3">
+                          <h3 class="bullets-card__title">
+                            Vücuttaki ve sebzelerdeki tüm Toksinleri atar
+                          </h3>
+                          <p class="bullets-card__desc">
+                            Çiftçilerin, ürünlerine güzel bir görünüm verebilmek için ve raf ömrünü uzatmak için büyük miktarlarda gıdaların üzerine pestisitler ve çeşitli kimyasallar kullanır.
+                          </p>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+        <section class="care">
+          <div class="container care__container">
+            <p class="section-suptitle care__suptitle">
+              HAS ve Four&nsbp;seasons <br>
+              Sağlığınızın için  yeni bir bakım seviyesi
+            </p>
+            <h2 class="section-title care__title">
+              HAS Food ile sağlıklı beslenim
+            </h2>
+            <div class="care__content">
+              <picture
+                class="care__pic"
+              >
+                <!-- <source srcset="./img/care/hero.webp" type="image/webp" /> -->
+                <img class="care__img" src="./img/care/chiefs.jpg" alt="" />
+              </picture>
+              <div class="care-offer">
+                <h3 class="care-offer__title">
+                  Otelimizde tüm yemekler HAS Su ile hazırlanmaktadır
+                <p class="care-offer__desc">
+                  Tüm sebzeleri, meyveleri ve bitkileri işlemek,
+bilinen pestisitlerin çoğunu tamamen temizlemenizi
+sağlar. Otelimizde birinci sınıf şefler tarafından
+hazırlanan organik yiyecekler yersiniz.
+                </p>
+                <a
+                  href="#video"
+                  class="button button--secondary care-offer__button button--icon-play"
+                >
+                  <span class="button__text">Bir video izleyin</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="care__fader section__fader"></div>
+        </section>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <section class="video" id="video">
+          <div class="container video__container">
+            <h2
+              class="section-title video__title animate__fadeInUp wow animate__animated"
+            >
+              HAS Food pestisitleri, yağları <br>
+              ve diğer toksinleri uzaklaştırır
+            </h2>
+            <p
+              class="section-suptitle video__suptitle animate__fadeInUp wow animate__animated"
+            >
+              Vücuda uygun değil
+            </p>
+            <div
+              class="video-player js_lazy-media media"
+              data-yt-id="HtG_ZKgC0IY"
+            >
+              <picture class="media video-player__preview"
+                ><img src="" alt="" class="video__preview-img"
+              /></picture>
+              <iframe
+                class="video-player__content media"
+                src=""
+                frameborder="0"
+              ></iframe>
+              <div class="button--play video-player__button"></div>
+            </div>
+            <p class="video__caption">
+              5 dakika suda 2.0 kalarak, toksinler <br>
+              gözlerinizin önünde yıkanır.
+            </p>
+          </div>
+        </section>
+
+        <div class="combiner combiner-food">
+          <div class="combiner__inner">
+            <section class="food">
+              <div class="container food__container">
+                <h2 class="section-title food__title">
+                  HAS'ın evde <br>
+                  benzeri yok
+                </h2>
+                <div class="food__content">
+                  <div class="food-offer">
+                    <h3 class="food-offer__title">
+                      HAS pişirmeyi ve
+                      yemek kalitesini
+                      hızlandırır
+                    </h3>
+                    <p class="food-offer__desc">
+                      Mesela : Eti veya balığı 10 dakika boyunca HAS'ta
+                      bekletirseniz, haşlama süresi ortalama 1 saatten
+                      40&nbsp;-&nbsp;45 dakikaya kadar  düşecektir.
+                    </p>
+                    <p class="food-offer__desc">
+                      Aynı zamanda, fermantasyon sayesinde
+                      et daha yumuşak olacaktır.
+                    </p>
+                  </div>
+                  <picture class="food__pic">
+                    <!-- <source srcset="./img/food/hero.webp" type="image/webp" /> -->
+                    <img class="food__img" src="./img/food/clock.png" alt="" />
+                  </picture>
+                </div>
+              </div>
+            </section>
+            <section class="gift" id="gift">
+              <div class="container gift__container">
+                <p class="section-suptitle gift__suptitle">
+                  HAS suyu her gün tüketin
+                </p>
+                <h2 class="section-title gift__title">
+                  Sizin için resepsiyonda <br>
+                  bir hediye hazırladık Four&nbsp;Seasons
+                </h2>
+                <div class="gift__content">
+                  <picture class="gift__pic">
+                    <!-- <source srcset="./img/gift/stand.webp," type="image/webp"> -->
+                    <img class="gift__img" src="./img/gift/stand.png" alt="" />
+                  </picture>
+
+                  <div class="gift__offer">
+                    <h3 class="gift__offer-title">
+                      Hediye almak <br>
+                      için kısa bir form <br>
+                      doldurun
+                    </h3>
+                    <p class="gift__offer-desc">
+                      ve alınan kodu resepsiyondaki
+                      yöneticiye gösterin
+                    </p>
+                    <button
+                      class="gift__offer-order-button button button--primary"
+                      data-poppa-open="quiz-feedback"
+                    >
+                      Formu doldurun
+                    </button>
+                    <h3
+                      class="gift__offer-title gift__offer-title--small animate__fadeInUp wow animate__animated"
+                      data-wow-delay="250ms"
+                    >
+                      Önerilen günlük tüketimi <br>
+                      1,5-2 litredir
+                    </h3>
+                    <p
+                      class="gift__offer-desc animate__fadeInUp wow animate__animated"
+                      data-wow-delay="300ms"
+                    >
+                      su HAS - günde 1.5-2 litre
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="gift__fader section__fader"></div>
+            </section>
+          </div>
+        </div>
+
+        <section class="magic js_section">
+          <div class="container magic__container">
+            <h2
+              class="section-title magic__title animate__fadeInUp wow animate__animated"
+            >
+              HAS doğadan bir mucizedir <br>
+              ve bilim tarafından kanıtlanmıştır
+            </h2>
+            <p
+              class="section-suptitle magic__suptitle animate__fadeInUp wow animate__animated"
+            >
+              Sıradan suyun nasıl "gerçek" hale <br>
+              geldiğini sosyal ağlardan öğrenin
+            </p>
+            <div class="socials socials--big">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="socials__link socials__link--facbook animate__fadeInUp wow animate__animated"
+              >
+                <svg class="socials__icon">
+                  <use xlink:href="./img/common/facebook.svg#facebook"></use>
+                </svg>
+              </a>
+              <a
+                href="https://t.me/laleccc_07"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="socials__link socials__link--telegram animate__fadeInUp wow animate__animated"
+                data-wow-delay="100ms"
+              >
+                <svg class="socials__icon">
+                  <use xlink:href="./img/common/telegram.svg#telegram"></use>
+                </svg>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="socials__link socials__link--twitter animate__fadeInUp wow animate__animated"
+                data-wow-delay="150ms"
+              >
+                <svg class="socials__icon">
+                  <use xlink:href="./img/common/twitter.svg#twitter"></use>
+                </svg>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="socials__link socials__link--vk animate__fadeInUp wow animate__animated"
+                data-wow-delay="200ms"
+              >
+                <svg class="socials__icon">
+                  <use xlink:href="./img/common/vk.svg#vk"></use>
+                </svg>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="socials__link socials__link--youtube animate__fadeInUp wow animate__animated"
+                data-wow-delay="250ms"
+              >
+                <svg class="socials__icon">
+                  <use xlink:href="./img/common/youtube.svg#youtube"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <div class="combiner combiner-research research--hidden">
+          <div class="combiner__inner">
+            <section class="research">
+              <div class="container research__container">
+                <p
+                  class="section-suptitle research__suptitle animate__fadeInUp wow animate__animated"
+                >
+                  Gerçek olmayan boş vaatlere HAS karşıdır
+                </p>
+                <h2
+                  class="section-title research__title animate__fadeInUp wow animate__animated"
+                >
+                  Tüm iddalarımız bilimsel <br>
+                  araştırmalarla kanıtlanmıştır
+                </h2>
+
+                <div class="h-scroller research__cards-scroller">
+                  <div class="research__cards">
+                    <article class="card research__card">
+                      <picture class="card__pic"
+                        ><img
+                          src="./img/researches/1.jpg"
+                          alt=""
+                          class="card__img"
+                      /></picture>
+                      <h3 class="card__title">
+                        <a class="card__link" target="_blank" href="https://haswater.com/resources/research.pdf">
+                          Çalişmanin tam adi
+                        </a>
+                      </h3>
+                      <p class="card__desc">
+                        Uzun olabilen çalışmanın açıklaması
+                        en fazla 2 satır
+                      </p>
+                    </article>
+                    <article class="card research__card">
+                      <picture class="card__pic"
+                        ><img
+                          src="./img/researches/2.jpg"
+                          alt=""
+                          class="card__img"
+                      /></picture>
+                      <h3 class="card__title">
+                        <a class="card__link" target="_blank" href="https://haswater.com/resources/research.pdf">
+                          Çalişmanin tam adi
+                        </a>
+                     </h3>
+                      <p class="card__desc">
+                        Uzun olabilen çalışmanın açıklaması
+                         en fazla 2 satır
+                      </p>
+                    </article>
+                    <article class="card research__card">
+                      <picture class="card__pic"
+                        ><img
+                          src="./img/researches/3.jpg"
+                          alt=""
+                          class="card__img"
+                      /></picture>
+                      <h3 class="card__title">
+                        <a class="card__link" target="_blank" href="https://haswater.com/resources/research.pdf">
+                          Çalişmanin tam adi
+                        </a>
+                      </h3>
+                      <p class="card__desc">
+                        Uzun olabilen çalışmanın açıklaması
+                         en fazla 2 satır
+                      </p>
+                    </article>
+                    <article class="card research__card">
+                      <picture class="card__pic"
+                        ><img
+                          src="./img/researches/4.jpg"
+                          alt=""
+                          class="card__img"
+                      /></picture>
+                      <h3 class="card__title">
+                        <a class="card__link" target="_blank" href="https://haswater.com/resources/research.pdf">
+                          Çalişmanin tam adi
+                        </a>
+                      </h3>
+                      <p class="card__desc">
+                        Uzun olabilen çalışmanın açıklaması
+                         en fazla 2 satır
+                      </p>
+                    </article>
+                    <article class="card research__card">
+                      <picture class="card__pic"
+                        ><img
+                          src="./img/researches/5.jpg"
+                          alt=""
+                          class="card__img"
+                      /></picture>
+                      <h3 class="card__title">
+                        <a class="card__link" target="_blank" href="https://haswater.com/resources/research.pdf">
+                          Çalişmanin tam adi
+                        </a>
+                      </h3>
+                      <p class="card__desc">
+                        Uzun olabilen çalışmanın açıklaması
+                         en fazla 2 satır
+                      </p>
+                    </article>
+                    <article class="card research__card">
+                      <picture class="card__pic"
+                        ><img
+                          src="./img/researches/6.jpg"
+                          alt=""
+                          class="card__img"
+                      /></picture>
+                      <h3 class="card__title">
+                        <a class="card__link" target="_blank" href="https://haswater.com/resources/research.pdf">
+                          Çalişmanin tam adi
+                        </a>
+                      </h3>
+                      <p class="card__desc">
+                        Uzun olabilen çalışmanın açıklaması
+                         en fazla 2 satır
+                      </p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="map">
+              <div class="container map__container">
+                <h2
+                  class="section-title map__title animate__fadeInUp wow animate__animated"
+                >
+                  Bir kez görmek 100 kez <br>
+                  duymaktan değerlidir
+                </h2>
+                <div class="map__cards">
+                  <div
+                    class="map__card map__way animate__fadeInUp wow animate__animated"
+                  >
+                    <h3 class="map__card-title">
+                      Hasco Teknloji <br />
+                      San. Ve tic. ltd. sti.
+                    </h3>
+                    <p class="map__card-desc">
+                      Adres: Antalya, Konyaaltı, Bahtılı Köyü Köyü, 555. <br />
+                      Hasco Teknloji San. Ve tic. ltd. sti.
+                    </p>
+                    <p class="map__card-desc">
+                      Telefon:
+                      <a
+                        href="tel:+71234567890"
+                        class="map__card-phone js-phone"
+                        >+7 123 456-78-90</a
+                      >
+                    </p>
+                    <button
+                      class="button button--secondary map__card-route-button"
+                    >
+                      Yol tarifi almak
+                    </button>
+                  </div>
+
+                  <div
+                    class="map__card map__events animate__fadeInUp wow animate__animated"
+                    data-wow-delay="100ms"
+                  >
+                    <h3 class="map__card-title">Yaklaşan Etkinlikler:</h3>
+                    <article class="map__events-item">
+                      <picture class="map__events-item-pic">
+                        <source srcset=".webp" type="image/webp" />
+                        <img class="map__events-item-img" src=".png" alt="" />
+                      </picture>
+                      <div class="map__events-item-info">
+                        <h3 class="map__events-item-title">İsim</h3>
+                        <p class="map__events-item-desc">
+                          Yeşilırmak Caddesi 94, Kepez, Antalya
+                        </p>
+                      </div>
+                      <button
+                        class="button button--secondary map__events-item-button"
+                      >
+                        Ziyaret etmek istiyorum
+                      </button>
+                    </article>
+                    <article class="map__events-item">
+                      <picture class="map__events-item-pic">
+                        <source srcset=".webp" type="image/webp" />
+                        <img class="map__events-item-img" src=".png" alt="" />
+                      </picture>
+                      <div class="map__events-item-info">
+                        <h3 class="map__events-item-title">İsim</h3>
+                        <p class="map__events-item-desc">
+                          Yeşilırmak Caddesi 94, Kepez, Antalya
+                        </p>
+                      </div>
+                      <button
+                        class="button button--secondary map__events-item-button"
+                      >
+                        Ziyaret etmek istiyorum
+                      </button>
+                    </article>
+                  </div>
+                </div>
+              </div>
+              <div class="map__fader section__fader"></div>
+            </section>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+  <div class="container footer__container">
+    <a href="https://haswater.com/resources/policy.doc" target="_blank" class="footer__link">
+      Gizlilik politikası
+    </a>
+    <p class="footer__copy">Tüm © HAS haklarını korunmaktadır</p>
+  </div>
+</footer>
+
+<section class="quiz poppa" id="quiz-feedback">
+  <div class="container">
+    <form
+      method="post"
+      id="quiz-form"
+      action="./mail.php"
+      class="swiper quiz-slider"
+    >
+      <div class="swiper-wrapper">
+        <div class="swiper-slide quiz-slider__slide">
+          <h3 class="quiz-slider__question section-title">
+            Has WATER denedeniz mi?
+          </h3>
+          <div class="quiz-slider__answers">
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-1"
+                class="quiz-slider__answer-input"
+                checked
+                value="Evet, tadını ve etkisi beğendim"
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">
+                Evet, tadını ve etkisi beğendim
+              </p>
+            </label>
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-1"
+                value="Evet, fakat beğenmedim"
+                class="quiz-slider__answer-input"
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">Evet, fakat beğenmedim</p>
+            </label>
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-1"
+                class="quiz-slider__answer-input"
+                value="Henüz daha denemedim "
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">Henüz daha denemedim</p>
+            </label>
+          </div>
+        </div>
+
+        <div class="swiper-slide quiz-slider__slide">
+          <h3 class="quiz-slider__question section-title">
+            Как вам Four seasons и качество еды?
+          </h3>
+          <div class="quiz-slider__answers">
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-2"
+                class="quiz-slider__answer-input"
+                checked
+                value="Herşeyi beğendim"
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">Herşeyi beğendim</p>
+            </label>
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-2"
+                class="quiz-slider__answer-input"
+                value="Beğenmedim"
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">Beğenmedim</p>
+            </label>
+            <label class="quiz-slider__answer">
+              <input
+                type="radio"
+                name="q-2"
+                class="quiz-slider__answer-input"
+                value="Henüz daha denemedim"
+              />
+              <div class="quiz-slider__answer-check"></div>
+              <p class="quiz-slider__answer-text">Henüz daha denemedim</p>
+            </label>
+          </div>
+        </div>
+
+        <div class="swiper-slide quiz-slider__slide">
+          <h3 class="quiz-slider__question section-title">
+            Telefon numaranızı bırakın ve biz size hediye için özel kod gönderilim
+          </h3>
+          <div class="quiz-slider__answers quiz-slider__answers-contacts">
+            <label class="input quiz__input">
+              <input
+                required
+                type="tel"
+                name="user_tel"
+                placeholder="Telefon numaranız"
+                class="input__field"
+                min="10"
+              />
+            </label>
+            <button class="button button--primary quiz__submit" type="submit">
+              Kod al
+            </button>
+          </div>
+        </div>
+        <div
+          class="swiper-slide quiz-slider__slide quiz-slider__slide--results"
+        >
+          <p class="quiz-slider__desc">Ankete katıldığınız için teşekkür ederiz!</p>
+          <h3 class="quiz-slider__question section-title">
+            Resepsiyondan Hediye almanız için özel kodunuz:
+          </h3>
+          <p class="quiz-slider__code section-title">WOJENAS32</p>
+          <p class="quiz-slider__desc">
+            Resepsiyonda yetkili kişiye kodu söylemeniz yeterli olur
+          </p>
+          <button
+            class="button button--primary quiz__close-results"
+            data-poppa-close="quiz-feedback"
+            type="button"
+          >
+            ОК
+          </button>
+        </div>
+      </div>
+      <div
+        class="swiper-pagination quiz-slider__pagination slider__pagination"
+      ></div>
+      <div class="quiz-slider__buttons">
+        <div
+          class="quiz-slider__button-prev slider__button slider__button-prev button button--secondary"
+        >
+          ← Geri
+        </div>
+        <div
+          class="quiz-slider__button-next slider__button slider__button-next button button--primary"
+        >
+          Bir sonraki soru
+        </div>
+        <div class="quiz-slider__skip">
+          Ankete katılmaya zamanım yok, sadece
+          <button class="quiz-slider__skip-button link" type="button">
+            hediye almak
+          </button>
+           istiyorum
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+    </div>
+
+    <script src="./js/bundle.min.js?_v=20221027095827"></script>
   </body>
 </html>
