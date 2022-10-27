@@ -38,6 +38,7 @@
   filter: blur(340px);
   -webkit-filter: blur(340px);
   border-radius: 960px;
+  display: block;
   opacity: 0.3;
   transform: translateY(-50%) translate3d(0, 0, 0);
   @media (max-width: 576px) {

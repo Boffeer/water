@@ -105,6 +105,7 @@
 .hero__pic::before {
   --size: 520px;
   position: absolute;
+  display: block;
   bottom: 315px;
   right: unset;
   left: -23%;
